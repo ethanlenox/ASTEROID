@@ -1008,3 +1008,40 @@
 body.intro-active {
     overflow: hidden;
 }
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .intro-asteroid {
+        width: 65px;
+        height: 65px;
+    }
+
+
+    .intro-asteroid::before {
+        width: 120px;
+    }
+
+
+    .intro-asteroid::after {
+        width: 80px;
+    }
+
+
+    .intro-logo-subtitle {
+        font-size: 0.5rem;
+
+        letter-spacing:
+            0.25em;
+    }
+
+
+    .intro-skip {
+        right: 16px;
+        bottom: 16px;
+    }
+
+}
