@@ -25,7 +25,8 @@
     background:
         #00030a;
 
-    color: var(--color-white);
+    color:
+        var(--color-white);
 
     opacity: 1;
 
@@ -84,6 +85,31 @@
         300px 300px;
 
     opacity: 0.5;
+
+    animation:
+        intro-stars-in
+        1.2s
+        ease
+        forwards;
+}
+
+
+@keyframes intro-stars-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(1.07);
+    }
+
+    to {
+        opacity: 0.6;
+
+        transform:
+            scale(1);
+    }
+
 }
 
 
@@ -97,19 +123,42 @@
     z-index: 2;
 
     width: 100%;
-
     height: 100%;
 
     display: flex;
 
-    align-items: center;
+    flex-direction: column;
 
+    align-items: center;
     justify-content: center;
+
+    text-align: center;
+
+    animation:
+        intro-camera
+        5s
+        ease-out
+        forwards;
+}
+
+
+@keyframes intro-camera {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    100% {
+        transform:
+            scale(1.025);
+    }
+
 }
 
 
 /* =========================================================
-   ASTÉROÏDE — PLACEHOLDER
+   ASTÉROÏDE
    ========================================================= */
 
 .intro-asteroid {
@@ -140,18 +189,189 @@
         translateX(-50%);
 
     opacity: 0;
+
+    animation:
+        asteroid-entry
+        2s
+        cubic-bezier(0.22, 0.61, 0.36, 1)
+        0.8s
+        forwards;
+}
+
+
+@keyframes asteroid-entry {
+
+    0% {
+        top: -20%;
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.5);
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1.1);
+    }
+
+    100% {
+        top: 48%;
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(1.35);
+    }
+
 }
 
 
 /* =========================================================
-   SONIC — PLACEHOLDER
+   TRAÎNÉE
+   ========================================================= */
+
+.intro-asteroid::before,
+.intro-asteroid::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: 70%;
+
+    width: 180px;
+    height: 12px;
+
+    transform:
+        translateY(-50%)
+        rotate(-20deg);
+
+    transform-origin:
+        right center;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 85, 0, 0.05),
+            rgba(255, 120, 0, 0.45)
+        );
+
+    filter:
+        blur(5px);
+
+    opacity: 0;
+}
+
+
+.intro-asteroid::after {
+    width: 110px;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 190, 100, 0.8)
+        );
+
+    filter:
+        blur(2px);
+}
+
+
+.intro-asteroid::before {
+    animation:
+        asteroid-trail
+        1.2s
+        ease
+        1s
+        forwards;
+}
+
+
+.intro-asteroid::after {
+    animation:
+        asteroid-trail-core
+        1.2s
+        ease
+        1s
+        forwards;
+}
+
+
+@keyframes asteroid-trail {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            rotate(-20deg)
+            scaleX(0.2);
+    }
+
+    25% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            rotate(-20deg)
+            scaleX(1);
+    }
+
+}
+
+
+@keyframes asteroid-trail-core {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            rotate(-20deg)
+            scaleX(0.2);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            rotate(-20deg)
+            scaleX(1);
+    }
+
+}
+
+
+/* =========================================================
+   SONIC
    ========================================================= */
 
 .intro-sonic {
     position: absolute;
 
     left: 50%;
-
     top: 55%;
 
     width: 16px;
@@ -172,229 +392,49 @@
         scale(0);
 
     opacity: 0;
-}
 
-
-/* =========================================================
-   LOGO INTRO
-   ========================================================= */
-
-.intro-logo {
-    position: absolute;
-
-    text-align: center;
-
-    opacity: 0;
-
-    transform:
-        scale(0.8);
-
-    text-shadow:
-        0 0 20px rgba(0, 229, 255, 0.35);
-}
-
-
-.intro-logo-subtitle {
-    margin-bottom: 12px;
-
-    color:
-        var(--color-cyan);
-
-    font-size: 0.65rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.4em;
-}
-
-
-.intro-logo h1 {
-    color:
-        var(--color-white);
-
-    font-size:
-        clamp(3rem, 10vw, 7rem);
-
-    letter-spacing:
-        -0.04em;
-}
-
-
-.intro-logo-name {
-    margin-top: -8px;
-
-    color:
-        var(--color-cyan);
-
-    font-size:
-        clamp(1.2rem, 4vw, 2.5rem);
-
-    font-weight: 800;
-
-    letter-spacing:
-        0.3em;
-}
-
-
-/* =========================================================
-   BOUTON PASSER
-   ========================================================= */
-
-.intro-skip {
-    position: absolute;
-
-    right: 24px;
-    bottom: 24px;
-
-    z-index: 5;
-
-    padding: 9px 16px;
-
-    border:
-        1px solid rgba(0, 229, 255, 0.25);
-
-    border-radius:
-        var(--radius-small);
-
-    background:
-        rgba(0, 229, 255, 0.04);
-
-    color:
-        var(--color-text-muted);
-
-    font-size: 0.7rem;
-
-    font-weight: 700;
-
-    letter-spacing:
-        0.12em;
-
-    text-transform:
-        uppercase;
-
-    cursor: pointer;
-
-    transition:
-        color var(--transition-normal),
-        border-color var(--transition-normal),
-        background var(--transition-normal);
-}
-
-
-.intro-skip:hover {
-    color:
-        var(--color-white);
-
-    border-color:
-        var(--color-cyan);
-
-    background:
-        rgba(0, 229, 255, 0.08);
-}
-
-
-/* =========================================================
-   ACCESSIBILITÉ
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .intro {
-        display: none;
-    }
-
-}
-
-/* =========================================================
-   SÉQUENCE D'INTRO
-   ========================================================= */
-
-
-/* =========================================================
-   ÉTOILES
-   ========================================================= */
-
-.intro-stars {
     animation:
-        intro-stars-in 1.2s ease forwards;
+        sonic-entry
+        0.9s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        2.65s
+        forwards;
 }
 
 
-@keyframes intro-stars-in {
-
-    from {
-        opacity: 0;
-        transform: scale(1.07);
-    }
-
-    to {
-        opacity: 0.6;
-        transform: scale(1);
-    }
-
-}
-
-
-/* =========================================================
-   ASTÉROÏDE
-   ========================================================= */
-
-.intro-asteroid {
-    animation:
-        asteroid-entry 2s
-        cubic-bezier(0.22, 0.61, 0.36, 1)
-        0.8s forwards;
-}
-
-
-@keyframes asteroid-entry {
+@keyframes sonic-entry {
 
     0% {
-        top: -20%;
-
         opacity: 0;
 
         transform:
-            translateX(-50%)
-            scale(0.5);
-
+            translate(-50%, -50%)
+            scale(0);
     }
 
-    25% {
-        opacity: 1;
-    }
-
-    75% {
-
+    35% {
         opacity: 1;
 
         transform:
-            translateX(-50%)
-            scale(1.1);
+            translate(-50%, -50%)
+            scale(2.5);
+    }
 
+    70% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
     }
 
     100% {
-
-        top: 48%;
-
         opacity: 0;
-
-        transform:
-            translateX(-50%)
-            scale(1.35);
-
-    }
-
-}
-
-
 /* =========================================================
    IMPACT
    ========================================================= */
 
 .intro-content::after {
-
     content: "";
 
     position: absolute;
@@ -421,6 +461,8 @@
 
     opacity: 0;
 
+    pointer-events: none;
+
     animation:
         impact-flash
         0.7s
@@ -433,357 +475,150 @@
 @keyframes impact-flash {
 
     0% {
-
         opacity: 0;
 
         transform:
             translate(-50%, -50%)
             scale(0);
-
     }
 
     15% {
-
         opacity: 1;
 
         transform:
             translate(-50%, -50%)
             scale(2);
-
     }
 
     45% {
-
         opacity: 0.8;
 
         transform:
             translate(-50%, -50%)
             scale(7);
-
     }
 
     100% {
-
         opacity: 0;
 
         transform:
             translate(-50%, -50%)
             scale(18);
-
     }
 
 }
 
 
 /* =========================================================
-   SONIC
+   FLASH CINÉMATIQUE
    ========================================================= */
 
-.intro-sonic {
-
-    animation:
-        sonic-entry
-        0.9s
-        cubic-bezier(0.16, 1, 0.3, 1)
-        2.65s
-        forwards;
-}
-
-
-@keyframes sonic-entry {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(0);
-
-    }
-
-    35% {
-
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(2.5);
-
-    }
-
-    70% {
-
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1.2);
-
-    }
-
-    100% {
-
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(0.8);
-
-    }
-
-}
-
-
-/* =========================================================
-   LOGO
-   ========================================================= */
-
-.intro-logo {
-    animation:
-        logo-entry
-        1.4s
-        cubic-bezier(0.16, 1, 0.3, 1)
-        3.6s
-        forwards;
-}
-
-
-@keyframes logo-entry {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            scale(0.75);
-
-        filter:
-            blur(12px);
-
-    }
-
-    45% {
-
-        opacity: 1;
-
-        transform:
-            scale(1.05);
-
-        filter:
-            blur(0);
-
-    }
-
-    70% {
-
-        transform:
-            scale(1);
-
-    }
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            scale(1);
-
-    }
-
-}
-
-
-/* =========================================================
-   SORTIE DE L'INTRO
-   ========================================================= */
-
-.intro {
-    animation:
-        intro-end
-        0.9s
-        ease
-        9.1s
-        forwards;
-}
-
-
-@keyframes intro-end {
-
-    0% {
-
-        opacity: 1;
-
-        visibility: visible;
-
-    }
-
-    100% {
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        pointer-events: none;
-
-    }
-
-}
-
-
-/* =========================================================
-   PASSER
-   ========================================================= */
-
-.intro-skip {
-
-    animation:
-        skip-entry
-        0.8s
-        ease
-        0.8s
-        both;
-}
-
-
-@keyframes skip-entry {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(8px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-/* =========================================================
-   TRAÎNÉE DE L'ASTÉROÏDE
-   ========================================================= */
-
-.intro-asteroid::before,
-.intro-asteroid::after {
+.intro-content::before {
     content: "";
 
     position: absolute;
 
-    top: 50%;
-    right: 70%;
+    inset: 0;
 
-    width: 180px;
-    height: 12px;
-
-    transform:
-        translateY(-50%)
-        rotate(-20deg);
-
-    transform-origin: right center;
+    z-index: 1;
 
     background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 85, 0, 0.05),
-            rgba(255, 120, 0, 0.45)
+        radial-gradient(
+            circle at 50% 48%,
+            rgba(255, 255, 255, 0.9),
+            rgba(0, 229, 255, 0.25) 8%,
+            transparent 30%
         );
-
-    filter: blur(5px);
 
     opacity: 0;
+
+    pointer-events: none;
+
+    animation:
+        cinematic-flash
+        0.8s
+        ease-out
+        2.3s
+        forwards;
 }
 
-.intro-asteroid::after {
-    width: 110px;
-    height: 5px;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 190, 100, 0.8)
-        );
+@keyframes cinematic-flash {
 
-    filter: blur(2px);
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    35% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
 }
 
 
 /* =========================================================
-   ACTIVATION DE LA TRAÎNÉE
+   MICRO IMPACT CAMERA
    ========================================================= */
 
-.intro-asteroid::before {
+.intro-content {
     animation:
-        asteroid-trail 1.2s ease 1s forwards;
+        intro-camera
+        5s
+        ease-out
+        forwards,
+
+        intro-shake
+        0.35s
+        ease-out
+        2.3s;
 }
 
-.intro-asteroid::after {
-    animation:
-        asteroid-trail-core 1.2s ease 1s forwards;
-}
 
-
-@keyframes asteroid-trail {
+@keyframes intro-shake {
 
     0% {
-        opacity: 0;
         transform:
-            translateY(-50%)
-            rotate(-20deg)
-            scaleX(0.2);
+            translate(0, 0);
     }
 
-    25% {
-        opacity: 0.7;
+    20% {
+        transform:
+            translate(-3px, 2px);
+    }
+
+    40% {
+        transform:
+            translate(3px, -2px);
+    }
+
+    60% {
+        transform:
+            translate(-2px, -1px);
+    }
+
+    80% {
+        transform:
+            translate(1px, 2px);
     }
 
     100% {
-        opacity: 0;
         transform:
-            translateY(-50%)
-            rotate(-20deg)
-            scaleX(1);
+            translate(0, 0);
     }
 
 }
 
-
-@keyframes asteroid-trail-core {
-
-    0% {
-        opacity: 0;
-        transform:
-            translateY(-50%)
-            rotate(-20deg)
-            scaleX(0.2);
-    }
-
-    30% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform:
-            translateY(-50%)
-            rotate(-20deg)
-            scaleX(1);
-    }
-
-}
 
 /* =========================================================
-   PARTICULES D'IMPACT
+   PARTICULES
    ========================================================= */
 
 .intro-particles {
@@ -869,186 +704,14 @@
     }
 
 }
-
 /* =========================================================
-   MOUVEMENT DE L'ESPACE
+   LOGO INTRO
    ========================================================= */
-
-.intro-content {
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    animation:
-        intro-camera 5s ease-out forwards,
-        intro-shake 0.35s ease-out 2.3s;
-}
-
-@keyframes intro-camera {
-
-    0% {
-        transform:
-            scale(1);
-    }
-
-    100% {
-        transform:
-            scale(1.025);
-    }
-
-}
-
-/* =========================================================
-   FLASH CINÉMATIQUE
-   ========================================================= */
-
-.intro-content::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 50% 48%,
-            rgba(255, 255, 255, 0.9),
-            rgba(0, 229, 255, 0.25) 8%,
-            transparent 30%
-        );
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    animation:
-        cinematic-flash
-        0.8s
-        ease-out
-        2.3s
-        forwards;
-}
-
-
-@keyframes cinematic-flash {
-
-    0% {
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 0.8;
-    }
-
-    35% {
-        opacity: 0.25;
-    }
-
-    100% {
-        opacity: 0;
-    }
-
-}
-
-/* =========================================================
-   MICRO IMPACT CAMERA
-   ========================================================= */
-
-.intro-content {
-    animation:
-        intro-camera 5s ease-out forwards,
-        intro-shake 0.35s ease-out 2.3s;
-}
-
-
-@keyframes intro-shake {
-
-    0% {
-        transform: translate(0, 0);
-    }
-
-    20% {
-        transform: translate(-3px, 2px);
-    }
-
-    40% {
-        transform: translate(3px, -2px);
-    }
-
-    60% {
-        transform: translate(-2px, -1px);
-    }
-
-    80% {
-        transform: translate(1px, 2px);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-
-}
-
-/* =========================================================
-   VERROUILLAGE DU SCROLL
-   ========================================================= */
-
-body.intro-active {
-    overflow: hidden;
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .intro-asteroid {
-        width: 65px;
-        height: 65px;
-    }
-
-
-    .intro-asteroid::before {
-        width: 120px;
-    }
-
-
-    .intro-asteroid::after {
-        width: 80px;
-    }
-
-
-    .intro-logo-subtitle {
-        font-size: 0.5rem;
-
-        letter-spacing:
-            0.25em;
-    }
-
-
-    .intro-skip {
-        right: 16px;
-        bottom: 16px;
-    }
-
-}
 
 .intro-logo {
     position: relative;
+
+    z-index: 3;
 
     display: flex;
 
@@ -1069,6 +732,11 @@ body.intro-active {
         blur(10px)
         brightness(1.5);
 
+    text-align: center;
+
+    text-shadow:
+        0 0 20px rgba(0, 229, 255, 0.35);
+
     animation:
         asteroid-logo-entry
         1.5s
@@ -1079,7 +747,6 @@ body.intro-active {
 
 
 .intro-logo img {
-
     display: block;
 
     width: 280px;
@@ -1096,14 +763,12 @@ body.intro-active {
             0 0 8px
             rgba(0, 229, 255, 0.35)
         );
-
 }
 
 
 @keyframes asteroid-logo-entry {
 
     0% {
-
         opacity: 0;
 
         transform:
@@ -1115,7 +780,6 @@ body.intro-active {
     }
 
     35% {
-
         opacity: 0.25;
 
         transform:
@@ -1127,7 +791,6 @@ body.intro-active {
     }
 
     70% {
-
         opacity: 0.75;
 
         transform:
@@ -1139,7 +802,6 @@ body.intro-active {
     }
 
     100% {
-
         opacity: 1;
 
         transform:
@@ -1149,11 +811,23 @@ body.intro-active {
             blur(0)
             brightness(1);
     }
+
 }
 
+
 /* =========================================================
-   GLOW RESPIRATION
+   GLOW DU LOGO
    ========================================================= */
+
+.intro-logo img {
+    animation:
+        asteroid-logo-glow
+        3s
+        ease-in-out
+        5.2s
+        infinite;
+}
+
 
 @keyframes asteroid-logo-glow {
 
@@ -1180,116 +854,190 @@ body.intro-active {
                 rgba(0, 229, 255, 0.25)
             );
     }
+
 }
+
+
 /* =========================================================
-   LOGO ASTÉROÏD — INTRO
+   SOUS-TITRE
    ========================================================= */
 
-.intro-logo {
-    position: relative;
+.intro-logo-subtitle {
+    margin-top: 16px;
+    margin-bottom: 12px;
 
-    display: flex;
+    color:
+        var(--color-cyan);
 
-    align-items: center;
-    justify-content: center;
+    font-size:
+        0.65rem;
 
-    width: 280px;
-    max-width: 70vw;
+    font-weight:
+        700;
 
-    margin: 0 auto;
+    letter-spacing:
+        0.4em;
 
     opacity: 0;
 
-    transform:
-        scale(0.78);
-
-    filter:
-        blur(10px)
-        brightness(1.5);
-
     animation:
-        asteroid-logo-entry
-        1.5s
-        cubic-bezier(0.16, 1, 0.3, 1)
-        3.65s
+        subtitle-entry
+        0.9s
+        ease
+        5s
         forwards;
 }
 
 
-.intro-logo img {
-
-    display: block;
-
-    width: 280px;
-    max-width: 70vw;
-
-    height: auto;
-
-    margin: 0 auto;
-
-    object-fit: contain;
-
-    filter:
-        drop-shadow(
-            0 0 8px
-            rgba(0, 229, 255, 0.35)
-        );
-
-}
-
-
-@keyframes asteroid-logo-entry {
+@keyframes subtitle-entry {
 
     0% {
-
         opacity: 0;
 
         transform:
-            scale(0.78);
+            translateY(12px);
 
-        filter:
-            blur(10px)
-            brightness(1.6);
-    }
-
-    35% {
-
-        opacity: 0.25;
-
-        transform:
-            scale(0.86);
-
-        filter:
-            blur(6px)
-            brightness(1.8);
-    }
-
-    70% {
-
-        opacity: 0.75;
-
-        transform:
-            scale(0.98);
-
-        filter:
-            blur(2px)
-            brightness(1.3);
+        letter-spacing:
+            0.65em;
     }
 
     100% {
-
         opacity: 1;
 
         transform:
+            translateY(0);
+
+        letter-spacing:
+            0.4em;
+    }
+
+}
+/* =========================================================
+   TITRE PRESENTE
+   ========================================================= */
+
+.intro-logo h1 {
+    margin: 0;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        clamp(2rem, 6vw, 4rem);
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        0.18em;
+
+    opacity: 0;
+
+    animation:
+        title-entry
+        1s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        5.25s
+        forwards;
+}
+
+
+@keyframes title-entry {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.95);
+
+        filter:
+            blur(6px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
             scale(1);
 
         filter:
-            blur(0)
-            brightness(1);
+            blur(0);
     }
+
 }
+
+
 /* =========================================================
-   RADAR DU LOGO
+   NOM ASTÉROÏD
+   ========================================================= */
+
+.intro-logo-name {
+    margin-top: 12px;
+
+    color:
+        var(--color-cyan);
+
+    font-size:
+        clamp(1rem, 3vw, 2rem);
+
+    font-weight:
+        800;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        0.3em;
+
+    opacity: 0;
+
+    animation:
+        name-entry
+        1s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        5.5s
+        forwards;
+}
+
+
+@keyframes name-entry {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.9);
+
+        filter:
+            blur(8px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* =========================================================
+   RADAR
    ========================================================= */
 
 .intro-radar {
@@ -1310,6 +1058,8 @@ body.intro-active {
     opacity: 0;
 
     pointer-events: none;
+
+    overflow: hidden;
 
     background:
         radial-gradient(
@@ -1332,6 +1082,7 @@ body.intro-active {
     box-shadow:
         0 0 30px
         rgba(0, 229, 255, 0.08),
+
         inset 0 0 30px
         rgba(0, 229, 255, 0.04);
 
@@ -1340,92 +1091,15 @@ body.intro-active {
         1.8s
         ease-out
         3.25s
-        forwards;
-}
+        forwards,
 
-
-.intro-radar::before {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 50%;
-    height: 50%;
-
-    transform-origin: 0 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 229, 255, 0.28),
-            transparent
-        );
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            100% 8%,
-            0 0
-        );
-
-    opacity: 0;
-
-    animation:
-        radar-beam
+        radar-sweep
         1.3s
         linear
-        3.3s
+        3.25s
         forwards;
 }
 
-
-.intro-radar::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(0, 229, 255, 0.15);
-
-    box-shadow:
-        inset 0 0 20px
-        rgba(0, 229, 255, 0.08);
-}
-
-
-@keyframes radar-beam {
-
-    0% {
-        opacity: 0;
-
-        transform:
-            rotate(0deg);
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 0.8;
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            rotate(360deg);
-    }
-}
 
 @keyframes radar-entry {
 
@@ -1456,28 +1130,15 @@ body.intro-active {
             translate(-50%, -50%)
             scale(1.08);
     }
-}
 
+}
 /* =========================================================
    BALAYAGE RADAR
    ========================================================= */
 
 .intro-radar {
-    overflow: hidden;
-}
-
-
-.intro-radar::marker {
-    display: none;
-}
-
-
-.intro-radar {
     --radar-angle: 0deg;
-}
 
-
-.intro-radar {
     background:
         conic-gradient(
             from var(--radar-angle),
@@ -1501,22 +1162,128 @@ body.intro-active {
         );
 
     animation:
-        radar-entry 1.8s ease-out 3.25s forwards,
-        radar-sweep 1.3s linear 3.25s forwards;
+        radar-entry
+        1.8s
+        ease-out
+        3.25s
+        forwards,
+
+        radar-sweep
+        1.3s
+        linear
+        3.25s
+        forwards;
 }
 
 
 @keyframes radar-sweep {
 
     from {
-        --radar-angle: 0deg;
+        --radar-angle:
+            0deg;
     }
 
     to {
-        --radar-angle: 360deg;
+        --radar-angle:
+            360deg;
     }
 
 }
+
+
+/* =========================================================
+   RADAR CERCLES
+   ========================================================= */
+
+.intro-radar::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(0, 229, 255, 0.15);
+
+    box-shadow:
+        inset 0 0 20px
+        rgba(0, 229, 255, 0.08);
+}
+
+
+/* =========================================================
+   FAISCEAU RADAR
+   ========================================================= */
+
+.intro-radar::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 50%;
+    height: 50%;
+
+    transform-origin:
+        0 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.28),
+            transparent
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 8%,
+            0 0
+        );
+
+    opacity: 0;
+
+    animation:
+        radar-beam
+        1.3s
+        linear
+        3.3s
+        forwards;
+}
+
+
+@keyframes radar-beam {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            rotate(0deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            rotate(360deg);
+    }
+
+}
+
 
 /* =========================================================
    SCAN DU LOGO
@@ -1526,11 +1293,9 @@ body.intro-active {
     position: absolute;
 
     left: -15%;
-
     top: 50%;
 
     width: 130%;
-
     height: 3px;
 
     transform:
@@ -1608,4 +1373,1230 @@ body.intro-active {
             translateX(30%)
             scaleX(0.2);
     }
+
 }
+/* =========================================================
+   SORTIE DE L'INTRO
+   ========================================================= */
+
+.intro {
+    animation:
+        intro-end
+        0.9s
+        ease
+        9.1s
+        forwards;
+}
+
+
+@keyframes intro-end {
+
+    0% {
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+    }
+
+}
+
+
+/* =========================================================
+   BOUTON PASSER
+   ========================================================= */
+
+.intro-skip {
+    position: absolute;
+
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 20;
+
+    padding:
+        9px 16px;
+
+    border:
+        1px solid
+        rgba(0, 229, 255, 0.25);
+
+    border-radius:
+        var(--radius-small);
+
+    background:
+        rgba(0, 229, 255, 0.04);
+
+    color:
+        var(--color-text-muted);
+
+    font-size:
+        0.7rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
+    transition:
+        color
+        var(--transition-normal),
+
+        border-color
+        var(--transition-normal),
+
+        background
+        var(--transition-normal),
+
+        box-shadow
+        var(--transition-normal);
+}
+
+
+.intro-skip:hover {
+    color:
+        var(--color-white);
+
+    border-color:
+        var(--color-cyan);
+
+    background:
+        rgba(0, 229, 255, 0.08);
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 229, 255, 0.15);
+}
+
+
+.intro-skip:active {
+    transform:
+        scale(0.96);
+}
+
+
+.intro-skip {
+    animation:
+        skip-entry
+        0.8s
+        ease
+        0.8s
+        both;
+}
+
+
+@keyframes skip-entry {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   VERROUILLAGE DU SCROLL
+   ========================================================= */
+
+body.intro-active {
+    overflow: hidden;
+}
+/* =========================================================
+   EFFET DE PROFONDEUR
+   ========================================================= */
+
+.intro::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 25%,
+            rgba(0, 0, 0, 0.25) 65%,
+            rgba(0, 0, 0, 0.7) 100%
+        );
+}
+
+
+/* =========================================================
+   VIGNETTE
+   ========================================================= */
+
+.intro::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 45%,
+            rgba(0, 0, 0, 0.28) 75%,
+            rgba(0, 0, 0, 0.65) 100%
+        );
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   LIGNES TECHNIQUES
+   ========================================================= */
+
+.intro-content {
+    isolation: isolate;
+}
+
+
+.intro-content {
+    background:
+        linear-gradient(
+            90deg,
+            transparent 49.9%,
+            rgba(0, 229, 255, 0.025) 50%,
+            transparent 50.1%
+        ),
+        linear-gradient(
+            0deg,
+            transparent 49.9%,
+            rgba(0, 229, 255, 0.025) 50%,
+            transparent 50.1%
+        );
+}
+
+
+/* =========================================================
+   HALO CENTRAL
+   ========================================================= */
+
+.intro-content {
+    --intro-halo:
+        rgba(0, 229, 255, 0.08);
+}
+
+
+.intro-logo::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 360px;
+    height: 160px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: -1;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            var(--intro-halo),
+            transparent 70%
+        );
+
+    filter:
+        blur(20px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    animation:
+        logo-halo
+        2s
+        ease
+        4.5s
+        forwards;
+}
+
+
+@keyframes logo-halo {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.6);
+    }
+
+    40% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0.55;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+
+}
+/* =========================================================
+   ANIMATION DES ÉTOILES
+   ========================================================= */
+
+.intro-stars::before,
+.intro-stars::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -10%;
+
+    pointer-events: none;
+}
+
+
+.intro-stars::before {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 255, 255, 0.7) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 30% 60%,
+            rgba(0, 229, 255, 0.6) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 60% 35%,
+            rgba(255, 255, 255, 0.7) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(0, 229, 255, 0.5) 0 1px,
+            transparent 2px
+        );
+
+    animation:
+        stars-drift-one
+        12s
+        linear
+        infinite;
+}
+
+
+.intro-stars::after {
+    background:
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(0, 229, 255, 0.5) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(255, 255, 255, 0.5) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 80% 65%,
+            rgba(0, 229, 255, 0.4) 0 1px,
+            transparent 2px
+        );
+
+    animation:
+        stars-drift-two
+        18s
+        linear
+        infinite;
+}
+
+
+@keyframes stars-drift-one {
+
+    from {
+        transform:
+            translate3d(0, 0, 0);
+    }
+
+    to {
+        transform:
+            translate3d(-25px, 18px, 0);
+    }
+
+}
+
+
+@keyframes stars-drift-two {
+
+    from {
+        transform:
+            translate3d(0, 0, 0);
+    }
+
+    to {
+        transform:
+            translate3d(20px, -15px, 0);
+    }
+
+}
+
+
+/* =========================================================
+   PULSATION SONIC
+   ========================================================= */
+
+.intro-sonic::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.4);
+
+    border:
+        1px solid
+        rgba(0, 229, 255, 0.7);
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    animation:
+        sonic-ring
+        1s
+        ease-out
+        2.65s
+        forwards;
+}
+
+
+@keyframes sonic-ring {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.3);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(5);
+    }
+
+}
+
+
+/* =========================================================
+   SECONDE ONDE SONIC
+   ========================================================= */
+
+.intro-sonic::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 14px;
+    height: 14px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.8);
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    animation:
+        sonic-pulse
+        0.7s
+        ease-out
+        2.75s
+        forwards;
+}
+
+
+@keyframes sonic-pulse {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(4);
+    }
+
+}
+/* =========================================================
+   PARTICULES SUPPLÉMENTAIRES
+   ========================================================= */
+
+.intro-particles {
+    z-index: 6;
+}
+
+
+.intro-particles {
+    --particle-color:
+        var(--color-cyan);
+}
+
+
+.intro-particles::before {
+    box-shadow:
+        0 0 8px var(--color-cyan),
+        0 0 18px var(--color-cyan),
+        40px -25px 0 rgba(0, 229, 255, 0.8),
+        -55px -40px 0 rgba(255, 255, 255, 0.6),
+        75px 35px 0 rgba(0, 229, 255, 0.6),
+        -80px 45px 0 rgba(255, 150, 50, 0.6);
+}
+
+
+/* =========================================================
+   ÉCLATS D'IMPACT
+   ========================================================= */
+
+.intro-content {
+    --impact-color:
+        rgba(0, 229, 255, 0.8);
+}
+
+
+.intro-content::after {
+    box-shadow:
+        0 0 20px var(--color-cyan),
+        0 0 50px var(--color-cyan),
+        0 0 100px rgba(0, 229, 255, 0.6),
+        0 0 150px rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================================
+   LIGNES D'ONDE
+   ========================================================= */
+
+.intro-content {
+    overflow: hidden;
+}
+
+
+.intro-content {
+    --wave-opacity:
+        0;
+}
+
+
+.intro-content .intro-sonic {
+    isolation: isolate;
+}
+
+
+.intro-content .intro-sonic::before {
+    box-shadow:
+        0 0 0 1px rgba(0, 229, 255, 0.4),
+        0 0 15px rgba(0, 229, 255, 0.5),
+        0 0 30px rgba(0, 229, 255, 0.3);
+}
+
+
+/* =========================================================
+   LUMIÈRE HORIZONTALE
+   ========================================================= */
+
+.intro-content .intro-logo {
+    isolation: isolate;
+}
+
+
+.intro-logo::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 520px;
+    height: 1px;
+
+    transform:
+        translate(-50%, -50%)
+        scaleX(0);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 229, 255, 0.25),
+            rgba(255, 255, 255, 0.8),
+            rgba(0, 229, 255, 0.25),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(0, 229, 255, 0.35);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        logo-horizon
+        1.2s
+        ease-out
+        4.6s
+        forwards;
+}
+
+
+@keyframes logo-horizon {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scaleX(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.7;
+
+        transform:
+            translate(-50%, -50%)
+            scaleX(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scaleX(1.15);
+    }
+
+}
+/* =========================================================
+   TRANSITION FINALE
+   ========================================================= */
+
+.intro {
+    will-change:
+        opacity,
+        visibility;
+}
+
+
+.intro.is-hidden {
+    transition:
+        opacity 0.8s ease,
+        visibility 0s linear 0.8s;
+}
+
+
+/* =========================================================
+   ACCÉLÉRATION GPU
+   ========================================================= */
+
+.intro-stars,
+.intro-content,
+.intro-asteroid,
+.intro-sonic,
+.intro-logo,
+.intro-radar,
+.intro-scan,
+.intro-particles,
+.intro-skip {
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+    transform-style:
+        preserve-3d;
+}
+
+
+/* =========================================================
+   OPTIMISATION ANIMATIONS
+   ========================================================= */
+
+.intro-asteroid,
+.intro-sonic,
+.intro-logo,
+.intro-radar,
+.intro-scan,
+.intro-particles {
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* =========================================================
+   INTERACTION BOUTON
+   ========================================================= */
+
+.intro-skip:focus-visible {
+    outline:
+        2px solid
+        var(--color-cyan);
+
+    outline-offset:
+        4px;
+
+    color:
+        var(--color-white);
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 229, 255, 0.25);
+}
+
+
+/* =========================================================
+   ÉTAT CLAVIER
+   ========================================================= */
+
+.intro-skip::-moz-focus-inner {
+    border:
+        0;
+}
+
+
+/* =========================================================
+   PETIT ÉCRAN
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .intro-asteroid {
+        width: 65px;
+        height: 65px;
+    }
+
+
+    .intro-asteroid::before {
+        width: 120px;
+    }
+
+
+    .intro-asteroid::after {
+        width: 80px;
+    }
+
+
+    .intro-logo {
+        width: 280px;
+
+        max-width:
+            72vw;
+    }
+
+
+    .intro-logo img {
+        width: 280px;
+
+        max-width:
+            72vw;
+    }
+
+
+    .intro-logo-subtitle {
+        font-size:
+            0.5rem;
+
+        letter-spacing:
+            0.25em;
+    }
+
+
+    .intro-logo h1 {
+        font-size:
+            clamp(1.6rem, 8vw, 3rem);
+
+        letter-spacing:
+            0.12em;
+    }
+
+
+    .intro-logo-name {
+        font-size:
+            clamp(0.8rem, 4vw, 1.5rem);
+
+        letter-spacing:
+            0.22em;
+    }
+
+
+    .intro-radar {
+        width:
+            280px;
+
+        height:
+            280px;
+    }
+
+
+    .intro-scan {
+        width:
+            150%;
+    }
+
+
+    .intro-skip {
+        right:
+            16px;
+
+        bottom:
+            16px;
+
+        padding:
+            8px 13px;
+    }
+
+}
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .intro-logo {
+        width:
+            280px;
+    }
+
+
+    .intro-logo img {
+        width:
+            280px;
+    }
+
+
+    .intro-radar {
+        width:
+            340px;
+
+        height:
+            340px;
+    }
+
+
+    .intro-asteroid {
+        width:
+            80px;
+
+        height:
+            80px;
+    }
+
+}
+
+
+/* =========================================================
+   GRAND ÉCRAN
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+    .intro-radar {
+        width:
+            440px;
+
+        height:
+            440px;
+    }
+
+
+    .intro-asteroid {
+        width:
+            100px;
+
+        height:
+            100px;
+    }
+
+
+    .intro-logo::before {
+        width:
+            460px;
+
+        height:
+            190px;
+    }
+
+
+    .intro-logo::after {
+        width:
+            650px;
+    }
+
+}
+
+
+/* =========================================================
+   PAYSAGE MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .intro-logo {
+        transform:
+            scale(0.85);
+    }
+
+
+    .intro-logo-subtitle {
+        margin-top:
+            8px;
+
+        margin-bottom:
+            6px;
+    }
+
+
+    .intro-logo h1 {
+        font-size:
+            1.8rem;
+    }
+
+
+    .intro-logo-name {
+        margin-top:
+            6px;
+
+        font-size:
+            1rem;
+    }
+
+
+    .intro-radar {
+        width:
+            250px;
+
+        height:
+            250px;
+    }
+
+
+    .intro-skip {
+        right:
+            12px;
+
+        bottom:
+            12px;
+    }
+
+}
+
+
+/* =========================================================
+   ÉCRANS TRÈS PETITS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .intro-logo {
+        width:
+            280px;
+
+        max-width:
+            78vw;
+    }
+
+
+    .intro-logo img {
+        width:
+            280px;
+
+        max-width:
+            78vw;
+    }
+
+
+    .intro-radar {
+        width:
+            240px;
+
+        height:
+            240px;
+    }
+
+
+    .intro-logo-subtitle {
+        font-size:
+            0.45rem;
+
+        letter-spacing:
+            0.2em;
+    }
+
+
+    .intro-logo h1 {
+        font-size:
+            1.45rem;
+    }
+
+
+    .intro-logo-name {
+        font-size:
+            0.75rem;
+    }
+
+}
+
+
+/* =========================================================
+   ÉCRANS HAUTS
+   ========================================================= */
+
+@media (min-height: 900px) {
+
+    .intro-logo {
+        transform:
+            translateY(-10px)
+            scale(1);
+    }
+
+
+    .intro-radar {
+        transform:
+            translate(-50%, -50%)
+            scale(0.8);
+    }
+
+}
+/* =========================================================
+   ACCESSIBILITÉ
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .intro {
+        animation:
+            none;
+
+        transition:
+            none;
+    }
+
+
+    .intro-stars,
+    .intro-content,
+    .intro-asteroid,
+    .intro-sonic,
+    .intro-logo,
+    .intro-radar,
+    .intro-scan,
+    .intro-particles,
+    .intro-skip {
+        animation:
+            none;
+    }
+
+
+    .intro {
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        pointer-events:
+            none;
+    }
+
+}
+
+
+/* =========================================================
+   SÉCURITÉ ANIMATION
+   ========================================================= */
+
+.intro *,
+.intro *::before,
+.intro *::after {
+    box-sizing:
+        border-box;
+}
+
+
+/* =========================================================
+   COMPATIBILITÉ WEBKIT
+   ========================================================= */
+
+.intro {
+    -webkit-user-select:
+        none;
+
+    user-select:
+        none;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+.intro-skip {
+    -webkit-user-select:
+        none;
+
+    user-select:
+        none;
+}
+
+
+/* =========================================================
+   MOBILE TOUCH
+   ========================================================= */
+
+@media (hover: none) {
+
+    .intro-skip:hover {
+        color:
+            var(--color-text-muted);
+
+        border-color:
+            rgba(0, 229, 255, 0.25);
+
+        background:
+            rgba(0, 229, 255, 0.04);
+
+        box-shadow:
+            none;
+    }
+
+
+    .intro-skip:active {
+        color:
+            var(--color-white);
+
+        border-color:
+            var(--color-cyan);
+
+        background:
+            rgba(0, 229, 255, 0.08);
+    }
+
+}
+
+
+/* =========================================================
+   DERNIER ÉTAT
+   ========================================================= */
+
+.intro.is-hidden .intro-skip {
+    pointer-events:
+        none;
+}
+
+
+.intro.is-hidden .intro-content {
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   FIN INTRO
+   ========================================================= */
+
+.intro[aria-hidden="true"] {
+    pointer-events:
+        none;
+}
+
+
+.intro[aria-hidden="false"] {
+    pointer-events:
+        auto;
+}
+        transform:
+            translate(-50%, -50%)
+            scale(0.8);
+    }
+
+}
+
