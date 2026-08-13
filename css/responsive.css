@@ -50,8 +50,7 @@
     /* HERO */
 
     #hero {
-        min-height:
-            calc(100svh - var(--header-height));
+        min-height: 100svh;
     }
 
     .hero-content {
