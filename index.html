@@ -24,33 +24,70 @@
     <!-- SITE PRINCIPAL -->
     <div id="site">
 
-        <!-- NAVIGATION -->
-        <header id="header">
-            <nav class="navbar">
+       <!-- NAVIGATION -->
+<header id="header">
 
-                <a href="index.html" class="logo">
-                    asteroide.destroyer
-                </a>
+    <nav class="navbar">
 
-                <button
-                    class="menu-toggle"
-                    type="button"
-                    aria-label="Ouvrir le menu"
-                    aria-expanded="false"
-                >
-                    ☰
-                </button>
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            asteroide.destroyer
+        </a>
 
-                <div class="nav-menu">
-                    <a href="index.html">Accueil</a>
-                    <a href="jeu.html">Le jeu</a>
-                    <a href="medias.html">Médias</a>
-                    <a href="demo.html">Démo</a>
-                </div>
 
-            </nav>
-        </header>
+        <!-- BOUTON MENU MOBILE -->
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="main-menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
+
+        <!-- MENU -->
+        <div
+            class="nav-menu"
+            id="main-menu"
+        >
+
+            <a
+                href="index.html"
+                class="nav-link active"
+            >
+                Accueil
+            </a>
+
+            <a
+                href="jeu.html"
+                class="nav-link"
+            >
+                Le jeu
+            </a>
+
+            <a
+                href="medias.html"
+                class="nav-link"
+            >
+                Médias
+            </a>
+
+            <a
+                href="demo.html"
+                class="nav-link"
+            >
+                Démo
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
 
         <!-- CONTENU PRINCIPAL -->
         <main>
