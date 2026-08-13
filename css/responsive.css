@@ -176,3 +176,153 @@
         transition-duration: 0.01ms !important;
     }
 }
+
+/* =========================================================
+   NAVIGATION MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #header {
+        height:
+            var(--header-height);
+    }
+
+
+    .navbar {
+        width:
+            calc(100% - 28px);
+    }
+
+
+    .menu-toggle {
+        display: block;
+
+        position: relative;
+
+        z-index: 1002;
+    }
+
+
+    .nav-menu {
+        position: fixed;
+
+        top: var(--header-height);
+
+        left: 0;
+
+        width: 100%;
+
+        min-height:
+            calc(100svh - var(--header-height));
+
+        padding: 30px 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+
+        background:
+            rgba(5, 9, 20, 0.96);
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+
+        border-top:
+            1px solid rgba(0, 229, 255, 0.08);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform:
+            translateY(-10px);
+
+        transition:
+            opacity var(--transition-normal),
+            visibility var(--transition-normal),
+            transform var(--transition-normal);
+    }
+
+
+    .nav-menu.is-open {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform:
+            translateY(0);
+    }
+
+
+    .nav-link {
+        min-height: 54px;
+
+        padding: 12px 16px;
+
+        border:
+            1px solid rgba(0, 229, 255, 0.08);
+
+        border-radius:
+            var(--radius-small);
+
+        background:
+            rgba(0, 229, 255, 0.025);
+
+        font-size: 0.8rem;
+    }
+
+
+    .nav-link::after {
+        display: none;
+    }
+
+
+    .nav-link.active {
+        border-color:
+            rgba(0, 229, 255, 0.35);
+
+        background:
+            rgba(0, 229, 255, 0.08);
+    }
+
+
+    /* Animation du bouton */
+
+    .menu-toggle.is-open span:nth-child(1) {
+        transform:
+            translateY(6px)
+            rotate(45deg);
+    }
+
+
+    .menu-toggle.is-open span:nth-child(2) {
+        opacity: 0;
+    }
+
+
+    .menu-toggle.is-open span:nth-child(3) {
+        transform:
+            translateY(-6px)
+            rotate(-45deg);
+    }
+
+
+    /* Empêche le site de défiler
+       lorsque le menu est ouvert */
+
+    body.menu-open {
+        overflow: hidden;
+    }
+}
