@@ -30,6 +30,10 @@ function closeIntro() {
 
     intro.classList.add("is-hidden");
 
+    document.body.classList.remove(
+        "intro-active"
+    );
+
     intro.setAttribute(
         "aria-hidden",
         "true"
@@ -41,7 +45,6 @@ function closeIntro() {
     );
 
 }
-
 
 /* =========================================================
    PASSER L'INTRO
@@ -75,6 +78,18 @@ const introAlreadySeen =
     sessionStorage.getItem(
         INTRO_STORAGE_KEY
     );
+
+if (
+    intro &&
+    introAlreadySeen !== "true" &&
+    !reducedMotion
+) {
+
+    document.body.classList.add(
+        "intro-active"
+    );
+
+}
 
 
 /* =========================================================
