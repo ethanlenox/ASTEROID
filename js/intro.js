@@ -61,3 +61,17 @@ if (introAlreadySeen === "true") {
     closeIntro();
 
 }
+
+/* =========================================================
+   FIN AUTOMATIQUE
+   ========================================================= */
+
+if (intro && introAlreadySeen !== "true") {
+
+    setTimeout(() => {
+
+        closeIntro();
+
+    }, 5000);
+
+}
