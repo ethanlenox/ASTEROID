@@ -1058,8 +1058,8 @@ body.intro-active {
     align-items: center;
     justify-content: center;
 
-    width: min(300px, 55vw);
-    max-width: 300px;
+    width: 280px;
+    max-width: 70vw;
 
     margin: 0 auto;
 
@@ -1083,8 +1083,8 @@ body.intro-active {
 .intro-logo img {
     display: block;
 
-    width: 100%;
-    max-width: 300px;
+    width: 280px;
+    max-width: 70vw;
     height: auto;
 
     margin: 0 auto;
