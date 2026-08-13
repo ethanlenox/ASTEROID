@@ -15,7 +15,7 @@ const INTRO_STORAGE_KEY =
     "asteroideIntroSeen";
 
 const INTRO_DURATION =
-    5000;
+    10000;
 
 
 /* =========================================================
