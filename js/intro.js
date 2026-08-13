@@ -1,6 +1,6 @@
 /* =========================================================
    ASTEROIDE.DESTROYER
-   INTRODUCTION
+   INTRO SYSTEM
    ========================================================= */
 
 const intro = document.querySelector("#intro");
@@ -8,7 +8,18 @@ const introSkip = document.querySelector("#intro-skip");
 
 
 /* =========================================================
-   FERMER L'INTRO
+   CONFIGURATION
+   ========================================================= */
+
+const INTRO_STORAGE_KEY =
+    "asteroideIntroSeen";
+
+const INTRO_DURATION =
+    5000;
+
+
+/* =========================================================
+   FERMETURE
    ========================================================= */
 
 function closeIntro() {
@@ -25,7 +36,7 @@ function closeIntro() {
     );
 
     sessionStorage.setItem(
-        "asteroideIntroSeen",
+        INTRO_STORAGE_KEY,
         "true"
     );
 
@@ -33,7 +44,7 @@ function closeIntro() {
 
 
 /* =========================================================
-   PASSER
+   PASSER L'INTRO
    ========================================================= */
 
 if (introSkip) {
@@ -47,31 +58,49 @@ if (introSkip) {
 
 
 /* =========================================================
-   SESSION STORAGE
+   ACCESSIBILITÉ
+   ========================================================= */
+
+const reducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+/* =========================================================
+   INTRO DÉJÀ VUE ?
    ========================================================= */
 
 const introAlreadySeen =
     sessionStorage.getItem(
-        "asteroideIntroSeen"
+        INTRO_STORAGE_KEY
     );
 
 
-if (introAlreadySeen === "true") {
+/* =========================================================
+   DÉCISION
+   ========================================================= */
+
+if (
+    introAlreadySeen === "true"
+    ||
+    reducedMotion
+) {
 
     closeIntro();
 
 }
 
+
 /* =========================================================
-   FIN AUTOMATIQUE
+   FERMETURE AUTOMATIQUE
    ========================================================= */
 
-if (intro && introAlreadySeen !== "true") {
+else {
 
-    setTimeout(() => {
-
-        closeIntro();
-
-    }, 5000);
+    window.setTimeout(
+        closeIntro,
+        INTRO_DURATION
+    );
 
 }
