@@ -1003,6 +1003,43 @@ body.intro-active {
 }
 
 /* =========================================================
+   BLOC DE PRÉSENTATION
+   ========================================================= */
+
+.intro-brand {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.intro-brand h1 {
+    margin: 0 0 18px;
+
+    color: var(--color-white);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.45em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 12px rgba(0, 229, 255, 0.25);
+}
+
+/* =========================================================
    LOGO ASTÉROÏD — INTRO
    ========================================================= */
 
