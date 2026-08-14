@@ -1470,13 +1470,12 @@ body.intro-active {
 
 /* =========================================================
    SÉQUENCE PRINCIPALE DE L'INTRO
-   7 SECONDES D'APPARITION
    ========================================================= */
 
 
 /* =========================================================
    01 — AC TEKPROD
-   0s → 1.2s
+   0s → 1.6s
    ========================================================= */
 
 .intro-brand .intro-logo-subtitle {
@@ -1491,7 +1490,7 @@ body.intro-active {
 
     animation:
         intro-subtitle-entry
-        1.2s
+        1.6s
         cubic-bezier(0.16, 1, 0.3, 1)
         0s
         forwards;
@@ -1502,39 +1501,28 @@ body.intro-active {
 
     0% {
         opacity: 0;
-
-        transform:
-            translateY(15px);
-
-        filter:
-            blur(10px);
+        transform: translateY(15px);
+        filter: blur(10px);
     }
 
     70% {
         opacity: 1;
-
-        transform:
-            translateY(0);
-
-        filter:
-            blur(0);
+        transform: translateY(0);
+        filter: blur(0);
     }
 
     100% {
         opacity: 1;
-
-        transform:
-            translateY(0);
-
-        filter:
-            blur(0);
+        transform: translateY(0);
+        filter: blur(0);
     }
 }
 
 
 /* =========================================================
    02 — LOGO
-   1.2s → 3.2s
+   APPARAÎT AU MOMENT DU FLASH
+   2.35s → 3.55s
    ========================================================= */
 
 .intro-brand .intro-logo {
@@ -1550,9 +1538,9 @@ body.intro-active {
 
     animation:
         intro-logo-main-entry
-        2s
-        cubic-bezier(0.16, 1, 0.3, 1)
         1.2s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        2.35s
         forwards;
 }
 
@@ -1605,7 +1593,7 @@ body.intro-active {
 
 /* =========================================================
    03 — PRESENTE
-   3.2s → 5.2s
+   3.55s → 5s
    ========================================================= */
 
 .intro-brand h1 {
@@ -1620,9 +1608,9 @@ body.intro-active {
 
     animation:
         intro-presente-entry
-        2s
+        1.45s
         cubic-bezier(0.16, 1, 0.3, 1)
-        3.2s
+        3.55s
         forwards;
 }
 
@@ -1631,39 +1619,27 @@ body.intro-active {
 
     0% {
         opacity: 0;
-
-        transform:
-            translateY(15px);
-
-        filter:
-            blur(10px);
+        transform: translateY(15px);
+        filter: blur(10px);
     }
 
     65% {
         opacity: 1;
-
-        transform:
-            translateY(0);
-
-        filter:
-            blur(0);
+        transform: translateY(0);
+        filter: blur(0);
     }
 
     100% {
         opacity: 1;
-
-        transform:
-            translateY(0);
-
-        filter:
-            blur(0);
+        transform: translateY(0);
+        filter: blur(0);
     }
 }
 
 
 /* =========================================================
    04 — ASTÉROÏD
-   5.2s → 7s
+   5s → 7s
    ========================================================= */
 
 .intro-brand .intro-logo-name {
@@ -1678,9 +1654,9 @@ body.intro-active {
 
     animation:
         intro-name-entry
-        1.8s
+        2s
         cubic-bezier(0.16, 1, 0.3, 1)
-        5.2s
+        5s
         forwards;
 }
 
@@ -1689,31 +1665,19 @@ body.intro-active {
 
     0% {
         opacity: 0;
-
-        transform:
-            translateY(15px);
-
-        filter:
-            blur(10px);
+        transform: translateY(15px);
+        filter: blur(10px);
     }
 
     65% {
         opacity: 1;
-
-        transform:
-            translateY(0);
-
-        filter:
-            blur(0);
+        transform: translateY(0);
+        filter: blur(0);
     }
 
     100% {
         opacity: 1;
-
-        transform:
-            translateY(0);
-
-        filter:
-            blur(0);
+        transform: translateY(0);
+        filter: blur(0);
     }
 }
