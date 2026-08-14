@@ -1124,18 +1124,27 @@ body.intro-active {
     0% {
         filter:
             drop-shadow(
-                0 0 6px
-                rgba(212, 175, 55, 0.35)
+                0 0 3px
+                rgba(212, 175, 55, 0.75)
             );
     }
 
     50% {
         filter:
             drop-shadow(
-                0 0 18px
-                rgba(245, 215, 110, 0.75)
+                0 0 7px
+                rgba(245, 215, 110, 1)
             );
     }
+
+    100% {
+        filter:
+            drop-shadow(
+                0 0 3px
+                rgba(212, 175, 55, 0.75)
+            );
+    }
+}
 
     100% {
         filter:
