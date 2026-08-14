@@ -97,16 +97,16 @@
     z-index: 2;
 
     width: 100%;
-
     height: 100%;
 
     display: flex;
+    flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
-}
 
+    text-align: center;
+}
 
 /* =========================================================
    ASTÉROÏDE — PLACEHOLDER
@@ -599,37 +599,20 @@
    ========================================================= */
 
 .intro {
-    animation:
-        intro-end
-        0.9s
-        ease
-        9.1s
-        forwards;
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
 }
 
 
-@keyframes intro-end {
-
-    0% {
-
-        opacity: 1;
-
-        visibility: visible;
-
-    }
-
-    100% {
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        pointer-events: none;
-
-    }
-
+.intro.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
-
 
 /* =========================================================
    PASSER
@@ -874,28 +857,6 @@
    MOUVEMENT DE L'ESPACE
    ========================================================= */
 
-.intro-content {
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    animation:
-        intro-camera 5s ease-out forwards,
-        intro-shake 0.35s ease-out 2.3s;
-}
-
 @keyframes intro-camera {
 
     0% {
@@ -966,13 +927,6 @@
 /* =========================================================
    MICRO IMPACT CAMERA
    ========================================================= */
-
-.intro-content {
-    animation:
-        intro-camera 5s ease-out forwards,
-        intro-shake 0.35s ease-out 2.3s;
-}
-
 
 @keyframes intro-shake {
 
