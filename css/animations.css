@@ -1124,26 +1124,51 @@ body.intro-active {
     0% {
         filter:
             drop-shadow(
-                0 0 3px
+                0 0 2px
+                rgba(255, 240, 180, 0.95)
+            )
+            drop-shadow(
+                0 0 5px
                 rgba(212, 175, 55, 0.75)
+            )
+            drop-shadow(
+                0 0 9px
+                rgba(212, 175, 55, 0.25)
             );
     }
 
     50% {
         filter:
             drop-shadow(
+                0 0 3px
+                rgba(255, 248, 210, 1)
+            )
+            drop-shadow(
                 0 0 7px
-                rgba(245, 215, 110, 1)
+                rgba(245, 215, 110, 0.95)
+            )
+            drop-shadow(
+                0 0 12px
+                rgba(212, 175, 55, 0.4)
             );
     }
 
     100% {
         filter:
             drop-shadow(
-                0 0 3px
+                0 0 2px
+                rgba(255, 240, 180, 0.95)
+            )
+            drop-shadow(
+                0 0 5px
                 rgba(212, 175, 55, 0.75)
+            )
+            drop-shadow(
+                0 0 9px
+                rgba(212, 175, 55, 0.25)
             );
     }
+
 }
 
     100% {
