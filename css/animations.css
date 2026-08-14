@@ -197,10 +197,6 @@
     transform:
         scale(0.72);
 
-    filter:
-        blur(12px)
-        brightness(1.4);
-
     text-align: center;
 
     animation:
