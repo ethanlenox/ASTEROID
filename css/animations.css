@@ -334,40 +334,80 @@
 
 @keyframes asteroid-entry {
 
+    /* 0% = le Meteor est très loin */
     0% {
-        top: -20%;
 
         opacity: 0;
 
         transform:
             translateX(-50%)
+            translateY(-20vh)
+            scale(0.18);
+
+    }
+
+
+    /* 20% = il commence à apparaître */
+    20% {
+
+        opacity: 0.35;
+
+        transform:
+            translateX(-50%)
+            translateY(-12vh)
+            scale(0.28);
+
+    }
+
+
+    /* 45% = il se rapproche */
+    45% {
+
+        opacity: 0.8;
+
+        transform:
+            translateX(-50%)
+            translateY(-2vh)
             scale(0.5);
 
     }
 
-    25% {
-        opacity: 1;
-    }
 
-    75% {
+    /* 65% = il commence à accélérer */
+    65% {
 
         opacity: 1;
 
         transform:
             translateX(-50%)
-            scale(1.1);
+            translateY(12vh)
+            scale(0.8);
 
     }
 
-    100% {
 
-        top: 48%;
+    /* 82% = arrivée rapide */
+    82% {
+
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(24vh)
+            scale(1.2);
+
+    }
+
+
+    /* 100% = il disparaît dans l'impact */
+    100% {
 
         opacity: 0;
 
         transform:
             translateX(-50%)
-            scale(1.35);
+            translateY(38vh)
+            scale(1.7);
 
     }
 
