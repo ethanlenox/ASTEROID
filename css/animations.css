@@ -122,10 +122,28 @@
 
     opacity: 0;
 
+    /*
+     * Trajectoire courbe :
+     *
+     * départ       : bas gauche
+     * passage      : devant la caméra
+     * arrivée      : centre de l'écran / impact
+     */
+    offset-path: path(
+        "M 120 980
+         C 180 850, 300 700, 500 620
+         C 700 540, 900 410, 1080 470
+         C 1120 485, 1080 505, 960 518"
+    );
+
+    offset-rotate: 0deg;
+
     transform:
         translate(-50%, -50%)
         scale(0.15);
 }
+
+
 
 
 
@@ -327,120 +345,114 @@
    ========================================================= */
 
 .intro-asteroid {
-    animation:
-        asteroid-entry 2s
-        cubic-bezier(0.22, 0.61, 0.36, 1)
-        0.8s forwards;
+        animation:asteroid-entry
+        2s
+        linear
+        0.8s
+        forwards;
 }
+
 
 
 @keyframes asteroid-entry {
 
     /* =====================================================
-       DÉPART — BAS GAUCHE
+       0% — DÉPART BAS GAUCHE
        ===================================================== */
 
     0% {
 
         opacity: 0;
 
+        offset-distance: 0%;
+
         transform:
-            translate(8vw, 110vh)
+            translate(-50%, -50%)
             scale(0.15);
-
     }
 
 
     /* =====================================================
-       APPARITION
+       35% — APPROCHE LENTE
        ===================================================== */
 
-    25% {
-
-        opacity: 0.75;
-
-        transform:
-            translate(16vw, 82vh)
-            scale(0.35);
-
-    }
-
-
-    /* =====================================================
-       APPROCHE
-       ===================================================== */
-
-    45% {
+    35% {
 
         opacity: 1;
 
-        transform:
-            translate(28vw, 55vh)
-            scale(0.8);
+        offset-distance: 35%;
 
+        transform:
+            translate(-50%, -50%)
+            scale(0.55);
     }
 
 
     /* =====================================================
-       PASSAGE DEVANT LA CAMÉRA
+       58% — APPROCHE DE LA CAMÉRA
        ===================================================== */
 
-    62% {
+    58% {
 
         opacity: 1;
 
-        transform:
-            translate(43vw, 38vh)
-            scale(3.2);
+        offset-distance: 58%;
 
+        transform:
+            translate(-50%, -50%)
+            scale(2.8);
     }
 
 
     /* =====================================================
-       GROS PLAN MAXIMUM
+       68% — PASSAGE DEVANT LA CAMÉRA
        ===================================================== */
 
-    70% {
+    68% {
 
         opacity: 1;
 
-        transform:
-            translate(50vw, 44vh)
-            scale(6);
+        offset-distance: 68%;
 
+        transform:
+            translate(-50%, -50%)
+            scale(7);
     }
 
 
     /* =====================================================
-       SORTIE DU GROS PLAN
+       73% — FIN DU GROS PLAN
        ===================================================== */
 
-    76% {
+    73% {
 
         opacity: 1;
 
-        transform:
-            translate(50vw, 47vh)
-            scale(3.5);
+        offset-distance: 73%;
 
+        transform:
+            translate(-50%, -50%)
+            scale(5);
     }
 
 
     /* =====================================================
-       IMPACT — CENTRE EXACT
+       100% — ACCÉLÉRATION VERS LE LOGO
        ===================================================== */
 
     100% {
 
         opacity: 0;
 
-        transform:
-            translate(50vw, 48vh)
-            scale(0.15);
+        offset-distance: 100%;
 
+        transform:
+            translate(-50%, -50%)
+            scale(0.15);
     }
 
 }
+
 
 
 
