@@ -334,84 +334,71 @@
 
 @keyframes asteroid-entry {
 
-    /* 0% = le Meteor est très loin */
+    /* =====================================================
+       Le Meteor est petit et encore loin.
+       ===================================================== */
+
     0% {
 
         opacity: 0;
 
         transform:
-            translateX(-50%)
-            translateY(-20vh)
+            translateX(-42vw)
+            translateY(38vh)
             scale(0.18);
 
     }
 
 
-    /* 20% = il commence à apparaître */
-    20% {
+    /* =====================================================
+       Il remonte doucement vers la caméra.
+       ===================================================== */
 
-        opacity: 0.35;
+    35% {
+
+        opacity: 0.85;
 
         transform:
-            translateX(-50%)
-            translateY(-12vh)
-            scale(0.28);
+            translateX(-25vw)
+            translateY(20vh)
+            scale(0.45);
 
     }
 
 
-    /* 45% = il se rapproche */
-    45% {
+    /* =====================================================
+       Le Meteor devient énorme
+       ===================================================== */
 
-        opacity: 0.8;
-
-        transform:
-            translateX(-50%)
-            translateY(-2vh)
-            scale(0.5);
-
-    }
-
-
-    /* 65% = il commence à accélérer */
     65% {
 
         opacity: 1;
 
         transform:
-            translateX(-50%)
-            translateY(12vh)
-            scale(0.8);
+            translateX(2vw)
+            translateY(-2vh)
+            scale(2.4);
 
     }
 
 
-    /* 82% = arrivée rapide */
-    82% {
+    /* =====================================================
+       Accélération finale.
+       ===================================================== */
 
-        opacity: 1;
-
-        transform:
-            translateX(-50%)
-            translateY(24vh)
-            scale(1.2);
-
-    }
-
-
-    /* 100% = il disparaît dans l'impact */
     100% {
 
         opacity: 0;
 
         transform:
-            translateX(-50%)
-            translateY(38vh)
-            scale(1.7);
+            translateX(0)
+            translateY(-4vh)
+            scale(0.15);
 
     }
 
 }
+
 
 
 
