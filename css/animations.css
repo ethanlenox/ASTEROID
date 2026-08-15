@@ -1059,21 +1059,23 @@ body.intro-active {
         0 0 8px
         rgba(212, 175, 55, 0.45)
     );
-
-    animation:
-        asteroid-logo-glow
-        3s
-        ease-in-out
-        5.2s
-        infinite;
 }
 
 
-@@ -1083,23 +1076,78 @@
+/* =========================================================
+   APPARITION
+   ========================================================= */
+
+@keyframes asteroid-logo-entry {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.72);
 
         filter:
             blur(12px)
-            brightness(1.8);
             brightness(2.2)
             drop-shadow(
                 0 0 0
@@ -1085,7 +1087,6 @@ body.intro-active {
             );
     }
 
-    45% {
     20% {
         opacity: 0.25;
 
@@ -1109,12 +1110,9 @@ body.intro-active {
         opacity: 1;
 
         transform:
-            scale(1.06);
             scale(1.08);
 
         filter:
-            blur(0)
-            brightness(1.5);
             blur(2px)
             brightness(3)
             drop-shadow(
@@ -1131,7 +1129,6 @@ body.intro-active {
             );
     }
 
-    70% {
     65% {
         transform:
             scale(0.98);
@@ -1154,11 +1151,13 @@ body.intro-active {
     }
 
     100% {
-@@ -1110,608 +1158,621 @@
+        opacity: 1;
+
+        transform:
+            scale(1);
 
         filter:
             blur(0)
-            brightness(1);
             brightness(1.15)
             drop-shadow(
                 0 0 3px
