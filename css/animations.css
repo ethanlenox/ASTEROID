@@ -1758,55 +1758,74 @@ body.intro-active {
     opacity: 0;
 
     transform:
-        scale(0.72);
+        scale(0.88);
 
     filter:
-        blur(12px)
-        brightness(1.5);
+        blur(8px)
+        brightness(2.2);
 
     animation:
         intro-logo-main-entry
-        1.2s
+        1.8s
         cubic-bezier(0.16, 1, 0.3, 1)
-        4.7s
+        4.35s
         forwards;
 }
+
 
 
 @keyframes intro-logo-main-entry {
 
     0% {
+
         opacity: 0;
 
         transform:
-            scale(0.72);
+            scale(0.88);
 
         filter:
-            blur(12px)
-            brightness(1.5);
+            blur(8px)
+            brightness(2.2);
+    }
+
+    20% {
+
+        opacity: 0.15;
+
+        transform:
+            scale(0.91);
+
+        filter:
+            blur(6px)
+            brightness(2.8);
     }
 
     45% {
-        opacity: 1;
+
+        opacity: 0.55;
 
         transform:
-            scale(1.06);
+            scale(0.97);
 
         filter:
-            blur(0)
-            brightness(1.5);
+            blur(3px)
+            brightness(2);
     }
 
     70% {
+
+        opacity: 0.9;
+
         transform:
-            scale(0.98);
+            scale(1.02);
 
         filter:
-            blur(0)
-            brightness(1.15);
+            blur(1px)
+            brightness(1.35);
     }
 
     100% {
+
         opacity: 1;
 
         transform:
@@ -1816,7 +1835,9 @@ body.intro-active {
             blur(0)
             brightness(1);
     }
+
 }
+
 
 
 /* =========================================================
