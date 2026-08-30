@@ -1630,7 +1630,7 @@ body.intro-active {
 
     animation:
         intro-subtitle-entry
-        1.6s
+        1.9s
         cubic-bezier(0.16, 1, 0.3, 1)
         0s
         forwards;
@@ -1680,7 +1680,7 @@ body.intro-active {
         intro-logo-main-entry
         1.2s
         cubic-bezier(0.16, 1, 0.3, 1)
-        5.65s
+        5.15s
         forwards;
 }
 
@@ -1750,7 +1750,7 @@ body.intro-active {
         intro-presente-entry
         1.45s
         cubic-bezier(0.16, 1, 0.3, 1)
-        6.55s
+        6.2s
         forwards;
 }
 
@@ -1796,7 +1796,7 @@ body.intro-active {
         intro-name-entry
         2s
         cubic-bezier(0.16, 1, 0.3, 1)
-        8.3s
+        7.3s
         forwards;
 }
 
