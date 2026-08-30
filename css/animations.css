@@ -1773,8 +1773,6 @@ body.intro-active {
 }
 
 
-
-
 @keyframes intro-logo-main-entry {
 
     0% {
@@ -1789,100 +1787,52 @@ body.intro-active {
             brightness(2.2);
     }
 
-    15% {
+    20% {
 
-        opacity: 0.04;
-
-        transform:
-            scale(0.89);
-
-        filter:
-            blur(7px)
-            brightness(2.5);
-    }
-
-    30% {
-
-        opacity: 0.12;
+        opacity: 0.15;
 
         transform:
             scale(0.91);
 
         filter:
             blur(6px)
-            brightness(2.4);
+            brightness(2.8);
     }
 
     45% {
 
-        opacity: 0.28;
-
-        transform:
-            scale(0.94);
-
-        filter:
-            blur(4.5px)
-            brightness(2.1);
-    }
-
-    60% {
-
-        opacity: 0.52;
+        opacity: 0.55;
 
         transform:
             scale(0.97);
 
         filter:
             blur(3px)
-            brightness(1.75);
+            brightness(2);
     }
 
-    72% {
+    70% {
 
-        opacity: 0.68;
-
-        transform:
-            scale(0.99);
-
-        filter:
-            blur(2px)
-            brightness(1.5);
-    }
-
-    82% {
-
-        opacity: 0.80;
+        opacity: 0.82;
 
         transform:
             scale(1);
 
         filter:
-            blur(1.3px)
+            blur(1.2px)
             brightness(1.35);
     }
 
-    90% {
+    85% {
 
-        opacity: 0.90;
-
-        transform:
-            scale(1.005);
-
-        filter:
-            blur(0.7px)
-            brightness(1.2);
-    }
-
-    96% {
-
-        opacity: 0.97;
+        opacity: 0.93;
 
         transform:
-            scale(1.002);
+            scale(1);
 
         filter:
-            blur(0.25px)
-            brightness(1.08);
+            blur(0.5px)
+            brightness(1.15);
     }
 
     100% {
@@ -1898,9 +1848,6 @@ body.intro-active {
     }
 
 }
-
-
-
 
 /* =========================================================
    03 — PRESENTE
