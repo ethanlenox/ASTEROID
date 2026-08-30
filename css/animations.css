@@ -883,6 +883,69 @@
     pointer-events: none;
 }
 
+/* =========================================================
+   ONDE CIRCULAIRE D'IMPACT
+   ========================================================= */
+
+.intro-particles {
+    width: 40px;
+    height: 40px;
+
+    border:
+        2px solid
+        rgba(0, 229, 255, 0.8);
+
+    border-radius: 50%;
+
+    animation:
+        impact-wave
+        1.4s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        4.35s
+        forwards;
+}
+
+
+@keyframes impact-wave {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+    }
+
+    10% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    45% {
+
+        opacity: 0.65;
+
+        transform:
+            translate(-50%, -50%)
+            scale(8);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(20);
+    }
+
+}
+
 
 .intro-particles::before,
 .intro-particles::after {
