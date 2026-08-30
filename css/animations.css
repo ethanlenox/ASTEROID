@@ -250,7 +250,7 @@
 }
 
 /* =========================================================
-   ASTÉROÏDE — PLACEHOLDER
+   ASTÉROÏDE — APPROCHE CINÉMATIQUE
    ========================================================= */
 
 .intro-asteroid {
@@ -266,8 +266,17 @@
 
     transform:
         translate(-50%, -50%)
-        scale(0.15);
+        scale(0.04);
+
+    filter:
+        blur(3px);
+
+    will-change:
+        transform,
+        opacity,
+        filter;
 }
+
 
 
 
@@ -479,7 +488,7 @@
 @keyframes asteroid-entry {
 
     /* =====================================================
-       DÉPART — BAS GAUCHE
+       DÉPART — TRÈS LOIN
        ===================================================== */
 
     0% {
@@ -487,24 +496,28 @@
         opacity: 0;
 
         transform:
-            translate(8vw, 110vh)
-            scale(0.15);
+            translate(8vw, 108vh)
+            scale(0.04);
 
+        filter:
+            blur(4px);
     }
 
 
     /* =====================================================
-       APPARITION
+       PREMIÈRE DÉTECTION VISUELLE
        ===================================================== */
 
-    25% {
+    18% {
 
-        opacity: 0.75;
+        opacity: 0.25;
 
         transform:
-            translate(16vw, 82vh)
-            scale(0.35);
+            translate(14vw, 88vh)
+            scale(0.08);
 
+        filter:
+            blur(3px);
     }
 
 
@@ -512,49 +525,55 @@
        APPROCHE
        ===================================================== */
 
-    45% {
+    38% {
 
-        opacity: 1;
+        opacity: 0.65;
 
         transform:
-            translate(28vw, 55vh)
-            scale(0.8);
+            translate(25vw, 63vh)
+            scale(0.18);
 
+        filter:
+            blur(2px);
     }
 
 
     /* =====================================================
-       PASSAGE DEVANT LA CAMÉRA
+       ACCÉLÉRATION
        ===================================================== */
 
-    62% {
+    55% {
 
-        opacity: 1;
+        opacity: 0.9;
 
         transform:
-            translate(43vw, 38vh)
-            scale(3.2);
+            translate(38vw, 43vh)
+            scale(0.55);
 
+        filter:
+            blur(1px);
     }
 
 
     /* =====================================================
-       GROS PLAN MAXIMUM
+       ENTRÉE DANS LA CAMÉRA
        ===================================================== */
 
-    70% {
+    67% {
 
         opacity: 1;
 
         transform:
-            translate(50vw, 44vh)
-            scale(6);
+            translate(46vw, 38vh)
+            scale(2);
 
+        filter:
+            blur(0);
     }
 
 
     /* =====================================================
-       SORTIE DU GROS PLAN
+       APPROCHE FINALE
        ===================================================== */
 
     76% {
@@ -562,14 +581,33 @@
         opacity: 1;
 
         transform:
-            translate(50vw, 47vh)
-            scale(3.5);
+            translate(50vw, 44vh)
+            scale(5);
 
+        filter:
+            blur(0);
     }
 
 
     /* =====================================================
-       IMPACT — CENTRE EXACT
+       PASSAGE DEVANT LA CAMÉRA
+       ===================================================== */
+
+    86% {
+
+        opacity: 1;
+
+        transform:
+            translate(50vw, 47vh)
+            scale(8);
+
+        filter:
+            blur(0);
+    }
+
+
+    /* =====================================================
+       IMPACT — CENTRE
        ===================================================== */
 
     100% {
@@ -580,6 +618,8 @@
             translate(50vw, 48vh)
             scale(0.15);
 
+        filter:
+            blur(0);
     }
 
 }
