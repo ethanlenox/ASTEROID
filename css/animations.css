@@ -1766,11 +1766,12 @@ body.intro-active {
 
     animation:
         intro-logo-main-entry
-        1.8s
+        2.8s
         cubic-bezier(0.16, 1, 0.3, 1)
-        4.35s
+        4.65s
         forwards;
 }
+
 
 
 
