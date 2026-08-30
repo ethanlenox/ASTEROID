@@ -652,7 +652,7 @@
         opacity: 0;
 
         transform:
-            translate(25vw, 30vh)
+            translate(25vw, 25vh)
             scale(1.2);
 
     }
