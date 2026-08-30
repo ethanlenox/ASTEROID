@@ -883,6 +883,53 @@
     pointer-events: none;
 }
 
+/* =========================================================
+   PARTICULES D'IMPACT
+   ========================================================= */
+
+.intro-particles {
+    position: absolute;
+
+    left: 50%;
+    top: 48%;
+
+    width: 40px;
+    height: 40px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    pointer-events: none;
+
+    border:
+    2px solid
+    rgba(0, 229, 255, 0.2);
+
+box-shadow:
+    0 0 8px
+    rgba(0, 229, 255, 0.45),
+
+    0 0 20px
+    rgba(0, 229, 255, 0.25),
+
+    0 0 45px
+    rgba(0, 229, 255, 0.12);
+
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    animation:
+        impact-wave
+        1.4s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        4.95s
+        forwards;
+}
+
+
 
 @keyframes impact-wave {
 
