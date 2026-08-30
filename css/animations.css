@@ -46,7 +46,7 @@
 
 
 /* =========================================================
-   ESPACE
+   ESPACE — PROFONDEUR DES ÉTOILES
    ========================================================= */
 
 .intro-stars {
@@ -54,35 +54,177 @@
 
     inset: 0;
 
+    overflow: hidden;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   ÉTOILES — ARRIÈRE-PLAN
+   ========================================================= */
+
+.intro-stars::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -10%;
+
     background:
         radial-gradient(
-            circle at 20% 30%,
-            rgba(255, 255, 255, 0.8) 0 1px,
+            circle at 12% 18%,
+            rgba(255, 255, 255, 0.35) 0 0.7px,
+            transparent 1.2px
+        ),
+        radial-gradient(
+            circle at 42% 32%,
+            rgba(255, 255, 255, 0.3) 0 0.7px,
+            transparent 1.2px
+        ),
+        radial-gradient(
+            circle at 78% 22%,
+            rgba(0, 229, 255, 0.3) 0 0.7px,
+            transparent 1.2px
+        ),
+        radial-gradient(
+            circle at 25% 76%,
+            rgba(255, 255, 255, 0.25) 0 0.7px,
+            transparent 1.2px
+        ),
+        radial-gradient(
+            circle at 84% 78%,
+            rgba(0, 229, 255, 0.25) 0 0.7px,
+            transparent 1.2px
+        );
+
+    background-size:
+        130px 130px,
+        170px 170px,
+        210px 210px,
+        190px 190px,
+        250px 250px;
+
+    opacity: 0.55;
+
+    animation:
+        intro-stars-back
+        18s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   ÉTOILES — PROFONDEUR INTERMÉDIAIRE
+   ========================================================= */
+
+.intro-stars::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -15%;
+
+    background:
+        radial-gradient(
+            circle at 18% 28%,
+            rgba(255, 255, 255, 0.7) 0 1px,
             transparent 1.5px
         ),
         radial-gradient(
-            circle at 70% 20%,
-            rgba(0, 229, 255, 0.7) 0 1px,
+            circle at 65% 18%,
+            rgba(0, 229, 255, 0.6) 0 1px,
             transparent 1.5px
         ),
         radial-gradient(
-            circle at 40% 80%,
-            rgba(255, 255, 255, 0.5) 0 1px,
+            circle at 38% 68%,
+            rgba(255, 255, 255, 0.55) 0 1px,
             transparent 1.5px
         ),
         radial-gradient(
-            circle at 85% 70%,
+            circle at 88% 58%,
             rgba(0, 229, 255, 0.5) 0 1px,
             transparent 1.5px
         );
 
     background-size:
-        180px 180px,
-        240px 240px,
-        200px 200px,
-        300px 300px;
+        230px 230px,
+        280px 280px,
+        250px 250px,
+        320px 320px;
 
-    opacity: 0.5;
+    opacity: 0.65;
+
+    animation:
+        intro-stars-mid
+        11s
+        linear
+        infinite;
+}
+
+/* =========================================================
+   MOUVEMENT DES ÉTOILES — ARRIÈRE-PLAN
+   ========================================================= */
+
+@keyframes intro-stars-back {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translate3d(1%, -1%, 0)
+            scale(1.01);
+    }
+
+}
+
+
+/* =========================================================
+   MOUVEMENT DES ÉTOILES — PROFONDEUR INTERMÉDIAIRE
+   ========================================================= */
+
+@keyframes intro-stars-mid {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translate3d(-2%, 1.5%, 0)
+            scale(1.025);
+    }
+
+}
+
+
+/* =========================================================
+   MOUVEMENT DES ÉTOILES — PREMIER PLAN
+   ========================================================= */
+
+@keyframes intro-stars-front {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translate3d(3%, -2%, 0)
+            scale(1.04);
+    }
+
 }
 
 
