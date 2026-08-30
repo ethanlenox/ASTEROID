@@ -250,7 +250,8 @@
 }
 
 /* =========================================================
-   ASTÉROÏDE — APPROCHE CINÉMATIQUE
+   APPROCHE CINÉMATIQUE
+   ASTÉROÏDE — PLACEHOLDER
    ========================================================= */
 
 .intro-asteroid {
@@ -266,15 +267,20 @@
 
     transform:
         translate(-50%, -50%)
-        scale(0.04);
+        scale(0.15);
 
-    filter:
-        blur(3px);
+    image-rendering:
+        auto;
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
 
     will-change:
         transform,
-        opacity,
-        filter;
+        opacity;
 }
 
 
