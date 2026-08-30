@@ -696,7 +696,7 @@
         impact-flash
         0.7s
         ease-out
-        2.35s
+        4.35s
         forwards;
 }
 
@@ -756,7 +756,7 @@
         sonic-entry
         0.9s
         cubic-bezier(0.16, 1, 0.3, 1)
-        2.65s
+        4.65s
         forwards;
 }
 
@@ -998,7 +998,7 @@
         cinematic-flash
         0.8s
         ease-out
-        2.3s
+        4.3s
         forwards;
 }
 
@@ -1680,7 +1680,7 @@ body.intro-active {
         intro-logo-main-entry
         1.2s
         cubic-bezier(0.16, 1, 0.3, 1)
-        2.35s
+        4.35s
         forwards;
 }
 
@@ -1750,7 +1750,7 @@ body.intro-active {
         intro-presente-entry
         1.45s
         cubic-bezier(0.16, 1, 0.3, 1)
-        3.55s
+        5.55s
         forwards;
 }
 
@@ -1796,7 +1796,7 @@ body.intro-active {
         intro-name-entry
         2s
         cubic-bezier(0.16, 1, 0.3, 1)
-        5s
+        7s
         forwards;
 }
 
