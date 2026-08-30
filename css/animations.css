@@ -1773,6 +1773,8 @@ body.intro-active {
 }
 
 
+
+
 @keyframes intro-logo-main-entry {
 
     0% {
@@ -1813,26 +1815,14 @@ body.intro-active {
 
     70% {
 
-        opacity: 0.82;
+        opacity: 0.9;
 
         transform:
-            scale(1);
+            scale(1.02);
 
         filter:
-            blur(1.2px)
+            blur(1px)
             brightness(1.35);
-    }
-
-    85% {
-
-        opacity: 0.93;
-
-        transform:
-            scale(1);
-
-        filter:
-            blur(0.5px)
-            brightness(1.15);
     }
 
     100% {
@@ -1848,6 +1838,8 @@ body.intro-active {
     }
 
 }
+
+
 
 /* =========================================================
    03 — PRESENTE
