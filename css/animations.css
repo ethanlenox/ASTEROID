@@ -884,12 +884,23 @@
 }
 
 /* =========================================================
-   ONDE CIRCULAIRE D'IMPACT
+   PARTICULES D'IMPACT
    ========================================================= */
 
 .intro-particles {
+    position: absolute;
+
+    left: 50%;
+    top: 48%;
+
     width: 40px;
     height: 40px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    pointer-events: none;
 
     border:
         2px solid
@@ -897,13 +908,16 @@
 
     border-radius: 50%;
 
+    opacity: 0;
+
     animation:
         impact-wave
         1.4s
         cubic-bezier(0.16, 1, 0.3, 1)
-        4.35s
+        4.95s
         forwards;
 }
+
 
 
 @keyframes impact-wave {
