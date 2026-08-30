@@ -1782,47 +1782,59 @@ body.intro-active {
         opacity: 0;
 
         transform:
-            scale(0.88);
+            scale(0.6);
 
         filter:
             blur(8px)
-            brightness(2.2);
+            brightness(1);
     }
 
     20% {
 
-        opacity: 0.15;
+        opacity: 0.20;
 
         transform:
-            scale(0.91);
+            scale(0.8);
 
         filter:
             blur(6px)
-            brightness(2.8);
-    }
-
-    45% {
-
-        opacity: 0.55;
-
-        transform:
-            scale(0.97);
-
-        filter:
-            blur(3px)
             brightness(2);
     }
 
-    70% {
+    40% {
 
-        opacity: 0.9;
+        opacity: 0.40;
 
         transform:
-            scale(1.02);
+            scale(0.85);
+
+        filter:
+            blur(3px)
+            brightness(3);
+    }
+
+    60% {
+
+        opacity: 0.6;
+
+        transform:
+            scale(1.2);
+
+        filter:
+            blur(2px)
+            brightness(2);
+    }
+
+  80% {
+
+        opacity: 0.8;
+
+        transform:
+            scale(1.5);
 
         filter:
             blur(1px)
-            brightness(1.35);
+            brightness(1.2);
     }
 
     100% {
