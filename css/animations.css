@@ -480,15 +480,10 @@
 .intro-asteroid {
     animation:
         asteroid-entry 4s
-        cubic-bezier(0.16, 1, 0.3, 1)
+        linear
         0.8s forwards;
 }
 
-
-
-/* =========================================================
-   ASTÉROÏDE
-   ========================================================= */
 
 @keyframes asteroid-entry {
 
@@ -501,38 +496,38 @@
         opacity: 0;
 
         transform:
-            translate(5vw, 115vh)
-            scale(0.08);
+            translate(5vw, 105vh)
+            scale(0.15);
 
     }
 
 
     /* =====================================================
-       APPARITION — TRÈS LENTE
+       APPARITION
        ===================================================== */
 
     10% {
 
-        opacity: 0.25;
+        opacity: 0.2;
 
         transform:
-            translate(8vw, 104vh)
-            scale(0.12);
+            translate(8vw, 96vh)
+            scale(0.18);
 
     }
 
 
     /* =====================================================
-       APPROCHE LENTE
+       APPROCHE
        ===================================================== */
 
     20% {
 
-        opacity: 0.45;
+        opacity: 0.4;
 
         transform:
-            translate(12vw, 91vh)
-            scale(0.18);
+            translate(12vw, 86vh)
+            scale(0.22);
 
     }
 
@@ -543,10 +538,10 @@
 
     30% {
 
-        opacity: 0.65;
+        opacity: 0.6;
 
         transform:
-            translate(17vw, 77vh)
+            translate(17vw, 75vh)
             scale(0.28);
 
     }
@@ -558,11 +553,11 @@
 
     40% {
 
-        opacity: 0.8;
+        opacity: 0.75;
 
         transform:
-            translate(23vw, 63vh)
-            scale(0.45);
+            translate(23vw, 64vh)
+            scale(0.36);
 
     }
 
@@ -573,11 +568,11 @@
 
     50% {
 
-        opacity: 0.95;
+        opacity: 0.9;
 
         transform:
-            translate(30vw, 51vh)
-            scale(0.75);
+            translate(30vw, 54vh)
+            scale(0.46);
 
     }
 
@@ -591,14 +586,14 @@
         opacity: 1;
 
         transform:
-            translate(38vw, 41vh)
-            scale(1.35);
+            translate(37vw, 46vh)
+            scale(0.6);
 
     }
 
 
     /* =====================================================
-       FORTE ACCÉLÉRATION
+       ARRIVÉE
        ===================================================== */
 
     70% {
@@ -606,14 +601,14 @@
         opacity: 1;
 
         transform:
-            translate(45vw, 36vh)
-            scale(2.4);
+            translate(43vw, 40vh)
+            scale(0.8);
 
     }
 
 
     /* =====================================================
-       ARRIVÉE VERS LA CAMÉRA
+       APPROCHE FINALE
        ===================================================== */
 
     80% {
@@ -621,14 +616,14 @@
         opacity: 1;
 
         transform:
-            translate(49vw, 42vh)
-            scale(4);
+            translate(47vw, 43vh)
+            scale(1);
 
     }
 
 
     /* =====================================================
-       GROS PLAN
+       IMPACT
        ===================================================== */
 
     90% {
@@ -636,14 +631,14 @@
         opacity: 1;
 
         transform:
-            translate(50vw, 46vh)
-            scale(6);
+            translate(50vw, 47vh)
+            scale(1.15);
 
     }
 
 
     /* =====================================================
-       IMPACT — CENTRE EXACT
+       DISPARITION
        ===================================================== */
 
     100% {
@@ -652,7 +647,7 @@
 
         transform:
             translate(50vw, 48vh)
-            scale(0.15);
+            scale(1.2);
 
     }
 
