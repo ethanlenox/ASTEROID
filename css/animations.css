@@ -487,7 +487,7 @@
 
 
 /* =========================================================
-   ASTÉROÏDE — APPROCHE CINÉMATIQUE
+   ASTÉROÏDE
    ========================================================= */
 
 @keyframes asteroid-entry {
@@ -501,28 +501,24 @@
         opacity: 0;
 
         transform:
-            translate(8vw, 108vh)
-            scale(0.04);
+            translate(5vw, 115vh)
+            scale(0.08);
 
-        filter:
-            blur(4px);
     }
 
 
     /* =====================================================
-       APPARITION LOINTAINE
+       APPARITION — TRÈS LENTE
        ===================================================== */
 
-    20% {
+    10% {
 
-        opacity: 0.2;
+        opacity: 0.25;
 
         transform:
-            translate(13vw, 91vh)
-            scale(0.06);
+            translate(8vw, 104vh)
+            scale(0.12);
 
-        filter:
-            blur(3.5px);
     }
 
 
@@ -530,16 +526,14 @@
        APPROCHE LENTE
        ===================================================== */
 
-    40% {
+    20% {
 
         opacity: 0.45;
 
         transform:
-            translate(21vw, 72vh)
-            scale(0.10);
+            translate(12vw, 91vh)
+            scale(0.18);
 
-        filter:
-            blur(2.8px);
     }
 
 
@@ -547,16 +541,14 @@
        APPROCHE
        ===================================================== */
 
-    60% {
+    30% {
 
-        opacity: 0.7;
+        opacity: 0.65;
 
         transform:
-            translate(31vw, 57vh)
-            scale(0.18);
+            translate(17vw, 77vh)
+            scale(0.28);
 
-        filter:
-            blur(2px);
     }
 
 
@@ -564,33 +556,74 @@
        ACCÉLÉRATION PROGRESSIVE
        ===================================================== */
 
-    75% {
+    40% {
 
-        opacity: 0.9;
+        opacity: 0.8;
 
         transform:
-            translate(41vw, 45vh)
-            scale(0.38);
+            translate(23vw, 63vh)
+            scale(0.45);
 
-        filter:
-            blur(1px);
     }
 
 
     /* =====================================================
-       ENTRÉE DANS LA CAMÉRA
+       ACCÉLÉRATION
        ===================================================== */
 
-    86% {
+    50% {
+
+        opacity: 0.95;
+
+        transform:
+            translate(30vw, 51vh)
+            scale(0.75);
+
+    }
+
+
+    /* =====================================================
+       APPROCHE RAPIDE
+       ===================================================== */
+
+    60% {
 
         opacity: 1;
 
         transform:
-            translate(47vw, 42vh)
-            scale(0.9);
+            translate(38vw, 41vh)
+            scale(1.35);
 
-        filter:
-            blur(0.3px);
+    }
+
+
+    /* =====================================================
+       FORTE ACCÉLÉRATION
+       ===================================================== */
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            translate(45vw, 36vh)
+            scale(2.4);
+
+    }
+
+
+    /* =====================================================
+       ARRIVÉE VERS LA CAMÉRA
+       ===================================================== */
+
+    80% {
+
+        opacity: 1;
+
+        transform:
+            translate(49vw, 42vh)
+            scale(4);
+
     }
 
 
@@ -598,21 +631,19 @@
        GROS PLAN
        ===================================================== */
 
-    94% {
+    90% {
 
         opacity: 1;
 
         transform:
             translate(50vw, 46vh)
-            scale(2.2);
+            scale(6);
 
-        filter:
-            blur(0);
     }
 
 
     /* =====================================================
-       IMPACT
+       IMPACT — CENTRE EXACT
        ===================================================== */
 
     100% {
@@ -621,13 +652,12 @@
 
         transform:
             translate(50vw, 48vh)
-            scale(3.5);
+            scale(0.15);
 
-        filter:
-            blur(0);
     }
 
 }
+
 
 /* =========================================================
    IMPACT
