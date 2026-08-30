@@ -1084,9 +1084,9 @@ box-shadow:
 
     animation:
         cinematic-flash
-        0.8s
+        1s
         ease-out
-        5.3s
+        4.8s
         forwards;
 }
 
@@ -1384,8 +1384,8 @@ body.intro-active {
     left: 50%;
     top: 50%;
 
-    width: 390px;
-    height: 390px;
+    width: 400px;
+    height: 400px;
 
     transform:
         translate(-50%, -50%)
@@ -1423,9 +1423,9 @@ body.intro-active {
 
     animation:
         radar-entry
-        1.8s
+        2s
         ease-out
-        3.25s
+        3s
         forwards;
 }
 
@@ -1651,9 +1651,9 @@ body.intro-active {
 
     animation:
         logo-scan
-        0.8s
+        1s
         cubic-bezier(0.4, 0, 0.2, 1)
-        4.35s
+        4s
         forwards;
 }
 
@@ -1718,7 +1718,7 @@ body.intro-active {
 
     animation:
         intro-subtitle-entry
-        1.9s
+        2s
         cubic-bezier(0.16, 1, 0.3, 1)
         0s
         forwards;
@@ -1768,7 +1768,7 @@ body.intro-active {
         intro-logo-main-entry
         3s
         cubic-bezier(0.16, 1, 0.3, 1)
-        5.2s
+        4.8s
         forwards;
 }
 
