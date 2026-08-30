@@ -1789,40 +1789,100 @@ body.intro-active {
             brightness(2.2);
     }
 
-    20% {
+    15% {
 
-        opacity: 0.15;
+        opacity: 0.04;
+
+        transform:
+            scale(0.89);
+
+        filter:
+            blur(7px)
+            brightness(2.5);
+    }
+
+    30% {
+
+        opacity: 0.12;
 
         transform:
             scale(0.91);
 
         filter:
             blur(6px)
-            brightness(2.8);
+            brightness(2.4);
     }
 
     45% {
 
-        opacity: 0.55;
+        opacity: 0.28;
+
+        transform:
+            scale(0.94);
+
+        filter:
+            blur(4.5px)
+            brightness(2.1);
+    }
+
+    60% {
+
+        opacity: 0.52;
 
         transform:
             scale(0.97);
 
         filter:
             blur(3px)
-            brightness(2);
+            brightness(1.75);
     }
 
-    70% {
+    72% {
 
-        opacity: 0.9;
+        opacity: 0.68;
 
         transform:
-            scale(1.02);
+            scale(0.99);
 
         filter:
-            blur(1px)
+            blur(2px)
+            brightness(1.5);
+    }
+
+    82% {
+
+        opacity: 0.80;
+
+        transform:
+            scale(1);
+
+        filter:
+            blur(1.3px)
             brightness(1.35);
+    }
+
+    90% {
+
+        opacity: 0.90;
+
+        transform:
+            scale(1.005);
+
+        filter:
+            blur(0.7px)
+            brightness(1.2);
+    }
+
+    96% {
+
+        opacity: 0.97;
+
+        transform:
+            scale(1.002);
+
+        filter:
+            blur(0.25px)
+            brightness(1.08);
     }
 
     100% {
@@ -1838,6 +1898,7 @@ body.intro-active {
     }
 
 }
+
 
 
 
