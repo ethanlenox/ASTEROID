@@ -777,8 +777,24 @@ class VideoPlayer {
 
 
 /* =========================================================
+   INITIALISATION AUTOMATIQUE
+   ========================================================= */
+
+document
+    .querySelectorAll(
+        "video[data-video-player]"
+    )
+    .forEach((video) => {
+
+        new VideoPlayer(video);
+
+    });
+
+
+/* =========================================================
    EXPORT
    ========================================================= */
 
 export default VideoPlayer;
+
 
