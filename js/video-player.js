@@ -5,32 +5,26 @@
 
 class VideoPlayer {
 
-    constructor(videoElement, options = {}) {
+    constructor(video) {
 
-        if (!videoElement) {
-            throw new Error(
-                "VideoPlayer : élément vidéo introuvable."
-            );
+        if (!video || video.tagName !== "VIDEO") {
+            return;
         }
 
-        if (videoElement.tagName !== "VIDEO") {
-            throw new Error(
-                "VideoPlayer : l'élément doit être une balise <video>."
-            );
-        }
+        this.video = video;
 
-        this.video = videoElement;
+        this.container = null;
 
-        this.options = {
-            autoplay: false,
-            muted: false,
-            loop: false,
-            ...options
-        };
+        this.controls = null;
 
-        this.isDraggingProgress = false;
+        this.hideControlsTimeout = null;
+
+        this.isPointerOver = false;
+
+        this.isDragging = false;
 
         this.init();
+
     }
 
 
@@ -39,17 +33,6 @@ class VideoPlayer {
        ===================================================== */
 
     init() {
-
-        this.video.controls = false;
-
-        this.video.autoplay =
-            this.options.autoplay;
-
-        this.video.muted =
-            this.options.muted;
-
-        this.video.loop =
-            this.options.loop;
 
         this.createPlayer();
 
@@ -62,6 +45,10 @@ class VideoPlayer {
         this.updateVolume();
 
         this.updateProgress();
+
+        this.updateDuration();
+
+        this.updatePipButton();
 
     }
 
@@ -79,6 +66,13 @@ class VideoPlayer {
             "video-player";
 
 
+        this.video.controls = false;
+
+        this.video.classList.add(
+            "video-player-media"
+        );
+
+
         this.video.parentNode.insertBefore(
             this.container,
             this.video
@@ -94,18 +88,28 @@ class VideoPlayer {
             "beforeend",
             `
 
-            <div class="video-player-controls">
+            <div
+                class="video-player-overlay"
+                aria-hidden="true"
+            ></div>
+
+
+            <div
+                class="video-player-controls"
+            >
 
                 <button
                     class="video-player-button video-player-play"
                     type="button"
                     aria-label="Lire la vidéo"
                 >
-                    ▶
+                    <span aria-hidden="true">▶</span>
                 </button>
 
 
-                <span class="video-player-time video-player-current">
+                <span
+                    class="video-player-time video-player-current"
+                >
                     00:00
                 </span>
 
@@ -121,7 +125,9 @@ class VideoPlayer {
                 >
 
 
-                <span class="video-player-time video-player-duration">
+                <span
+                    class="video-player-time video-player-duration"
+                >
                     00:00
                 </span>
 
@@ -129,9 +135,9 @@ class VideoPlayer {
                 <button
                     class="video-player-button video-player-mute"
                     type="button"
-                    aria-label="Activer le son"
+                    aria-label="Couper le son"
                 >
-                    🔊
+                    <span aria-hidden="true">🔊</span>
                 </button>
 
 
@@ -149,9 +155,9 @@ class VideoPlayer {
                 <button
                     class="video-player-button video-player-pip"
                     type="button"
-                    aria-label="Picture in Picture"
+                    aria-label="Picture-in-Picture"
                 >
-                    PiP
+                    <span aria-hidden="true">PiP</span>
                 </button>
 
 
@@ -160,7 +166,7 @@ class VideoPlayer {
                     type="button"
                     aria-label="Plein écran"
                 >
-                    ⛶
+                    <span aria-hidden="true">⛶</span>
                 </button>
 
             </div>
@@ -177,40 +183,53 @@ class VideoPlayer {
 
     cacheElements() {
 
+        this.controls =
+            this.container.querySelector(
+                ".video-player-controls"
+            );
+
+
         this.playButton =
             this.container.querySelector(
                 ".video-player-play"
             );
+
 
         this.currentTime =
             this.container.querySelector(
                 ".video-player-current"
             );
 
+
         this.duration =
             this.container.querySelector(
                 ".video-player-duration"
             );
+
 
         this.progress =
             this.container.querySelector(
                 ".video-player-progress"
             );
 
+
         this.muteButton =
             this.container.querySelector(
                 ".video-player-mute"
             );
+
 
         this.volume =
             this.container.querySelector(
                 ".video-player-volume"
             );
 
+
         this.pipButton =
             this.container.querySelector(
                 ".video-player-pip"
             );
+
 
         this.fullscreenButton =
             this.container.querySelector(
@@ -226,7 +245,9 @@ class VideoPlayer {
 
     bindEvents() {
 
-        /* PLAY / PAUSE */
+        /* -----------------------------------------------
+           PLAY / PAUSE
+           ----------------------------------------------- */
 
         this.playButton.addEventListener(
             "click",
@@ -240,7 +261,9 @@ class VideoPlayer {
         );
 
 
-        /* LECTURE */
+        /* -----------------------------------------------
+           LECTURE
+           ----------------------------------------------- */
 
         this.video.addEventListener(
             "play",
@@ -248,11 +271,15 @@ class VideoPlayer {
 
                 this.updatePlayButton();
 
+                this.showControls();
+
             }
         );
 
 
-        /* PAUSE */
+        /* -----------------------------------------------
+           PAUSE
+           ----------------------------------------------- */
 
         this.video.addEventListener(
             "pause",
@@ -260,11 +287,15 @@ class VideoPlayer {
 
                 this.updatePlayButton();
 
+                this.showControls();
+
             }
         );
 
 
-        /* FIN */
+        /* -----------------------------------------------
+           FIN DE VIDÉO
+           ----------------------------------------------- */
 
         this.video.addEventListener(
             "ended",
@@ -272,17 +303,21 @@ class VideoPlayer {
 
                 this.updatePlayButton();
 
+                this.showControls();
+
             }
         );
 
 
-        /* PROGRESSION */
+        /* -----------------------------------------------
+           PROGRESSION
+           ----------------------------------------------- */
 
         this.video.addEventListener(
             "timeupdate",
             () => {
 
-                if (!this.isDraggingProgress) {
+                if (!this.isDragging) {
 
                     this.updateProgress();
 
@@ -292,7 +327,9 @@ class VideoPlayer {
         );
 
 
-        /* MÉTADONNÉES */
+        /* -----------------------------------------------
+           MÉTADONNÉES
+           ----------------------------------------------- */
 
         this.video.addEventListener(
             "loadedmetadata",
@@ -306,25 +343,33 @@ class VideoPlayer {
         );
 
 
-        /* BARRE DE PROGRESSION */
+        /* -----------------------------------------------
+           BARRE DE PROGRESSION
+           ----------------------------------------------- */
 
         this.progress.addEventListener(
             "input",
             () => {
 
-                this.isDraggingProgress = true;
+                this.isDragging = true;
 
                 if (!this.video.duration) {
                     return;
                 }
 
+
                 const time =
                     (
-                        this.progress.value / 100
+                        Number(
+                            this.progress.value
+                        ) / 100
                     ) *
                     this.video.duration;
 
-                this.video.currentTime = time;
+
+                this.video.currentTime =
+                    time;
+
 
                 this.currentTime.textContent =
                     this.formatTime(time);
@@ -337,22 +382,37 @@ class VideoPlayer {
             "change",
             () => {
 
-                this.isDraggingProgress = false;
+                this.isDragging = false;
 
             }
         );
 
 
-        /* VOLUME */
+        /* -----------------------------------------------
+           VOLUME
+           ----------------------------------------------- */
 
         this.volume.addEventListener(
             "input",
             () => {
 
-                this.video.volume =
-                    Number(this.volume.value);
+                const value =
+                    Number(
+                        this.volume.value
+                    );
 
-                this.video.muted = false;
+
+                this.video.volume =
+                    value;
+
+
+                if (value > 0) {
+
+                    this.video.muted =
+                        false;
+
+                }
+
 
                 this.updateVolume();
 
@@ -360,7 +420,9 @@ class VideoPlayer {
         );
 
 
-        /* MUTE */
+        /* -----------------------------------------------
+           MUTE
+           ----------------------------------------------- */
 
         this.muteButton.addEventListener(
             "click",
@@ -369,39 +431,138 @@ class VideoPlayer {
                 this.video.muted =
                     !this.video.muted;
 
+
                 this.updateVolume();
 
             }
         );
 
 
-        /* PICTURE IN PICTURE */
+        /* -----------------------------------------------
+           PICTURE IN PICTURE
+           ----------------------------------------------- */
 
         this.pipButton.addEventListener(
             "click",
-            () => this.togglePictureInPicture()
+            () => {
+
+                this.togglePictureInPicture();
+
+            }
         );
 
 
-        /* PLEIN ÉCRAN */
+        /* -----------------------------------------------
+           PLEIN ÉCRAN
+           ----------------------------------------------- */
 
         this.fullscreenButton.addEventListener(
             "click",
-            () => this.toggleFullscreen()
+            () => {
+
+                this.toggleFullscreen();
+
+            }
         );
 
 
-        /* CLAVIER */
+        /* -----------------------------------------------
+           SOURIS
+           ----------------------------------------------- */
+
+        this.container.addEventListener(
+            "mouseenter",
+            () => {
+
+                this.isPointerOver = true;
+
+                this.showControls();
+
+            }
+        );
+
+
+        this.container.addEventListener(
+            "mouseleave",
+            () => {
+
+                this.isPointerOver = false;
+
+                if (!this.video.paused) {
+
+                    this.startHideControlsTimer();
+
+                }
+
+            }
+        );
+
+
+        this.container.addEventListener(
+            "mousemove",
+            () => {
+
+                this.showControls();
+
+            }
+        );
+
+
+        /* -----------------------------------------------
+           CLAVIER
+           ----------------------------------------------- */
 
         this.container.addEventListener(
             "keydown",
-            (event) => this.handleKeyboard(event)
+            (event) => {
+
+                this.handleKeyboard(event);
+
+            }
         );
 
 
         this.container.setAttribute(
             "tabindex",
             "0"
+        );
+
+
+        /* -----------------------------------------------
+           FULLSCREEN
+           ----------------------------------------------- */
+
+        document.addEventListener(
+            "fullscreenchange",
+            () => {
+
+                this.updateFullscreenButton();
+
+            }
+        );
+
+
+        /* -----------------------------------------------
+           PICTURE IN PICTURE
+           ----------------------------------------------- */
+
+        this.video.addEventListener(
+            "enterpictureinpicture",
+            () => {
+
+                this.updatePipButton();
+
+            }
+        );
+
+
+        this.video.addEventListener(
+            "leavepictureinpicture",
+            () => {
+
+                this.updatePipButton();
+
+            }
         );
 
     }
@@ -446,9 +607,15 @@ class VideoPlayer {
 
     updatePlayButton() {
 
+        const icon =
+            this.playButton.querySelector(
+                "span"
+            );
+
+
         if (this.video.paused) {
 
-            this.playButton.textContent = "▶";
+            icon.textContent = "▶";
 
             this.playButton.setAttribute(
                 "aria-label",
@@ -457,7 +624,7 @@ class VideoPlayer {
 
         } else {
 
-            this.playButton.textContent = "❚❚";
+            icon.textContent = "❚❚";
 
             this.playButton.setAttribute(
                 "aria-label",
@@ -477,6 +644,7 @@ class VideoPlayer {
 
         const current =
             this.video.currentTime || 0;
+
 
         const total =
             this.video.duration || 0;
@@ -520,31 +688,42 @@ class VideoPlayer {
 
     updateVolume() {
 
+        const icon =
+            this.muteButton.querySelector(
+                "span"
+            );
+
+
         if (
             this.video.muted ||
             this.video.volume === 0
         ) {
 
-            this.muteButton.textContent =
-                "🔇";
+            icon.textContent = "🔇";
 
         } else if (
             this.video.volume < 0.5
         ) {
 
-            this.muteButton.textContent =
-                "🔉";
+            icon.textContent = "🔉";
 
         } else {
 
-            this.muteButton.textContent =
-                "🔊";
+            icon.textContent = "🔊";
 
         }
 
 
         this.volume.value =
             this.video.volume;
+
+
+        this.muteButton.setAttribute(
+            "aria-label",
+            this.video.muted
+                ? "Activer le son"
+                : "Couper le son"
+        );
 
     }
 
@@ -556,7 +735,8 @@ class VideoPlayer {
     async togglePictureInPicture() {
 
         if (
-            !document.pictureInPictureEnabled
+            !document.pictureInPictureEnabled ||
+            !this.video.requestPictureInPicture
         ) {
 
             return;
@@ -581,9 +761,30 @@ class VideoPlayer {
         } catch (error) {
 
             console.error(
-                "Picture in Picture impossible :",
+                "Picture-in-Picture impossible :",
                 error
             );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       BOUTON PIP
+       ===================================================== */
+
+    updatePipButton() {
+
+        if (
+            !document.pictureInPictureEnabled
+        ) {
+
+            this.pipButton.hidden = true;
+
+        } else {
+
+            this.pipButton.hidden = false;
 
         }
 
@@ -598,7 +799,9 @@ class VideoPlayer {
 
         try {
 
-            if (!document.fullscreenElement) {
+            if (
+                !document.fullscreenElement
+            ) {
 
                 await this.container.requestFullscreen();
 
@@ -621,7 +824,99 @@ class VideoPlayer {
 
 
     /* =====================================================
-       RACCOURCIS CLAVIER
+       BOUTON PLEIN ÉCRAN
+       ===================================================== */
+
+    updateFullscreenButton() {
+
+        const icon =
+            this.fullscreenButton.querySelector(
+                "span"
+            );
+
+
+        if (
+            document.fullscreenElement ===
+            this.container
+        ) {
+
+            icon.textContent = "×";
+
+            this.fullscreenButton.setAttribute(
+                "aria-label",
+                "Quitter le plein écran"
+            );
+
+        } else {
+
+            icon.textContent = "⛶";
+
+            this.fullscreenButton.setAttribute(
+                "aria-label",
+                "Plein écran"
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       CONTRÔLES AUTOMATIQUES
+       ===================================================== */
+
+    showControls() {
+
+        this.container.classList.remove(
+            "controls-hidden"
+        );
+
+
+        clearTimeout(
+            this.hideControlsTimeout
+        );
+
+
+        if (!this.video.paused) {
+
+            this.startHideControlsTimer();
+
+        }
+
+    }
+
+
+    startHideControlsTimer() {
+
+        clearTimeout(
+            this.hideControlsTimeout
+        );
+
+
+        this.hideControlsTimeout =
+            window.setTimeout(
+                () => {
+
+                    if (
+                        !this.video.paused &&
+                        !this.isPointerOver
+                    ) {
+
+                        this.container.classList.add(
+                            "controls-hidden"
+                        );
+
+                    }
+
+                },
+                2500
+            );
+
+    }
+
+
+    /* =====================================================
+       CLAVIER
        ===================================================== */
 
     handleKeyboard(event) {
@@ -674,7 +969,8 @@ class VideoPlayer {
                         this.video.volume + 0.1
                     );
 
-                this.video.muted = false;
+                this.video.muted =
+                    false;
 
                 this.updateVolume();
 
@@ -751,9 +1047,17 @@ class VideoPlayer {
 
 
         return (
-            String(minutes).padStart(2, "0") +
-            ":" +
-            String(remainingSeconds).padStart(2, "0")
+            String(minutes).padStart(
+                2,
+                "0"
+            )
+            +
+            ":"
+            +
+            String(remainingSeconds).padStart(
+                2,
+                "0"
+            )
         );
 
     }
@@ -765,9 +1069,15 @@ class VideoPlayer {
 
     destroy() {
 
+        clearTimeout(
+            this.hideControlsTimeout
+        );
+
+
         this.container.replaceWith(
             this.video
         );
+
 
         this.video.controls = true;
 
@@ -784,11 +1094,13 @@ document
     .querySelectorAll(
         "video[data-video-player]"
     )
-    .forEach((video) => {
+    .forEach(
+        (video) => {
 
-        new VideoPlayer(video);
+            new VideoPlayer(video);
 
-    });
+        }
+    );
 
 
 /* =========================================================
@@ -796,5 +1108,3 @@ document
    ========================================================= */
 
 export default VideoPlayer;
-
-
