@@ -1190,12 +1190,7 @@ body.intro-active {
             rgba(212, 175, 55, 0.25)
         );
 
-    animation:
-        asteroid-logo-glow
-        3.9s
-        ease-in-out
-        5.3s
-        infinite;
+    
 }
 
 
