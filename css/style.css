@@ -409,7 +409,8 @@ h2 {
 
 .video-placeholder {
 
-    width: 100%;
+    width: 640px;
+    height: 360px;
 
     margin: 0 auto;
 
