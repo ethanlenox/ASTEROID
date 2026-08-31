@@ -349,11 +349,25 @@ h2 {
         0 0 60px rgba(0, 229, 255, 0.12);
 }
 
+.hero-content h1 span {
+    display: block;
+
+    margin-top: -10px;
+
+    margin-left: 55px;
+
+    font-size: 40%;
+
+    letter-spacing: 0;
+
+    line-height: 1;
+}
+
 
 .hero-description {
     max-width: 600px;
 
-    margin: 0 auto 35px;
+    margin: 0 auto 21px;
 
     color: var(--color-text-muted);
 
@@ -361,7 +375,7 @@ h2 {
 }
 
 .hero-gameplay-label {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 
     color: var(--color-cyan);
 
