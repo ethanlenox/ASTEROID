@@ -1176,21 +1176,8 @@ body.intro-active {
 
     object-fit: contain;
 
-    filter:
-        drop-shadow(
-            0 0 2px
-            rgba(255, 240, 180, 0.95)
-        )
-        drop-shadow(
-            0 0 5px
-            rgba(212, 175, 55, 0.75)
-        )
-        drop-shadow(
-            0 0 9px
-            rgba(212, 175, 55, 0.25)
-        );
-
-    
+   filter: none;
+  
 }
 
 
