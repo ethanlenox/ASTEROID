@@ -1,1 +1,361 @@
+/* =========================================================
+   ASTEROIDE.DESTROYER
+   VIDEO PLAYER
+   ========================================================= */
+
+.video-player {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    background: #000;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* =========================================================
+   VIDÉO
+   ========================================================= */
+
+.video-player video {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    background: #000;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   CONTRÔLES
+   ========================================================= */
+
+.video-player-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(5, 8, 15, 0.98),
+            rgba(10, 15, 25, 0.94)
+        );
+
+}
+
+
+/* =========================================================
+   BOUTONS
+   ========================================================= */
+
+.video-player-button {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.video-player-button:hover {
+
+    color: #66c7ff;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+.video-player-button:focus-visible {
+
+    outline: 2px solid #66c7ff;
+
+    outline-offset: 2px;
+
+}
+
+
+/* =========================================================
+   TEMPS
+   ========================================================= */
+
+.video-player-time {
+
+    flex-shrink: 0;
+
+    min-width: 42px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 12px;
+
+    font-family:
+        monospace;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   BARRE DE PROGRESSION
+   ========================================================= */
+
+.video-player-progress {
+
+    flex: 1;
+
+    min-width: 50px;
+
+    height: 4px;
+
+    appearance: none;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+
+}
+
+
+.video-player-progress::-webkit-slider-thumb {
+
+    appearance: none;
+
+    width: 12px;
+    height: 12px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #66c7ff;
+
+    cursor: pointer;
+
+}
+
+
+.video-player-progress::-moz-range-thumb {
+
+    width: 12px;
+    height: 12px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #66c7ff;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   VOLUME
+   ========================================================= */
+
+.video-player-volume {
+
+    width: 75px;
+
+    height: 4px;
+
+    appearance: none;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+
+}
+
+
+.video-player-volume::-webkit-slider-thumb {
+
+    appearance: none;
+
+    width: 11px;
+    height: 11px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #66c7ff;
+
+}
+
+
+.video-player-volume::-moz-range-thumb {
+
+    width: 11px;
+    height: 11px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #66c7ff;
+
+}
+
+
+/* =========================================================
+   PICTURE IN PICTURE
+   ========================================================= */
+
+.video-player-pip {
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   PLEIN ÉCRAN
+   ========================================================= */
+
+.video-player-fullscreen {
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================================
+   PLEIN ÉCRAN
+   ========================================================= */
+
+.video-player:fullscreen {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #000;
+
+}
+
+
+.video-player:fullscreen video {
+
+    width: 100%;
+
+    max-height: calc(100vh - 60px);
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .video-player-controls {
+
+        gap: 5px;
+
+        padding: 8px;
+
+    }
+
+
+    .video-player-button {
+
+        width: 30px;
+        height: 30px;
+
+    }
+
+
+    .video-player-time {
+
+        min-width: 36px;
+
+        font-size: 10px;
+
+    }
+
+
+    .video-player-volume {
+
+        display: none;
+
+    }
+
+
+    .video-player-pip {
+
+        display: none;
+
+    }
+
+}
 
