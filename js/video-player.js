@@ -293,9 +293,9 @@ class VideoPlayer {
         );
 
 
-    /* -----------------------------------------------
-       FIN DE VIDÉO
-       ----------------------------------------------- */
+     /* -----------------------------------------------
+        FIN DE VIDÉO
+        ----------------------------------------------- */
 
         this.video.addEventListener(
         "ended",
@@ -305,19 +305,13 @@ class VideoPlayer {
 
         this.showControls();
 
-        /* Conserve la dernière image de la vidéo */
-        if (
-            this.video.duration &&
-            Number.isFinite(this.video.duration)
-        ) {
-
-            this.video.currentTime =
-                this.video.duration;
-
-        }
+        /* Retour au poster après la fin */
+        this.video.currentTime = 0;
+        this.video.load();
 
     }
 );
+
 
 
         /* -----------------------------------------------
