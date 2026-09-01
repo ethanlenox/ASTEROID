@@ -115,10 +115,14 @@
 
     /* VIDÉO */
 
-    .video-placeholder {
-        border-radius:
-            var(--radius-small);
-    }
+.video-placeholder {
+    width: 100%;
+    height: auto;
+
+    border-radius:
+        var(--radius-small);
+}
+
 
 
     /* FOOTER */
