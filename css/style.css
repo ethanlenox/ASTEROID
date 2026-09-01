@@ -354,14 +354,23 @@ h2 {
 
     margin-top: -10px;
 
-    margin-left: 55px;
-
-    font-size: 40%;
-
     letter-spacing: 0;
 
     line-height: 1;
 }
+
+.hero-content h1 span:first-child {
+    margin-left: 0;
+
+    font-size: 100%;
+}
+
+.hero-content h1 span:last-child {
+    margin-left: 120px;
+
+    font-size: 40%;
+}
+
 
 
 .hero-description {
