@@ -359,26 +359,16 @@ h2 {
     line-height: 1;
 }
 
-.hero-content h1 span:last-child {
-    margin-left: 160px;
+.hero-content h1 span:first-child {
+    margin-left: 0;
 
     font-size: 85%;
 }
 
-@media (min-width: 601px) {
+.hero-content h1 span:last-child {
+    margin-left: 280px;
 
-    .hero-content h1 span:last-child {
-        margin-left: 280px;
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    .hero-content h1 span:last-child {
-        margin-left: 160px;
-    }
-
+    font-size: 35%;
 }
 
 
