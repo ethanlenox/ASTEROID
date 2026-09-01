@@ -50,7 +50,7 @@
     /* HERO */
 
     #hero {
-        min-height: calc(100svh - 70px);
+        min-height: calc(100svh - 60px);
     }
 
     .hero-content {
