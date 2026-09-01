@@ -362,11 +362,11 @@ h2 {
 .hero-content h1 span:first-child {
     margin-left: 0;
 
-    font-size: 100%;
+    font-size: 70%;
 }
 
 .hero-content h1 span:last-child {
-    margin-left: 120px;
+    margin-left: 160px;
 
     font-size: 40%;
 }
