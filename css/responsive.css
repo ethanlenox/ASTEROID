@@ -125,13 +125,20 @@
 
 
 
-    /* FOOTER */
+        /* FOOTER */
 
     #footer {
         padding:
             30px 15px;
     }
+
+
+    .hero-content h1 span:last-child {
+        margin-left: 160px;
+    }
+
 }
+
 
 
 /* =========================================================
