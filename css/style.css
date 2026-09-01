@@ -371,6 +371,15 @@ h2 {
     font-size: 35%;
 }
 
+@media (max-width: 600px) {
+
+    .hero-content h1 span:last-child {
+        margin-left: 0;
+    }
+
+}
+
+
 
 
 .hero-description {
