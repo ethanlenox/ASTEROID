@@ -374,7 +374,7 @@ h2 {
 @media (max-width: 600px) {
 
     .hero-content h1 span:last-child {
-        margin-left: 0;
+        margin-left: 160px;
     }
 
 }
