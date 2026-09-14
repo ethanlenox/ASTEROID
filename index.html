@@ -350,6 +350,63 @@
 
         </main>
 
+                <!-- =====================================================
+         MINI LECTEUR MUSIQUE
+         ===================================================== -->
+
+        <div
+            class="mini-music-player"
+            data-mini-music-player
+        >
+
+            <button
+                type="button"
+                class="mini-music-button"
+                data-mini-music-play
+                aria-label="Lire la musique"
+            >
+                ▶
+            </button>
+
+            <div class="mini-music-info">
+
+                <span
+                    class="mini-music-label"
+                >
+                    MUSIC
+                </span>
+
+                <span
+                    class="mini-music-title"
+                    data-mini-music-title
+                >
+                    A vos postes
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                class="mini-music-progress"
+                data-mini-music-progress
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Progression de la musique"
+            >
+
+            <button
+                type="button"
+                class="mini-music-button"
+                data-mini-music-next
+                aria-label="Musique suivante"
+            >
+                ▶
+            </button>
+
+        </div>
+
 
         <!-- FOOTER -->
         <footer id="footer">
