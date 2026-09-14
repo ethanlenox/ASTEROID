@@ -437,11 +437,15 @@
    ========================================================= */
 
 .mini-music-player {
-    position: absolute;
+    position: relative;
 
-    left: 50%;
+    left: auto;
 
-    bottom: 20px;
+    bottom: auto;
+
+    margin: 40px auto 20px;
+
+    transform: none;
 
     transform: translateX(-50%);
 
