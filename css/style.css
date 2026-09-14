@@ -754,9 +754,9 @@ h2 {
    ========================================================= */
 
 .concept-item {
-    overflow: hidden;
+    position: relative;
 
-    isolation: isolate;
+    overflow: hidden;
 }
 
 
@@ -767,7 +767,7 @@ h2 {
 
     inset: 0;
 
-    z-index: -2;
+    z-index: 0;
 
     background-size: cover;
 
@@ -799,24 +799,14 @@ h2 {
 }
 
 
-.concept-item::after {
-    content: "";
+.concept-item span,
+.concept-item h3,
+.concept-item p {
+    position: relative;
 
-    position: absolute;
-
-    inset: 0;
-
-    z-index: -1;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(5, 9, 20, 0.35),
-            rgba(5, 9, 20, 0.72)
-        );
-
-    pointer-events: none;
+    z-index: 2;
 }
+
 
 
 /* =========================================================
