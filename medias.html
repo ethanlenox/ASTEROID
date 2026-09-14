@@ -111,11 +111,146 @@
                     Médias
                 </h1>
 
-                <p>
-                    Retrouvez ici les captures,
-                    artworks et vidéos
-                    d'ASTÉROÏD destroyer.
-                </p>
+             <p>
+                Retrouvez ici les captures,
+                artworks et vidéos
+                d'ASTÉROÏD destroyer.
+            </p>
+
+            <!-- =====================================================
+             LECTEUR MUSIQUE
+             ===================================================== -->
+
+            <div class="music-player">
+
+                <div class="music-player-header">
+
+                    <p class="music-player-label">
+                        SOUND DATABASE
+                    </p>
+
+                    <h2>
+                        Bande originale
+                    </h2>
+
+                </div>
+
+
+                <div class="music-player-content">
+
+                    <div class="music-track-info">
+
+                        <span
+                            class="music-track-number"
+                            data-music-number
+                        >
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3 data-music-title>
+                                A vos postes
+                            </h3>
+
+                            <p data-music-status>
+                                Prêt à jouer
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <audio
+                        data-music-player
+                        preload="metadata"
+                    >
+                        <source
+                            src="son/A vos postes.mp3"
+                            type="audio/mpeg"
+                        >
+                    </audio>
+
+
+                    <div class="music-controls">
+
+                        <button
+                            type="button"
+                            class="music-button"
+                            data-music-prev
+                            aria-label="Musique précédente"
+                        >
+                            ◀
+                        </button>
+
+                        <button
+                            type="button"
+                            class="music-button music-button-main"
+                            data-music-play
+                            aria-label="Lire la musique"
+                        >
+                            ▶
+                        </button>
+
+                        <button
+                            type="button"
+                            class="music-button"
+                            data-music-next
+                            aria-label="Musique suivante"
+                        >
+                            ▶
+                        </button>
+
+                    </div>
+
+
+                    <div class="music-progress">
+
+                        <span
+                            data-music-current
+                        >
+                            00:00
+                        </span>
+
+                        <input
+                            type="range"
+                            data-music-progress
+                            min="0"
+                            max="100"
+                            value="0"
+                            step="0.1"
+                            aria-label="Progression de la musique"
+                        >
+
+                        <span
+                            data-music-duration
+                        >
+                            00:00
+                        </span>
+
+                    </div>
+
+
+                    <div class="music-volume">
+
+                        <span>
+                            VOL
+                        </span>
+
+                        <input
+                            type="range"
+                            data-music-volume
+                            min="0"
+                            max="1"
+                            value="0.8"
+                            step="0.01"
+                            aria-label="Volume"
+                        >
+
+                    </div>
+
+                </div>
 
             </div>
 
