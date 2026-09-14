@@ -754,57 +754,41 @@ h2 {
    ========================================================= */
 
 .concept-item {
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-.concept-item::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 0;
-
     background-size: cover;
 
     background-position: center;
 
     background-repeat: no-repeat;
-
-    opacity: 0.28;
-
-    pointer-events: none;
 }
 
 
-.concept-asteroid::before {
+.concept-asteroid {
     background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
         url("../img/icon/asteroid.png");
 }
 
 
-.concept-orbesonic::before {
+.concept-orbesonic {
     background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
         url("../img/icon/orbesonic.png");
 }
 
 
-.concept-defense::before {
+.concept-defense {
     background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
         url("../img/icon/defense.png");
-}
-
-
-.concept-item span,
-.concept-item h3,
-.concept-item p {
-    position: relative;
-
-    z-index: 2;
 }
 
 
