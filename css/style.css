@@ -296,12 +296,28 @@ h2 {
     text-align: center;
 
     overflow: hidden;
+
+    padding-top: 140px;
+
+    padding-bottom: 100px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(0, 229, 255, 0.08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0, 229, 255, 0.04),
+            transparent 45%
+        );
 }
 
 
 .hero-content {
     width: min(
-        900px,
+        1000px,
         calc(100% - 40px)
     );
 
@@ -314,11 +330,11 @@ h2 {
 
 
 .hero-label {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
     color: var(--color-cyan);
 
-    font-size: 1.15rem;
+    font-size: 0.8rem;
 
     font-weight: 700;
 
@@ -327,37 +343,38 @@ h2 {
     text-transform: uppercase;
 
     text-shadow:
-        0 0 15px rgba(0, 229, 255, 0.5);
+        0 0 10px rgba(0, 229, 255, 0.4),
+        0 0 25px rgba(0, 229, 255, 0.15);
 }
 
 
 .hero-content h1 {
-    margin-bottom: 24px;
+    margin-bottom: 26px;
 
     color: var(--color-white);
 
     font-size: clamp(
-        3rem,
-        9vw,
-        7rem
+        3.5rem,
+        10vw,
+        8rem
     );
 
-    letter-spacing: -0.04em;
+    letter-spacing: -0.05em;
+
+    line-height: 0.9;
 
     text-shadow:
         0 0 20px rgba(0, 229, 255, 0.35),
         0 0 60px rgba(0, 229, 255, 0.12);
 }
 
+
 .hero-content h1 span {
     display: block;
 
-    margin-top: -10px;
-
-    letter-spacing: 0;
-
     line-height: 1;
 }
+
 
 .hero-content h1 span:first-child {
     margin-left: 0;
@@ -365,43 +382,46 @@ h2 {
     font-size: 85%;
 }
 
+
 .hero-content h1 span:last-child {
+    margin-top: 4px;
+
     margin-left: 280px;
 
+    color: var(--color-cyan);
+
     font-size: 35%;
+
+    letter-spacing: 0.02em;
+
+    text-shadow:
+        0 0 15px rgba(0, 229, 255, 0.45);
 }
-
-@media (max-width: 600px) {
-
-    .hero-content h1 span:last-child {
-        margin-left: 160px;
-    }
-
-}
-
-
 
 
 .hero-description {
-    max-width: 600px;
+    max-width: 620px;
 
-    margin: 0 auto 21px;
+    margin: 0 auto 28px;
 
-    color: var(--color-text-muted);
+    color: var(--color-text);
 
     font-size: 1.05rem;
+
+    line-height: 1.8;
 }
+
 
 .hero-gameplay-label {
     margin-bottom: 16px;
 
     color: var(--color-cyan);
 
-    font-size: 0.94rem;
+    font-size: 0.7rem;
 
     font-weight: 700;
 
-    letter-spacing: 0.25em;
+    letter-spacing: 0.28em;
 
     text-transform: uppercase;
 
@@ -419,7 +439,28 @@ h2 {
 
     gap: 14px;
 
-    margin-top: 20px; 
+    margin-top: 28px;
+}
+
+
+@media (max-width: 600px) {
+
+    #hero {
+        padding-top: 120px;
+
+        padding-bottom: 80px;
+    }
+
+
+    .hero-content h1 span:last-child {
+        margin-left: 160px;
+    }
+
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
 }
 
 
