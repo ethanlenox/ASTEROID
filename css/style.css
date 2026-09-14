@@ -1287,3 +1287,48 @@ h2 {
 
     font-size: 0.9rem;
 }
+/* =========================================================
+   DATABASE — ORBESONIC / PLATEFORMES
+   ========================================================= */
+
+.orbesonic-grid,
+.plateformes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+
+/* =========================================================
+   IMAGES ORBESONIC
+   ========================================================= */
+
+.orbesonic-card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.orbesonic-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   IMAGES PLATEFORMES
+   ========================================================= */
+
+.plateforme-card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.plateforme-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
