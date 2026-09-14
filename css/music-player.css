@@ -443,11 +443,7 @@
 
     bottom: auto;
 
-    margin: 40px auto 20px;
-
     transform: none;
-
-    transform: translateX(-50%);
 
     z-index: 900;
 
@@ -456,10 +452,7 @@
         calc(100% - 40px)
     );
 
-    margin-left: auto;
-
-    margin-right: auto;
-
+    margin: 40px auto 20px;
 
     min-height: 64px;
 
