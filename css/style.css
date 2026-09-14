@@ -749,6 +749,44 @@ h2 {
     opacity: 1;
 }
 
+/* =========================================================
+   ICÔNES CONCEPT
+   ========================================================= */
+
+.concept-icon {
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+
+    margin-bottom: 18px;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(0, 229, 255, 0.45)
+        )
+        drop-shadow(
+            0 0 20px rgba(0, 229, 255, 0.18)
+        );
+
+    transition:
+        transform var(--transition-normal),
+        filter var(--transition-normal);
+}
+
+
+.concept-item:hover .concept-icon {
+    transform:
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(0, 229, 255, 0.7)
+        )
+        drop-shadow(
+            0 0 30px rgba(0, 229, 255, 0.3)
+        );
+}
 
 .concept-item span {
     position: relative;
