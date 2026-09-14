@@ -791,6 +791,26 @@ h2 {
         url("../img/icon/defense.png");
 }
 
+/* =========================================================
+   EFFET CLIC DES CARTES CONCEPT
+   ========================================================= */
+
+.concept-item:active {
+    transform: translateY(0) scale(0.98);
+
+    border-color:
+        var(--color-cyan);
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.7),
+        0 0 30px rgba(0, 229, 255, 0.3);
+
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.08s ease,
+        border-color 0.08s ease;
+}
+
 
 
 /* =========================================================
