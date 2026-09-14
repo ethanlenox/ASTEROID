@@ -84,11 +84,7 @@ const musicPlaylist = [
         src: "son/cosmic sylver.mp3"
     },
  
-    {
-        title: "souffrance",
-        src: "son/bonus.mp3"
-    },
-
+    
      {
         title: "Speed",
         src: "son/speed.mp3"
