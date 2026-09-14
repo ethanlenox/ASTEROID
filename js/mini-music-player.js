@@ -30,91 +30,110 @@ if (miniMusicPlayer) {
 
     const miniPlaylist = [
 
-        {
-            title: "A vos postes",
-            src: "son/A vos postes.mp3"
-        },
+    {
+        title: "Saturn 80",
+        src: "son/saturn 80.mp3"
+    },
 
-        {
-            title: "Alerte astre",
-            src: "son/alerte astre.mp3"
-        },
+    {
+        title: "Étoile lunaire",
+        src: "son/etoile lunaire.mp3"
+    },
+ 
+    {
+        title: "Green Horizon",
+        src: "son/green horizon.mp3"
+    },
 
-        {
-            title: "Asteroid Destroyer Theme",
-            src: "son/asteroid destroyer theme musicale.mp3"
-        },
+    {
+        title: "Lune solaire",
+        src: "son/lune solaire.mp3"
+    },
 
-        {
-            title: "Bonus",
-            src: "son/bonus.mp3"
-        },
+    {
+        title: "Numérique spatial",
+        src: "son/numerique spatial.mp3"
+    },
 
-        {
-            title: "Boss",
-            src: "son/boss.mp3"
-        },
+    {
+        title: "Orbite coloré",
+        src: "son/orbite coloré.mp3"
+    },
 
-        {
-            title: "Confusion",
-            src: "son/confusion.mp3"
-        },
+ 
+    {
+        title: "Comet",
+        src: "son/Comet.mp3"
+    },
 
-        {
-            title: "Étoile lunaire",
-            src: "son/etoile lunaire.mp3"
-        },
+    {
+        title: "cosmic sylver",
+        src: "son/cosmic sylver.mp3"
+    },
+ 
+    
+     {
+        title: "Speed",
+        src: "son/speed.mp3"
+    },
 
-        {
-            title: "Fight",
-            src: "son/fight.mp3"
-        },
+    {
+        title: "flash ecarlate",
+        src: "son/flash ecarlate.mp3"
+    },
 
-        {
-            title: "Green Horizon",
-            src: "son/green horizon.mp3"
-        },
+    {
+        title: "metal chaos",
+        src: "son/metal chaos.mp3"
+    },
 
-        {
-            title: "Lune solaire",
-            src: "son/lune solaire.mp3"
-        },
+    
+    {
+        title: "Pixel Rush",
+        src: "son/Pixel Rush.mp3"
+    },
+ 
 
-        {
-            title: "Numérique spatial",
-            src: "son/numerique spatial.mp3"
-        },
+    {
+        title: "retro gold",
+        src: "son/retro gold.mp3"
+    },
 
-        {
-            title: "Orbite coloré",
-            src: "son/orbite coloré.mp3"
-        },
+    {
+        title: "rupture celeste",
+        src: "son/rupture celeste.mp3"
+    },
 
-        {
-            title: "Reflection",
-            src: "son/reflection.mp3"
-        },
+    {
+        title: "stone fire",
+        src: "son/stone fire.mp3"
+    },
 
-        {
-            title: "Revolt",
-            src: "son/revolt.mp3"
-        },
+    {
+        title: "temporis",
+        src: "son/temporis.mp3"
+    },
 
-        {
-            title: "Saturn 80",
-            src: "son/saturn 80.mp3"
-        },
+    {
+        title: "stylise rock",
+        src: "son/stylise rock.mp3"
+    },
 
-        {
-            title: "Speed",
-            src: "son/speed.mp3"
-        },
+    {
+        title: "union world",
+        src: "son/union world.mp3"
+    },
+ 
+    {
+        title: "Boss",
+        src: "son/boss.mp3"
+    },
 
-        {
-            title: "Tension",
-            src: "son/tension.mp3"
-        }
-
+    {
+        title: "Generique de fin",
+        src: "son/generique de fin ne pas mettre dans le jeu.mp3"
+    }
+       
     ];
 
 
