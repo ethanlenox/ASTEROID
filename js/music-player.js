@@ -43,46 +43,16 @@ const musicDuration =
 
 const musicPlaylist = [
 
-    {
-        title: "A vos postes",
-        src: "son/A vos postes.mp3"
-    },
-
-    {
-        title: "Alerte astre",
-        src: "son/alerte astre.mp3"
-    },
-
-    {
-        title: "Asteroid Destroyer Theme",
-        src: "son/asteroid destroyer theme musicale.mp3"
-    },
-
-    {
-        title: "Bonus",
-        src: "son/bonus.mp3"
-    },
-
-    {
-        title: "Boss",
-        src: "son/boss.mp3"
-    },
-
-    {
-        title: "Confusion",
-        src: "son/confusion.mp3"
+{
+        title: "Saturn 80",
+        src: "son/saturn 80.mp3"
     },
 
     {
         title: "Étoile lunaire",
         src: "son/etoile lunaire.mp3"
     },
-
-    {
-        title: "Fight",
-        src: "son/fight.mp3"
-    },
-
+ 
     {
         title: "Green Horizon",
         src: "son/green horizon.mp3"
@@ -103,6 +73,44 @@ const musicPlaylist = [
         src: "son/orbite coloré.mp3"
     },
 
+ 
+    {
+        title: "Asteroid Destroyer Theme",
+        src: "son/asteroid destroyer theme musicale.mp3"
+    },
+
+    {
+        title: "Alerte astre",
+        src: "son/alerte astre.mp3"
+    },
+ 
+    {
+        title: "souffrance",
+        src: "son/bonus.mp3"
+    },
+
+     {
+        title: "Speed",
+        src: "son/speed.mp3"
+    },
+
+    {
+        title: "Tension",
+        src: "son/tension.mp3"
+    },
+
+    {
+        title: "Confusion",
+        src: "son/confusion.mp3"
+    },
+
+    
+    {
+        title: "Fight",
+        src: "son/fight.mp3"
+    },
+ 
+
     {
         title: "Reflection",
         src: "son/reflection.mp3"
@@ -113,19 +121,10 @@ const musicPlaylist = [
         src: "son/revolt.mp3"
     },
 
+    
     {
-        title: "Saturn 80",
-        src: "son/saturn 80.mp3"
-    },
-
-    {
-        title: "Speed",
-        src: "son/speed.mp3"
-    },
-
-    {
-        title: "Tension",
-        src: "son/tension.mp3"
+        title: "Boss",
+        src: "son/boss.mp3"
     },
 
     {
