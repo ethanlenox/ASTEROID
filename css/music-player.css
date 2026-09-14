@@ -456,6 +456,11 @@
         calc(100% - 40px)
     );
 
+    margin-left: auto;
+
+    margin-right: auto;
+
+
     min-height: 64px;
 
     display: flex;
