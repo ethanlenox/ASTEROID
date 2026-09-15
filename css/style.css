@@ -1310,8 +1310,8 @@ h2 {
 
 .orbesonic-card-image img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     object-fit: contain;
 }
 
@@ -1321,8 +1321,8 @@ h2 {
 
 .asteroid-card-image img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     object-fit: contain;
     object-position: center;
     margin: 0 auto;
@@ -1339,7 +1339,7 @@ h2 {
 
 .plateforme-card-image img {
     display: block;
-    width: 30%;
-    height: 30%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
