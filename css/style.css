@@ -1332,9 +1332,21 @@ h2 {
    TAILLE CARTES ORBESONIC
    ========================================================= */
 
+/* =========================================================
+   TAILLE CARTES ORBESONIC
+   ========================================================= */
+
 .orbesonic-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 160px);
+    gap: 20px;
+    justify-content: center;
 }
+
+.orbesonic-grid .asteroid-card {
+    width: 160px;
+    height: 160px;
+}
+
 
 
 /* =========================================================
