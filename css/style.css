@@ -1315,22 +1315,6 @@ h2 {
     object-fit: contain;
 }
 
-/* =========================================================
-   CENTRAGE DES IMAGES ORBESONIC
-   ========================================================= */
-
-.asteroid-card-image img {
-    display: block;
-    width: 50%;
-    height: 50%;
-    object-fit: contain;
-    object-position: center;
-    margin: 0 auto;
-}
-
-/* =========================================================
-   TAILLE CARTES ORBESONIC
-   ========================================================= */
 
 /* =========================================================
    TAILLE CARTES ORBESONIC
@@ -1347,7 +1331,22 @@ h2 {
     height: 160px;
 }
 
+/* =========================================================
+   CENTRAGE IMAGES ORBESONIC
+   ========================================================= */
 
+.orbesonic-grid .asteroid-card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbesonic-grid .asteroid-card-image img {
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    object-fit: contain;
+}
 
 /* =========================================================
    IMAGES PLATEFORMES
