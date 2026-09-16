@@ -1361,12 +1361,17 @@ h2 {
 .asteroid-card-image {
     position: relative;
     overflow: hidden;
+
+    width: 100%;
+    height: 220px;
 }
 
 .asteroid-card-image img {
     display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: contain;
 }
 
