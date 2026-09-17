@@ -14,7 +14,7 @@
         padding: 90px 0;
     }
 
-    .concept-flow,
+    .concept-flow,FGD
     .features-grid {
         grid-template-columns: 1fr;
     }
@@ -113,14 +113,39 @@
     }
 
 
-    /* VIDÉO */
+/* =========================================================
+   VIDÉOS
+   ========================================================= */
 
 .video-placeholder {
-    width: 100%;
+    border-radius: var(--radius-small);
+}
+
+
+/* Grande vidéo */
+.video-size-large {
+    width: min(640px, calc(100vw - 28px));
     height: auto;
 
-    border-radius:
-        var(--radius-small);
+    aspect-ratio: 16 / 9;
+}
+
+
+/* Petite vidéo paysage */
+.video-size-small-landscape {
+    width: min(320px, calc(100vw - 28px));
+    height: auto;
+
+    aspect-ratio: 16 / 9;
+}
+
+
+/* Petite vidéo portrait */
+.video-size-small-portrait {
+    width: min(180px, calc(100vw - 28px));
+    height: auto;
+
+    aspect-ratio: 9 / 16;
 }
 
 
