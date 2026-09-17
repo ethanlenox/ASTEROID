@@ -609,32 +609,30 @@
 @media (max-width: 240px) {
 
     .video-player-controls {
-
-        gap: 3px;
-
-        padding: 6px;
-
+        gap:
+            3px;
+        padding:
+            6px;
     }
-
     .video-player-time {
-
-        display: none;
-
+        display:
+            none;
     }
-
     .video-player-progress {
-
-        min-width: 20px;
-
+        min-width:
+            20px;
     }
-
     .video-player-button {
-
-        width: 29px;
-        height: 29px;
-
+        width:
+            29px;
+        height:
+            29px;
     }
-   
+    .video-player-pip {
+
+        display:
+            none;
+    }
 }
 
 
