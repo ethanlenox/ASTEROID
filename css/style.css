@@ -599,17 +599,49 @@ h2 {
 
 
 /* =========================================================
-   9. VIDÉO
+   TAILLES DES LECTEURS VIDÉO
    ========================================================= */
 
-.video-placeholder {
-
+/* Grande vidéo — 640 × 360 */
+.video-size-large {
     width: 640px;
     height: 360px;
+}
 
+
+/* Petite vidéo paysage — 320 × 180 */
+.video-size-small-landscape {
+    width: 320px;
+    height: 180px;
+}
+
+
+/* Petite vidéo portrait — 180 × 320 */
+.video-size-small-portrait {
+    width: 180px;
+    height: 320px;
+}
+
+
+/* Centrage de tous les lecteurs */
+.video-placeholder {
     margin-left: auto;
     margin-right: auto;
 
+    position: relative;
+}
+
+
+/* La vidéo occupe exactement son lecteur */
+.video-placeholder video {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    background: #000;
 }
 
 
