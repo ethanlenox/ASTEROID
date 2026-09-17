@@ -100,26 +100,32 @@
    CONTRÔLES
    ========================================================= */
 
+/* =========================================================
+   CONTRÔLES — CENTRAGE RESPONSIVE
+   ========================================================= */
+
 .video-player-controls {
 
     position: absolute;
 
-    left: 50%;
-    right: auto;
+    left: 0;
+    right: 0;
     bottom: 0;
 
-    transform:
-        translateX(-50%);
+    width: 100%;
 
     z-index: 5;
 
     display: flex;
 
     align-items: center;
+    justify-content: center;
 
     gap: 8px;
 
     padding: 12px;
+
+    box-sizing: border-box;
 
     background:
         linear-gradient(
@@ -129,10 +135,6 @@
         );
 
     opacity: 1;
-
-    transform:
-        translateX(-50%);
-
 
     transition:
         opacity var(--transition-normal),
@@ -147,13 +149,12 @@
     opacity: 0;
 
     transform:
-        translateX(-50%)
         translateY(10px);
-
 
     pointer-events: none;
 
 }
+
 
 
 /* =========================================================
@@ -589,44 +590,51 @@
 
     }
 
+
+    .video-player-progress {
+
+        min-width: 0;
+
+    }
+
+
 }
 
 
 /* =========================================================
-   TRÈS PETITS ÉCRANS
+   TRÈS PETITS LECTEURS
+   Adaptation automatique aux vidéos étroites
    ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 240px) {
 
     .video-player-controls {
 
-        padding:
-            6px;
+        gap: 3px;
+
+        padding: 6px;
 
     }
-
-
-    .video-player-button {
-
-        width:
-            29px;
-
-        height:
-            29px;
-
-    }
-
 
     .video-player-time {
 
-        min-width:
-            30px;
-
-        font-size:
-            0.58rem;
+        display: none;
 
     }
 
+    .video-player-progress {
+
+        min-width: 20px;
+
+    }
+
+    .video-player-button {
+
+        width: 29px;
+        height: 29px;
+
+    }
+   
 }
 
 
