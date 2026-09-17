@@ -104,9 +104,12 @@
 
     position: absolute;
 
-    left: 0;
-    right: 0;
+    left: 50%;
+    right: auto;
     bottom: 0;
+
+    transform:
+        translateX(-50%);
 
     z-index: 5;
 
@@ -128,7 +131,8 @@
     opacity: 1;
 
     transform:
-        translateY(0);
+        translateX(-50%);
+
 
     transition:
         opacity var(--transition-normal),
@@ -143,7 +147,9 @@
     opacity: 0;
 
     transform:
+        translateX(-50%)
         translateY(10px);
+
 
     pointer-events: none;
 
