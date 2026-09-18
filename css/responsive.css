@@ -112,6 +112,26 @@
         padding: 24px;
     }
 
+   /* =========================================================
+   CENTRAGE PAGE MÉDIAS — MOBILE
+   ========================================================= */
+
+#media-page {
+    text-align: center;
+}
+
+#media-page .section-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+#media-page .music-player {
+    width: 100%;
+}
+
 
 /* =========================================================
    VIDÉOS
