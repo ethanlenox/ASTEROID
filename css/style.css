@@ -662,6 +662,12 @@ h2 {
         );
 }
 
+/* ESPACE SOUS LA VIDÉO DE PRÉSENTATION */
+
+#concept .video-size-small-landscape {
+    margin-bottom: 20px;
+}
+
 
 .concept-flow {
     display: grid;
