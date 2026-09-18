@@ -78,7 +78,7 @@
 
     flex-shrink: 0;
 
-    margin: 0 -20px 0 0;
+    margin: 0;
 
     object-fit: cover;
 
@@ -90,7 +90,12 @@
 
     box-shadow:
         var(--glow-cyan);
+
+    position: relative;
+
+    right: -15px;
 }
+
 
 
 .music-player-label {
