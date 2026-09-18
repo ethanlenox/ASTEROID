@@ -899,6 +899,93 @@ h2 {
     color: var(--color-text-muted);
 }
 
+/* =========================================================
+   FONDS DES CARTES FONCTIONNALITÉS
+   ========================================================= */
+
+.feature-niveaux {
+    background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
+        url("../img/artwork/NIVO.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.feature-bonus {
+    background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
+        url("../img/artwork/BONUS.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.feature-malus {
+    background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
+        url("../img/artwork/MALUS.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.feature-plateformes {
+    background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
+        url("../img/artwork/PLATEFORME.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.feature-stages {
+    background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
+        url("../img/artwork/ORBESONIC.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.feature-asteroides {
+    background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
+        url("../img/artwork/asteroid.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 /* =========================================================
    12. MÉDIAS
