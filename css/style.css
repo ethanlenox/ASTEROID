@@ -1612,3 +1612,90 @@ h2 {
     object-fit: contain;
 }
 
+/* =========================================================
+   PAGE STAGES
+   ========================================================= */
+
+#stages-page {
+    padding-top: 140px;
+}
+
+
+#stages-page .section-content > p:not(.section-label) {
+    margin-bottom: 40px;
+}
+
+
+#stages-page .stages-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 40px 50px;
+
+    width: 100%;
+
+    margin-top: 50px;
+}
+
+
+#stages-page .stage-card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 100%;
+
+    padding: 20px;
+
+    border:
+        1px solid var(--color-border);
+
+    border-radius:
+        var(--radius-medium);
+
+    background:
+        rgba(5, 15, 28, 0.75);
+
+    transition:
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+
+#stages-page .stage-card:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        var(--glow-cyan);
+
+    transform:
+        translateY(-4px);
+}
+
+
+#stages-page .stage-card-video {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+
+#stages-page .stage-card h2 {
+    margin-top: 16px;
+    margin-bottom: 0;
+
+    color: var(--color-cyan);
+
+    font-size: 1rem;
+
+    text-align: center;
+}
