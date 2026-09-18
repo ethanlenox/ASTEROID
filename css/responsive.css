@@ -118,6 +118,7 @@
 
 #media-page {
     text-align: center;
+    padding-top: 100px;
 }
 
 #media-page .section-content {
@@ -131,6 +132,24 @@
 #media-page .music-player {
     width: 100%;
 }
+
+
+#media-page .media-page-actions {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+#media-page .media-page-actions .btn {
+    flex: 1;
+
+    max-width: 180px;
+}
+
 
 
 /* =========================================================
