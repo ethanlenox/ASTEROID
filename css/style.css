@@ -1699,3 +1699,31 @@ h2 {
 
     text-align: center;
 }
+/* =========================================================
+   BOUTONS NAVIGATION MÉDIAS
+   ========================================================= */
+
+.media-page-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    gap: 40px;
+}
+
+
+.media-page-actions .btn {
+    width: 300px;
+
+    min-height: 70px;
+
+    padding: 20px 30px;
+
+    font-size: 1rem;
+}
