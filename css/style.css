@@ -1704,10 +1704,12 @@ h2 {
    ========================================================= */
 
 .media-page-actions {
-    display: flex;
+    display: grid;
 
-    align-items: center;
-    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+
+    justify-items: center;
+
 
     width: 100%;
 
