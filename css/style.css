@@ -1167,7 +1167,6 @@ h2 {
 }
 
 /* =========================================================
-   INDEX
    MODULE COMMAND
    SECTION CONCEPT
    ========================================================= */
@@ -1433,12 +1432,11 @@ h2 {
 
     position: relative;
 
-    width: min(
-        760px,
-        100%
+    width: 180px;
+    height: 320px;
     );
 
-    margin: 0 auto 55px;
+    margin: 0 auto 40px;
 
     padding: 0;
 
