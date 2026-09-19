@@ -113,6 +113,87 @@
     }
 
    /* =========================================================
+   page acceuil
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    #concept .concept-flow {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    #concept .concept-item {
+
+        min-height: 280px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #concept.command-section {
+
+        padding-top: 80px;
+        padding-bottom: 90px;
+
+    }
+
+
+    .command-section-topline {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+
+    }
+
+
+    .command-section-title {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 24px 20px 26px;
+
+    }
+
+
+    .command-status {
+
+        margin-left: 18px;
+
+    }
+
+
+    .command-feed-header,
+    .command-feed-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+
+    }
+
+
+    .concept-item-content {
+
+        padding: 25px;
+
+    }
+
+}
+
+   /* =========================================================
    CENTRAGE PAGE MÉDIAS — MOBILE
    ========================================================= */
 
@@ -197,8 +278,6 @@
     }
 
 }
-
-
 
 /* =========================================================
    TRÈS PETITS ÉCRANS
@@ -502,3 +581,4 @@
     }
 
 }
+
