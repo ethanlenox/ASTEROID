@@ -2245,140 +2245,398 @@ h2 {
 
 /* =========================================================
    11. FONCTIONNALITÉS
+   MODULE 02 // SYSTEM CAPABILITIES
+   ========================================================= */
+
+.features-section {
+    position: relative;
+}
+
+
+/* =========================================================
+   GRILLE
    ========================================================= */
 
 .features-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(2, 1fr);
 
     gap: 20px;
+
+    width: 100%;
+
+    margin-top: 30px;
 }
 
 
+/* =========================================================
+   CARTE
+   ========================================================= */
+
 .feature-card {
-    padding: 30px;
+    position: relative;
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    padding: 0;
 
     border:
         1px solid var(--color-border);
 
-    background:
-        rgba(5, 15, 28, 0.75);
+    border-radius:
+        var(--radius-medium);
+
+    background-color:
+        rgba(5, 15, 28, 0.82);
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
 
     transition:
         border-color var(--transition-normal),
-        box-shadow var(--transition-normal);
+        box-shadow var(--transition-normal),
+        transform var(--transition-normal);
 }
 
 
-.feature-card:hover {
-    border-color:
-        var(--color-cyan);
+/* =========================================================
+   OVERLAY COMMUN
+   ========================================================= */
+
+.feature-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 9, 20, 0.62),
+            rgba(5, 9, 20, 0.82)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LIGNE CYAN SUPÉRIEURE
+   ========================================================= */
+
+.feature-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    z-index: 3;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--color-cyan),
+            transparent
+        );
 
     box-shadow:
-        var(--glow-cyan);
+        0 0 15px rgba(0, 229, 255, 0.7);
+
+    opacity: 0.35;
+
+    transition:
+        opacity var(--transition-normal);
+}
+
+
+/* =========================================================
+   CONTENU AU-DESSUS DE L'IMAGE
+   ========================================================= */
+
+.feature-card-header,
+.feature-card-content,
+.feature-card-footer {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.feature-card-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 18px 22px;
+
+    border-bottom:
+        1px solid rgba(0, 229, 255, 0.1);
+
+    background:
+        rgba(0, 8, 15, 0.38);
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   STATUT
+   ========================================================= */
+
+.feature-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 9px;
+
+    border:
+        1px solid rgba(57, 255, 136, 0.3);
+
+    background:
+        rgba(57, 255, 136, 0.05);
+
+    color:
+        var(--color-bonus);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.feature-status.danger {
+    border-color:
+        rgba(255, 48, 79, 0.35);
+
+    background:
+        rgba(255, 48, 79, 0.06);
+
+    color:
+        var(--color-danger-light);
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.feature-card-content {
+    flex: 1;
+
+    padding: 30px 25px 25px;
+}
+
+
+.feature-category {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        var(--color-cyan);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.22em;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.4);
 }
 
 
 .feature-card h3 {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 
-    color: var(--color-cyan);
+    color:
+        var(--color-white);
+
+    font-size: clamp(
+        1.4rem,
+        2.5vw,
+        2rem
+    );
+
+    letter-spacing: 0.02em;
+
+    text-shadow:
+        0 0 15px rgba(0, 229, 255, 0.18);
 }
 
 
 .feature-card p {
-    color: var(--color-text-muted);
+    max-width: 560px;
+
+    margin: 0;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.9rem;
+
+    line-height: 1.75;
 }
 
+
 /* =========================================================
-   FONDS DES CARTES FONCTIONNALITÉS
+   FOOTER
+   ========================================================= */
+
+.feature-card-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 14px 22px;
+
+    border-top:
+        1px solid rgba(0, 229, 255, 0.1);
+
+    background:
+        rgba(0, 8, 15, 0.42);
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+
+.feature-card-footer span:last-child {
+    color:
+        var(--color-cyan);
+
+    text-shadow:
+        0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.feature-card:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        var(--glow-cyan),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    transform:
+        translateY(-6px);
+}
+
+
+.feature-card:hover::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   FONDS DES CARTES
    ========================================================= */
 
 .feature-niveaux {
     background-image:
-        linear-gradient(
-            rgba(5, 9, 20, 0.68),
-            rgba(5, 9, 20, 0.68)
-        ),
         url("../img/artwork/NIVO.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 
 .feature-bonus {
     background-image:
-        linear-gradient(
-            rgba(5, 9, 20, 0.68),
-            rgba(5, 9, 20, 0.68)
-        ),
         url("../img/artwork/BONUS.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 
 .feature-malus {
     background-image:
-        linear-gradient(
-            rgba(5, 9, 20, 0.68),
-            rgba(5, 9, 20, 0.68)
-        ),
         url("../img/artwork/MALUS.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 
 .feature-plateformes {
     background-image:
-        linear-gradient(
-            rgba(5, 9, 20, 0.68),
-            rgba(5, 9, 20, 0.68)
-        ),
         url("../img/artwork/PLATEFORME.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 
 .feature-stages {
     background-image:
-        linear-gradient(
-            rgba(5, 9, 20, 0.68),
-            rgba(5, 9, 20, 0.68)
-        ),
         url("../img/artwork/ORBESONIC.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 
 .feature-asteroides {
     background-image:
-        linear-gradient(
-            rgba(5, 9, 20, 0.68),
-            rgba(5, 9, 20, 0.68)
-        ),
         url("../img/artwork/asteroid.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
+
+/* =========================================================
+   EFFET ACTIVE
+   ========================================================= */
+
+.feature-card:active {
+    transform:
+        translateY(0)
+        scale(0.985);
+
+    border-color:
+        var(--color-cyan);
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.7),
+        0 0 30px rgba(0, 229, 255, 0.3);
+}
 
 /* =========================================================
    12. MÉDIAS
