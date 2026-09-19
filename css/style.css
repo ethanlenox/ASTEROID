@@ -2639,17 +2639,174 @@ h2 {
 }
 
 /* =========================================================
-   12. MÉDIAS
+   12. MÉDIAS — MODULE 03
    ========================================================= */
 
-.media-preview-grid {
+#media-preview.command-section {
+    position: relative;
+}
+
+
+/* =========================================================
+   EN-TÊTE MODULE
+   ========================================================= */
+
+#media-preview .command-section-header {
+    margin-bottom: 35px;
+
+    border: 1px solid var(--color-border);
+
+    background:
+        rgba(5, 15, 28, 0.55);
+
+    box-shadow:
+        inset 0 0 35px rgba(0, 229, 255, 0.018);
+}
+
+
+#media-preview .command-section-topline {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 20px;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+#media-preview .command-section-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 30px;
+}
+
+
+#media-preview .command-section-title h2 {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   STATUT
+   ========================================================= */
+
+#media-preview .command-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 14px;
+
+    border:
+        1px solid rgba(57, 255, 136, 0.2);
+
+    background:
+        rgba(57, 255, 136, 0.035);
+
+    color:
+        var(--color-bonus);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    white-space: nowrap;
+}
+
+
+#media-preview .command-status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--color-bonus);
+
+    box-shadow:
+        0 0 8px var(--color-bonus);
+}
+
+
+/* =========================================================
+   MEDIA FEED
+   ========================================================= */
+
+#media-preview .command-feed {
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(5, 15, 28, 0.55);
+
+    box-shadow:
+        inset 0 0 40px rgba(0, 229, 255, 0.018);
+}
+
+
+/* =========================================================
+   BARRE SUPÉRIEURE DU FEED
+   ========================================================= */
+
+#media-preview .command-feed-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 20px;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   CARTE MÉDIA
+   ========================================================= */
+
+#media-preview .media-preview-grid {
     position: relative;
 
     display: block;
 
     min-height: 180px;
 
-    margin-bottom: 30px;
+    margin: 30px;
 
     padding: 34px 30px;
 
@@ -2674,7 +2831,10 @@ h2 {
 
     background-repeat: no-repeat;
 
-    color: var(--color-white);
+    color:
+        var(--color-white);
+
+    text-decoration: none;
 
     transition:
         border-color var(--transition-normal),
@@ -2683,7 +2843,11 @@ h2 {
 }
 
 
-.media-preview-grid::before {
+/* =========================================================
+   LIGNE CYAN
+   ========================================================= */
+
+#media-preview .media-preview-grid::before {
     content: "";
 
     position: absolute;
@@ -2712,21 +2876,26 @@ h2 {
 }
 
 
-.media-preview-grid span,
-.media-preview-grid h3,
-.media-preview-grid p {
+/* =========================================================
+   CONTENU DE LA CARTE
+   ========================================================= */
+
+#media-preview .media-preview-grid span,
+#media-preview .media-preview-grid h3,
+#media-preview .media-preview-grid p {
     position: relative;
 
     z-index: 1;
 }
 
 
-.media-preview-grid span {
+#media-preview .media-preview-grid span {
     display: block;
 
     margin-bottom: 12px;
 
-    color: var(--color-cyan);
+    color:
+        var(--color-cyan);
 
     font-size: 0.75rem;
 
@@ -2738,21 +2907,33 @@ h2 {
 }
 
 
-.media-preview-grid h3 {
+#media-preview .media-preview-grid h3 {
     margin-bottom: 12px;
+
+    color:
+        var(--color-white);
 
     font-size: 2rem;
 }
 
 
-.media-preview-grid p {
+#media-preview .media-preview-grid p {
     max-width: 500px;
 
-    color: var(--color-text);
+    margin-bottom: 0;
+
+    color:
+        var(--color-text);
+
+    line-height: 1.7;
 }
 
 
-.media-preview-grid:hover {
+/* =========================================================
+   HOVER CARTE
+   ========================================================= */
+
+#media-preview .media-preview-grid:hover {
     border-color:
         var(--color-border-strong);
 
@@ -2764,9 +2945,51 @@ h2 {
 }
 
 
-.media-preview-grid:hover::before {
+#media-preview .media-preview-grid:hover::before {
     opacity: 1;
 }
+
+
+/* =========================================================
+   BARRE INFÉRIEURE DU FEED
+   ========================================================= */
+
+#media-preview .command-feed-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 20px;
+
+    border-top:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   BOUTON
+   ========================================================= */
+
+#media-preview .media-page-actions {
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 40px;
+}
+
 
 
 /* =========================================================
