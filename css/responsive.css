@@ -395,3 +395,110 @@
         overflow: hidden;
     }
 }
+
+/* =======================
+   RESPONSIVE page le jeu
+   ======================= */
+
+@media (max-width: 800px) {
+
+    .game-dossier {
+        padding: 25px;
+    }
+
+
+    .dossier-meta {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .dossier-meta > div:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .dossier-meta > div:nth-child(-n + 2) {
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+
+    .tech-spec {
+        grid-template-columns: 1fr;
+    }
+
+
+    .mission-sequence {
+        grid-template-columns: 1fr;
+    }
+
+
+    .final-command {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .classified-header {
+        padding: 25px 20px;
+    }
+
+
+    .classified-topline {
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+
+    .game-dossier {
+        padding: 18px;
+    }
+
+
+    .dossier-meta {
+        grid-template-columns: 1fr;
+    }
+
+
+    .dossier-meta > div {
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+
+    .dossier-meta > div:last-child {
+        border-bottom: none;
+    }
+
+
+    .dossier-block {
+        padding: 25px 20px;
+    }
+
+
+    .terminal-content {
+        padding: 30px 20px;
+    }
+
+
+    .terminal-header {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .mission-alert {
+        line-height: 1.1;
+    }
+
+}
