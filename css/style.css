@@ -1436,7 +1436,10 @@ h2 {
     height: 180px;
     );
 
-    margin: 0 auto 40px;
+    .concept-flow {
+    margin-top: 20px;
+    }
+
 
     padding: 0;
 
