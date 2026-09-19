@@ -2803,7 +2803,8 @@ h2 {
     position: relative;
 
     display: block;
-
+   
+    width: 100%;
     min-height: 180px;
 
     margin-bottom: 30px;
