@@ -2806,7 +2806,7 @@ h2 {
 
     min-height: 180px;
 
-    margin: 30px;
+    margin-bottom: 30px;
 
     padding: 34px 30px;
 
@@ -2841,6 +2841,7 @@ h2 {
         box-shadow var(--transition-normal),
         transform var(--transition-normal);
 }
+
 
 
 /* =========================================================
