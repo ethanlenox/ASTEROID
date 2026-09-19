@@ -1798,577 +1798,85 @@ h2 {
     object-fit: cover;
 }
 
-/* =========================================================
-   ASTEROID DESTROYER
-   EFFETS HOLOGRAPHIQUES — PAGE LE JEU
-   ========================================================= */
-
 
 /* =========================================================
-   1. AMBIANCE GÉNÉRALE DE LA PAGE
+   PAGE — LE JEU / STORY
    ========================================================= */
 
 #game-page {
-    position: relative;
+    min-height: 100vh;
 
-    isolation: isolate;
+    padding-top: 140px;
+    padding-bottom: 140px;
 
     overflow: hidden;
-}
-
-
-/*
- * Halo lumineux principal
- */
-
-#game-page::before {
-    content: "";
-
-    position: absolute;
-
-    top: 18%;
-    left: 50%;
-
-    width: 700px;
-    height: 700px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
 
     background:
         radial-gradient(
-            circle,
+            circle at 50% 30%,
             rgba(0, 229, 255, 0.055),
-            rgba(0, 229, 255, 0.018) 35%,
-            transparent 70%
-        );
-
-    filter:
-        blur(10px);
-
-    pointer-events: none;
-
-    z-index: -2;
-}
-
-
-/*
- * Grille holographique
- */
-
-#game-page::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 229, 255, 0.025) 1px,
-            transparent 1px
+            transparent 35%
         ),
         linear-gradient(
-            90deg,
-            rgba(0, 229, 255, 0.025) 1px,
-            transparent 1px
+            180deg,
+            rgba(0, 229, 255, 0.015),
+            transparent 50%
         );
-
-    background-size:
-        55px 55px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            transparent,
-            black 15%,
-            black 80%,
-            transparent
-        );
-
-    -webkit-mask-image:
-        linear-gradient(
-            to bottom,
-            transparent,
-            black 15%,
-            black 80%,
-            transparent
-        );
-
-    pointer-events: none;
-
-    z-index: -3;
 }
 
 
 /* =========================================================
-   2. PETITES LIGNES DE SCAN
+   CONTENEUR DU RÉCIT
    ========================================================= */
 
 .game-story {
-    overflow: hidden;
+    position: relative;
 
-    isolation: isolate;
-}
+    width: min(
+        900px,
+        100%
+    );
 
+    margin: 55px auto 0;
 
-/*
- * Scanlines très discrètes
- */
+    padding: 55px 65px;
 
-.game-story::after {
-    content: "";
+    border:
+        1px solid var(--color-border);
 
-    position: absolute;
-
-    inset: 0;
+    border-radius:
+        var(--radius-medium);
 
     background:
-        repeating-linear-gradient(
-            0deg,
-            transparent 0px,
-            transparent 4px,
-            rgba(0, 229, 255, 0.018) 4px,
-            rgba(0, 229, 255, 0.018) 5px
+        linear-gradient(
+            145deg,
+            rgba(15, 35, 55, 0.68),
+            rgba(5, 15, 28, 0.88)
         );
 
-    pointer-events: none;
+    backdrop-filter:
+        blur(12px);
 
-    z-index: 10;
+    -webkit-backdrop-filter:
+        blur(12px);
 
-    opacity: 0.7;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025),
+        0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
 
-/* =========================================================
-   3. BALAYAGE HOLOGRAPHIQUE
-   ========================================================= */
+/* Ligne lumineuse supérieure */
 
 .game-story::before {
     content: "";
 
     position: absolute;
 
-    top: -10%;
-
-    left: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(0, 229, 255, 0.8),
-            transparent
-        );
-
-    box-shadow:
-        0 0 12px rgba(0, 229, 255, 0.6),
-        0 0 30px rgba(0, 229, 255, 0.25);
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    z-index: 11;
-
-    animation:
-        holographic-scan 8s linear infinite;
-}
-
-
-@keyframes holographic-scan {
-
-    0% {
-        top: -5%;
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 0.35;
-    }
-
-    15% {
-        opacity: 0.12;
-    }
-
-    45% {
-        opacity: 0.2;
-    }
-
-    55% {
-        opacity: 0.08;
-    }
-
-    95% {
-        opacity: 0.25;
-    }
-
-    100% {
-        top: 105%;
-        opacity: 0;
-    }
-
-}
-
-
-/* =========================================================
-   4. COINS TECHNIQUES DU TERMINAL
-   ========================================================= */
-
-.game-story {
-    --corner-size: 18px;
-}
-
-
-/*
- * Coin supérieur gauche
- */
-
-.game-story .story-opening::before {
-    content: "DATA_STREAM // 01";
-
-    display: block;
-
-    margin-bottom: 18px;
-
-    color: rgba(0, 229, 255, 0.45);
-
-    font-family: monospace;
-
-    font-size: 0.62rem;
-
-    letter-spacing: 0.2em;
-}
-
-
-/* =========================================================
-   5. TEXTE — LÉGER EFFET TERMINAL
-   ========================================================= */
-
-.game-story p {
-    position: relative;
-
-    z-index: 2;
-}
-
-
-/*
- * Les textes restent parfaitement lisibles.
- * L'effet lumineux est volontairement très léger.
- */
-
-.game-story .story-opening {
-    text-shadow:
-        0 0 20px rgba(0, 229, 255, 0.04);
-}
-
-
-/* =========================================================
-   6. EFFET SUR "JUSQU'À CE JOUR"
-   ========================================================= */
-
-.story-emphasis {
-    position: relative;
-
-    text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.25),
-        0 0 20px rgba(0, 229, 255, 0.15);
-}
-
-
-/* =========================================================
-   7. ALERTE — INTERFÉRENCE
-   ========================================================= */
-
-.story-alert {
-    position: relative;
-
-    padding: 15px 0;
-
-    overflow: hidden;
-}
-
-
-.story-alert::before {
-    content: "";
-
-    position: absolute;
-
     top: 0;
-    bottom: 0;
+    left: 8%;
+    right: 8%;
 
-    left: -30%;
-
-    width: 30%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 48, 79, 0.12),
-            transparent
-        );
-
-    animation:
-        alert-scan 4s linear infinite;
-}
-
-
-@keyframes alert-scan {
-
-    0% {
-        left: -30%;
-    }
-
-    100% {
-        left: 130%;
-    }
-
-}
-
-
-/* =========================================================
-   8. BLOC DONNÉES INCONNUES
-   ========================================================= */
-
-.story-warning {
-    overflow: hidden;
-
-    box-shadow:
-        inset 0 0 30px rgba(0, 229, 255, 0.025),
-        0 0 25px rgba(0, 229, 255, 0.025);
-}
-
-
-/*
- * Grille interne
- */
-
-.story-warning::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 229, 255, 0.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            rgba(0, 229, 255, 0.025) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        25px 25px;
-
-    opacity: 0.35;
-
-    pointer-events: none;
-}
-
-
-/*
- * Le texte reste au-dessus de la grille
- */
-
-.story-warning p,
-.story-warning .warning-label {
-    position: relative;
-
-    z-index: 2;
-}
-
-
-/* =========================================================
-   9. LABEL "DONNÉES INCONNUES"
-   ========================================================= */
-
-.warning-label {
-    position: relative;
-}
-
-
-.warning-label::after {
-    content: "_";
-
-    margin-left: 4px;
-
-    animation:
-        terminal-cursor 1s steps(2) infinite;
-}
-
-
-@keyframes terminal-cursor {
-
-    0%,
-    50% {
-        opacity: 1;
-    }
-
-    51%,
-    100% {
-        opacity: 0;
-    }
-
-}
-
-
-/* =========================================================
-   10. ÉTAT DE LA MISSION
-   ========================================================= */
-
-.mission-status {
-    position: relative;
-}
-
-
-/*
- * Ligne verticale de connexion
- */
-
-.mission-status::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    bottom: 0;
-
-    left: 23px;
-
-    width: 1px;
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--color-cyan),
-            rgba(0, 229, 255, 0.08),
-            transparent
-        );
-
-    box-shadow:
-        0 0 8px rgba(0, 229, 255, 0.35);
-
-    opacity: 0.5;
-}
-
-
-.mission-status p {
-    position: relative;
-
-    z-index: 2;
-}
-
-
-/* =========================================================
-   11. NUMÉROS DE MISSION
-   ========================================================= */
-
-.mission-number {
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 28px;
-    height: 28px;
-
-    flex-shrink: 0;
-
-    border:
-        1px solid rgba(0, 229, 255, 0.35);
-
-    background:
-        rgba(5, 9, 20, 0.95);
-
-    box-shadow:
-        0 0 10px rgba(0, 229, 255, 0.1);
-
-    z-index: 3;
-}
-
-
-/* =========================================================
-   12. HOVER DES ÉTAPES
-   ========================================================= */
-
-.mission-status p:hover .mission-number {
-    color: var(--color-white);
-
-    border-color:
-        var(--color-cyan);
-
-    background:
-        rgba(0, 229, 255, 0.12);
-
-    box-shadow:
-        var(--glow-cyan);
-}
-
-
-/* =========================================================
-   13. COMMANDE FINALE
-   ========================================================= */
-
-.game-command {
-    position: relative;
-
-    padding: 25px 0;
-}
-
-
-.game-command::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border-top:
-        1px solid rgba(0, 229, 255, 0.08);
-
-    border-bottom:
-        1px solid rgba(0, 229, 255, 0.08);
-
-    background:
-        rgba(0, 229, 255, 0.015);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   14. LIGNE DE COMMANDE
-   ========================================================= */
-
-.command-line {
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-.command-line::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -100%;
-
-    width: 100%;
     height: 1px;
 
     background:
@@ -2380,159 +1888,483 @@ h2 {
         );
 
     box-shadow:
-        0 0 10px rgba(0, 229, 255, 0.7);
+        0 0 15px rgba(0, 229, 255, 0.7);
 
-    animation:
-        command-line-scan 4s linear infinite;
-}
-
-
-@keyframes command-line-scan {
-
-    0% {
-        left: -100%;
-    }
-
-    100% {
-        left: 100%;
-    }
-
+    opacity: 0.65;
 }
 
 
 /* =========================================================
-   15. "À VOUS DE JOUER"
+   TEXTE
    ========================================================= */
 
-.game-command p {
-    position: relative;
+.game-story p {
+    margin-bottom: 30px;
 
-    z-index: 2;
+    color: var(--color-text);
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+}
+
+
+/* Premier paragraphe */
+
+.game-story .story-opening {
+    margin-bottom: 45px;
+
+    color: var(--color-white);
+
+    font-size: 1.2rem;
+
+    line-height: 1.85;
 }
 
 
 /* =========================================================
-   16. PETIT GLITCH TRÈS DISCRET
+   EMPHASE
    ========================================================= */
 
-.game-command p::before,
-.game-command p::after {
-    content: "À vous de jouer.";
+.story-emphasis {
+    display: inline-block;
 
-    position: absolute;
+    margin-left: 5px;
 
-    inset: 0;
+    color: var(--color-white);
 
-    opacity: 0;
+    font-weight: 800;
 
-    pointer-events: none;
-}
-
-
-.game-command p::before {
-    color: #00ffff;
-
-    transform:
-        translateX(-2px);
-
-    animation:
-        command-glitch-cyan 6s infinite;
-}
-
-
-.game-command p::after {
-    color: #ff304f;
-
-    transform:
-        translateX(2px);
-
-    animation:
-        command-glitch-red 6s infinite;
-}
-
-
-@keyframes command-glitch-cyan {
-
-    0%,
-    88%,
-    100% {
-        opacity: 0;
-    }
-
-    89% {
-        opacity: 0.35;
-    }
-
-    90% {
-        opacity: 0;
-    }
-
-    92% {
-        opacity: 0.2;
-    }
-
-    93% {
-        opacity: 0;
-    }
-
-}
-
-
-@keyframes command-glitch-red {
-
-    0%,
-    90%,
-    100% {
-        opacity: 0;
-    }
-
-    91% {
-        opacity: 0.3;
-    }
-
-    92% {
-        opacity: 0;
-    }
-
-    94% {
-        opacity: 0.15;
-    }
-
-    95% {
-        opacity: 0;
-    }
-
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 
 /* =========================================================
-   17. PETITES MARQUES DE TERMINAL
+   ALERTE
    ========================================================= */
 
-.game-story {
-    background-image:
+.story-alert {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin: 50px 0;
+
+    color: var(--color-danger);
+
+    font-family: monospace;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 10px rgba(255, 48, 79, 0.6);
+}
+
+
+.story-alert::before,
+.story-alert::after {
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
         linear-gradient(
             90deg,
-            transparent 49.9%,
-            rgba(0, 229, 255, 0.018) 50%,
-            transparent 50.1%
+            transparent,
+            var(--color-danger)
+        );
+
+    box-shadow:
+        0 0 8px rgba(255, 48, 79, 0.4);
+}
+
+
+.story-alert::after {
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-danger),
+            transparent
         );
 }
 
 
 /* =========================================================
-   18. RÉDUCTION DES ANIMATIONS
+   PEMP
    ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+.game-story strong {
+    color: var(--color-white);
 
-    .game-story::before,
-    .story-alert::before,
-    .warning-label::after,
-    .command-line::after,
-    .game-command p::before,
-    .game-command p::after {
-        animation: none !important;
+    font-weight: 800;
+
+    text-shadow:
+        0 0 8px rgba(0, 229, 255, 0.15);
+}
+
+
+/* =========================================================
+   ORBESONIC
+   ========================================================= */
+
+.orbesonic-title {
+    color: var(--color-cyan) !important;
+
+    font-family: monospace;
+
+    letter-spacing: 0.12em;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.65),
+        0 0 25px rgba(0, 229, 255, 0.25);
+}
+
+
+/* =========================================================
+   BLOC DONNÉES ÉTRANGES
+   ========================================================= */
+
+.story-warning {
+    position: relative;
+
+    margin: 55px 0;
+
+    padding: 30px 32px;
+
+    border:
+        1px solid rgba(0, 229, 255, 0.22);
+
+    border-left:
+        3px solid var(--color-cyan);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.055),
+            rgba(0, 229, 255, 0.015),
+            transparent
+        );
+
+    box-shadow:
+        inset 12px 0 30px rgba(0, 229, 255, 0.025);
+}
+
+
+.story-warning::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 80px;
+    height: 80px;
+
+    border-top:
+        1px solid rgba(0, 229, 255, 0.25);
+
+    border-right:
+        1px solid rgba(0, 229, 255, 0.25);
+}
+
+
+.story-warning p {
+    margin-bottom: 20px;
+}
+
+
+.story-warning p:last-child {
+    margin-bottom: 0;
+}
+
+
+.warning-label {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: var(--color-cyan);
+
+    font-family: monospace;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+
+/* =========================================================
+   UNE SEULE CERTITUDE
+   ========================================================= */
+
+.story-certainty {
+    margin-top: 55px;
+
+    color: var(--color-white) !important;
+
+    font-family: monospace;
+
+    font-size: 0.85rem !important;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.25);
+}
+
+
+/* =========================================================
+   ÉTAT DE LA MISSION
+   ========================================================= */
+
+.mission-status {
+    margin: 30px 0 55px;
+
+    border-top:
+        1px solid rgba(0, 229, 255, 0.2);
+}
+
+
+.mission-status p {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin: 0;
+
+    padding: 18px 10px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    color: var(--color-white);
+
+    font-family: monospace;
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+    transition:
+        background var(--transition-normal),
+        padding-left var(--transition-normal);
+}
+
+
+.mission-status p:hover {
+    padding-left: 18px;
+
+    background:
+        rgba(0, 229, 255, 0.035);
+}
+
+
+.mission-number {
+    min-width: 28px;
+
+    color: var(--color-cyan);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    opacity: 0.75;
+
+    text-shadow:
+        0 0 8px rgba(0, 229, 255, 0.5);
+}
+
+
+/* =========================================================
+   À VOUS DE JOUER
+   ========================================================= */
+
+.game-command {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 60px;
+}
+
+
+.game-command p {
+    margin: 0;
+
+    color: var(--color-cyan);
+
+    font-family: monospace;
+
+    font-size: 1.05rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.7),
+        0 0 30px rgba(0, 229, 255, 0.25);
+
+    animation:
+        command-glow 3s ease-in-out infinite;
+}
+
+
+.command-line {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 229, 255, 0.6)
+        );
+
+    box-shadow:
+        0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+
+.command-line:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.6),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes command-glow {
+
+    0%,
+    100% {
+        opacity: 0.8;
+
+        text-shadow:
+            0 0 10px rgba(0, 229, 255, 0.5),
+            0 0 25px rgba(0, 229, 255, 0.2);
+    }
+
+    50% {
+        opacity: 1;
+
+        text-shadow:
+            0 0 12px rgba(0, 229, 255, 0.8),
+            0 0 35px rgba(0, 229, 255, 0.4);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #game-page {
+        padding-top: 110px;
+        padding-bottom: 100px;
+    }
+
+
+    .game-story {
+        margin-top: 40px;
+
+        padding: 35px 22px;
+    }
+
+
+    .game-story p {
+        font-size: 0.95rem;
+
+        line-height: 1.8;
+    }
+
+
+    .game-story .story-opening {
+        font-size: 1.08rem;
+
+        line-height: 1.75;
+    }
+
+
+    .story-warning {
+        padding: 25px 20px;
+
+        margin: 40px 0;
+    }
+
+
+    .story-alert {
+        gap: 10px;
+
+        font-size: 0.65rem;
+
+        letter-spacing: 0.12em;
+    }
+
+
+    .mission-status p {
+        gap: 12px;
+
+        padding: 16px 4px;
+
+        font-size: 0.8rem;
+    }
+
+
+    .game-command {
+        gap: 10px;
+
+        margin-top: 45px;
+    }
+
+
+    .game-command p {
+        font-size: 0.8rem;
+
+        letter-spacing: 0.1em;
     }
 
 }
