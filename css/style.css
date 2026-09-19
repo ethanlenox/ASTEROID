@@ -2803,13 +2803,14 @@ h2 {
     position: relative;
 
     display: block;
-   
-    width: 100%;
-    min-height: 180px;
 
-    margin-bottom: 30px;
+    width: 100%;
+    min-height: 300px;
+
+    margin: 0;
 
     padding: 34px 30px;
+
 
     overflow: hidden;
 
