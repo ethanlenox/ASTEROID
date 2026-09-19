@@ -14,7 +14,7 @@
         padding: 90px 0;
     }
 
-    .concept-flow,FGD
+    .concept-flow,
     .features-grid {
         grid-template-columns: 1fr;
     }
