@@ -596,6 +596,575 @@ h2 {
 
 }
 
+/* =========================================================
+   ACCUEIL
+   BRIEFING PRÉ-COMBAT
+   ASTÉROÏD DESTROYER
+   ========================================================= */
+
+
+/* =========================================================
+   HERO — COMMAND CENTER
+   ========================================================= */
+
+#hero.briefing-hero {
+
+    min-height: 100vh;
+
+    padding-top: 120px;
+    padding-bottom: 80px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(0, 229, 255, 0.10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 70%,
+            rgba(0, 229, 255, 0.04),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(5, 9, 20, 0.25),
+            rgba(5, 9, 20, 0.85)
+        );
+}
+
+
+/* =========================================================
+   BANDEAU COMMAND
+   ========================================================= */
+
+.briefing-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    max-width: 900px;
+
+    margin: 0 auto 35px;
+
+    padding: 10px 16px;
+
+    border-top:
+        1px solid var(--color-border);
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    color: var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    background:
+        rgba(0, 229, 255, 0.025);
+}
+
+
+.briefing-header span:first-child {
+
+    color:
+        var(--color-cyan);
+}
+
+
+/* =========================================================
+   ALERTE
+   ========================================================= */
+
+.briefing-alert {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    padding: 8px 14px;
+
+    border:
+        1px solid rgba(255, 48, 79, 0.35);
+
+    background:
+        rgba(255, 48, 79, 0.05);
+
+    color:
+        var(--color-danger-light);
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    text-shadow:
+        0 0 10px rgba(255, 48, 79, 0.3);
+}
+
+
+.briefing-alert-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--color-danger);
+
+    box-shadow:
+        0 0 8px var(--color-danger);
+
+    animation:
+        briefing-danger-pulse 1.4s infinite;
+}
+
+
+@keyframes briefing-danger-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+#hero.briefing-hero .hero-content h1 {
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 15px rgba(0, 229, 255, 0.5),
+        0 0 45px rgba(0, 229, 255, 0.25),
+        0 0 100px rgba(0, 229, 255, 0.12);
+}
+
+
+#hero.briefing-hero .hero-label {
+
+    margin-bottom: 15px;
+
+    letter-spacing: 0.35em;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+#hero.briefing-hero .hero-description {
+
+    max-width: 650px;
+
+    margin-bottom: 28px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   STATUT OPÉRATIONNEL
+   ========================================================= */
+
+.briefing-status-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    width: min(
+        650px,
+        100%
+    );
+
+    margin: 30px auto 35px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(5, 15, 28, 0.65);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+.briefing-status-grid > div {
+
+    padding: 17px 15px;
+
+    border-right:
+        1px solid var(--color-border);
+}
+
+
+.briefing-status-grid > div:last-child {
+
+    border-right: none;
+}
+
+
+.briefing-status-grid span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.briefing-status-grid strong {
+
+    color:
+        var(--color-danger-light);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.1em;
+
+    text-shadow:
+        0 0 8px rgba(255, 48, 79, 0.25);
+}
+
+
+.briefing-status-grid .status-online {
+
+    color:
+        var(--color-bonus);
+
+    text-shadow:
+        0 0 8px rgba(57, 255, 136, 0.3);
+}
+
+
+/* =========================================================
+   GAMEPLAY
+   ========================================================= */
+
+#hero.briefing-hero .hero-gameplay-label {
+
+    margin-top: 25px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   VIDÉO
+   ========================================================= */
+
+#hero.briefing-hero .video-placeholder {
+
+    position: relative;
+
+    border:
+        1px solid var(--color-border-strong);
+
+    box-shadow:
+        0 0 0 1px rgba(0, 229, 255, 0.03),
+        0 0 35px rgba(0, 229, 255, 0.10),
+        0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+
+#hero.briefing-hero .video-placeholder::before {
+
+    content: "LIVE // GAMEPLAY FEED";
+
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    z-index: 3;
+
+    padding: 5px 9px;
+
+    background:
+        rgba(5, 9, 20, 0.85);
+
+    border:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-cyan);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+#hero.briefing-hero .video-placeholder::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--color-cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.7);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BOUTONS
+   ========================================================= */
+
+#hero.briefing-hero .hero-actions {
+
+    margin-top: 35px;
+}
+
+
+#hero.briefing-hero .hero-actions .btn {
+
+    min-width: 190px;
+}
+
+
+/* =========================================================
+   STATUS FINAL
+   ========================================================= */
+
+.briefing-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.briefing-footer strong {
+
+    color:
+        var(--color-bonus);
+
+    text-shadow:
+        0 0 8px rgba(57, 255, 136, 0.35);
+}
+
+
+/* =========================================================
+   SECTIONS — STYLE BRIEFING
+   ========================================================= */
+
+.briefing-section {
+
+    position: relative;
+}
+
+
+/* =========================================================
+   CONCEPT
+   ========================================================= */
+
+#concept.briefing-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 229, 255, 0.025),
+            transparent 25%,
+            rgba(0, 229, 255, 0.015)
+        );
+}
+
+
+#concept.briefing-section .section-label::before {
+
+    content: "01 // ";
+
+    color:
+        var(--color-text-muted);
+}
+
+
+#concept.briefing-section h2 {
+
+    position: relative;
+
+    padding-left: 18px;
+
+    border-left:
+        2px solid var(--color-cyan);
+}
+
+
+/* =========================================================
+   FONCTIONNALITÉS
+   ========================================================= */
+
+#features.briefing-section {
+
+    background:
+        rgba(0, 0, 0, 0.08);
+}
+
+
+#features.briefing-section .section-label::before {
+
+    content: "02 // ";
+
+    color:
+        var(--color-text-muted);
+}
+
+
+#features.briefing-section h2 {
+
+    position: relative;
+
+    padding-left: 18px;
+
+    border-left:
+        2px solid var(--color-cyan);
+}
+
+
+/* =========================================================
+   MÉDIAS
+   ========================================================= */
+
+#media-preview.briefing-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 229, 255, 0.015),
+            rgba(0, 229, 255, 0.035)
+        );
+}
+
+
+#media-preview.briefing-section .section-label::before {
+
+    content: "03 // ";
+
+    color:
+        var(--color-text-muted);
+}
+
+
+#media-preview.briefing-section h2 {
+
+    position: relative;
+
+    padding-left: 18px;
+
+    border-left:
+        2px solid var(--color-cyan);
+}
+
+
+/* =========================================================
+   EFFET TERMINAL / LIGNES TECHNIQUES
+   ========================================================= */
+
+#concept.briefing-section::before,
+#features.briefing-section::before,
+#media-preview.briefing-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: min(
+        1200px,
+        calc(100% - 40px)
+    );
+
+    height: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 229, 255, 0.25),
+            transparent
+        );
+
+    pointer-events: none;
+}
 
 
 /* =========================================================
