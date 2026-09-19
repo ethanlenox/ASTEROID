@@ -1797,3 +1797,742 @@ h2 {
 
     object-fit: cover;
 }
+
+/* =========================================================
+   ASTEROID DESTROYER
+   EFFETS HOLOGRAPHIQUES — PAGE LE JEU
+   ========================================================= */
+
+
+/* =========================================================
+   1. AMBIANCE GÉNÉRALE DE LA PAGE
+   ========================================================= */
+
+#game-page {
+    position: relative;
+
+    isolation: isolate;
+
+    overflow: hidden;
+}
+
+
+/*
+ * Halo lumineux principal
+ */
+
+#game-page::before {
+    content: "";
+
+    position: absolute;
+
+    top: 18%;
+    left: 50%;
+
+    width: 700px;
+    height: 700px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 229, 255, 0.055),
+            rgba(0, 229, 255, 0.018) 35%,
+            transparent 70%
+        );
+
+    filter:
+        blur(10px);
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+/*
+ * Grille holographique
+ */
+
+#game-page::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 229, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 15%,
+            black 80%,
+            transparent
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 15%,
+            black 80%,
+            transparent
+        );
+
+    pointer-events: none;
+
+    z-index: -3;
+}
+
+
+/* =========================================================
+   2. PETITES LIGNES DE SCAN
+   ========================================================= */
+
+.game-story {
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/*
+ * Scanlines très discrètes
+ */
+
+.game-story::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 4px,
+            rgba(0, 229, 255, 0.018) 4px,
+            rgba(0, 229, 255, 0.018) 5px
+        );
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   3. BALAYAGE HOLOGRAPHIQUE
+   ========================================================= */
+
+.game-story::before {
+    content: "";
+
+    position: absolute;
+
+    top: -10%;
+
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 229, 255, 0.8),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(0, 229, 255, 0.6),
+        0 0 30px rgba(0, 229, 255, 0.25);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 11;
+
+    animation:
+        holographic-scan 8s linear infinite;
+}
+
+
+@keyframes holographic-scan {
+
+    0% {
+        top: -5%;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0.35;
+    }
+
+    15% {
+        opacity: 0.12;
+    }
+
+    45% {
+        opacity: 0.2;
+    }
+
+    55% {
+        opacity: 0.08;
+    }
+
+    95% {
+        opacity: 0.25;
+    }
+
+    100% {
+        top: 105%;
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   4. COINS TECHNIQUES DU TERMINAL
+   ========================================================= */
+
+.game-story {
+    --corner-size: 18px;
+}
+
+
+/*
+ * Coin supérieur gauche
+ */
+
+.game-story .story-opening::before {
+    content: "DATA_STREAM // 01";
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: rgba(0, 229, 255, 0.45);
+
+    font-family: monospace;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.2em;
+}
+
+
+/* =========================================================
+   5. TEXTE — LÉGER EFFET TERMINAL
+   ========================================================= */
+
+.game-story p {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/*
+ * Les textes restent parfaitement lisibles.
+ * L'effet lumineux est volontairement très léger.
+ */
+
+.game-story .story-opening {
+    text-shadow:
+        0 0 20px rgba(0, 229, 255, 0.04);
+}
+
+
+/* =========================================================
+   6. EFFET SUR "JUSQU'À CE JOUR"
+   ========================================================= */
+
+.story-emphasis {
+    position: relative;
+
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.25),
+        0 0 20px rgba(0, 229, 255, 0.15);
+}
+
+
+/* =========================================================
+   7. ALERTE — INTERFÉRENCE
+   ========================================================= */
+
+.story-alert {
+    position: relative;
+
+    padding: 15px 0;
+
+    overflow: hidden;
+}
+
+
+.story-alert::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: -30%;
+
+    width: 30%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 48, 79, 0.12),
+            transparent
+        );
+
+    animation:
+        alert-scan 4s linear infinite;
+}
+
+
+@keyframes alert-scan {
+
+    0% {
+        left: -30%;
+    }
+
+    100% {
+        left: 130%;
+    }
+
+}
+
+
+/* =========================================================
+   8. BLOC DONNÉES INCONNUES
+   ========================================================= */
+
+.story-warning {
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 0 30px rgba(0, 229, 255, 0.025),
+        0 0 25px rgba(0, 229, 255, 0.025);
+}
+
+
+/*
+ * Grille interne
+ */
+
+.story-warning::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(0, 229, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        25px 25px;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+
+/*
+ * Le texte reste au-dessus de la grille
+ */
+
+.story-warning p,
+.story-warning .warning-label {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   9. LABEL "DONNÉES INCONNUES"
+   ========================================================= */
+
+.warning-label {
+    position: relative;
+}
+
+
+.warning-label::after {
+    content: "_";
+
+    margin-left: 4px;
+
+    animation:
+        terminal-cursor 1s steps(2) infinite;
+}
+
+
+@keyframes terminal-cursor {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   10. ÉTAT DE LA MISSION
+   ========================================================= */
+
+.mission-status {
+    position: relative;
+}
+
+
+/*
+ * Ligne verticale de connexion
+ */
+
+.mission-status::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 23px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--color-cyan),
+            rgba(0, 229, 255, 0.08),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(0, 229, 255, 0.35);
+
+    opacity: 0.5;
+}
+
+
+.mission-status p {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   11. NUMÉROS DE MISSION
+   ========================================================= */
+
+.mission-number {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid rgba(0, 229, 255, 0.35);
+
+    background:
+        rgba(5, 9, 20, 0.95);
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.1);
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   12. HOVER DES ÉTAPES
+   ========================================================= */
+
+.mission-status p:hover .mission-number {
+    color: var(--color-white);
+
+    border-color:
+        var(--color-cyan);
+
+    background:
+        rgba(0, 229, 255, 0.12);
+
+    box-shadow:
+        var(--glow-cyan);
+}
+
+
+/* =========================================================
+   13. COMMANDE FINALE
+   ========================================================= */
+
+.game-command {
+    position: relative;
+
+    padding: 25px 0;
+}
+
+
+.game-command::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-top:
+        1px solid rgba(0, 229, 255, 0.08);
+
+    border-bottom:
+        1px solid rgba(0, 229, 255, 0.08);
+
+    background:
+        rgba(0, 229, 255, 0.015);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   14. LIGNE DE COMMANDE
+   ========================================================= */
+
+.command-line {
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.command-line::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--color-cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.7);
+
+    animation:
+        command-line-scan 4s linear infinite;
+}
+
+
+@keyframes command-line-scan {
+
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   15. "À VOUS DE JOUER"
+   ========================================================= */
+
+.game-command p {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   16. PETIT GLITCH TRÈS DISCRET
+   ========================================================= */
+
+.game-command p::before,
+.game-command p::after {
+    content: "À vous de jouer.";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.game-command p::before {
+    color: #00ffff;
+
+    transform:
+        translateX(-2px);
+
+    animation:
+        command-glitch-cyan 6s infinite;
+}
+
+
+.game-command p::after {
+    color: #ff304f;
+
+    transform:
+        translateX(2px);
+
+    animation:
+        command-glitch-red 6s infinite;
+}
+
+
+@keyframes command-glitch-cyan {
+
+    0%,
+    88%,
+    100% {
+        opacity: 0;
+    }
+
+    89% {
+        opacity: 0.35;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    92% {
+        opacity: 0.2;
+    }
+
+    93% {
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes command-glitch-red {
+
+    0%,
+    90%,
+    100% {
+        opacity: 0;
+    }
+
+    91% {
+        opacity: 0.3;
+    }
+
+    92% {
+        opacity: 0;
+    }
+
+    94% {
+        opacity: 0.15;
+    }
+
+    95% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   17. PETITES MARQUES DE TERMINAL
+   ========================================================= */
+
+.game-story {
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 49.9%,
+            rgba(0, 229, 255, 0.018) 50%,
+            transparent 50.1%
+        );
+}
+
+
+/* =========================================================
+   18. RÉDUCTION DES ANIMATIONS
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .game-story::before,
+    .story-alert::before,
+    .warning-label::after,
+    .command-line::after,
+    .game-command p::before,
+    .game-command p::after {
+        animation: none !important;
+    }
+
+}
