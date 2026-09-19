@@ -1,151 +1,243 @@
-<section id="game-page">
+<!DOCTYPE html>
+<html lang="fr">
 
-    <div class="section-content">
+<head>
 
-        <p class="section-label">
-            SYSTEM
-        </p>
+    <meta charset="UTF-8">
 
-        <h1>
-            Le jeu
-        </h1>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-        <div class="game-story">
+    <meta
+        name="description"
+        content="Découvrez l'univers et le gameplay d'Asteroide.Destroyer."
+    >
 
-            <p class="story-opening">
-                À des milliers d’années-lumière de la Terre, 
-                au cœur d’une galaxie que l’humanité ne connaît pas, 
-                une planète vit sous la lumière étrange de deux soleils verts.
-            </p>
+    <title>Le jeu — ASTÉROÏD destroyer</title>
 
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
-            <p>
-                Depuis des générations, 
-                ses habitants observent le ciel sans jamais avoir eu à le craindre.
-                <span class="story-emphasis">Jusqu’à ce jour.</span>
-            </p>
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
 
+    <link
+        rel="stylesheet"
+        href="css/music-player.css"
+    >
 
-            <p>
-                Sans avertissement, 
-                des milliers d’astéroïdes et de météores, 
-                apparaissent aux confins du système,
-                et prennent progressivement la direction de la planète.
-            </p>
-
-
-            <p>
-                Leur nombre augmente. 
-                Leurs trajectoires convergent. 
-                Et bientôt, l’impact ne pourra plus être évité.
-            </p>
+    
+</head>
 
 
-            <div class="story-alert">
+<body>
 
-                <span>
-                    ⚠ ALERTE SYSTÈME ⚠
-                </span>
+    <!-- NAVIGATION -->
 
-            </div>
+    <header id="header">
 
+        <nav class="navbar">
 
-            <p>
-                Face à cette menace, 
-                les autorités activent un système de défense planétaire, 
-                jamais utilisé à une telle échelle,
-                les <strong>PEMP</strong>, des Plateformes Électro-Magnétiques Propulsées,
-                capables de repousser les projectiles,
-                à l’aide d’une technologie défensive expérimentale.
-            </p>
+            <a
+                href="index.html"
+                class="logo"
+            >
+                ASTÉROÏD destroyer
+            </a>
 
 
-            <p>
-                Leur arme principale : 
-                <strong class="orbesonic-title">les Orbesonic</strong>, 
-                de puissantes sphères d’énergie,
-                conçues pour intercepter et détruire les corps célestes,
-                avant qu’ils n'atteignent la surface.
-            </p>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+                aria-controls="main-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
 
-            <div class="story-warning">
+            <div
+                class="nav-menu"
+                id="main-menu"
+            >
 
-                <span class="warning-label">
-                    DONNÉES INCONNUES
-                </span>
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Accueil
+                </a>
 
-                <p>
-                    Mais quelque chose ne tourne pas rond.
-                </p>
+                <a
+                    href="jeu.html"
+                    class="nav-link"
+                >
+                    Le jeu
+                </a>
 
-                <p>
-                    Plus les défenses avancent, 
-                    plus les événements deviennent étranges. 
-                </p>
+                <a
+                    href="medias.html"
+                    class="nav-link"
+                >
+                    Médias
+                </a>
 
-                <p>
-                    Les secteurs traversés semblent révéler des phénomènes,
-                    que personne n’avait anticipés… 
-                    et certaines données découvertes par le système défensif,
-                    ne correspondent à aucune donnée astronomique connue.
-                </p>
-
-            </div>
-
-
-            <p>
-                Dans l'ombre du centre de commandement, 
-                un mystérieux intervenant suit l'opération. 
-                Son identité, son rôle et ce qu'il sait réellement, 
-                restent inconnus.
-            </p>
-
-
-            <p class="story-certainty">
-                Une seule certitude demeure :
-            </p>
-
-
-            <div class="mission-status">
-
-                <p>
-                    <span class="mission-number">01</span>
-                    <span>la planète est en danger.</span>
-                </p>
-
-                <p>
-                    <span class="mission-number">02</span>
-                    <span>Le réseau PEMP est activé.</span>
-                </p>
-
-                <p>
-                    <span class="mission-number">03</span>
-                    <span>Les Orbesonic sont chargés.</span>
-                </p>
-
-                <p>
-                    <span class="mission-number">04</span>
-                    <span>La trajectoire est verrouillée.</span>
-                </p>
+                <a
+                    href="demo.html"
+                    class="nav-link"
+                >
+                    Démo
+                </a>
 
             </div>
 
+        </nav>
 
-            <div class="game-command">
+    </header>
 
-                <span class="command-line"></span>
 
-                <p>
-                    À vous de jouer.
+    <!-- CONTENU -->
+
+    <main>
+
+        <section id="game-page">
+
+            <div class="section-content">
+
+                <p class="section-label">
+                    SYSTEM
                 </p>
 
-                <span class="command-line"></span>
+                <h1>
+                    Le jeu
+                </h1>
+
+                <p>
+                         À des milliers d’années-lumière de la Terre, au cœur d’une galaxie que l’humanité ne connaît pas, une planète vit sous la lumière étrange de deux soleils verts.
+
+Depuis des générations, ses habitants observent le ciel sans jamais avoir eu à le craindre.
+
+Jusqu’à ce jour.
+
+Sans avertissement, des milliers d’astéroïdes et de météores apparaissent aux confins du système et prennent progressivement la direction de la planète. Leur nombre augmente. Leurs trajectoires convergent. Et bientôt, l’impact ne pourra plus être évité.
+
+Face à cette menace, les autorités activent un système de défense planétaire jamais utilisé à une telle échelle : les PEMP, des Plateformes Électro-Magnétiques Propulsées capables de repousser les projectiles à l’aide d’une technologie défensive expérimentale.
+
+Leur arme principale : les Orbesonic, de puissantes sphères d’énergie conçues pour intercepter et détruire les corps célestes avant qu’ils n'atteignent la surface.
+
+Mais quelque chose ne tourne pas rond.
+
+Plus les défenses avancent, plus les événements deviennent étranges. Les secteurs traversés semblent révéler des phénomènes que personne n’avait anticipés… et certaines données découvertes par le système défensif ne correspondent à aucune donnée astronomique connue.
+
+Dans l'ombre du centre de commandement, un mystérieux intervenant suit l'opération. Son identité, son rôle et ce qu'il sait réellement restent inconnus.
+
+Une seule certitude demeure :
+
+la planète est en danger.
+
+Le réseau PEMP est activé.
+
+Les Orbesonic sont chargés.
+
+La trajectoire est verrouillée.
+
+À vous de jouer.
+                </p>
 
             </div>
+
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+     MINI LECTEUR MUSIQUE
+     ===================================================== -->
+
+    <div
+        class="mini-music-player"
+        data-mini-music-player
+    >
+
+        <button
+            type="button"
+            class="mini-music-button"
+            data-mini-music-play
+            aria-label="Lire la musique"
+        >
+            ▶
+        </button>
+
+        <div class="mini-music-info">
+
+            <span
+                class="mini-music-label"
+            >
+                MUSIC
+            </span>
+
+            <span
+                class="mini-music-title"
+                data-mini-music-title
+            >
+                A vos postes
+            </span>
 
         </div>
 
+        <input
+            type="range"
+            class="mini-music-progress"
+            data-mini-music-progress
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+            aria-label="Progression de la musique"
+        >
+
+        <button
+            type="button"
+            class="mini-music-button"
+            data-mini-music-next
+            aria-label="Musique suivante"
+        >
+            ▶
+        </button>
+
     </div>
 
-</section>
+    
+    <!-- FOOTER -->
+
+    <footer id="footer">
+
+        <p>
+            © 2026.ASTÉROÏD-destroyer.AC-TekProd.
+        </p>
+
+    </footer>
+
+
+    <script
+        type="module"
+        src="js/main.js"
+    ></script>
+
+<script
+    src="js/mini-music-player.js"
+></script>
+
+    
+</body>
+
+</html>
