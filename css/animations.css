@@ -1466,3 +1466,449 @@ body.intro-active {
 }
 
 
+/* =========================================================
+   ASTÉROÏD DESTROYER
+   PEMP // HOLOGRAPHIC INTERFACE
+   CSS — PARTIE 5/12
+   INDICATEURS + BARRES + ACTIVITÉ
+   ========================================================= */
+
+
+/* =========================================================
+   PETITES DONNÉES TECHNIQUES HAUT DROITE
+   ========================================================= */
+
+.intro-content {
+
+    --hud-green-glow:
+        rgba(53,255,136,.55);
+
+    --hud-red-glow:
+        rgba(255,48,79,.55);
+
+    --hud-orange-glow:
+        rgba(255,138,0,.55);
+}
+
+
+/* =========================================================
+   MATRICE DE DONNÉES EN HAUT À DROITE
+   ========================================================= */
+
+.intro-content > .intro-asteroid::after {
+
+    content:
+        "TRACK // 001";
+
+    position: fixed;
+
+    right: 52px;
+    top: 52px;
+
+    padding:
+        7px 11px;
+
+    border-right:
+        2px solid
+        var(--hud-orange);
+
+    background:
+        linear-gradient(
+            -90deg,
+            rgba(255,138,0,.08),
+            transparent
+        );
+
+    color:
+        rgba(255,178,90,.8);
+
+    font-family:
+        monospace;
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .18em;
+
+    opacity: 0;
+
+    animation:
+        target-label-in
+        .7s
+        ease
+        2.2s
+        forwards;
+}
+
+
+@keyframes target-label-in {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =========================================================
+   LECTEUR DE SIGNAL
+   ========================================================= */
+
+.intro-particles {
+
+    z-index: 12;
+}
+
+
+/* =========================================================
+   BARRE DE SIGNAL EN BAS À GAUCHE
+   ========================================================= */
+
+.intro-particles::before {
+
+    content:
+        "SIGNAL";
+
+    position: fixed;
+
+    left: 52px;
+    bottom: 78px;
+
+    width: 130px;
+    height: 22px;
+
+    padding-left:
+        9px;
+
+    display: flex;
+
+    align-items: center;
+
+    border-left:
+        2px solid
+        var(--hud-green);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(53,255,136,.08),
+            transparent
+        );
+
+    color:
+        rgba(53,255,136,.72);
+
+    font-family:
+        monospace;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .18em;
+
+    opacity: 0;
+
+    animation:
+        signal-panel-in
+        .7s
+        ease
+        2.5s
+        forwards;
+}
+
+
+@keyframes signal-panel-in {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =========================================================
+   BARRE DE SIGNAL ANIMÉE
+   ========================================================= */
+
+.intro-particles {
+
+    box-shadow:
+        0 0 20px
+        rgba(0,234,255,.18);
+}
+
+
+.intro-particles::after {
+
+    border-radius:
+        0;
+
+    width:
+        95px;
+
+    height:
+        2px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            var(--hud-green) 0 6px,
+            transparent 6px 9px
+        );
+
+    box-shadow:
+        0 0 8px
+        var(--hud-green);
+
+    animation:
+        signal-bars
+        1.1s
+        steps(7)
+        2.5s
+        infinite alternate;
+}
+
+
+@keyframes signal-bars {
+
+    from {
+
+        opacity: .25;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scaleX(.35);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scaleX(1);
+    }
+}
+
+
+/* =========================================================
+   INDICATEUR DE CONNEXION BAS DROITE
+   ========================================================= */
+
+.intro-content > .intro-sonic {
+
+    box-shadow:
+        0 0 25px
+        rgba(0,234,255,.12);
+}
+
+
+.intro-content > .intro-sonic::before {
+
+    content:
+        "UPLINK";
+
+    height:
+        24px;
+
+    width:
+        105px;
+
+    left:
+        0;
+
+    top:
+        -12px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    padding-left:
+        10px;
+
+    border:
+        1px solid
+        rgba(53,255,136,.18);
+
+    background:
+        rgba(53,255,136,.025);
+
+    color:
+        rgba(53,255,136,.7);
+
+    font-family:
+        monospace;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .18em;
+
+    box-shadow:
+        0 0 15px
+        rgba(53,255,136,.04);
+
+    animation:
+        uplink-pulse
+        1.4s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes uplink-pulse {
+
+    from {
+
+        opacity: .35;
+
+        border-color:
+            rgba(53,255,136,.12);
+    }
+
+    to {
+
+        opacity: .95;
+
+        border-color:
+            rgba(53,255,136,.45);
+    }
+}
+
+
+/* =========================================================
+   MICRO-TICKS
+   ========================================================= */
+
+.intro-content > .intro-radar::after {
+
+    content:
+        "0001   0010   0110   1011";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -42px;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        rgba(0,234,255,.3);
+
+    font-family:
+        monospace;
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        .22em;
+
+    white-space:
+        nowrap;
+
+    opacity: 0;
+
+    animation:
+        binary-in
+        .8s
+        ease
+        3s
+        forwards;
+}
+
+
+@keyframes binary-in {
+
+    from {
+
+        opacity: 0;
+
+        letter-spacing:
+            .5em;
+    }
+
+    to {
+
+        opacity: .65;
+
+        letter-spacing:
+            .22em;
+    }
+}
+
+
+/* =========================================================
+   POINTS DE STATUT
+   ========================================================= */
+
+.intro-content > .intro-radar {
+
+    overflow:
+        visible;
+}
+
+
+/* petit point vert */
+
+.intro-content > .intro-radar::before {
+
+    box-shadow:
+
+        0 0 10px
+        var(--hud-cyan),
+
+        0 0 25px
+        rgba(0,234,255,.35);
+}
+
+
+/* =========================================================
+   CLIGNOTEMENT GLOBAL DES DONNÉES
+   ========================================================= */
+
+.intro-brand h1,
+.intro-logo-name {
+
+    animation-timing-function:
+        cubic-bezier(.16,1,.3,1);
+}
+
