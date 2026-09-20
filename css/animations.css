@@ -6792,7 +6792,634 @@ body.intro-active {
             .16em;
     }
 }
+/* =========================================================
+   PEMP HUD DATA — ANIMATION DES DONNÉES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   DONNÉES HUD
+   --------------------------------------------------------- */
+
+.hud-data strong,
+.hud-mini-grid strong,
+.hud-header strong,
+.hud-console strong,
+.hud-target-box strong,
+.console-message,
+#hud-message,
+#hud-time,
+#boot-percent {
+
+    font-family:
+        "Orbitron",
+        "Rajdhani",
+        monospace;
+
+    font-variant-numeric:
+        tabular-nums;
+
+    transition:
+        color .3s ease,
+        text-shadow .3s ease,
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+
+/* ---------------------------------------------------------
+   COULEURS DE BASE
+   --------------------------------------------------------- */
+
+.hud-data strong.cyan,
+.hud-mini-grid strong,
+.hud-header strong,
+.console-message,
+#hud-time {
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 7px
+        rgba(0,229,255,.45);
+}
+
+
+.hud-data strong.green {
+
+    color:
+        var(--hud-green);
+
+    text-shadow:
+        0 0 7px
+        rgba(57,255,136,.5);
+}
+
+
+.hud-data strong.orange {
+
+    color:
+        var(--hud-orange);
+
+    text-shadow:
+        0 0 7px
+        rgba(255,106,0,.5);
+}
+
+
+.hud-data strong.red {
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 8px
+        rgba(255,48,79,.55);
+}
+
+
+/* ---------------------------------------------------------
+   AUCUNE DONNÉE BLANCHE
+   --------------------------------------------------------- */
+
+.hud-data strong,
+.hud-mini-grid strong,
+.hud-header strong,
+.hud-console strong,
+.hud-target-box strong,
+.console-message,
+#boot-percent {
+
+    color:
+        var(--hud-cyan);
+}
+
+
+/* ---------------------------------------------------------
+   CONNECTION
+   --------------------------------------------------------- */
+
+#hud-connection {
+
+    animation:
+        connection-pulse
+        1s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes connection-pulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .45;
+
+        text-shadow:
+            0 0 4px
+            rgba(0,229,255,.25);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        text-shadow:
+            0 0 12px
+            rgba(0,229,255,.7);
+    }
+}
+
 
 /* =========================================================
-   FIN DU CSS intro
+   PHASE CONNECT
+   ========================================================= */
+
+.intro.state-connect .hud-data strong,
+.intro.state-connect .hud-mini-grid strong,
+.intro.state-connect #hud-message,
+.intro.state-connect #hud-connection {
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 8px
+        rgba(0,229,255,.5);
+}
+
+
+/* =========================================================
+   PHASE SYNC — VERT
+   ========================================================= */
+
+.intro.state-sync .hud-data strong,
+.intro.state-sync .hud-mini-grid strong,
+.intro.state-sync #hud-message,
+.intro.state-sync #hud-connection {
+
+    color:
+        var(--hud-green);
+
+    text-shadow:
+        0 0 8px
+        rgba(57,255,136,.5);
+}
+
+
+/* =========================================================
+   PHASE DETECTION — ORANGE
+   ========================================================= */
+
+.intro.state-detect .hud-data strong,
+.intro.state-detect .hud-mini-grid strong,
+.intro.state-detect #hud-message,
+.intro.state-detect #hud-connection {
+
+    color:
+        var(--hud-orange);
+
+    text-shadow:
+        0 0 9px
+        rgba(255,106,0,.55);
+}
+
+
+/* =========================================================
+   PHASE ALERTE — ROUGE
+   ========================================================= */
+
+.intro.state-alert .hud-data strong,
+.intro.state-alert .hud-mini-grid strong,
+.intro.state-alert #hud-message,
+.intro.state-alert #hud-connection {
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,48,79,.7);
+
+    animation:
+        hud-danger-data
+        .45s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes hud-danger-data {
+
+    0%,
+    100% {
+
+        opacity:
+            .65;
+
+        transform:
+            translateX(0);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(1px);
+    }
+}
+
+
+/* =========================================================
+   PHASE FINALE
+   ========================================================= */
+
+.intro.state-complete .hud-data strong,
+.intro.state-complete .hud-mini-grid strong,
+.intro.state-complete #hud-message,
+.intro.state-complete #hud-connection {
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 9px
+        rgba(0,229,255,.55);
+}
+
+
+/* =========================================================
+   TARGET
+   ========================================================= */
+
+#hud-target {
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 8px
+        rgba(0,229,255,.5);
+
+    transition:
+        color .3s ease,
+        text-shadow .3s ease;
+}
+
+
+.intro.state-detect #hud-target {
+
+    color:
+        var(--hud-orange);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,106,0,.65);
+
+    animation:
+        target-detect
+        .8s
+        ease-in-out
+        infinite;
+}
+
+
+.intro.state-alert #hud-target {
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 12px
+        rgba(255,48,79,.8);
+
+    animation:
+        target-danger
+        .4s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes target-detect {
+
+    0%,
+    100% {
+
+        opacity:
+            .5;
+    }
+
+    50% {
+
+        opacity:
+            1;
+    }
+}
+
+
+@keyframes target-danger {
+
+    0%,
+    100% {
+
+        opacity:
+            .55;
+    }
+
+    50% {
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   CONSOLE
+   ========================================================= */
+
+.console-message {
+
+    position:
+        relative;
+
+    min-width:
+        250px;
+}
+
+
+.console-message::after {
+
+    content:
+        "▋";
+
+    margin-left:
+        4px;
+
+    color:
+        currentColor;
+
+    animation:
+        console-cursor
+        .7s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes console-cursor {
+
+    0%,
+    45% {
+
+        opacity:
+            1;
+    }
+
+    46%,
+    100% {
+
+        opacity:
+            0;
+    }
+}
+
+
+/* =========================================================
+   ALERTE
+   ========================================================= */
+
+.intro.state-alert .hud-alert {
+
+    color:
+        var(--hud-red);
+
+    border-color:
+        rgba(255,48,79,.5);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,48,79,.12),
+
+        inset 0 0 20px
+        rgba(255,48,79,.04);
+
+    animation:
+        hud-alert-pulse
+        .55s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes hud-alert-pulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .55;
+    }
+
+    50% {
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   BARRE DE PROGRESSION
+   ========================================================= */
+
+#boot-percent {
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 8px
+        rgba(0,229,255,.5);
+}
+
+
+.intro.state-sync #boot-percent {
+
+    color:
+        var(--hud-green);
+}
+
+
+.intro.state-detect #boot-percent {
+
+    color:
+        var(--hud-orange);
+}
+
+
+.intro.state-alert #boot-percent {
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,48,79,.7);
+}
+
+
+/* =========================================================
+   STAGES
+   ========================================================= */
+
+.boot-stages span {
+
+    color:
+        rgba(0,229,255,.28);
+
+    transition:
+        color .3s ease,
+        text-shadow .3s ease,
+        opacity .3s ease;
+}
+
+
+.boot-stages span.active {
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 8px
+        rgba(0,229,255,.6);
+}
+
+
+.intro.state-sync #stage-link,
+.intro.state-sync #stage-core {
+
+    color:
+        var(--hud-green);
+
+    text-shadow:
+        0 0 8px
+        rgba(57,255,136,.5);
+}
+
+
+.intro.state-detect #stage-scan {
+
+    color:
+        var(--hud-orange);
+
+    text-shadow:
+        0 0 8px
+        rgba(255,106,0,.55);
+}
+
+
+.intro.state-alert #stage-target,
+.intro.state-alert #stage-defense {
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 9px
+        rgba(255,48,79,.65);
+}
+
+
+/* =========================================================
+   TRANSITIONS DES PANNEAUX
+   ========================================================= */
+
+.hud-panel {
+
+    transition:
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.intro.state-sync .hud-left {
+
+    border-color:
+        rgba(57,255,136,.22);
+}
+
+
+.intro.state-detect .hud-right {
+
+    border-color:
+        rgba(255,106,0,.28);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,106,0,.06);
+}
+
+
+.intro.state-alert .hud-left,
+.intro.state-alert .hud-right {
+
+    border-color:
+        rgba(255,48,79,.3);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,48,79,.07);
+}
+
+
+/* =========================================================
+   PETITE ANIMATION DES VALEURS
+   ========================================================= */
+
+.hud-data strong.changed {
+
+    animation:
+        value-update
+        .35s
+        ease-out;
+}
+
+
+@keyframes value-update {
+
+    0% {
+
+        opacity:
+            .25;
+
+        transform:
+            translateX(4px);
+
+        filter:
+            blur(2px);
+    }
+
+    100% {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(0);
+
+        filter:
+            blur(0);
+    }
+}
+
+/* =========================================================
+    OUF FIN DU CSS intro
    ========================================================= */
