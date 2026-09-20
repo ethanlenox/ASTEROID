@@ -7421,11 +7421,15 @@ body.intro-active {
 }
 /* TEST TEMPORAIRE */
 
-.intro.state-alert .hud-alert {
-    background: transparent !important;
+/* TEST 2 */
+
+.intro.state-alert .intro-brand::before,
+.intro.state-alert .intro-brand::after {
+    background: none !important;
+    border: none !important;
     box-shadow: none !important;
-    border-color: transparent !important;
 }
+
 
 /* =========================================================
     OUF FIN DU CSS intro
