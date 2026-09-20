@@ -801,4 +801,20 @@
         padding-bottom:
             11px;
     }
+
+    .intro-brand {
+
+        animation-duration:
+            6s;
+    }
+
+    .intro-logo::after {
+
+        width:
+            125%;
+
+        height:
+            125%;
+    }
 }
+
