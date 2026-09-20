@@ -1,19 +1,21 @@
 /* =========================================================
    ASTEROIDE.DESTROYER
    MUSIC PLAYER
+   BROADCAST / PEMP CONTROL SYSTEM
    ========================================================= */
+
 
 /* =========================================================
-   1. CONTENEUR
+   1. CONTENEUR PRINCIPAL
    ========================================================= */
 
-
 .music-player {
+    position: relative;
+
     width: min(
         900px,
         100%
     );
-   
 
     margin: 60px auto 0;
 
@@ -24,7 +26,11 @@
         var(--radius-large);
 
     background:
-        var(--color-glass);
+        linear-gradient(
+            145deg,
+            rgba(8, 22, 38, 0.94),
+            rgba(3, 8, 17, 0.97)
+        );
 
     backdrop-filter:
         blur(16px);
@@ -33,9 +39,71 @@
         blur(16px);
 
     box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        inset 0 0 45px rgba(0, 229, 255, 0.025),
         var(--glow-cyan);
 
     overflow: hidden;
+}
+
+
+/* =========================================================
+   LIGNES DE BALAYAGE
+   ========================================================= */
+
+.music-player::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 229, 255, 0.018) 0px,
+            rgba(0, 229, 255, 0.018) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+
+    opacity: 0.28;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   LIGNE DE SIGNAL BASSE
+   ========================================================= */
+
+.music-player::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-cyan),
+            rgba(0, 229, 255, 0.15),
+            transparent 85%
+        );
+
+    box-shadow:
+        0 0 12px rgba(0, 229, 255, 0.6);
+
+    pointer-events: none;
+
+    z-index: 3;
 }
 
 
@@ -44,6 +112,8 @@
    ========================================================= */
 
 .music-player-header {
+    position: relative;
+
     padding: 18px 30px;
 
     border-bottom:
@@ -52,9 +122,60 @@
     background:
         linear-gradient(
             135deg,
-            rgba(0, 229, 255, 0.08),
-            rgba(0, 229, 255, 0.015)
+            rgba(0, 229, 255, 0.075),
+            rgba(0, 229, 255, 0.012)
         );
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   IDENTIFIANT DE TRANSMISSION
+   ========================================================= */
+
+.music-player-header::before {
+    content:
+        "AUDIO CHANNEL // PEMP BROADCAST";
+
+    position: absolute;
+
+    top: 9px;
+    right: 30px;
+
+    color:
+        rgba(0, 229, 255, 0.35);
+
+    font-size: 0.48rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   INDICATEUR SIGNAL
+   ========================================================= */
+
+.music-player-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 30px;
+    bottom: -1px;
+
+    width: 85px;
+    height: 2px;
+
+    background:
+        var(--color-cyan);
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.75);
 }
 
 
@@ -66,12 +187,20 @@
     justify-content: space-between;
 
     width: calc(100% + 20px);
+
+    position: relative;
 }
+
+
+/* =========================================================
+   LABEL ALBUM
+   ========================================================= */
 
 .music-player-label {
     margin-bottom: 8px;
 
-    color: var(--color-cyan);
+    color:
+        var(--color-cyan);
 
     font-size: 0.7rem;
 
@@ -82,22 +211,35 @@
     text-transform: uppercase;
 
     text-shadow:
-        0 0 10px rgba(0, 229, 255, 0.4);
+        0 0 10px rgba(0, 229, 255, 0.5);
 }
 
 
+/* =========================================================
+   TITRE
+   ========================================================= */
+
 .music-player-header h2 {
+    position: relative;
+
     margin-bottom: 0;
+
+    color:
+        var(--color-white);
 
     font-size: clamp(
         1.8rem,
         4vw,
         2.8rem
     );
+
+    text-shadow:
+        0 0 15px rgba(0, 229, 255, 0.18);
 }
 
+
 /* =========================================================
-   3.1 IMAGE ALBUM
+   3. IMAGE ALBUM
    ========================================================= */
 
 .music-player-image {
@@ -118,26 +260,48 @@
     border-radius:
         var(--radius-small);
 
+    background:
+        var(--color-space);
+
     box-shadow:
-        var(--glow-cyan);
+        0 0 18px rgba(0, 229, 255, 0.15),
+        inset 0 0 15px rgba(0, 229, 255, 0.08);
 
     position: relative;
 
     right: 10px;
+
+    transition:
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
 }
 
 
+.music-player-image:hover {
+    border-color:
+        var(--color-cyan);
+
+    box-shadow:
+        0 0 22px rgba(0, 229, 255, 0.3),
+        inset 0 0 18px rgba(0, 229, 255, 0.08);
+}
+
 
 /* =========================================================
-   3. CONTENU
+   4. CONTENU
    ========================================================= */
 
 .music-player-content {
+    position: relative;
+
     padding: 20px 30px;
+
+    z-index: 2;
 }
 
+
 /* =========================================================
-   4. INFORMATIONS PISTE
+   5. INFORMATIONS PISTE
    ========================================================= */
 
 .music-track-info {
@@ -148,8 +312,14 @@
     gap: 20px;
 
     margin-bottom: 30px;
+
+    position: relative;
 }
 
+
+/* =========================================================
+   NUMÉRO DE PISTE
+   ========================================================= */
 
 .music-track-number {
     display: flex;
@@ -169,7 +339,7 @@
         var(--radius-small);
 
     background:
-        rgba(0, 229, 255, 0.06);
+        rgba(0, 229, 255, 0.045);
 
     color:
         var(--color-cyan);
@@ -181,7 +351,8 @@
     letter-spacing: 0.1em;
 
     box-shadow:
-        inset 0 0 15px rgba(0, 229, 255, 0.04);
+        inset 0 0 15px rgba(0, 229, 255, 0.04),
+        0 0 10px rgba(0, 229, 255, 0.03);
 }
 
 
@@ -192,6 +363,8 @@
         var(--color-white);
 
     font-size: 1.2rem;
+
+    letter-spacing: 0.02em;
 }
 
 
@@ -202,11 +375,13 @@
         var(--color-text-muted);
 
     font-size: 0.8rem;
+
+    letter-spacing: 0.05em;
 }
 
 
 /* =========================================================
-   5. CONTRÔLES
+   6. CONTRÔLES
    ========================================================= */
 
 .music-controls {
@@ -238,7 +413,7 @@
     border-radius: 50%;
 
     background:
-        rgba(0, 229, 255, 0.05);
+        rgba(0, 229, 255, 0.04);
 
     color:
         var(--color-cyan);
@@ -255,36 +430,57 @@
 
 .music-button:hover {
     background:
-        rgba(0, 229, 255, 0.14);
+        rgba(0, 229, 255, 0.13);
 
     border-color:
         var(--color-cyan);
 
     box-shadow:
-        var(--glow-cyan);
+        0 0 18px rgba(0, 229, 255, 0.25);
 
     transform:
         scale(1.06);
 }
 
 
+.music-button:active {
+    transform:
+        scale(0.96);
+}
+
+
+/* =========================================================
+   BOUTON PRINCIPAL
+   ========================================================= */
+
 .music-button-main {
     width: 60px;
     height: 60px;
 
     background:
-        rgba(0, 229, 255, 0.1);
+        rgba(0, 229, 255, 0.09);
 
     border-color:
         var(--color-cyan);
 
     box-shadow:
-        0 0 15px rgba(0, 229, 255, 0.2);
+        0 0 15px rgba(0, 229, 255, 0.2),
+        inset 0 0 18px rgba(0, 229, 255, 0.04);
+}
+
+
+.music-button-main:hover {
+    background:
+        rgba(0, 229, 255, 0.17);
+
+    box-shadow:
+        0 0 25px rgba(0, 229, 255, 0.38),
+        inset 0 0 20px rgba(0, 229, 255, 0.05);
 }
 
 
 /* =========================================================
-   6. PROGRESSION
+   7. PROGRESSION
    ========================================================= */
 
 .music-progress {
@@ -293,6 +489,8 @@
     align-items: center;
 
     gap: 12px;
+
+    padding-top: 5px;
 }
 
 
@@ -306,6 +504,8 @@
 
     font-variant-numeric:
         tabular-nums;
+
+    letter-spacing: 0.03em;
 }
 
 
@@ -313,6 +513,10 @@
     text-align: right;
 }
 
+
+/* =========================================================
+   BARRE DE PROGRESSION
+   ========================================================= */
 
 .music-progress input {
     flex: 1;
@@ -328,11 +532,19 @@
     outline: none;
 
     background:
-        rgba(0, 229, 255, 0.12);
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.18),
+            rgba(0, 229, 255, 0.07)
+        );
 
     cursor: pointer;
 }
 
+
+/* =========================================================
+   THUMB WEBKIT
+   ========================================================= */
 
 .music-progress input::-webkit-slider-thumb {
     appearance: none;
@@ -342,7 +554,8 @@
     width: 12px;
     height: 12px;
 
-    border: 2px solid var(--color-cyan);
+    border:
+        2px solid var(--color-cyan);
 
     border-radius: 50%;
 
@@ -353,14 +566,32 @@
         0 0 8px rgba(0, 229, 255, 0.6);
 
     cursor: pointer;
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
 }
 
+
+.music-progress input::-webkit-slider-thumb:hover {
+    transform:
+        scale(1.25);
+
+    box-shadow:
+        0 0 14px rgba(0, 229, 255, 0.9);
+}
+
+
+/* =========================================================
+   THUMB MOZILLA
+   ========================================================= */
 
 .music-progress input::-moz-range-thumb {
     width: 12px;
     height: 12px;
 
-    border: 2px solid var(--color-cyan);
+    border:
+        2px solid var(--color-cyan);
 
     border-radius: 50%;
 
@@ -375,7 +606,7 @@
 
 
 /* =========================================================
-   7. VOLUME
+   8. VOLUME
    ========================================================= */
 
 .music-volume {
@@ -403,6 +634,9 @@
     font-weight: 700;
 
     letter-spacing: 0.15em;
+
+    text-shadow:
+        0 0 8px rgba(0, 229, 255, 0.25);
 }
 
 
@@ -434,7 +668,8 @@
     width: 11px;
     height: 11px;
 
-    border: 2px solid var(--color-cyan);
+    border:
+        2px solid var(--color-cyan);
 
     border-radius: 50%;
 
@@ -452,7 +687,8 @@
     width: 11px;
     height: 11px;
 
-    border: 2px solid var(--color-cyan);
+    border:
+        2px solid var(--color-cyan);
 
     border-radius: 50%;
 
@@ -467,15 +703,16 @@
 
 
 /* =========================================================
-   8. AUDIO NATIF
+   9. AUDIO NATIF
    ========================================================= */
 
 .music-player audio {
     display: none;
 }
 
+
 /* =========================================================
-   9. MINI LECTEUR MUSIQUE
+   10. MINI LECTEUR
    ========================================================= */
 
 .mini-music-player {
@@ -513,7 +750,11 @@
         var(--radius-medium);
 
     background:
-        rgba(5, 12, 25, 0.92);
+        linear-gradient(
+            145deg,
+            rgba(8, 22, 38, 0.94),
+            rgba(3, 8, 17, 0.97)
+        );
 
     backdrop-filter:
         blur(16px);
@@ -523,11 +764,71 @@
 
     box-shadow:
         0 8px 30px rgba(0, 0, 0, 0.35),
+        inset 0 0 30px rgba(0, 229, 255, 0.025),
         var(--glow-cyan);
+
+    overflow: hidden;
 }
 
 
+/* =========================================================
+   SCANLINES MINI PLAYER
+   ========================================================= */
+
+.mini-music-player::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 229, 255, 0.018) 0px,
+            rgba(0, 229, 255, 0.018) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+
+    opacity: 0.25;
+}
+
+
+/* =========================================================
+   LIGNE SIGNAL MINI
+   ========================================================= */
+
+.mini-music-player::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 35%;
+    height: 1px;
+
+    background:
+        var(--color-cyan);
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.65);
+}
+
+
+/* =========================================================
+   11. MINI BOUTON
+   ========================================================= */
+
 .mini-music-button {
+    position: relative;
+
+    z-index: 2;
+
     display: flex;
 
     align-items: center;
@@ -546,7 +847,7 @@
     border-radius: 50%;
 
     background:
-        rgba(0, 229, 255, 0.06);
+        rgba(0, 229, 255, 0.045);
 
     color:
         var(--color-cyan);
@@ -569,14 +870,28 @@
         var(--color-cyan);
 
     box-shadow:
-        var(--glow-cyan);
+        0 0 16px rgba(0, 229, 255, 0.25);
 
     transform:
         scale(1.05);
 }
 
 
+.mini-music-button:active {
+    transform:
+        scale(0.95);
+}
+
+
+/* =========================================================
+   12. INFORMATIONS MINI
+   ========================================================= */
+
 .mini-music-info {
+    position: relative;
+
+    z-index: 2;
+
     display: flex;
 
     flex-direction: column;
@@ -600,6 +915,9 @@
     letter-spacing: 0.18em;
 
     text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(0, 229, 255, 0.35);
 }
 
 
@@ -619,7 +937,15 @@
 }
 
 
+/* =========================================================
+   13. PROGRESSION MINI
+   ========================================================= */
+
 .mini-music-progress {
+    position: relative;
+
+    z-index: 2;
+
     flex: 1;
 
     width: 100%;
@@ -635,7 +961,11 @@
     outline: none;
 
     background:
-        rgba(0, 229, 255, 0.12);
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.18),
+            rgba(0, 229, 255, 0.07)
+        );
 
     cursor: pointer;
 }
@@ -684,7 +1014,46 @@
 
 
 /* =========================================================
-   10. MINI LECTEUR — MOBILE
+   14. ÉTAT ACTIF
+   ========================================================= */
+
+.music-player[data-playing="true"] {
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        inset 0 0 45px rgba(0, 229, 255, 0.035),
+        0 0 25px rgba(0, 229, 255, 0.18);
+}
+
+
+.music-player[data-playing="true"] .music-button-main {
+    box-shadow:
+        0 0 25px rgba(0, 229, 255, 0.4),
+        inset 0 0 20px rgba(0, 229, 255, 0.07);
+}
+
+
+/* =========================================================
+   15. FOCUS ACCESSIBILITÉ
+   ========================================================= */
+
+.music-button:focus-visible,
+.mini-music-button:focus-visible,
+.music-progress input:focus-visible,
+.music-volume input:focus-visible,
+.mini-music-progress:focus-visible {
+    outline:
+        1px solid var(--color-cyan);
+
+    outline-offset:
+        3px;
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.35);
+}
+
+
+/* =========================================================
+   16. MINI PLAYER — MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
