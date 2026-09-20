@@ -19,9 +19,11 @@
 
 <body>
 
-    <!-- =====================================================
-     INTRODUCTION
-     ===================================================== -->
+   <!-- =========================================================
+                 PEMP // PLANETARY DEFENSE NETWORK
+                          INTRO
+                  ASTÉROÏD DESTROYER // MISSION BOOT
+     ========================================================= -->
 
 <div
     id="intro"
@@ -29,57 +31,592 @@
     aria-hidden="false"
 >
 
-        <div class="intro-stars"></div>
+    <!-- =====================================================
+         BACKGROUND
+         ===================================================== -->
 
-        <div class="intro-content">
+    <div class="intro-stars"></div>
 
-        <div class="intro-particles"></div>
+    <div class="intro-noise"></div>
 
-        <img
-             class="intro-asteroid"
-             src="gif/meteor.gif"
-             alt="BIENVENU"
->
+    <div class="intro-scanlines"></div>
 
-        <div class="intro-sonic"></div>
 
-        <div class="intro-brand">
+    <!-- =====================================================
+         INTERFACE PRINCIPALE
+         ===================================================== -->
 
-    <p class="intro-logo-subtitle">
-        AC TEKPROD
-    </p>
+    <div class="intro-content">
 
-    <div class="intro-logo">
 
-        <div class="intro-radar"></div>
+        <!-- =================================================
+             HEADER
+             ================================================= -->
 
-        <div class="intro-scan"></div>
+        <header class="hud-header">
 
-        <img
-            src="gif/logo.gif"
-            alt="ASTÉROÏD destroyer"
+            <div class="hud-header-left">
+
+                <span class="hud-dot"></span>
+
+                <span>
+                    PEMP // DEFENSE NETWORK
+                </span>
+
+            </div>
+
+
+            <div class="hud-header-center">
+
+                <span>
+                    SECURE CONNECTION
+                </span>
+
+                <strong id="hud-connection">
+                    ESTABLISHING
+                </strong>
+
+            </div>
+
+
+            <div class="hud-header-right">
+
+                <span>
+                    NODE
+                </span>
+
+                <strong>
+                    PEMP-07
+                </strong>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PANNEAU GAUCHE
+             ================================================= -->
+
+        <aside class="hud-panel hud-left">
+
+            <div class="hud-panel-title">
+
+                <span class="panel-indicator"></span>
+
+                SYSTEM STATUS
+
+            </div>
+
+
+            <div class="hud-panel-line"></div>
+
+
+            <div class="hud-data">
+
+                <span>NETWORK</span>
+
+                <strong
+                    id="hud-network"
+                    class="cyan"
+                >
+                    OFFLINE
+                </strong>
+
+            </div>
+
+
+            <div class="hud-data">
+
+                <span>CORE</span>
+
+                <strong
+                    id="hud-core"
+                    class="cyan"
+                >
+                    BOOTING
+                </strong>
+
+            </div>
+
+
+            <div class="hud-data">
+
+                <span>DEFENSE</span>
+
+                <strong
+                    id="hud-defense"
+                    class="red"
+                >
+                    STANDBY
+                </strong>
+
+            </div>
+
+
+            <div class="hud-data">
+
+                <span>THREAT LEVEL</span>
+
+                <strong
+                    id="hud-threat"
+                    class="green"
+                >
+                    NONE
+                </strong>
+
+            </div>
+
+
+            <div class="hud-meter">
+
+                <div class="hud-meter-label">
+
+                    <span>
+                        SYSTEM POWER
+                    </span>
+
+                    <strong
+                        id="hud-power-value"
+                    >
+                        00%
+                    </strong>
+
+                </div>
+
+
+                <div class="hud-meter-track">
+
+                    <div
+                        id="hud-power"
+                        class="hud-meter-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hud-mini-grid">
+
+                <span>CPU</span>
+                <strong id="hud-cpu">--</strong>
+
+                <span>MEM</span>
+                <strong id="hud-memory">--</strong>
+
+                <span>LINK</span>
+                <strong id="hud-link">--</strong>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             PANNEAU DROIT
+             ================================================= -->
+
+        <aside class="hud-panel hud-right">
+
+            <div class="hud-panel-title">
+
+                <span class="panel-indicator orange"></span>
+
+                SENSOR ARRAY
+
+            </div>
+
+
+            <div class="hud-panel-line"></div>
+
+
+            <div class="hud-data">
+
+                <span>SCAN</span>
+
+                <strong
+                    id="hud-scan"
+                    class="cyan"
+                >
+                    INITIALIZING
+                </strong>
+
+            </div>
+
+
+            <div class="hud-data">
+
+                <span>OBJECTS</span>
+
+                <strong
+                    id="hud-objects"
+                    class="cyan"
+                >
+                    000
+                </strong>
+
+            </div>
+
+
+            <div class="hud-data">
+
+                <span>VELOCITY</span>
+
+                <strong
+                    id="hud-velocity"
+                    class="orange"
+                >
+                    ---
+                </strong>
+
+            </div>
+
+
+            <div class="hud-data">
+
+                <span>DISTANCE</span>
+
+                <strong
+                    id="hud-distance"
+                    class="orange"
+                >
+                    ---
+                </strong>
+
+            </div>
+
+
+            <div class="hud-data">
+
+                <span>TRAJECTORY</span>
+
+                <strong
+                    id="hud-trajectory"
+                    class="cyan"
+                >
+                    ---
+                </strong>
+
+            </div>
+
+
+            <div class="hud-target-box">
+
+                <div class="target-corners"></div>
+
+                <span>
+                    TARGET
+                </span>
+
+                <strong id="hud-target">
+                    NO TARGET
+                </strong>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CENTRE
+             ================================================= -->
+
+        <main class="intro-center">
+
+
+            <!-- =============================================
+                 CERCLE HOLOGRAPHIQUE
+                 ============================================= -->
+
+            <div class="holo-ring holo-ring-outer"></div>
+
+            <div class="holo-ring holo-ring-middle"></div>
+
+            <div class="holo-ring holo-ring-inner"></div>
+
+
+            <!-- =============================================
+                 CROSSHAIR
+                 ============================================= -->
+
+            <div class="holo-crosshair">
+
+                <span class="crosshair-top"></span>
+                <span class="crosshair-bottom"></span>
+                <span class="crosshair-left"></span>
+                <span class="crosshair-right"></span>
+
+                <div class="crosshair-center"></div>
+
+            </div>
+
+
+            <!-- =============================================
+                 METEOR
+                 ============================================= -->
+
+            <img
+                class="intro-asteroid"
+                src="gif/meteor.gif"
+                alt=""
+            >
+
+
+            <!-- =============================================
+                 IMPACT
+                 ============================================= -->
+
+            <div class="intro-sonic"></div>
+
+            <div class="intro-particles"></div>
+
+
+            <!-- =============================================
+                 LOGO
+                 ============================================= -->
+
+            <div class="intro-brand">
+
+                <p class="intro-logo-subtitle">
+                    AC TEKPROD
+                </p>
+
+
+                <div class="intro-logo">
+
+                    <div class="intro-radar"></div>
+
+                    <div class="intro-scan"></div>
+
+                    <img
+                        src="gif/logo.gif"
+                        alt="ASTÉROÏD DESTROYER"
+                    >
+
+                </div>
+
+
+                <h1>
+                    PRÉSENTE
+                </h1>
+
+
+                <p class="intro-logo-name">
+                    ASTÉROÏD DESTROYER
+                </p>
+
+            </div>
+
+
+            <!-- =============================================
+                 TARGET LOCK
+                 ============================================= -->
+
+            <div class="target-lock">
+
+                <span class="target-lock-line"></span>
+
+                <div class="target-lock-box">
+
+                    <span>
+                        TARGET LOCK
+                    </span>
+
+                    <strong>
+                        <span id="target-lock-id">
+                            001
+                        </span>
+                    </strong>
+
+                </div>
+
+                <span class="target-lock-line"></span>
+
+            </div>
+
+        </main>
+
+
+
+        <!-- =================================================
+             PANNEAU BAS GAUCHE
+             ================================================= -->
+
+        <div class="hud-console hud-console-left">
+
+            <span class="console-label">
+                PEMP COMMAND
+            </span>
+
+            <span
+                id="hud-message"
+                class="console-message"
+            >
+                WAITING FOR CONNECTION...
+            </span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PANNEAU BAS DROIT
+             ================================================= -->
+
+        <div class="hud-console hud-console-right">
+
+            <span>
+                LAT
+            </span>
+
+            <strong id="hud-lat">
+                --.----
+            </strong>
+
+            <span>
+                LNG
+            </span>
+
+            <strong id="hud-lng">
+                --.----
+            </strong>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ALERTE
+             ================================================= -->
+
+        <div
+            id="hud-alert"
+            class="hud-alert"
         >
 
+            <span class="alert-symbol">
+                !
+            </span>
+
+            <div>
+
+                <strong>
+                    THREAT DETECTED
+                </strong>
+
+                <span>
+                    UNIDENTIFIED OBJECT
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROGRESSION
+             ================================================= -->
+
+        <div class="boot-progress">
+
+            <div class="boot-progress-top">
+
+                <span>
+                    SYSTEM INITIALIZATION
+                </span>
+
+                <strong id="boot-percent">
+                    00%
+                </strong>
+
+            </div>
+
+
+            <div class="boot-progress-track">
+
+                <div
+                    id="boot-progress-fill"
+                    class="boot-progress-fill"
+                ></div>
+
+            </div>
+
+
+            <div class="boot-stages">
+
+                <span id="stage-link">
+                    LINK
+                </span>
+
+                <span id="stage-core">
+                    CORE
+                </span>
+
+                <span id="stage-scan">
+                    SCAN
+                </span>
+
+                <span id="stage-target">
+                    TARGET
+                </span>
+
+                <span id="stage-defense">
+                    DEFENSE
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="hud-footer">
+
+            <span>
+                PEMP // PLANETARY EMERGENCY MANAGEMENT PROTOCOL
+            </span>
+
+            <span id="hud-time">
+                00:00:00
+            </span>
+
+            <span>
+                SECURE CHANNEL
+            </span>
+
+        </footer>
+
     </div>
 
-    <h1>
-        PRESENTE
-    </h1>
 
-    <p class="intro-logo-name">
-        ASTÉROÏD destroyer
-    </p>
 
-</div>
-
-    </div>
+    <!-- =====================================================
+         BOUTON PASSER
+         ===================================================== -->
 
     <button
         id="intro-skip"
         class="intro-skip"
         type="button"
     >
-        Passer
+
+        <span>
+            PASSER
+        </span>
+
+        <kbd>
+            ESC
+        </kbd>
+
     </button>
 
 </div>
