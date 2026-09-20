@@ -1,6 +1,7 @@
 /* =========================================================
-   ASTÉROÏD.DESTROYER
+   ASTÉROÏD DESTROYER
    PEMP // MISSION BRIEFING
+   JS — INTRO 10 SECONDES
    ========================================================= */
 
 const intro =
@@ -17,9 +18,210 @@ const introSkip =
 const INTRO_STORAGE_KEY =
     "asteroideIntroSeen";
 
-
 const INTRO_DURATION =
-    8000;
+    10000;
+
+
+/*
+ * Timings de l'interface
+ *
+ * 0s → connexion
+ * 1.8s → réseau synchronisé
+ * 3.8s → objet détecté
+ * 5.8s → alerte
+ * 8.4s → défense active
+ * 10s → sortie
+ */
+
+const TIMELINE = [
+
+    {
+        time: 0,
+        state: "state-connect"
+    },
+
+    {
+        time: 1800,
+        state: "state-sync"
+    },
+
+    {
+        time: 3800,
+        state: "state-detect"
+    },
+
+    {
+        time: 5800,
+        state: "state-alert"
+    },
+
+    {
+        time: 8400,
+        state: "state-complete"
+    }
+
+];
+
+
+/* =========================================================
+   VARIABLES INTERNES
+   ========================================================= */
+
+let introClosed =
+    false;
+
+let timelineTimers =
+    [];
+
+let closeTimer =
+    null;
+
+
+/* =========================================================
+   RÉDUCTION DES ANIMATIONS
+   ========================================================= */
+
+const reducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+/* =========================================================
+   UTILITAIRE
+   ========================================================= */
+
+function clearIntroStates() {
+
+    if (!intro) {
+        return;
+    }
+
+    intro.classList.remove(
+        "state-connect",
+        "state-sync",
+        "state-detect",
+        "state-alert",
+        "state-complete"
+    );
+}
+
+
+/* =========================================================
+   CHANGER L'ÉTAT
+   ========================================================= */
+
+function setIntroState(state) {
+
+    if (
+        !intro ||
+        introClosed
+    ) {
+        return;
+    }
+
+    clearIntroStates();
+
+    if (state) {
+
+        intro.classList.add(
+            state
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   DÉMARRAGE DE LA TIMELINE
+   ========================================================= */
+
+function startTimeline() {
+
+    if (
+        !intro ||
+        reducedMotion
+    ) {
+        return;
+    }
+
+
+    /*
+     * État initial immédiat
+     */
+
+    setIntroState(
+        "state-connect"
+    );
+
+
+    /*
+     * Programme les différentes
+     * phases de l'interface.
+     */
+
+    TIMELINE.forEach(
+        ({ time, state }) => {
+
+            if (time === 0) {
+                return;
+            }
+
+
+            const timer =
+                window.setTimeout(
+                    () => {
+
+                        setIntroState(
+                            state
+                        );
+
+                    },
+                    time
+                );
+
+
+            timelineTimers.push(
+                timer
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ARRÊT DE LA TIMELINE
+   ========================================================= */
+
+function stopTimeline() {
+
+    timelineTimers.forEach(
+        (timer) => {
+
+            window.clearTimeout(
+                timer
+            );
+
+        }
+    );
+
+    timelineTimers = [];
+
+
+    if (closeTimer !== null) {
+
+        window.clearTimeout(
+            closeTimer
+        );
+
+        closeTimer = null;
+
+    }
+
+}
 
 
 /* =========================================================
@@ -34,36 +236,79 @@ function closeIntro() {
 
 
     /*
-     * Évite de déclencher plusieurs fois
-     * la fermeture.
+     * Empêche une double fermeture.
      */
 
-    if (
-        intro.classList.contains("is-hidden")
-    ) {
+    if (introClosed) {
         return;
     }
 
 
+    introClosed =
+        true;
+
+
+    stopTimeline();
+
+
+    /*
+     * Dernière impulsion avant
+     * la disparition.
+     */
+
+    clearIntroStates();
+
+
     intro.classList.add(
-        "is-hidden"
+        "state-complete"
     );
 
 
-    document.body.classList.remove(
-        "intro-active"
-    );
+    /*
+     * Petite pause pour laisser
+     * respirer l'état final.
+     */
+
+    window.setTimeout(
+        () => {
+
+            intro.classList.add(
+                "is-hidden"
+            );
+
+            document.body.classList.remove(
+                "intro-active"
+            );
+
+            intro.setAttribute(
+                "aria-hidden",
+                "true"
+            );
 
 
-    intro.setAttribute(
-        "aria-hidden",
-        "true"
-    );
+            /*
+             * L'intro ne se rejoue pas
+             * pendant cette session.
+             */
 
+            try {
 
-    sessionStorage.setItem(
-        INTRO_STORAGE_KEY,
-        "true"
+                sessionStorage.setItem(
+                    INTRO_STORAGE_KEY,
+                    "true"
+                );
+
+            } catch (error) {
+
+                /*
+                 * sessionStorage peut être bloqué
+                 * dans certains environnements.
+                 */
+
+            }
+
+        },
+        180
     );
 
 }
@@ -84,38 +329,45 @@ if (introSkip) {
 
 
 /* =========================================================
-   ACCESSIBILITÉ
+   TOUCHE ESCAPE
    ========================================================= */
 
-const reducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Escape" &&
+            !introClosed
+        ) {
+
+            closeIntro();
+
+        }
+
+    }
+);
 
 
 /* =========================================================
-   INTRO DÉJÀ VUE ?
+   VÉRIFICATION SESSION
    ========================================================= */
 
-const introAlreadySeen =
-    sessionStorage.getItem(
-        INTRO_STORAGE_KEY
-    );
+let introAlreadySeen =
+    false;
 
 
-/* =========================================================
-   INITIALISATION
-   ========================================================= */
+try {
 
-if (
-    intro &&
-    introAlreadySeen !== "true" &&
-    !reducedMotion
-) {
+    introAlreadySeen =
+        sessionStorage.getItem(
+            INTRO_STORAGE_KEY
+        ) === "true";
 
-    document.body.classList.add(
-        "intro-active"
-    );
+} catch (error) {
+
+    introAlreadySeen =
+        false;
 
 }
 
@@ -125,25 +377,83 @@ if (
    ========================================================= */
 
 if (
-    introAlreadySeen === "true"
-    ||
+    introAlreadySeen ||
     reducedMotion
 ) {
 
-    closeIntro();
+    if (intro) {
+
+        intro.classList.add(
+            "is-hidden"
+        );
+
+        intro.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+    document.body.classList.remove(
+        "intro-active"
+    );
 
 }
 
 
 /* =========================================================
-   FERMETURE AUTOMATIQUE
+   DÉMARRAGE
    ========================================================= */
 
-else {
+else if (intro) {
 
-    window.setTimeout(
-        closeIntro,
-        INTRO_DURATION
+    document.body.classList.add(
+        "intro-active"
     );
 
+
+    intro.classList.remove(
+        "is-hidden"
+    );
+
+
+    intro.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    /*
+     * Démarre les états
+     * de l'interface.
+     */
+
+    startTimeline();
+
+
+    /*
+     * Fermeture automatique
+     * après exactement 10 secondes.
+     */
+
+    closeTimer =
+        window.setTimeout(
+            closeIntro,
+            INTRO_DURATION
+        );
+
 }
+
+
+/* =========================================================
+   SÉCURITÉ
+   ========================================================= */
+
+window.addEventListener(
+    "pagehide",
+    () => {
+
+        stopTimeline();
+
+    }
+);
