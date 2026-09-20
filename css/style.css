@@ -2758,7 +2758,7 @@ h2 {
 
     width: 100%;
     max-width: 1100px;
-
+    min-height: 350px;
     margin: 0 auto;
 
     overflow: hidden;
@@ -2811,7 +2811,7 @@ h2 {
     display: block;
 
     width: 100%;
-    min-height: 180px;
+    min-height: 320px;
 
     margin: 0;
 
