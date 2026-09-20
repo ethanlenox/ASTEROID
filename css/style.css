@@ -4675,3 +4675,169 @@ h2 {
 }
 
 
+
+/* =========================================================
+   PAGE MÉDIAS
+   MEDIA CONTROL / FUTURISTIC BROADCAST
+   ========================================================= */
+
+#media-page {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 229, 255, 0.025),
+            rgba(4, 9, 18, 0.92)
+        );
+
+    border: 1px solid var(--color-border);
+
+    box-shadow:
+        inset 0 0 80px rgba(0, 229, 255, 0.025),
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+#media-page::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 229, 255, 0.018) 0px,
+            rgba(0, 229, 255, 0.018) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+
+    opacity: 0.35;
+}
+
+
+#media-page::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--color-cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.7);
+}
+
+
+/* =========================================================
+   ZONE TITRE
+   ========================================================= */
+
+#media-page .section-label {
+    position: relative;
+
+    color: var(--color-cyan);
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.45);
+}
+
+
+#media-page h1 {
+    position: relative;
+
+    text-shadow:
+        0 0 15px rgba(0, 229, 255, 0.35),
+        0 0 45px rgba(0, 229, 255, 0.12);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+#media-page > .section-content > p:not(.section-label) {
+    position: relative;
+
+    color: var(--color-text-muted);
+
+    border-left: 2px solid var(--color-cyan);
+
+    padding-left: 18px;
+}
+
+
+/* =========================================================
+   COMMANDES MÉDIAS
+   ========================================================= */
+
+.media-page-actions {
+    position: relative;
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+
+.media-page-actions::before {
+    content: "MEDIA CHANNELS // SELECT SOURCE";
+
+    position: absolute;
+
+    top: -22px;
+    left: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.5rem;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+.media-page-actions .btn {
+    position: relative;
+
+    border-color:
+        var(--color-border-strong);
+
+    background:
+        rgba(0, 229, 255, 0.025);
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 229, 255, 0.02);
+}
+
+
+.media-page-actions .btn:hover {
+    border-color:
+        var(--color-cyan);
+
+    color:
+        var(--color-cyan);
+
+    box-shadow:
+        0 0 20px rgba(0, 229, 255, 0.12),
+        inset 0 0 20px rgba(0, 229, 255, 0.035);
+}
+
