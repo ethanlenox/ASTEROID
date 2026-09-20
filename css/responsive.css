@@ -631,129 +631,26 @@
 }
 
 /* =========================================================
-    INTRO
-   ========================================================= */
-/* =========================================================
-   TRÈS PETITS ÉCRANS
-   ========================================================= */
-
-@media (max-width: 420px) {
-
-    .hud-left,
-    .hud-right {
-
-        top:
-            62px;
-
-        transform:
-            scale(.66);
-    }
-
-
-    .hud-left {
-        left:
-            8px;
-    }
-
-
-    .hud-right {
-        right:
-            8px;
-    }
-
-
-    .intro-radar {
-
-        width:
-            72vw;
-
-        height:
-            72vw;
-    }
-
-
-    .intro-logo {
-
-        width:
-            62vw;
-
-        min-height:
-            90px;
-    }
-
-
-    .intro-logo-subtitle {
-
-        font-size:
-            .42rem;
-
-        letter-spacing:
-            .18em;
-    }
-
-
-    .intro-logo-name {
-
-        font-size:
-            .58rem;
-    }
-
-
-    .hud-console-left,
-    .hud-console-right {
-
-        bottom:
-            62px;
-
-        font-size:
-            .36rem;
-    }
-
-
-    .boot-progress {
-
-        bottom:
-            72px;
-
-        width:
-            68vw;
-    }
-
-
-    .target-lock {
-
-        bottom:
-            125px;
-
-        transform:
-            translateX(-50%)
-            scale(.6);
-    }
-
-
-    .hud-footer {
-
-        bottom:
-            8px;
-
-        font-size:
-            .31rem;
-    }
-}
-
-/* =========================================================
-   ÉCRANS moyen
+    INTRO MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
+    /* =====================================================
+       BASE
+       ===================================================== */
+
     .intro {
+        width: 100%;
+        height: 100dvh;
+        min-height: 100dvh;
         overflow: hidden;
     }
 
     .intro-content {
+        position: relative;
         width: 100%;
-        height: 100dvh;
+        height: 100%;
         min-height: 100dvh;
         overflow: hidden;
     }
@@ -764,168 +661,7 @@
        ===================================================== */
 
     .intro-content::before {
-        inset: 10px;
-
-        border-color:
-            rgba(0,229,255,.16);
-    }
-
-
-    /* =====================================================
-       CENTRE
-       ===================================================== */
-
-    .intro-center {
-
-        position: absolute;
-
-        left: 50%;
-        top: 50%;
-
-        width: 100%;
-        height: 100%;
-
-        transform:
-            translate(-50%,-50%);
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-    }
-
-
-    /* =====================================================
-       RADAR
-       ===================================================== */
-
-    .intro-radar {
-
-        width:
-            min(78vw, 330px);
-
-        height:
-            min(78vw, 330px);
-
-        max-width:
-            330px;
-
-        max-height:
-            330px;
-    }
-
-
-    /* =====================================================
-       LOGO
-       ===================================================== */
-
-    .intro-logo {
-
-        width:
-            min(68vw, 300px);
-
-        min-height:
-            110px;
-
-        max-width:
-            300px;
-    }
-
-
-    .intro-logo-subtitle {
-
-        bottom:
-            calc(100% + 14px);
-
-        font-size:
-            .48rem;
-
-        letter-spacing:
-            .25em;
-    }
-
-
-    .intro-brand h1 {
-
-        margin-top:
-            14px;
-
-        font-size:
-            .52rem;
-
-        letter-spacing:
-            .25em;
-    }
-
-
-    .intro-logo-name {
-
-        margin-top:
-            8px;
-
-        font-size:
-            .68rem;
-
-        letter-spacing:
-            .14em;
-    }
-
-
-    /* =====================================================
-       PANNEAU GAUCHE
-       ===================================================== */
-
-    .hud-left {
-
-        left:
-            14px;
-
-        top:
-            70px;
-
-        width:
-            calc(50% - 22px);
-
-        max-width:
-            170px;
-
-        padding:
-            8px;
-
-        transform:
-            scale(.78);
-
-        transform-origin:
-            top left;
-    }
-
-
-    /* =====================================================
-       PANNEAU DROIT
-       ===================================================== */
-
-    .hud-right {
-
-        right:
-            14px;
-
-        top:
-            70px;
-
-        width:
-            calc(50% - 22px);
-
-        max-width:
-            170px;
-
-        padding:
-            8px;
-
-        transform:
-            scale(.78);
-
-        transform-origin:
-            top right;
+        inset: 12px;
     }
 
 
@@ -934,221 +670,280 @@
        ===================================================== */
 
     .hud-header {
+        position: absolute;
 
-        position:
-            absolute;
+        top: 22px;
+        left: 18px;
+        right: 18px;
 
-        top:
-            20px;
+        width: auto;
+        height: 24px;
 
-        left:
-            18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        right:
-            18px;
+        gap: 10px;
 
-        height:
-            30px;
+        font-size: .42rem;
+        letter-spacing: .08em;
 
-        font-size:
-            .42rem;
-
-        letter-spacing:
-            .08em;
+        z-index: 100;
     }
 
+    .hud-header-left,
+    .hud-header-right {
+        white-space: nowrap;
+    }
 
     .hud-header-center {
-        display:
-            none;
-    }
-
-
-    .hud-header-left {
-        max-width:
-            50%;
-    }
-
-
-    .hud-header-right {
-        max-width:
-            40%;
+        display: none;
     }
 
 
     /* =====================================================
-       CONSOLES BASSES
+       PANNEAUX HAUT GAUCHE / DROIT
        ===================================================== */
 
-    .hud-console-left {
+    .hud-panel {
+        position: absolute;
 
-        left:
-            14px;
+        top: 60px;
 
-        bottom:
-            70px;
+        width: 39vw;
+        max-width: 165px;
 
-        max-width:
-            44vw;
+        padding: 9px;
 
-        font-size:
-            .42rem;
+        box-sizing: border-box;
+
+        z-index: 50;
+
+        transform: none;
     }
 
+    .hud-left {
+        left: 12px;
+        right: auto;
+    }
 
-    .hud-console-right {
+    .hud-right {
+        right: 12px;
+        left: auto;
+    }
 
-        right:
-            14px;
+    .hud-panel-title {
+        font-size: .43rem;
+        letter-spacing: .10em;
+    }
 
-        bottom:
-            70px;
+    .hud-data {
+        margin-top: 6px;
+        font-size: .40rem;
+    }
 
-        max-width:
-            44vw;
+    .hud-meter {
+        margin-top: 9px;
+    }
 
-        font-size:
-            .42rem;
+    .hud-meter-label {
+        font-size: .37rem;
+    }
+
+    .hud-mini-grid {
+        margin-top: 8px;
+        font-size: .37rem;
+    }
+
+    .hud-target-box {
+        margin-top: 9px;
     }
 
 
     /* =====================================================
-       ALERTE
+       CENTRE — VRAI CENTRE DE L'ÉCRAN
        ===================================================== */
 
-    .hud-alert {
+    .intro-center {
+        position: absolute;
 
-        left:
-            50%;
+        left: 50%;
+        top: 50%;
 
-        top:
-            58%;
+        width: 100%;
+        height: 100%;
 
-        width:
-            min(72vw, 280px);
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        z-index: 20;
+
+        pointer-events: none;
+    }
+
+
+    /* =====================================================
+       RADAR
+       ===================================================== */
+
+    .intro-radar {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        width: min(72vw, 310px);
+        height: min(72vw, 310px);
+
+        transform:
+            translate(-50%, -50%)
+            scale(.95);
+
+        z-index: 0;
+
+        pointer-events: none;
+    }
+
+
+    /* =====================================================
+       LOGO / BRANDING
+       ===================================================== */
+
+    .intro-brand {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        width: 100%;
+
+        transform:
+            translate(-50%, -50%);
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        z-index: 30;
+
+        pointer-events: none;
+    }
+
+
+    .intro-logo {
+        width: min(64vw, 285px);
+
+        min-height: 0;
+
+        margin: 0 auto;
+
+        z-index: 31;
+    }
+
+
+    .intro-logo img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       AC TEKPROD
+       ===================================================== */
+
+    .intro-logo-subtitle {
+        position: absolute;
+
+        bottom:
+            calc(100% + 13px);
+
+        left: 50%;
 
         transform:
             translateX(-50%);
 
-        font-size:
-            .5rem;
-    }
-
-
-    /* =====================================================
-       TARGET LOCK
-       ===================================================== */
-
-    .target-lock {
-
-        bottom:
-            145px;
-
-        transform:
-            translateX(-50%)
-            scale(.72);
-
-        transform-origin:
-            center;
-    }
-
-
-    /* =====================================================
-       PROGRESSION
-       ===================================================== */
-
-    .boot-progress {
-
-        left:
-            50%;
-
-        bottom:
-            82px;
-
-        width:
-            min(72vw, 330px);
-
-        transform:
-            translateX(-50%);
-    }
-
-
-    .boot-stages {
+        width: max-content;
+        max-width: 90vw;
 
         font-size:
-            .38rem;
+            clamp(.55rem, 2.2vw, .72rem);
 
         letter-spacing:
-            .08em;
+            .28em;
+
+        white-space: nowrap;
+
+        z-index: 40;
     }
 
 
     /* =====================================================
-       FOOTER
+       PRÉSENTE
        ===================================================== */
 
-    .hud-footer {
-
-        left:
-            14px;
-
-        right:
-            14px;
-
-        bottom:
-            14px;
+    .intro-brand h1 {
+        margin:
+            13px 0 0;
 
         font-size:
-            .36rem;
+            clamp(.48rem, 1.9vw, .65rem);
 
         letter-spacing:
-            .06em;
-    }
-
-
-    .hud-footer span:first-child {
-
-        max-width:
-            45%;
-
-        overflow:
-            hidden;
-
-        text-overflow:
-            ellipsis;
+            .28em;
 
         white-space:
             nowrap;
     }
 
 
-    .hud-footer span:last-child {
+    /* =====================================================
+       NOM DU JEU
+       ===================================================== */
 
-        display:
-            none;
+    .intro-logo-name {
+        margin:
+            8px 0 0;
+
+        padding: 0;
+
+        font-size:
+            clamp(.68rem, 3.2vw, .95rem);
+
+        letter-spacing:
+            .15em;
+
+        white-space:
+            nowrap;
     }
 
 
     /* =====================================================
-       BOUTON PASSER
+       CIBLE AUTOUR DU CENTRE
        ===================================================== */
 
-    .intro-skip {
+    .target-lock {
+        position: absolute;
 
-        right:
-            14px;
+        left: 50%;
 
-        bottom:
-            38px;
+        bottom: 18%;
 
-        padding:
-            7px 10px;
+        transform:
+            translateX(-50%)
+            scale(.72);
 
-        font-size:
-            .48rem;
+        transform-origin:
+            center center;
 
-        z-index:
-            1000;
+        z-index: 35;
+
+        white-space: nowrap;
     }
 
 
@@ -1157,69 +952,398 @@
        ===================================================== */
 
     .intro-asteroid {
-
         width:
-            clamp(55px, 18vw, 90px);
+            clamp(55px, 16vw, 85px);
 
         max-width:
-            90px;
+            85px;
+
+        z-index: 40;
     }
 
 
     /* =====================================================
-       PARTICULES
+       IMPACT
        ===================================================== */
+
+    .intro-sonic {
+        z-index: 25;
+    }
 
     .intro-particles {
-
-        transform:
-            translate(-50%,-50%)
-            scale(.7);
+        z-index: 26;
     }
 
 
     /* =====================================================
-       SCAN
+       CONSOLES BASSES
        ===================================================== */
 
-    .intro-scan {
+    .hud-console {
+        position: absolute;
 
-        width:
-            120%;
+        bottom: 78px;
 
-        left:
-            -10%;
+        width: 40vw;
+        max-width: 155px;
+
+        font-size: .38rem;
+
+        z-index: 60;
+    }
+
+    .hud-console-left {
+        left: 12px;
+        right: auto;
+    }
+
+    .hud-console-right {
+        right: 12px;
+        left: auto;
+    }
+
+
+    /* =====================================================
+       MESSAGE CONSOLE
+       ===================================================== */
+
+    .console-message {
+        display: block;
+
+        max-width: 100%;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       ALERTE
+       ===================================================== */
+
+    .hud-alert {
+        position: absolute;
+
+        left: 50%;
+        top: 67%;
+
+        width: min(70vw, 260px);
+
+        transform:
+            translateX(-50%);
+
+        z-index: 70;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       PROGRESSION
+       ===================================================== */
+
+    .boot-progress {
+        position: absolute;
+
+        left: 50%;
+        bottom: 48px;
+
+        width: min(70vw, 300px);
+
+        transform:
+            translateX(-50%);
+
+        z-index: 80;
+    }
+
+    .boot-progress-top {
+        font-size: .40rem;
+    }
+
+    .boot-stages {
+        font-size: .36rem;
+        letter-spacing: .08em;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .hud-footer {
+        position: absolute;
+
+        left: 14px;
+        right: 14px;
+
+        bottom: 12px;
+
+        width: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 10px;
+
+        font-size: .31rem;
+
+        letter-spacing: .05em;
+
+        z-index: 90;
+    }
+
+    .hud-footer span:first-child {
+        max-width: 55%;
+
+        overflow: hidden;
+
+        white-space: nowrap;
+
+        text-overflow: ellipsis;
+    }
+
+    .hud-footer span:nth-child(2) {
+        white-space: nowrap;
+    }
+
+    .hud-footer span:last-child {
+        display: none;
+    }
+
+
+    /* =====================================================
+       BOUTON PASSER
+       ===================================================== */
+
+    .intro-skip {
+        position: absolute;
+
+        right: 12px;
+        bottom: 38px;
+
+        z-index: 1000;
+
+        padding:
+            7px 10px;
+
+        font-size: .45rem;
+
+        letter-spacing: .10em;
+    }
+
+
+    /* =====================================================
+       ÉLÉMENTS DÉCORATIFS
+       ===================================================== */
+
+    .intro-brand::before,
+    .intro-brand::after {
+        display: none;
+    }
+
+    .intro-logo-subtitle::after {
+        display: none;
     }
 }
-/* =====================================================
-    GRAND ECRAN
-   ===================================================== */
 
-@media (max-width: 900px) {
 
-    .intro-brand::before {
+/* =========================================================
+   PETITS SMARTPHONES
+   ========================================================= */
 
-        left: 25px;
+@media (max-width: 420px) {
 
-        width: 145px;
+    .hud-header {
+        top: 18px;
+        left: 12px;
+        right: 12px;
 
-        font-size:
-            7px;
+        font-size: .36rem;
     }
 
-    .intro-brand::after {
 
-        right: 25px;
+    .hud-panel {
+        top: 52px;
 
-        width: 145px;
+        width: 37vw;
 
-        font-size:
-            7px;
+        max-width: 145px;
+
+        padding: 7px;
     }
 
-    .intro::before {
+    .hud-left {
+        left: 8px;
+    }
 
-        left: 25px;
+    .hud-right {
+        right: 8px;
+    }
+
+
+    .hud-panel-title {
+        font-size: .38rem;
+    }
+
+    .hud-data {
+        font-size: .35rem;
+        margin-top: 5px;
+    }
+
+    .hud-meter-label,
+    .hud-mini-grid {
+        font-size: .33rem;
+    }
+
+
+    /* CENTRE */
+
+    .intro-radar {
+        width: 67vw;
+        height: 67vw;
+    }
+
+
+    .intro-logo {
+        width: 59vw;
+        max-width: 250px;
+    }
+
+
+    .intro-logo-subtitle {
+        font-size: .50rem;
+        letter-spacing: .23em;
+    }
+
+
+    .intro-brand h1 {
+        margin-top: 10px;
+        font-size: .43rem;
+        letter-spacing: .23em;
+    }
+
+
+    .intro-logo-name {
+        margin-top: 6px;
+        font-size: .61rem;
+        letter-spacing: .12em;
+    }
+
+
+    .target-lock {
+        bottom: 19%;
+
+        transform:
+            translateX(-50%)
+            scale(.62);
+    }
+
+
+    .hud-console {
+        bottom: 72px;
+
+        width: 38vw;
+
+        font-size: .33rem;
+    }
+
+
+    .boot-progress {
+        bottom: 44px;
+
+        width: 66vw;
+    }
+
+
+    .hud-footer {
+        bottom: 8px;
+
+        font-size: .27rem;
+    }
+
+
+    .intro-skip {
+        right: 9px;
+        bottom: 30px;
+
+        padding:
+            6px 8px;
+
+        font-size: .40rem;
+    }
+}
+
+
+/* =========================================================
+   TÉLÉPHONES TRÈS ÉTROITS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .hud-panel {
+        top: 48px;
+
+        width: 36vw;
+
+        padding: 6px;
+    }
+
+
+    .hud-panel-title {
+        font-size: .34rem;
+    }
+
+
+    .hud-data {
+        font-size: .31rem;
+    }
+
+
+    .intro-radar {
+        width: 63vw;
+        height: 63vw;
+    }
+
+
+    .intro-logo {
+        width: 55vw;
+    }
+
+
+    .intro-logo-subtitle {
+        font-size: .44rem;
+    }
+
+
+    .intro-brand h1 {
+        font-size: .39rem;
+    }
+
+
+    .intro-logo-name {
+        font-size: .55rem;
+    }
+
+
+    .hud-console {
+        bottom: 67px;
+
+        font-size: .29rem;
+    }
+
+
+    .boot-progress {
+        width: 62vw;
+        bottom: 40px;
+    }
+
+
+    .hud-footer {
+        font-size: .24rem;
     }
 }
 
