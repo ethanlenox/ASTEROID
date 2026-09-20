@@ -635,361 +635,177 @@
    ========================================================= */
 
 /* =========================================================
-   01 — TABLETTE / PETIT DESKTOP
+   TABLETTES / PETITS LAPTOPS
    ========================================================= */
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
 
     .intro-content {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+        padding: 0;
+    }
+
+    .intro-brand {
+
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        width: min(78vw, 700px);
+
+        transform:
+            translate(-50%, -50%);
+
+        text-align: center;
     }
 
 
-    .hud-panel {
-        width: 185px;
-    }
-
-
-    .hud-left {
-        left: 24px;
-    }
-
-
-    .hud-right {
-        right: 24px;
-    }
-
+    /* LOGO */
 
     .intro-logo {
+
         width:
-            clamp(300px, 34vw, 430px);
+            clamp(280px, 42vw, 500px);
+
+        min-height:
+            clamp(150px, 22vw, 240px);
+
+        margin:
+            0 auto;
+
+        transform:
+            scale(1);
     }
 
 
-    .intro-radar {
-        width:
-            clamp(320px, 46vw, 560px);
-    }
-
+    /* AC TEKPROD */
 
     .intro-logo-subtitle {
+
+        position: absolute;
+
+        left: 50%;
+        bottom:
+            calc(100% + 25px);
+
+        transform:
+            translateX(-50%);
+
         font-size:
-            .85rem;
+            clamp(.8rem, 1.5vw, 1.05rem);
+
+        letter-spacing:
+            .34em;
+
+        white-space:
+            nowrap;
     }
 
+
+    /* PRÉSENTE */
 
     .intro-brand h1 {
+
+        margin:
+            28px 0 0;
+
         font-size:
-            .75rem;
+            clamp(.85rem, 1.7vw, 1.2rem);
+
+        line-height:
+            1.2;
+
+        letter-spacing:
+            .42em;
+
+        text-align:
+            center;
     }
 
 
+    /* ASTÉROÏD DESTROYER */
+
     .intro-logo-name {
+
+        margin:
+            16px 0 0;
+
         font-size:
-            1.10rem;
+            clamp(1.15rem, 2.6vw, 1.8rem);
+
+        line-height:
+            1.25;
+
+        letter-spacing:
+            .22em;
+
+        text-align:
+            center;
+
+        white-space:
+            nowrap;
+    }
+
+
+    /* METEORE */
+
+    .intro-asteroid {
+
+        width:
+            clamp(180px, 22vw, 300px);
+    }
+
+
+    /* BOUTON */
+
+    .intro-skip {
+
+        color:
+            var(--hud-cyan);
+
+        border-color:
+            rgba(0,229,255,.45);
+
+        background:
+            rgba(0,10,18,.75);
+
+        box-shadow:
+            0 0 15px
+            rgba(0,229,255,.08);
     }
 }
 
 
-
 /* =========================================================
-   02 — TABLETTE
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .intro-content::before {
-        inset:
-            18px;
-    }
-
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
-
-    .hud-header {
-        left:
-            22px;
-
-        right:
-            22px;
-
-        top:
-            22px;
-    }
-
-
-    /* -----------------------------------------------------
-       PANNEAUX
-       ----------------------------------------------------- */
-
-    .hud-panel {
-        width:
-            150px;
-
-        padding:
-            11px;
-    }
-
-
-    .hud-left {
-        left:
-            18px;
-    }
-
-
-    .hud-right {
-        right:
-            18px;
-    }
-
-
-    /* -----------------------------------------------------
-       LOGO
-       ----------------------------------------------------- */
-
-    .intro-logo {
-        width:
-            clamp(290px, 40vw, 390px);
-    }
-
-
-    .intro-radar {
-        width:
-            clamp(300px, 50vw, 500px);
-    }
-
-
-    /* -----------------------------------------------------
-       TEXTES
-       ----------------------------------------------------- */
-
-    .intro-logo-subtitle {
-        font-size:
-            .82rem;
-    }
-
-
-    .intro-brand h1 {
-        font-size:
-            .72rem;
-    }
-
-
-    .intro-logo-name {
-        font-size:
-            1.05rem;
-    }
-}
-
-
-
-/* =========================================================
-   03 — MOBILE PRINCIPAL
+   MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
-    /* -----------------------------------------------------
-       CONTENEUR
-       ----------------------------------------------------- */
-
     .intro {
 
-        width:
-            100vw;
-
-        height:
-            100dvh;
-
-        min-width:
-            0;
-
-        min-height:
-            0;
-
         overflow:
             hidden;
     }
 
 
-    .intro-content {
-
-        position:
-            absolute;
-
-        inset:
-            0;
-
-        width:
-            100vw;
-
-        height:
-            100dvh;
-
-        overflow:
-            hidden;
-    }
-
+    /* -----------------------------------------------------
+       CADRE
+       ----------------------------------------------------- */
 
     .intro-content::before {
 
         inset:
-            10px;
+            12px;
+
+        border-color:
+            rgba(0,229,255,.16);
     }
 
 
-    /* =====================================================
-       HEADER MOBILE
-       ===================================================== */
-
-    .hud-header {
-
-        position:
-            absolute;
-
-        left:
-            16px;
-
-        right:
-            16px;
-
-        top:
-            18px;
-
-        display:
-            flex;
-
-        align-items:
-            center;
-
-        justify-content:
-            space-between;
-
-        z-index:
-            100;
-    }
-
-
-    .hud-header-left,
-    .hud-header-right {
-
-        font-size:
-            .46rem;
-    }
-
-
-    .hud-header-center {
-
-        display:
-            none;
-    }
-
-
-
-    /* =====================================================
-       PANNEAUX
-       ===================================================== */
-
-    .hud-panel {
-
-        width:
-            115px;
-
-        padding:
-            8px;
-
-        opacity:
-            .72;
-
-        z-index:
-            15;
-    }
-
-
-    .hud-left {
-
-        left:
-            10px;
-
-        top:
-            90px;
-    }
-
-
-    .hud-right {
-
-        right:
-            10px;
-
-        top:
-            90px;
-    }
-
-
-    .hud-panel-title {
-
-        font-size:
-            .43rem;
-    }
-
-
-    .hud-data {
-
-        font-size:
-            .40rem;
-
-        margin-bottom:
-            6px;
-    }
-
-
-    .hud-data strong {
-
-        font-size:
-            .43rem;
-    }
-
-
-    .hud-meter,
-    .hud-mini-grid {
-
-        display:
-            none;
-    }
-
-
-
-    /* =====================================================
-       CENTRE
-       ===================================================== */
-
-    .intro-center {
-
-        position:
-            absolute;
-
-        inset:
-            0;
-
-        width:
-            100%;
-
-        height:
-            100%;
-
-        transform:
-            none;
-    }
-
-
-
-    /* =====================================================
-       BLOC LOGO + TEXTES
-       ===================================================== */
+    /* -----------------------------------------------------
+       BLOC CENTRAL
+       ----------------------------------------------------- */
 
     .intro-brand {
 
@@ -1003,19 +819,13 @@
             50%;
 
         width:
-            96vw;
+            94vw;
 
         max-width:
-            96vw;
+            94vw;
 
-        margin:
-            0;
-
-        padding:
-            0;
-
-        transform:
-            translate(-50%, -50%);
+        height:
+            auto;
 
         display:
             flex;
@@ -1029,30 +839,28 @@
         justify-content:
             center;
 
+        transform:
+            translate(-50%, -50%);
+
         text-align:
             center;
 
         z-index:
-            40;
+            30;
     }
 
 
-
-    /* =====================================================
+    /* -----------------------------------------------------
        LOGO
-       APPARAÎT IMMÉDIATEMENT
-       ===================================================== */
+       ----------------------------------------------------- */
 
     .intro-logo {
-
-        order:
-            1;
 
         position:
             relative;
 
         width:
-            min(72vw, 330px);
+            min(82vw, 390px);
 
         height:
             auto;
@@ -1061,25 +869,91 @@
             0;
 
         margin:
-            0;
+            0 auto;
 
-        opacity:
-            1;
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
 
         transform:
-            scale(1);
+            scale(0);
+
+        opacity:
+            0;
 
         filter:
-            none;
+            blur(8px)
+            brightness(1.8);
 
         animation:
-            none;
+            mobile-logo-enter
+            1.25s
+            cubic-bezier(.16,1,.3,1)
+            .25s
+            forwards;
+    }
+
+
+    @keyframes mobile-logo-enter {
+
+        0% {
+
+            opacity:
+                0;
+
+            transform:
+                scale(0);
+
+            filter:
+                blur(12px)
+                brightness(2.2);
+        }
+
+        65% {
+
+            opacity:
+                1;
+
+            transform:
+                scale(1.2);
+
+            filter:
+                blur(0)
+                brightness(1.5);
+        }
+
+        82% {
+
+            transform:
+                scale(.96);
+        }
+
+        100% {
+
+            opacity:
+                1;
+
+            transform:
+                scale(1);
+
+            filter:
+                blur(0)
+                brightness(1);
+        }
     }
 
 
     .intro-logo img {
 
         width:
+            100%;
+
+        max-width:
             100%;
 
         height:
@@ -1090,19 +964,17 @@
     }
 
 
-
-    /* =====================================================
+    /* -----------------------------------------------------
        AC TEKPROD
-       TRÈS VISIBLE — SOUS LOGO
-       ===================================================== */
+       ----------------------------------------------------- */
 
     .intro-logo-subtitle {
 
-        order:
-            2;
-
         position:
             relative;
+
+        order:
+            -1;
 
         left:
             auto;
@@ -1113,334 +985,490 @@
         transform:
             none;
 
-        width:
-            auto;
-
         margin:
-            22px 0 0;
-
-        padding:
-            0;
+            0 0 20px;
 
         font-size:
-            clamp(
-                1.25rem,
-                6vw,
-                1.75rem
-            );
+            clamp(1.05rem, 4.8vw, 1.5rem);
+
+        line-height:
+            1.2;
 
         font-weight:
             900;
 
         letter-spacing:
-            .18em;
+            .28em;
 
-        line-height:
-            1;
+        text-align:
+            center;
+
+        white-space:
+            nowrap;
 
         color:
             var(--hud-cyan);
-
-        white-space:
-            nowrap;
-
-        opacity:
-            1;
-
-        text-shadow:
-
-            0 0 8px
-            rgba(0,229,255,.95),
-
-            0 0 20px
-            rgba(0,229,255,.75),
-
-            0 0 45px
-            rgba(0,229,255,.35);
-
-        animation:
-            none;
-    }
-
-
-
-    /* =====================================================
-       PRÉSENTE
-       ===================================================== */
-
-    .intro-brand h1 {
-
-        order:
-            3;
-
-        position:
-            relative;
-
-        margin:
-            17px 0 0;
-
-        padding:
-            0;
-
-        font-size:
-            clamp(
-                1.05rem,
-                5vw,
-                1.45rem
-            );
-
-        font-weight:
-            900;
-
-        letter-spacing:
-            .25em;
-
-        line-height:
-            1;
-
-        color:
-            rgba(235,245,248,.95);
-
-        white-space:
-            nowrap;
-
-        opacity:
-            1;
-
-        transform:
-            none;
-
-        text-shadow:
-
-            0 0 8px
-            rgba(255,255,255,.35),
-
-            0 0 20px
-            rgba(190,215,225,.25);
-
-        animation:
-            none;
-    }
-
-
-
-    /* =====================================================
-       ASTÉROÏD DESTROYER
-       TRÈS GROS ET LISIBLE
-       ===================================================== */
-
-    .intro-logo-name {
-
-        order:
-            4;
-
-        position:
-            relative;
-
-        margin:
-            17px 0 0;
-
-        padding:
-            0;
-
-        max-width:
-            94vw;
-
-        font-size:
-            clamp(
-                1.35rem,
-                7vw,
-                2rem
-            );
-
-        font-weight:
-            900;
-
-        letter-spacing:
-            .10em;
-
-        line-height:
-            1;
-
-        color:
-            var(--hud-cyan);
-
-        white-space:
-            nowrap;
-
-        opacity:
-            1;
-
-        transform:
-            none;
 
         text-shadow:
 
             0 0 10px
-            rgba(0,229,255,1),
+            rgba(0,229,255,.65),
 
             0 0 25px
-            rgba(0,229,255,.75),
+            rgba(0,229,255,.3);
 
-            0 0 50px
-            rgba(0,229,255,.35);
+        z-index:
+            40;
+
+        opacity:
+            0;
 
         animation:
-            none;
+            mobile-subtitle-in
+            .7s
+            ease
+            .65s
+            forwards;
     }
 
 
+    @keyframes mobile-subtitle-in {
 
-    /* =====================================================
-       RADAR
-       PAS DE REDIMENSIONNEMENT EXCESSIF
-       ===================================================== */
+        from {
 
-    .intro-radar {
+            opacity:
+                0;
+
+            transform:
+                translateY(-12px)
+                scale(.85);
+        }
+
+        to {
+
+            opacity:
+                1;
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+    }
+
+
+    /* -----------------------------------------------------
+       PRÉSENTE
+       ----------------------------------------------------- */
+
+    .intro-brand h1 {
+
+        position:
+            relative;
+
+        margin:
+            25px 0 0;
 
         width:
-            min(82vw, 460px);
+            100%;
 
-        height:
-            min(82vw, 460px);
+        font-size:
+            clamp(1.05rem, 4.6vw, 1.55rem);
 
-        max-width:
-            none;
+        line-height:
+            1.25;
 
-        max-height:
-            none;
+        font-weight:
+            900;
+
+        letter-spacing:
+            .35em;
+
+        text-align:
+            center;
+
+        white-space:
+            nowrap;
+
+        color:
+            rgba(220,240,245,.9);
+
+        text-shadow:
+            0 0 10px
+            rgba(255,255,255,.18);
+
+        opacity:
+            0;
 
         transform:
-            translate(-50%, -50%)
-            scale(.90);
+            translateY(15px);
+
+        animation:
+            mobile-present-in
+            .7s
+            cubic-bezier(.16,1,.3,1)
+            1.35s
+            forwards;
     }
 
 
+    @keyframes mobile-present-in {
 
-    /* =====================================================
-       CROSSHAIR
-       ===================================================== */
+        to {
 
-    .holo-crosshair {
+            opacity:
+                .95;
 
-        transform:
-            translate(-50%, -50%)
-            scale(.85);
+            transform:
+                translateY(0);
+        }
     }
 
 
+    /* -----------------------------------------------------
+       ASTÉROÏD DESTROYER
+       ----------------------------------------------------- */
 
-    /* =====================================================
-       MÉTÉORE
-       BEAUCOUP PLUS GROS
-       ===================================================== */
+    .intro-logo-name {
+
+        position:
+            relative;
+
+        margin:
+            14px 0 0;
+
+        width:
+            100%;
+
+        font-size:
+            clamp(1.35rem, 6vw, 2rem);
+
+        line-height:
+            1.25;
+
+        font-weight:
+            900;
+
+        letter-spacing:
+            .16em;
+
+        text-align:
+            center;
+
+        white-space:
+            nowrap;
+
+        color:
+            var(--hud-cyan);
+
+        text-shadow:
+
+            0 0 10px
+            rgba(0,229,255,.7),
+
+            0 0 25px
+            rgba(0,229,255,.35),
+
+            0 0 50px
+            rgba(0,229,255,.15);
+
+        opacity:
+            0;
+
+        transform:
+            translateY(18px)
+            scale(.9);
+
+        animation:
+            mobile-game-name-in
+            .85s
+            cubic-bezier(.16,1,.3,1)
+            1.65s
+            forwards;
+    }
+
+
+    @keyframes mobile-game-name-in {
+
+        to {
+
+            opacity:
+                1;
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+    }
+
+
+    /* -----------------------------------------------------
+       METEORE
+       ----------------------------------------------------- */
 
     .intro-asteroid {
 
-        width:
-            clamp(
-                230px,
-                52vw,
-                360px
-            );
-
-        max-width:
-            none;
-
-        z-index:
-            50;
-    }
-
-
-
-    /* =====================================================
-       CIBLE
-       ===================================================== */
-
-    .target-lock {
-
-        left:
-            50%;
-
-        bottom:
-            19%;
-
-        transform:
-            translateX(-50%)
-            scale(.78);
-
-        z-index:
-            45;
-    }
-
-
-
-    /* =====================================================
-       ALERTE
-       ===================================================== */
-
-    .hud-alert {
+        position:
+            absolute;
 
         left:
             50%;
 
         top:
-            74px;
-
-        transform:
-            translateX(-50%)
-            scale(.78);
-
-        transform-origin:
-            center top;
+            50%;
 
         z-index:
-            90;
+            15;
+
+        width:
+            clamp(320px, 72vw, 520px);
+
+        max-width:
+            none;
+
+        pointer-events:
+            none;
+
+        transform-origin:
+            center center;
     }
 
 
+    /* -----------------------------------------------------
+       RADAR
+       ----------------------------------------------------- */
 
-    /* =====================================================
-       CONSOLES
-       ===================================================== */
+    .intro-radar {
+
+        width:
+            min(88vw, 480px);
+
+        height:
+            auto;
+
+        max-width:
+            480px;
+    }
+
+
+    /*
+     * RADAR ROUGE CONSERVÉ
+     * Aucun display:none ici.
+     */
+
+    .intro.state-alert .intro-radar {
+
+        box-shadow:
+
+            0 0 45px
+            rgba(255,48,79,.15),
+
+            inset 0 0 70px
+            rgba(255,48,79,.08);
+    }
+
+
+    .intro.state-alert .intro-radar::after {
+
+        width:
+            78%;
+
+        height:
+            78%;
+
+        border-color:
+            rgba(255,48,79,.65);
+
+        box-shadow:
+
+            0 0 25px
+            rgba(255,48,79,.18);
+
+        animation:
+            target-lock-alert
+            .8s
+            linear
+            infinite;
+    }
+
+
+    /* -----------------------------------------------------
+       PANNEAUX LATÉRAUX
+       ----------------------------------------------------- */
+
+    .hud-panel {
+
+        position:
+            absolute;
+
+        width:
+            150px;
+
+        max-width:
+            39vw;
+
+        padding:
+            9px;
+
+        font-size:
+            8px;
+    }
+
+
+    .hud-left {
+
+        left:
+            18px;
+
+        top:
+            72px;
+    }
+
+
+    .hud-right {
+
+        right:
+            18px;
+
+        top:
+            72px;
+    }
+
+
+    .hud-panel-title {
+
+        font-size:
+            7px;
+
+        letter-spacing:
+            .08em;
+    }
+
+
+    .hud-data {
+
+        margin:
+            7px 0;
+    }
+
+
+    .hud-data span,
+    .hud-data strong {
+
+        font-size:
+            7px;
+    }
+
+
+    .hud-mini-grid {
+
+        font-size:
+            7px;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .hud-header {
+
+        position:
+            absolute;
+
+        top:
+            25px;
+
+        left:
+            22px;
+
+        right:
+            22px;
+
+        display:
+            flex;
+
+        justify-content:
+            space-between;
+
+        align-items:
+            center;
+
+        font-size:
+            7px;
+    }
+
+
+    .hud-header-center {
+
+        position:
+            absolute;
+
+        left:
+            50%;
+
+        transform:
+            translateX(-50%);
+
+        text-align:
+            center;
+    }
+
+
+    .hud-header-left span:last-child,
+    .hud-header-right span {
+
+        display:
+            none;
+    }
+
+
+    /* -----------------------------------------------------
+       TARGET LOCK
+       ----------------------------------------------------- */
+
+    .target-lock {
+
+        position:
+            absolute;
+
+        left:
+            50%;
+
+        bottom:
+            100px;
+
+        transform:
+            translateX(-50%);
+
+        width:
+            70vw;
+
+        max-width:
+            280px;
+    }
+
+
+    .target-lock-box {
+
+        font-size:
+            8px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONSOLE
+       ----------------------------------------------------- */
 
     .hud-console {
 
-        max-width:
-            145px;
+        bottom:
+            68px;
 
         font-size:
-            .42rem;
-
-        z-index:
-            70;
-    }
-
-
-    .hud-console-left {
-
-        left:
-            12px;
-
-        bottom:
-            72px;
-    }
-
-
-    .hud-console-right {
-
-        right:
-            12px;
-
-        bottom:
-            72px;
-    }
-
-
-    .console-message {
+            7px;
 
         max-width:
-            145px;
+            42vw;
 
         overflow:
             hidden;
@@ -1453,10 +1481,68 @@
     }
 
 
+    .hud-console-left {
 
-    /* =====================================================
-       BARRE DE PROGRESSION
-       ===================================================== */
+        left:
+            18px;
+    }
+
+
+    .hud-console-right {
+
+        right:
+            18px;
+    }
+
+
+    /* -----------------------------------------------------
+       MESSAGE ANIMÉ
+       ----------------------------------------------------- */
+
+    .console-message {
+
+        color:
+            var(--hud-cyan);
+
+        text-shadow:
+            0 0 8px
+            rgba(0,229,255,.45);
+
+        animation:
+            console-pulse
+            1.2s
+            ease-in-out
+            infinite alternate;
+    }
+
+
+    @keyframes console-pulse {
+
+        from {
+
+            opacity:
+                .45;
+
+            text-shadow:
+                0 0 4px
+                rgba(0,229,255,.2);
+        }
+
+        to {
+
+            opacity:
+                1;
+
+            text-shadow:
+                0 0 12px
+                rgba(0,229,255,.65);
+        }
+    }
+
+
+    /* -----------------------------------------------------
+       PROGRESSION
+       ----------------------------------------------------- */
 
     .boot-progress {
 
@@ -1467,814 +1553,350 @@
             50%;
 
         bottom:
-            38px;
+            28px;
 
         width:
-            min(70vw, 360px);
+            62vw;
+
+        max-width:
+            340px;
 
         transform:
             translateX(-50%);
 
-        z-index:
-            80;
+        font-size:
+            7px;
     }
 
 
-    .boot-progress-top,
     .boot-stages {
 
         font-size:
-            .43rem;
+            6px;
+
+        letter-spacing:
+            .08em;
     }
 
 
-
-    /* =====================================================
+    /* -----------------------------------------------------
        FOOTER
-       ===================================================== */
+       ----------------------------------------------------- */
 
     .hud-footer {
 
-        left:
-            12px;
-
-        right:
-            12px;
-
-        bottom:
-            10px;
-
-        font-size:
-            .34rem;
-
-        z-index:
-            80;
-    }
-
-
-
-    /* =====================================================
-       BOUTON PASSER
-       ===================================================== */
-
-    .intro-skip {
-
-        right:
-            12px;
-
-        top:
-            48px;
-
-        bottom:
-            auto;
-
-        padding:
-            8px 12px;
-
-        font-size:
-            .50rem;
-
-        color:
-            rgba(190,215,225,.85);
-
-        background:
-            rgba(0,8,15,.75);
-
-        border:
-            1px solid
-            rgba(0,229,255,.4);
-
-        z-index:
-            200;
-    }
-}
-
-
-
-/* =========================================================
-   04 — MOBILE ÉTROIT
-   ========================================================= */
-
-@media (max-width: 500px) {
-
-    /* -----------------------------------------------------
-       PANNEAUX PLUS DISCRETS
-       ----------------------------------------------------- */
-
-    .hud-panel {
-
-        width:
-            100px;
-
-        opacity:
-            .55;
-    }
-
-
-    .hud-left {
-        left:
-            7px;
-
-        top:
-            86px;
-    }
-
-
-    .hud-right {
-        right:
-            7px;
-
-        top:
-            86px;
+        display:
+            none;
     }
 
 
     /* -----------------------------------------------------
-       LOGO
-       ----------------------------------------------------- */
-
-    .intro-logo {
-
-        width:
-            70vw;
-    }
-
-
-    /* -----------------------------------------------------
-       AC TEKPROD
-       ----------------------------------------------------- */
-
-    .intro-logo-subtitle {
-
-        margin-top:
-            20px;
-
-        font-size:
-            1.20rem;
-
-        letter-spacing:
-            .15em;
-    }
-
-
-    /* -----------------------------------------------------
-       PRÉSENTE
-       ----------------------------------------------------- */
-
-    .intro-brand h1 {
-
-        margin-top:
-            15px;
-
-        font-size:
-            1rem;
-
-        letter-spacing:
-            .20em;
-    }
-
-
-    /* -----------------------------------------------------
-       ASTÉROÏD DESTROYER
-       ----------------------------------------------------- */
-
-    .intro-logo-name {
-
-        margin-top:
-            15px;
-
-        font-size:
-            1.28rem;
-
-        letter-spacing:
-            .07em;
-    }
-
-
-    /* -----------------------------------------------------
-       MÉTÉORE
-       ----------------------------------------------------- */
-
-    .intro-asteroid {
-
-        width:
-            240px;
-    }
-
-
-    /* -----------------------------------------------------
-       RADAR
-       ----------------------------------------------------- */
-
-    .intro-radar {
-
-        width:
-            80vw;
-
-        height:
-            80vw;
-    }
-
-
-    /* -----------------------------------------------------
-       TARGET
-       ----------------------------------------------------- */
-
-    .target-lock {
-
-        bottom:
-            17%;
-
-        transform:
-            translateX(-50%)
-            scale(.68);
-    }
-
-
-    /* -----------------------------------------------------
-       ALERT
+       ALERTE
        ----------------------------------------------------- */
 
     .hud-alert {
 
         top:
-            68px;
+            58px;
+
+        left:
+            50%;
+
+        width:
+            max-content;
+
+        max-width:
+            78vw;
 
         transform:
-            translateX(-50%)
-            scale(.68);
+            translateX(-50%);
+
+        font-size:
+            8px;
     }
 
 
     /* -----------------------------------------------------
-       PASSER
+       BOUTON PASSER
        ----------------------------------------------------- */
 
     .intro-skip {
 
-        top:
-            45px;
-
         right:
-            9px;
+            14px;
+
+        bottom:
+            14px;
+
+        z-index:
+            200;
 
         padding:
-            7px 10px;
+            9px 13px;
+
+        color:
+            var(--hud-cyan);
+
+        border:
+            1px solid
+            rgba(0,229,255,.5);
+
+        background:
+            rgba(2,8,14,.9);
+
+        font-size:
+            .62rem;
+
+        box-shadow:
+            0 0 15px
+            rgba(0,229,255,.12);
+    }
+
+
+    .intro-skip kbd {
+
+        color:
+            var(--hud-orange);
+
+        border-color:
+            rgba(255,106,0,.35);
+
+        background:
+            rgba(255,106,0,.06);
     }
 }
 
 
-
 /* =========================================================
-   05 — PETIT SMARTPHONE
+   TRÈS PETITS ÉCRANS
    ========================================================= */
 
 @media (max-width: 400px) {
 
-    /* -----------------------------------------------------
-       PANNEAUX
-       ----------------------------------------------------- */
-
-    .hud-panel {
+    .intro-brand {
 
         width:
-            88px;
-
-        padding:
-            6px;
-
-        opacity:
-            .45;
+            96vw;
     }
 
-
-    .hud-left {
-        left:
-            5px;
-
-        top:
-            82px;
-    }
-
-
-    .hud-right {
-        right:
-            5px;
-
-        top:
-            82px;
-    }
-
-
-    /* -----------------------------------------------------
-       LOGO
-       ----------------------------------------------------- */
 
     .intro-logo {
 
         width:
-            68vw;
+            78vw;
     }
 
-
-    /* -----------------------------------------------------
-       AC TEKPROD
-       ----------------------------------------------------- */
 
     .intro-logo-subtitle {
 
-        margin-top:
-            18px;
-
-        font-size:
-            1.05rem;
-
-        letter-spacing:
-            .12em;
-    }
-
-
-    /* -----------------------------------------------------
-       PRÉSENTE
-       ----------------------------------------------------- */
-
-    .intro-brand h1 {
-
-        margin-top:
-            13px;
-
-        font-size:
-            .90rem;
-
-        letter-spacing:
-            .17em;
-    }
-
-
-    /* -----------------------------------------------------
-       ASTÉROÏD DESTROYER
-       ----------------------------------------------------- */
-
-    .intro-logo-name {
-
-        margin-top:
-            13px;
-
-        font-size:
-            1.12rem;
-
-        letter-spacing:
-            .045em;
-    }
-
-
-    /* -----------------------------------------------------
-       MÉTÉORE
-       ----------------------------------------------------- */
-
-    .intro-asteroid {
-
-        width:
-            220px;
-    }
-
-
-    /* -----------------------------------------------------
-       RADAR
-       ----------------------------------------------------- */
-
-    .intro-radar {
-
-        width:
-            76vw;
-
-        height:
-            76vw;
-    }
-
-
-    /* -----------------------------------------------------
-       TARGET
-       ----------------------------------------------------- */
-
-    .target-lock {
-
-        bottom:
-            16%;
-
-        transform:
-            translateX(-50%)
-            scale(.58);
-    }
-
-
-    /* -----------------------------------------------------
-       ALERT
-       ----------------------------------------------------- */
-
-    .hud-alert {
-
-        top:
-            64px;
-
-        transform:
-            translateX(-50%)
-            scale(.58);
-    }
-
-
-    /* -----------------------------------------------------
-       CONSOLES
-       ----------------------------------------------------- */
-
-    .hud-console {
-
-        font-size:
-            .32rem;
-    }
-
-
-    .hud-console-left {
-
-        left:
-            6px;
-
-        bottom:
-            58px;
-    }
-
-
-    .hud-console-right {
-
-        right:
-            6px;
-
-        bottom:
-            58px;
-    }
-
-
-    /* -----------------------------------------------------
-       PROGRESSION
-       ----------------------------------------------------- */
-
-    .boot-progress {
-
-        bottom:
-            27px;
-
-        width:
-            62vw;
-    }
-
-
-    .boot-stages {
-
-        display:
-            none;
-    }
-
-
-    /* -----------------------------------------------------
-       FOOTER
-       ----------------------------------------------------- */
-
-    .hud-footer {
-
-        bottom:
-            7px;
-
-        font-size:
-            .28rem;
-    }
-}
-
-
-
-/* =========================================================
-   06 — TRÈS PETIT SMARTPHONE
-   ========================================================= */
-
-@media (max-width: 360px) {
-
-    /* -----------------------------------------------------
-       PANNEAUX : ON LES CACHE POUR LA LISIBILITÉ
-       ----------------------------------------------------- */
-
-    .hud-panel {
-
-        display:
-            none;
-    }
-
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
-
-    .hud-header {
-
-        left:
-            10px;
-
-        right:
-            10px;
-
-        top:
-            12px;
-    }
-
-
-    .hud-header-left,
-    .hud-header-right {
-
-        font-size:
-            .35rem;
-    }
-
-
-    /* -----------------------------------------------------
-       LOGO
-       ----------------------------------------------------- */
-
-    .intro-logo {
-
-        width:
-            65vw;
-    }
-
-
-    /* -----------------------------------------------------
-       AC TEKPROD
-       ----------------------------------------------------- */
-
-    .intro-logo-subtitle {
-
-        margin-top:
-            16px;
-
-        font-size:
-            .96rem;
-
-        letter-spacing:
-            .10em;
-    }
-
-
-    /* -----------------------------------------------------
-       PRÉSENTE
-       ----------------------------------------------------- */
-
-    .intro-brand h1 {
-
-        margin-top:
-            11px;
-
-        font-size:
-            .82rem;
-
-        letter-spacing:
-            .14em;
-    }
-
-
-    /* -----------------------------------------------------
-       ASTÉROÏD DESTROYER
-       ----------------------------------------------------- */
-
-    .intro-logo-name {
-
-        margin-top:
-            11px;
+        margin-bottom:
+            15px;
 
         font-size:
             1rem;
 
         letter-spacing:
-            .025em;
+            .2em;
     }
 
 
-    /* -----------------------------------------------------
-       MÉTÉORE
-       ----------------------------------------------------- */
+    .intro-brand h1 {
+
+        margin-top:
+            20px;
+
+        font-size:
+            1rem;
+
+        letter-spacing:
+            .25em;
+    }
+
+
+    .intro-logo-name {
+
+        margin-top:
+            11px;
+
+        font-size:
+            1.25rem;
+
+        letter-spacing:
+            .1em;
+    }
+
 
     .intro-asteroid {
 
         width:
-            190px;
+            78vw;
     }
 
 
-    /* -----------------------------------------------------
-       RADAR
-       ----------------------------------------------------- */
-
-    .intro-radar {
+    .hud-panel {
 
         width:
-            72vw;
+            132px;
 
-        height:
-            72vw;
+        padding:
+            7px;
     }
 
 
-    /* -----------------------------------------------------
-       CROSSHAIR
-       ----------------------------------------------------- */
+    .hud-left {
 
-    .holo-crosshair {
+        left:
+            10px;
 
-        transform:
-            translate(-50%, -50%)
-            scale(.62);
+        top:
+            68px;
     }
 
 
-    /* -----------------------------------------------------
-       TARGET
-       ----------------------------------------------------- */
+    .hud-right {
+
+        right:
+            10px;
+
+        top:
+            68px;
+    }
+
 
     .target-lock {
 
         bottom:
-            15%;
+            92px;
 
-        transform:
-            translateX(-50%)
-            scale(.50);
+        width:
+            64vw;
     }
 
-
-    /* -----------------------------------------------------
-       ALERT
-       ----------------------------------------------------- */
-
-    .hud-alert {
-
-        top:
-            59px;
-
-        transform:
-            translateX(-50%)
-            scale(.50);
-    }
-
-
-    /* -----------------------------------------------------
-       CONSOLES
-       ----------------------------------------------------- */
 
     .hud-console {
 
-        display:
-            none;
+        bottom:
+            62px;
+
+        font-size:
+            6px;
     }
 
-
-    /* -----------------------------------------------------
-       PROGRESSION
-       ----------------------------------------------------- */
 
     .boot-progress {
 
         bottom:
-            20px;
+            23px;
 
         width:
             58vw;
     }
 
 
-    /* -----------------------------------------------------
-       FOOTER
-       ----------------------------------------------------- */
+    .intro-skip {
 
-    .hud-footer {
+        right:
+            10px;
+
+        bottom:
+            10px;
+    }
+}
+
+
+/* =========================================================
+   TÉLÉPHONES TRÈS ÉTROITS
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    .hud-panel {
 
         display:
             none;
     }
 
 
-    /* -----------------------------------------------------
-       BOUTON PASSER
-       ----------------------------------------------------- */
-
-    .intro-skip {
-
-        top:
-            40px;
-
-        right:
-            7px;
-
-        padding:
-            6px 8px;
+    .hud-header-center {
 
         font-size:
-            .38rem;
+            6px;
+    }
+
+
+    .intro-logo {
+
+        width:
+            76vw;
+    }
+
+
+    .intro-logo-subtitle {
+
+        font-size:
+            .9rem;
+    }
+
+
+    .intro-brand h1 {
+
+        font-size:
+            .9rem;
+    }
+
+
+    .intro-logo-name {
+
+        font-size:
+            1.1rem;
+    }
+
+
+    .intro-asteroid {
+
+        width:
+            72vw;
+    }
+
+
+    .target-lock {
+
+        bottom:
+            88px;
+    }
+
+
+    .hud-console {
+
+        display:
+            none;
+    }
+
+
+    .boot-progress {
+
+        width:
+            65vw;
     }
 }
 
 
-
 /* =========================================================
-   07 — TRÈS GRAND ÉCRAN
+   ÉCRANS TRÈS LARGES
    ========================================================= */
 
 @media (min-width: 1600px) {
 
     .intro-content::before {
+
         inset:
             42px;
     }
 
 
-    .hud-panel {
-        width:
-            240px;
-    }
-
-
-    .hud-left {
-        left:
-            45px;
-    }
-
-
-    .hud-right {
-        right:
-            45px;
-    }
-
-
-    .intro-logo {
-        width:
-            440px;
-    }
-
-
     .intro-radar {
+
         width:
-            640px;
-    }
-
-
-    .intro-logo-subtitle {
-        font-size:
-            .85rem;
-    }
-
-
-    .intro-brand h1 {
-        font-size:
-            .78rem;
-    }
-
-
-    .intro-logo-name {
-        font-size:
-            1.20rem;
+            600px;
     }
 }
-
-
-
-/* =========================================================
-   08 — ULTRA LARGE
-   ========================================================= */
-
-@media (min-width: 2000px) {
-
-    .hud-panel {
-        width:
-            275px;
-    }
-
-
-    .hud-left {
-        left:
-            60px;
-    }
-
-
-    .hud-right {
-        right:
-            60px;
-    }
-
-
-    .intro-logo {
-        width:
-            480px;
-    }
-
-
-    .intro-radar {
-        width:
-            700px;
-    }
-}
-
