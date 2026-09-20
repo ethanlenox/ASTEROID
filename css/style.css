@@ -2813,11 +2813,13 @@ h2 {
     justify-content: center;
 
     width: 100%;
+
     min-height: 300px;
+    height: auto;
 
     margin: 0;
 
-    padding: 34px 30px;
+    padding: 60px 40px;
 
     box-sizing: border-box;
 
@@ -2840,11 +2842,10 @@ h2 {
     background-position: center;
     background-repeat: no-repeat;
 
-    color:
-        var(--color-white);
-
+    color: var(--color-white);
     text-decoration: none;
 }
+
 
     background-image:
         linear-gradient(
