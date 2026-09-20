@@ -816,5 +816,34 @@
         height:
             125%;
     }
-}
 
+    .intro-logo-subtitle::after {
+
+        display:
+            none;
+    }
+
+    .intro-brand::before {
+
+        padding:
+            4px 8px;
+
+        max-width:
+            90vw;
+
+        overflow:
+            hidden;
+
+        text-overflow:
+            ellipsis;
+    }
+
+    .intro-brand::after {
+
+        max-width:
+            88vw;
+
+        padding:
+            4px 8px;
+    }
+}
