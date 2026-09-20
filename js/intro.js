@@ -1,10 +1,13 @@
 /* =========================================================
-   ASTEROIDE.DESTROYER
-   INTRO SYSTEM
+   ASTÉROÏD.DESTROYER
+   PEMP // MISSION BRIEFING
    ========================================================= */
 
-const intro = document.querySelector("#intro");
-const introSkip = document.querySelector("#intro-skip");
+const intro =
+    document.querySelector("#intro");
+
+const introSkip =
+    document.querySelector("#intro-skip");
 
 
 /* =========================================================
@@ -14,8 +17,9 @@ const introSkip = document.querySelector("#intro-skip");
 const INTRO_STORAGE_KEY =
     "asteroideIntroSeen";
 
+
 const INTRO_DURATION =
-    10000;
+    8000;
 
 
 /* =========================================================
@@ -28,16 +32,34 @@ function closeIntro() {
         return;
     }
 
-    intro.classList.add("is-hidden");
+
+    /*
+     * Évite de déclencher plusieurs fois
+     * la fermeture.
+     */
+
+    if (
+        intro.classList.contains("is-hidden")
+    ) {
+        return;
+    }
+
+
+    intro.classList.add(
+        "is-hidden"
+    );
+
 
     document.body.classList.remove(
         "intro-active"
     );
 
+
     intro.setAttribute(
         "aria-hidden",
         "true"
     );
+
 
     sessionStorage.setItem(
         INTRO_STORAGE_KEY,
@@ -46,8 +68,9 @@ function closeIntro() {
 
 }
 
+
 /* =========================================================
-   PASSER L'INTRO
+   BOUTON PASSER
    ========================================================= */
 
 if (introSkip) {
@@ -79,6 +102,11 @@ const introAlreadySeen =
         INTRO_STORAGE_KEY
     );
 
+
+/* =========================================================
+   INITIALISATION
+   ========================================================= */
+
 if (
     intro &&
     introAlreadySeen !== "true" &&
@@ -93,7 +121,7 @@ if (
 
 
 /* =========================================================
-   DÉCISION
+   INTRO DÉJÀ VUE
    ========================================================= */
 
 if (
