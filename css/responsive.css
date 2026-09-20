@@ -678,4 +678,32 @@
 
         font-size: 7px;
     }
+
+    .intro-content > .intro-asteroid::after {
+
+        right:
+            25px;
+
+        top:
+            30px;
+    }
+
+    .intro-particles::before {
+
+        left:
+            22px;
+
+        bottom:
+            55px;
+
+        width:
+            105px;
+    }
+
+    .intro-content > .intro-sonic::before {
+
+        display:
+            none;
+    }
+
 }
