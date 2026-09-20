@@ -2351,6 +2351,594 @@ body.intro-active {
         0 0 35px
         rgba(255,48,79,.55);
 }
+/* =========================================================
+   ASTÉROÏD DESTROYER
+   PEMP // HOLOGRAPHIC INTERFACE
+   CSS — PARTIE 7/12
+   CONNEXION RÉSEAU + ACTIVITÉ EN TEMPS RÉEL
+   ========================================================= */
 
 
+/* =========================================================
+   LIGNES DE CONNEXION
+   ========================================================= */
+
+.intro::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 35;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0,229,255,.025) 48%,
+            rgba(0,229,255,.07) 50%,
+            rgba(0,229,255,.025) 52%,
+            transparent 100%
+        );
+
+    opacity: .7;
+
+    animation:
+        connection-breath
+        2.4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes connection-breath {
+
+    0%,
+    100% {
+
+        opacity:
+            .25;
+
+        transform:
+            scaleX(.95);
+    }
+
+    50% {
+
+        opacity:
+            .8;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/* =========================================================
+   FLUX DE DONNÉES HORIZONTAL
+   ========================================================= */
+
+.intro-content {
+
+    --data-blue:
+        rgba(0,229,255,.7);
+
+    --data-green:
+        rgba(57,255,136,.8);
+}
+
+
+.intro-content > .intro-brand {
+
+    --data-speed:
+        1.8s;
+}
+
+
+/* =========================================================
+   PETITS FLUX LUMINEUX
+   ========================================================= */
+
+.intro-content > .intro-brand h1::before,
+.intro-content > .intro-brand h1::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 70px;
+
+    height: 1px;
+
+    transform:
+        translateY(-50%);
+
+    opacity: .45;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--hud-cyan)
+        );
+}
+
+
+.intro-content > .intro-brand h1::before {
+
+    right:
+        calc(100% + 25px);
+}
+
+
+.intro-content > .intro-brand h1::after {
+
+    left:
+        calc(100% + 25px);
+
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+}
+
+
+/* =========================================================
+   PARTICULES DE DONNÉES
+   ========================================================= */
+
+.intro-content > .intro-brand h1 {
+
+    text-shadow:
+        0 0 8px
+        rgba(0,229,255,.25);
+}
+
+
+/* =========================================================
+   TICKS AUTOUR DU CENTRE
+   ========================================================= */
+
+.intro-logo {
+
+    --tick:
+        rgba(0,229,255,.55);
+}
+
+
+.intro-logo::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -18px;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        top left / 35px 1px no-repeat,
+
+        linear-gradient(
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        top left / 1px 35px no-repeat,
+
+        linear-gradient(
+            270deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        top right / 35px 1px no-repeat,
+
+        linear-gradient(
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        top right / 1px 35px no-repeat,
+
+        linear-gradient(
+            90deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        bottom left / 35px 1px no-repeat,
+
+        linear-gradient(
+            0deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        bottom left / 1px 35px no-repeat,
+
+        linear-gradient(
+            270deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        bottom right / 35px 1px no-repeat,
+
+        linear-gradient(
+            0deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        bottom right / 1px 35px no-repeat;
+
+    opacity: 0;
+
+    animation:
+        logo-corners
+        .8s
+        ease
+        1.4s
+        forwards;
+}
+
+
+@keyframes logo-corners {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            scale(.85);
+    }
+
+    to {
+
+        opacity:
+            .8;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   CERCLE TECHNIQUE AUTOUR DU LOGO
+   ========================================================= */
+
+.intro-logo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 115%;
+    height: 115%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border:
+        1px dashed
+        rgba(0,229,255,.13);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    animation:
+        technical-ring-in
+        1s
+        ease
+        1.8s
+        forwards,
+
+        technical-ring-spin
+        12s
+        linear
+        2.8s
+        infinite;
+}
+
+
+@keyframes technical-ring-in {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.75);
+    }
+
+    to {
+
+        opacity:
+            .7;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+}
+
+
+@keyframes technical-ring-spin {
+
+    from {
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+    }
+
+    to {
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ÉTAT VERT : RÉSEAU SYNCHRONISÉ
+   ========================================================= */
+
+.intro.state-sync .intro-logo::after {
+
+    border-color:
+        rgba(57,255,136,.28);
+
+    box-shadow:
+        0 0 25px
+        rgba(57,255,136,.08);
+}
+
+
+/* =========================================================
+   ÉTAT ORANGE : CIBLE DÉTECTÉE
+   ========================================================= */
+
+.intro.state-detect .intro-logo::after {
+
+    border-color:
+        rgba(255,106,0,.4);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,106,0,.12);
+}
+
+
+/* =========================================================
+   ÉTAT ROUGE : MENACE
+   ========================================================= */
+
+.intro.state-alert .intro-logo::after {
+
+    border-color:
+        rgba(255,48,79,.65);
+
+    border-style:
+        solid;
+
+    animation:
+        alert-ring
+        .65s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes alert-ring {
+
+    from {
+
+        opacity:
+            .3;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.97);
+    }
+
+    to {
+
+        opacity:
+            .9;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.05);
+    }
+}
+
+
+/* =========================================================
+   BARRE DE CHARGEMENT SYSTÈME
+   ========================================================= */
+
+.intro-logo-name {
+
+    position:
+        relative;
+
+    padding-bottom:
+        13px;
+}
+
+
+.intro-logo-name::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--hud-cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(0,229,255,.6);
+
+    transform-origin:
+        left center;
+
+    transform:
+        scaleX(0);
+
+    animation:
+        loading-line
+        2.2s
+        cubic-bezier(.16,1,.3,1)
+        5.9s
+        forwards;
+}
+
+
+@keyframes loading-line {
+
+    0% {
+
+        transform:
+            scaleX(0);
+
+        opacity:
+            0;
+    }
+
+    15% {
+
+        opacity:
+            1;
+    }
+
+    65% {
+
+        transform:
+            scaleX(1);
+    }
+
+    100% {
+
+        transform:
+            scaleX(1);
+
+        opacity:
+            .75;
+    }
+}
+
+
+/* =========================================================
+   CHANGEMENT DE COULEUR DE LA BARRE
+   ========================================================= */
+
+.intro.state-sync .intro-logo-name::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--hud-green),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(57,255,136,.7);
+}
+
+
+.intro.state-detect .intro-logo-name::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--hud-orange),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(255,106,0,.7);
+}
+
+
+.intro.state-alert .intro-logo-name::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--hud-red),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(255,48,79,.8);
+
+    animation:
+        alert-loading-line
+        .35s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes alert-loading-line {
+
+    from {
+
+        opacity:
+            .35;
+
+        transform:
+            scaleX(.75);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            scaleX(1);
+    }
+}
 
