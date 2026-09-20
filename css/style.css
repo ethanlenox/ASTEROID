@@ -2804,13 +2804,14 @@ h2 {
 
     display: block;
 
-    width: 100%;
-    min-height: 300px;
+    width: calc(100% - 60px);
+    min-height: 320px;
 
-    margin: 0;
+    margin: 30px;
 
-    padding: 34px 30px;
+    padding: 45px 40px;
 
+    box-sizing: border-box;
 
     overflow: hidden;
 
@@ -2822,8 +2823,8 @@ h2 {
 
     background-image:
         linear-gradient(
-            rgba(5, 9, 20, 0.68),
-            rgba(5, 9, 20, 0.68)
+            rgba(5, 9, 20, 0.55),
+            rgba(5, 9, 20, 0.72)
         ),
         url("../img/artwork/01.png");
 
@@ -2843,7 +2844,6 @@ h2 {
         box-shadow var(--transition-normal),
         transform var(--transition-normal);
 }
-
 
 
 /* =========================================================
