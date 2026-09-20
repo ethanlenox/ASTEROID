@@ -2805,11 +2805,9 @@ h2 {
     display: block;
 
     width: calc(100% - 60px);
-    min-height: 320px;
-
-    margin: 30px;
-
-    padding: 45px 40px;
+    min-height: 300px;
+    margin: 30px auto;
+    padding: 34px 30px;
 
     box-sizing: border-box;
 
