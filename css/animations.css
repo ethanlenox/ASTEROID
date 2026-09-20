@@ -5816,5 +5816,413 @@ body.intro-active {
 }
 
 /* =========================================================
+   PATCH FINAL — NETTOYAGE HUD
+   Supprime les textes parasites et synchronise les infos
+   avec les phases de l'introduction.
+   ========================================================= */
+
+
+/* =========================================================
+   1. SUPPRESSION DES TEXTES PARASITES
+   ========================================================= */
+
+/*
+ * Les anciens labels pseudo-HUD prenaient trop de place.
+ * On les neutralise : le HTML reste inchangé.
+ */
+
+.intro-brand::before,
+.intro-brand::after {
+
+    content:
+        "" !important;
+
+    display:
+        none !important;
+}
+
+
+/* =========================================================
+   2. LE "PRESENTE" NE DOIT PAS RESTER FIXE
+   ========================================================= */
+
+.intro-brand h1 {
+
+    opacity:
+        0;
+
+    transition:
+        opacity .35s ease,
+        color .35s ease,
+        text-shadow .35s ease;
+}
+
+
+/* =========================================================
+   3. LE NOM DU JEU RESTE CENTRAL
+   ========================================================= */
+
+.intro-logo-name {
+
+    position:
+        relative;
+
+    opacity:
+        0;
+
+    transition:
+        color .35s ease,
+        text-shadow .35s ease,
+        opacity .35s ease;
+}
+
+
+/* =========================================================
+   4. SOUS-TITRE AC TEKPROD
+   ========================================================= */
+
+.intro-logo-subtitle {
+
+    opacity:
+        0;
+
+    transition:
+        opacity .4s ease,
+        color .3s ease;
+}
+
+
+/* =========================================================
+   5. PHASE CONNEXION
+   ========================================================= */
+
+.intro.state-connect .intro-logo-subtitle {
+
+    opacity:
+        .8;
+}
+
+
+.intro.state-connect .intro-brand h1 {
+
+    opacity:
+        .35;
+
+    color:
+        rgba(190,215,225,.6);
+}
+
+
+/* =========================================================
+   6. PHASE SYNCHRONISATION
+   ========================================================= */
+
+.intro.state-sync .intro-logo-subtitle {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-green);
+
+    text-shadow:
+        0 0 10px
+        rgba(57,255,136,.45);
+}
+
+
+.intro.state-sync .intro-brand h1 {
+
+    opacity:
+        .7;
+
+    color:
+        var(--hud-green);
+
+    text-shadow:
+        0 0 12px
+        rgba(57,255,136,.3);
+}
+
+
+.intro.state-sync .intro-logo-name {
+
+    opacity:
+        .9;
+
+    color:
+        var(--hud-cyan);
+}
+
+
+/* =========================================================
+   7. PHASE DÉTECTION
+   ========================================================= */
+
+.intro.state-detect .intro-logo-subtitle {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-orange);
+
+    text-shadow:
+        0 0 12px
+        rgba(255,106,0,.55);
+}
+
+
+.intro.state-detect .intro-brand h1 {
+
+    opacity:
+        .85;
+
+    color:
+        var(--hud-orange);
+
+    text-shadow:
+        0 0 14px
+        rgba(255,106,0,.35);
+}
+
+
+.intro.state-detect .intro-logo-name {
+
+    opacity:
+        1;
+
+    color:
+        #ffffff;
+
+    text-shadow:
+        0 0 12px
+        rgba(255,106,0,.4);
+}
+
+
+/* =========================================================
+   8. PHASE ALERTE
+   ========================================================= */
+
+.intro.state-alert .intro-logo-subtitle {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 12px
+        rgba(255,48,79,.7);
+
+    animation:
+        alert-subtitle
+        .5s
+        steps(2)
+        infinite;
+}
+
+
+.intro.state-alert .intro-brand h1 {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 15px
+        rgba(255,48,79,.55);
+
+    animation:
+        alert-text
+        .55s
+        steps(2)
+        infinite;
+}
+
+
+.intro.state-alert .intro-logo-name {
+
+    opacity:
+        1;
+
+    color:
+        #ffffff;
+
+    text-shadow:
+
+        0 0 8px
+        rgba(255,255,255,.8),
+
+        0 0 25px
+        rgba(255,48,79,.65);
+}
+
+
+@keyframes alert-subtitle {
+
+    0%,
+    100% {
+
+        opacity:
+            .65;
+    }
+
+    50% {
+
+        opacity:
+            1;
+    }
+}
+
+
+@keyframes alert-text {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(0);
+
+        opacity:
+            .8;
+    }
+
+    50% {
+
+        transform:
+            translateX(.7px);
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   9. PHASE FINALE
+   ========================================================= */
+
+.intro.state-complete .intro-logo-subtitle {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 12px
+        rgba(0,229,255,.5);
+}
+
+
+.intro.state-complete .intro-brand h1 {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 15px
+        rgba(0,229,255,.45);
+}
+
+
+.intro.state-complete .intro-logo-name {
+
+    opacity:
+        1;
+
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   10. MÉTÉORE — LABEL TARGET SUPPRIMÉ
+   ========================================================= */
+
+/*
+ * Le pseudo-élément "TARGET // 001" était trop statique.
+ * On le retire pour éviter un texte flottant inutile.
+ */
+
+.intro-asteroid::before {
+
+    content:
+        none !important;
+}
+
+
+/* =========================================================
+   11. PAS DE TEXTE BLANC PERMANENT
+   ========================================================= */
+
+.intro-logo-name,
+.intro-brand h1,
+.intro-logo-subtitle {
+
+    text-align:
+        center;
+
+    white-space:
+        nowrap;
+}
+
+
+/* =========================================================
+   12. SORTIE
+   ========================================================= */
+
+.intro.is-hidden .intro-logo-subtitle,
+.intro.is-hidden .intro-brand h1,
+.intro.is-hidden .intro-logo-name {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(-8px);
+
+    transition:
+        opacity .3s ease,
+        transform .45s ease;
+}
+
+
+/* =========================================================
+   13. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .intro-logo-subtitle {
+
+        font-size:
+            .5rem;
+    }
+
+    .intro-brand h1 {
+
+        font-size:
+            .55rem;
+    }
+
+    .intro-logo-name {
+
+        font-size:
+            .7rem;
+    }
+}
+
+
+/* =========================================================
    FIN DU CSS intro
    ========================================================= */
