@@ -630,3 +630,52 @@
 
 }
 
+/* =========================================================
+    INTRO
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .intro-brand::before {
+
+        left: 25px;
+
+        width: 145px;
+
+        font-size:
+            7px;
+    }
+
+    .intro-brand::after {
+
+        right: 25px;
+
+        width: 145px;
+
+        font-size:
+            7px;
+    }
+
+    .intro::before {
+
+        left: 25px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .intro-brand::before,
+    .intro-brand::after {
+
+        display: none;
+    }
+
+    .intro::before {
+
+        left: 22px;
+        top: 30px;
+
+        font-size: 7px;
+    }
+}
