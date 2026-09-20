@@ -7419,17 +7419,6 @@ body.intro-active {
             blur(0);
     }
 }
-/* TEST TEMPORAIRE */
-
-/* TEST 2 */
-
-.intro.state-alert .intro-brand::before,
-.intro.state-alert .intro-brand::after {
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
 
 /* =========================================================
     OUF FIN DU CSS intro
