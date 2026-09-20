@@ -5160,3 +5160,661 @@ body.intro-active {
 }
 
 
+/* =========================================================
+   ASTÉROÏD DESTROYER
+   PEMP // HOLOGRAPHIC INTERFACE
+   CSS — PARTIE 12/12
+   FINALISATION + TRANSITIONS + SORTIE
+   ========================================================= */
+
+
+/* =========================================================
+   CALAGE GLOBAL
+   ========================================================= */
+
+.intro,
+.intro * {
+
+    box-sizing:
+        border-box;
+}
+
+
+.intro {
+
+    font-family:
+        "Orbitron",
+        "Rajdhani",
+        "Segoe UI",
+        sans-serif;
+
+    text-rendering:
+        geometricPrecision;
+
+    -webkit-font-smoothing:
+        antialiased;
+}
+
+
+/* =========================================================
+   PROFONDEUR GLOBALE
+   ========================================================= */
+
+.intro-content {
+
+    transform-style:
+        preserve-3d;
+
+    will-change:
+        transform,
+        filter;
+}
+
+
+/* =========================================================
+   BRUIT HOLOGRAPHIQUE
+   ========================================================= */
+
+.intro-content {
+
+    isolation:
+        isolate;
+}
+
+
+.intro-content::after {
+
+    mix-blend-mode:
+        screen;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   LIGNES DE SCAN ULTRA FINES
+   ========================================================= */
+
+.intro::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        40;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .16;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 3px,
+            rgba(0,229,255,.018) 4px,
+            transparent 5px
+        );
+
+    animation:
+        screen-scanlines
+        .18s
+        linear
+        infinite;
+}
+
+
+@keyframes screen-scanlines {
+
+    from {
+
+        background-position:
+            0 0;
+    }
+
+    to {
+
+        background-position:
+            0 5px;
+    }
+}
+
+
+/* =========================================================
+   LUMINOSITÉ CENTRALE
+   ========================================================= */
+
+.intro-brand {
+
+    filter:
+        drop-shadow(
+            0 0 1px
+            rgba(0,229,255,.3)
+        );
+}
+
+
+/* =========================================================
+   PHASE CONNECTING
+   ========================================================= */
+
+.intro.state-connect {
+
+    --active-color:
+        var(--hud-cyan);
+}
+
+
+.intro.state-connect .intro-brand {
+
+    animation:
+        connect-breathe
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes connect-breathe {
+
+    0%,
+    100% {
+
+        filter:
+            brightness(.92)
+            drop-shadow(
+                0 0 2px
+                rgba(0,229,255,.2)
+            );
+    }
+
+    50% {
+
+        filter:
+            brightness(1.12)
+            drop-shadow(
+                0 0 12px
+                rgba(0,229,255,.22)
+            );
+    }
+}
+
+
+/* =========================================================
+   PHASE SYNCHRONISATION
+   ========================================================= */
+
+.intro.state-sync {
+
+    --active-color:
+        var(--hud-green);
+}
+
+
+.intro.state-sync .intro-brand {
+
+    animation:
+        sync-breathe
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes sync-breathe {
+
+    0%,
+    100% {
+
+        filter:
+            brightness(.98)
+            drop-shadow(
+                0 0 3px
+                rgba(57,255,136,.15)
+            );
+    }
+
+    50% {
+
+        filter:
+            brightness(1.08)
+            drop-shadow(
+                0 0 14px
+                rgba(57,255,136,.18)
+            );
+    }
+}
+
+
+/* =========================================================
+   PHASE DÉTECTION
+   ========================================================= */
+
+.intro.state-detect {
+
+    --active-color:
+        var(--hud-orange);
+}
+
+
+.intro.state-detect .intro-brand {
+
+    animation:
+        detection-pulse
+        1.1s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes detection-pulse {
+
+    0%,
+    100% {
+
+        filter:
+            brightness(.95);
+    }
+
+    50% {
+
+        filter:
+            brightness(1.12)
+            drop-shadow(
+                0 0 16px
+                rgba(255,106,0,.2)
+            );
+    }
+}
+
+
+/* =========================================================
+   PHASE ALERTE
+   ========================================================= */
+
+.intro.state-alert {
+
+    --active-color:
+        var(--hud-red);
+}
+
+
+.intro.state-alert .intro-brand {
+
+    filter:
+        brightness(1.05)
+        drop-shadow(
+            0 0 10px
+            rgba(255,48,79,.12)
+        );
+}
+
+
+/* =========================================================
+   FLASH D'ALERTE
+   ========================================================= */
+
+.intro.state-alert::before {
+
+    opacity:
+        .22;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 3px,
+            rgba(255,48,79,.025) 4px,
+            transparent 5px
+        );
+
+    animation:
+        alert-scanlines
+        .22s
+        linear
+        infinite;
+}
+
+
+@keyframes alert-scanlines {
+
+    0% {
+
+        background-position:
+            0 0;
+    }
+
+    50% {
+
+        background-position:
+            0 5px;
+    }
+
+    100% {
+
+        background-position:
+            0 0;
+    }
+}
+
+
+/* =========================================================
+   ÉCLAIR CENTRAL LORS DU LOCK
+   ========================================================= */
+
+.intro.state-alert .intro-sonic {
+
+    box-shadow:
+
+        0 0 8px
+        #ffffff,
+
+        0 0 18px
+        var(--hud-red),
+
+        0 0 45px
+        var(--hud-red),
+
+        0 0 100px
+        rgba(255,48,79,.5);
+}
+
+
+/* =========================================================
+   CERCLES DE CIBLE PLUS LISIBLES
+   ========================================================= */
+
+.intro.state-alert .intro-radar {
+
+    background:
+
+        radial-gradient(
+            circle,
+            transparent 0 17%,
+            rgba(255,48,79,.05) 17.5%,
+            transparent 18%
+        ),
+
+        repeating-radial-gradient(
+            circle,
+            transparent 0 52px,
+            rgba(255,48,79,.11) 53px,
+            transparent 54px
+        );
+
+    box-shadow:
+
+        0 0 50px
+        rgba(255,48,79,.1),
+
+        inset 0 0 60px
+        rgba(255,48,79,.05);
+}
+
+
+/* =========================================================
+   RETOUR FINAL CYAN
+   ========================================================= */
+
+.intro.state-complete {
+
+    --active-color:
+        var(--hud-cyan);
+}
+
+
+.intro.state-complete .intro-brand {
+
+    animation:
+        complete-pulse
+        1.6s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes complete-pulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .9;
+
+        transform:
+            translate3d(0,0,0);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translate3d(0,-2px,8px);
+    }
+}
+
+
+/* =========================================================
+   SORTIE — CHARGE L'ÉCRAN
+   ========================================================= */
+
+.intro.is-hidden {
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    transition:
+
+        opacity
+        .9s
+        cubic-bezier(.4,0,.2,1),
+
+        visibility
+        .9s
+        linear;
+}
+
+
+.intro.is-hidden .intro-content {
+
+    transform:
+        scale(1.06)
+        translateZ(30px);
+
+    filter:
+        blur(7px)
+        brightness(1.35);
+
+    opacity:
+        0;
+
+    transition:
+
+        transform
+        .9s
+        cubic-bezier(.16,1,.3,1),
+
+        filter
+        .9s
+        ease,
+
+        opacity
+        .55s
+        ease;
+}
+
+
+/* =========================================================
+   SORTIE DU LOGO
+   ========================================================= */
+
+.intro.is-hidden .intro-logo img {
+
+    filter:
+        brightness(2)
+        drop-shadow(
+            0 0 25px
+            rgba(0,229,255,.8)
+        )
+        drop-shadow(
+            0 0 60px
+            rgba(0,229,255,.45)
+        );
+
+    transition:
+        filter
+        .45s
+        ease;
+}
+
+
+/* =========================================================
+   SORTIE DU RADAR
+   ========================================================= */
+
+.intro.is-hidden .intro-radar {
+
+    opacity:
+        0;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.35);
+
+    transition:
+
+        opacity
+        .45s
+        ease,
+
+        transform
+        .8s
+        cubic-bezier(.16,1,.3,1);
+}
+
+
+/* =========================================================
+   SORTIE DU MÉTÉORE
+   ========================================================= */
+
+.intro.is-hidden .intro-asteroid {
+
+    opacity:
+        0;
+
+    filter:
+        blur(5px)
+        brightness(2);
+
+    transition:
+
+        opacity
+        .25s
+        ease,
+
+        filter
+        .5s
+        ease;
+}
+
+
+/* =========================================================
+   BOUTON PASSER
+   ========================================================= */
+
+.intro-skip {
+
+    user-select:
+        none;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+.intro-skip:active {
+
+    transform:
+        translateY(1px);
+}
+
+
+.intro-skip::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -1px;
+
+    border:
+        1px solid
+        transparent;
+
+    pointer-events:
+        none;
+
+    transition:
+        border-color
+        .25s
+        ease;
+}
+
+
+.intro-skip:hover::before {
+
+    border-color:
+        rgba(0,229,255,.2);
+}
+
+
+/* =========================================================
+   ACCESSIBILITÉ
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .intro::before,
+    .intro::after,
+    .intro-content,
+    .intro-brand,
+    .intro-logo,
+    .intro-logo img,
+    .intro-radar,
+    .intro-scan,
+    .intro-sonic,
+    .intro-particles {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+    }
+}
+
+/* =========================================================
+   FIN DU CSS intro
+   ========================================================= */
