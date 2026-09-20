@@ -2808,18 +2808,14 @@ h2 {
 #media-preview .media-preview-grid {
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: block;
 
     width: 100%;
-
-    min-height: 450px;
-    height: auto;
+    min-height: 300px;
 
     margin: 0;
 
-    padding: 60px 40px;
+    padding: 34px 30px;
 
     box-sizing: border-box;
 
@@ -2839,10 +2835,14 @@ h2 {
         url("../img/artwork/01.png");
 
     background-size: cover;
+
     background-position: center;
+
     background-repeat: no-repeat;
 
-    color: var(--color-white);
+    color:
+        var(--color-white);
+
     text-decoration: none;
 }
 
