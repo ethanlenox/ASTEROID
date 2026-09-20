@@ -7419,6 +7419,13 @@ body.intro-active {
             blur(0);
     }
 }
+/* TEST TEMPORAIRE */
+
+.intro.state-alert .hud-alert {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
 
 /* =========================================================
     OUF FIN DU CSS intro
