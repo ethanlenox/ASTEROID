@@ -846,4 +846,112 @@
         padding:
             4px 8px;
     }
+
+    .intro-content::before {
+
+        inset:
+            14px;
+    }
+
+
+    .intro-brand {
+
+        max-width:
+            92vw;
+    }
+
+
+    .intro-logo {
+
+        max-width:
+            82vw;
+    }
+
+
+    .intro-logo-name {
+
+        font-size:
+            clamp(
+                .58rem,
+                2.8vw,
+                1rem
+            );
+    }
+
+
+    .intro-brand h1 {
+
+        font-size:
+            clamp(
+                .48rem,
+                2vw,
+                .7rem
+            );
+    }
+
+
+    .intro-skip {
+
+        right:
+            14px;
+
+        bottom:
+            14px;
+    }
+}
+
+
+/* =========================================================
+   TRÈS PETITS ÉCRANS
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .intro-content::before {
+
+        inset:
+            9px;
+    }
+
+
+    .intro-brand {
+
+        transform-origin:
+            center;
+    }
+
+
+    .intro-logo {
+
+        width:
+            74vw;
+    }
+
+
+    .intro-radar {
+
+        width:
+            86vw;
+    }
+}
+
+
+/* =========================================================
+   ÉCRANS TRÈS LARGES
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+    .intro-content::before {
+
+        inset:
+            42px;
+    }
+
+
+    .intro-radar {
+
+        width:
+            600px;
+    }
 }
