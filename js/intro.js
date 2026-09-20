@@ -4,6 +4,11 @@
    JS — INTRO 10 SECONDES
    ========================================================= */
 
+/* =========================================================
+   PLANETARY DEFENSE NETWORK
+   HUD LIVE DATA
+   ========================================================= */
+
 const intro =
     document.querySelector("#intro");
 
@@ -12,7 +17,7 @@ const introSkip =
 
 
 /* =========================================================
-   CONFIGURATION
+   CONFIG
    ========================================================= */
 
 const INTRO_STORAGE_KEY =
@@ -22,18 +27,86 @@ const INTRO_DURATION =
     10000;
 
 
-/*
- * Timings de l'interface
- *
- * 0s → connexion
- * 1.8s → réseau synchronisé
- * 3.8s → objet détecté
- * 5.8s → alerte
- * 8.4s → défense active
- * 10s → sortie
- */
+/* =========================================================
+   ÉLÉMENTS HUD
+   ========================================================= */
 
-const TIMELINE = [
+const hud = {
+
+    connection:
+        document.querySelector("#hud-connection"),
+
+    network:
+        document.querySelector("#hud-network"),
+
+    core:
+        document.querySelector("#hud-core"),
+
+    defense:
+        document.querySelector("#hud-defense"),
+
+    threat:
+        document.querySelector("#hud-threat"),
+
+    power:
+        document.querySelector("#hud-power"),
+
+    powerValue:
+        document.querySelector("#hud-power-value"),
+
+    cpu:
+        document.querySelector("#hud-cpu"),
+
+    memory:
+        document.querySelector("#hud-memory"),
+
+    link:
+        document.querySelector("#hud-link"),
+
+    scan:
+        document.querySelector("#hud-scan"),
+
+    objects:
+        document.querySelector("#hud-objects"),
+
+    velocity:
+        document.querySelector("#hud-velocity"),
+
+    distance:
+        document.querySelector("#hud-distance"),
+
+    trajectory:
+        document.querySelector("#hud-trajectory"),
+
+    target:
+        document.querySelector("#hud-target"),
+
+    message:
+        document.querySelector("#hud-message"),
+
+    lat:
+        document.querySelector("#hud-lat"),
+
+    lng:
+        document.querySelector("#hud-lng"),
+
+    alert:
+        document.querySelector("#hud-alert"),
+
+    bootPercent:
+        document.querySelector("#boot-percent"),
+
+    time:
+        document.querySelector("#hud-time")
+
+};
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+const phases = [
 
     {
         time: 0,
@@ -63,37 +136,66 @@ const TIMELINE = [
 ];
 
 
-/* =========================================================
-   VARIABLES INTERNES
-   ========================================================= */
+let timers = [];
 
-let introClosed =
-    false;
+let liveInterval = null;
 
-let timelineTimers =
-    [];
+let clockInterval = null;
 
-let closeTimer =
-    null;
+let closed = false;
+
+let startedAt = 0;
 
 
 /* =========================================================
-   RÉDUCTION DES ANIMATIONS
+   HELPERS
    ========================================================= */
 
-const reducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
+function setText(element, value) {
+
+    if (!element) {
+        return;
+    }
+
+    if (element.textContent !== value) {
+
+        element.textContent =
+            value;
+
+        element.classList.remove(
+            "changed"
+        );
+
+        void element.offsetWidth;
+
+        element.classList.add(
+            "changed"
+        );
+
+    }
+
+}
 
 
-/* =========================================================
-   UTILITAIRE
-   ========================================================= */
+function setPower(value) {
 
-function clearIntroStates() {
+    if (hud.power) {
 
-    if (!intro) {
+        hud.power.style.width =
+            `${value}%`;
+
+    }
+
+    setText(
+        hud.powerValue,
+        `${String(value).padStart(2, "0")}%`
+    );
+}
+
+
+function setState(state) {
+
+    if (!intro || closed) {
         return;
     }
 
@@ -104,28 +206,441 @@ function clearIntroStates() {
         "state-alert",
         "state-complete"
     );
+
+    intro.classList.add(
+        state
+    );
+
 }
 
 
 /* =========================================================
-   CHANGER L'ÉTAT
+   DONNÉES — CONNEXION
    ========================================================= */
 
-function setIntroState(state) {
+function connectionPhase() {
 
-    if (
-        !intro ||
-        introClosed
-    ) {
+    setText(
+        hud.connection,
+        "CONNECTING"
+    );
+
+    setText(
+        hud.network,
+        "LINKING"
+    );
+
+    setText(
+        hud.core,
+        "BOOTING"
+    );
+
+    setText(
+        hud.defense,
+        "STANDBY"
+    );
+
+    setText(
+        hud.threat,
+        "NONE"
+    );
+
+    setText(
+        hud.scan,
+        "INITIALIZING"
+    );
+
+    setText(
+        hud.objects,
+        "000"
+    );
+
+    setText(
+        hud.velocity,
+        "---"
+    );
+
+    setText(
+        hud.distance,
+        "---"
+    );
+
+    setText(
+        hud.trajectory,
+        "---"
+    );
+
+    setText(
+        hud.target,
+        "NO TARGET"
+    );
+
+    setText(
+        hud.message,
+        "ESTABLISHING SECURE CONNECTION..."
+    );
+
+    setPower(18);
+
+}
+
+
+/* =========================================================
+   DONNÉES — SYNCHRONISATION
+   ========================================================= */
+
+function syncPhase() {
+
+    setText(
+        hud.connection,
+        "CONNECTED"
+    );
+
+    setText(
+        hud.network,
+        "ONLINE"
+    );
+
+    setText(
+        hud.core,
+        "READY"
+    );
+
+    setText(
+        hud.defense,
+        "ARMED"
+    );
+
+    setText(
+        hud.threat,
+        "LOW"
+    );
+
+    setText(
+        hud.scan,
+        "ACTIVE"
+    );
+
+    setText(
+        hud.message,
+        "PEMP NETWORK SYNCHRONIZED"
+    );
+
+    setPower(57);
+
+}
+
+
+/* =========================================================
+   DONNÉES — DÉTECTION
+   ========================================================= */
+
+function detectPhase() {
+
+    setText(
+        hud.connection,
+        "LOCKING"
+    );
+
+    setText(
+        hud.network,
+        "ONLINE"
+    );
+
+    setText(
+        hud.core,
+        "TRACKING"
+    );
+
+    setText(
+        hud.defense,
+        "ARMED"
+    );
+
+    setText(
+        hud.threat,
+        "ELEVATED"
+    );
+
+    setText(
+        hud.scan,
+        "OBJECT DETECTED"
+    );
+
+    setText(
+        hud.objects,
+        "001"
+    );
+
+    setText(
+        hud.velocity,
+        "27.4 KM/S"
+    );
+
+    setText(
+        hud.distance,
+        "1842 KM"
+    );
+
+    setText(
+        hud.trajectory,
+        "INTERCEPT"
+    );
+
+    setText(
+        hud.target,
+        "OBJECT 001"
+    );
+
+    setText(
+        hud.message,
+        "UNKNOWN OBJECT // TRACKING..."
+    );
+
+    setPower(76);
+
+}
+
+
+/* =========================================================
+   DONNÉES — ALERTE
+   ========================================================= */
+
+function alertPhase() {
+
+    setText(
+        hud.connection,
+        "LOCKED"
+    );
+
+    setText(
+        hud.network,
+        "ONLINE"
+    );
+
+    setText(
+        hud.core,
+        "TARGET LOCK"
+    );
+
+    setText(
+        hud.defense,
+        "ACTIVE"
+    );
+
+    setText(
+        hud.threat,
+        "CRITICAL"
+    );
+
+    setText(
+        hud.scan,
+        "TRACK CONFIRMED"
+    );
+
+    setText(
+        hud.objects,
+        "001"
+    );
+
+    setText(
+        hud.velocity,
+        "31.8 KM/S"
+    );
+
+    setText(
+        hud.distance,
+        "0924 KM"
+    );
+
+    setText(
+        hud.trajectory,
+        "IMPACT VECTOR"
+    );
+
+    setText(
+        hud.target,
+        "TARGET LOCKED"
+    );
+
+    setText(
+        hud.message,
+        "WARNING // IMPACT TRAJECTORY CONFIRMED"
+    );
+
+    setPower(94);
+
+}
+
+
+/* =========================================================
+   DONNÉES — FINAL
+   ========================================================= */
+
+function completePhase() {
+
+    setText(
+        hud.connection,
+        "SECURE"
+    );
+
+    setText(
+        hud.network,
+        "ONLINE"
+    );
+
+    setText(
+        hud.core,
+        "STABLE"
+    );
+
+    setText(
+        hud.defense,
+        "ACTIVE"
+    );
+
+    setText(
+        hud.threat,
+        "TRACKED"
+    );
+
+    setText(
+        hud.scan,
+        "COMPLETE"
+    );
+
+    setText(
+        hud.objects,
+        "001"
+    );
+
+    setText(
+        hud.velocity,
+        "31.8 KM/S"
+    );
+
+    setText(
+        hud.distance,
+        "LOCKED"
+    );
+
+    setText(
+        hud.trajectory,
+        "SECURED"
+    );
+
+    setText(
+        hud.target,
+        "INTERCEPT READY"
+    );
+
+    setText(
+        hud.message,
+        "PEMP DEFENSE SYSTEM ONLINE"
+    );
+
+    setPower(100);
+
+}
+
+
+/* =========================================================
+   LIVE DATA
+   ========================================================= */
+
+function updateLiveData() {
+
+    if (closed) {
         return;
     }
 
-    clearIntroStates();
+    const elapsed =
+        Date.now() - startedAt;
 
-    if (state) {
 
-        intro.classList.add(
-            state
+    /*
+     * CPU
+     */
+
+    const cpu =
+        24 +
+        Math.floor(
+            Math.random() * 18
+        );
+
+
+    /*
+     * MEM
+     */
+
+    const memory =
+        38 +
+        Math.floor(
+            Math.random() * 14
+        );
+
+
+    /*
+     * LINK
+     */
+
+    const link =
+        82 +
+        Math.floor(
+            Math.random() * 17
+        );
+
+
+    setText(
+        hud.cpu,
+        `${cpu}%`
+    );
+
+    setText(
+        hud.memory,
+        `${memory}%`
+    );
+
+    setText(
+        hud.link,
+        `${link}%`
+    );
+
+
+    /*
+     * Coordonnées HUD fictives
+     * pour donner une sensation
+     * de système actif.
+     */
+
+    if (elapsed > 3800) {
+
+        const lat =
+            "48." +
+            String(
+                8200 +
+                Math.floor(
+                    Math.random() * 900
+                )
+            );
+
+        const lng =
+            "002." +
+            String(
+                1000 +
+                Math.floor(
+                    Math.random() * 900
+                )
+            );
+
+        setText(
+            hud.lat,
+            lat
+        );
+
+        setText(
+            hud.lng,
+            lng
         );
 
     }
@@ -134,92 +649,179 @@ function setIntroState(state) {
 
 
 /* =========================================================
-   DÉMARRAGE DE LA TIMELINE
+   HORLOGE HUD
    ========================================================= */
 
-function startTimeline() {
+function updateClock() {
 
-    if (
-        !intro ||
-        reducedMotion
-    ) {
+    if (!hud.time) {
         return;
     }
 
+    const elapsed =
+        Date.now() - startedAt;
 
-    /*
-     * État initial immédiat
-     */
+    const seconds =
+        Math.min(
+            Math.floor(
+                elapsed / 1000
+            ),
+            10
+        );
 
-    setIntroState(
+    const tenth =
+        Math.floor(
+            (elapsed % 1000) / 100
+        );
+
+    setText(
+        hud.time,
+        `00:00:${String(seconds).padStart(2, "0")}.${tenth}`
+    );
+
+}
+
+
+/* =========================================================
+   PROGRESSION
+   ========================================================= */
+
+function updateProgress() {
+
+    if (!hud.bootPercent) {
+        return;
+    }
+
+    const elapsed =
+        Date.now() - startedAt;
+
+    const percent =
+        Math.min(
+            100,
+            Math.floor(
+                (elapsed / INTRO_DURATION) * 100
+            )
+        );
+
+    setText(
+        hud.bootPercent,
+        `${String(percent).padStart(2, "0")}%`
+    );
+
+}
+
+
+/* =========================================================
+   DÉMARRAGE
+   ========================================================= */
+
+function startIntro() {
+
+    startedAt =
+        Date.now();
+
+
+    setState(
         "state-connect"
     );
 
 
-    /*
-     * Programme les différentes
-     * phases de l'interface.
-     */
+    connectionPhase();
 
-    TIMELINE.forEach(
+
+    phases.forEach(
         ({ time, state }) => {
 
             if (time === 0) {
                 return;
             }
 
-
             const timer =
-                window.setTimeout(
+                setTimeout(
                     () => {
 
-                        setIntroState(
+                        setState(
                             state
                         );
+
+
+                        if (
+                            state ===
+                            "state-sync"
+                        ) {
+
+                            syncPhase();
+
+                        }
+
+
+                        if (
+                            state ===
+                            "state-detect"
+                        ) {
+
+                            detectPhase();
+
+                        }
+
+
+                        if (
+                            state ===
+                            "state-alert"
+                        ) {
+
+                            alertPhase();
+
+                        }
+
+
+                        if (
+                            state ===
+                            "state-complete"
+                        ) {
+
+                            completePhase();
+
+                        }
 
                     },
                     time
                 );
 
 
-            timelineTimers.push(
+            timers.push(
                 timer
             );
 
         }
     );
 
-}
 
+    liveInterval =
+        setInterval(
+            () => {
 
-/* =========================================================
-   ARRÊT DE LA TIMELINE
-   ========================================================= */
+                updateLiveData();
+                updateProgress();
 
-function stopTimeline() {
-
-    timelineTimers.forEach(
-        (timer) => {
-
-            window.clearTimeout(
-                timer
-            );
-
-        }
-    );
-
-    timelineTimers = [];
-
-
-    if (closeTimer !== null) {
-
-        window.clearTimeout(
-            closeTimer
+            },
+            350
         );
 
-        closeTimer = null;
 
-    }
+    clockInterval =
+        setInterval(
+            updateClock,
+            100
+        );
+
+
+    timers.push(
+        setTimeout(
+            closeIntro,
+            INTRO_DURATION
+        )
+    );
 
 }
 
@@ -230,92 +832,75 @@ function stopTimeline() {
 
 function closeIntro() {
 
-    if (!intro) {
+    if (
+        !intro ||
+        closed
+    ) {
         return;
     }
 
 
-    /*
-     * Empêche une double fermeture.
-     */
-
-    if (introClosed) {
-        return;
-    }
-
-
-    introClosed =
+    closed =
         true;
 
 
-    stopTimeline();
+    timers.forEach(
+        clearTimeout
+    );
 
 
-    /*
-     * Dernière impulsion avant
-     * la disparition.
-     */
+    timers =
+        [];
 
-    clearIntroStates();
+
+    if (liveInterval) {
+
+        clearInterval(
+            liveInterval
+        );
+
+    }
+
+
+    if (clockInterval) {
+
+        clearInterval(
+            clockInterval
+        );
+
+    }
 
 
     intro.classList.add(
-        "state-complete"
+        "is-hidden"
     );
 
 
-    /*
-     * Petite pause pour laisser
-     * respirer l'état final.
-     */
-
-    window.setTimeout(
-        () => {
-
-            intro.classList.add(
-                "is-hidden"
-            );
-
-            document.body.classList.remove(
-                "intro-active"
-            );
-
-            intro.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-
-            /*
-             * L'intro ne se rejoue pas
-             * pendant cette session.
-             */
-
-            try {
-
-                sessionStorage.setItem(
-                    INTRO_STORAGE_KEY,
-                    "true"
-                );
-
-            } catch (error) {
-
-                /*
-                 * sessionStorage peut être bloqué
-                 * dans certains environnements.
-                 */
-
-            }
-
-        },
-        180
+    document.body.classList.remove(
+        "intro-active"
     );
+
+
+    intro.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    try {
+
+        sessionStorage.setItem(
+            INTRO_STORAGE_KEY,
+            "true"
+        );
+
+    } catch (error) {}
 
 }
 
 
 /* =========================================================
-   BOUTON PASSER
+   PASSER
    ========================================================= */
 
 if (introSkip) {
@@ -329,7 +914,7 @@ if (introSkip) {
 
 
 /* =========================================================
-   TOUCHE ESCAPE
+   ESC
    ========================================================= */
 
 document.addEventListener(
@@ -338,7 +923,7 @@ document.addEventListener(
 
         if (
             event.key === "Escape" &&
-            !introClosed
+            !closed
         ) {
 
             closeIntro();
@@ -350,110 +935,53 @@ document.addEventListener(
 
 
 /* =========================================================
-   VÉRIFICATION SESSION
+   SESSION
    ========================================================= */
 
-let introAlreadySeen =
+let alreadySeen =
     false;
 
 
 try {
 
-    introAlreadySeen =
+    alreadySeen =
         sessionStorage.getItem(
             INTRO_STORAGE_KEY
         ) === "true";
 
 } catch (error) {
 
-    introAlreadySeen =
+    alreadySeen =
         false;
 
 }
 
 
 /* =========================================================
-   INTRO DÉJÀ VUE
+   LANCEMENT
    ========================================================= */
 
 if (
-    introAlreadySeen ||
-    reducedMotion
+    intro &&
+    !alreadySeen
 ) {
-
-    if (intro) {
-
-        intro.classList.add(
-            "is-hidden"
-        );
-
-        intro.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-    }
-
-    document.body.classList.remove(
-        "intro-active"
-    );
-
-}
-
-
-/* =========================================================
-   DÉMARRAGE
-   ========================================================= */
-
-else if (intro) {
 
     document.body.classList.add(
         "intro-active"
     );
 
+    startIntro();
 
-    intro.classList.remove(
+}
+else if (intro) {
+
+    intro.classList.add(
         "is-hidden"
     );
 
-
     intro.setAttribute(
         "aria-hidden",
-        "false"
+        "true"
     );
 
-
-    /*
-     * Démarre les états
-     * de l'interface.
-     */
-
-    startTimeline();
-
-
-    /*
-     * Fermeture automatique
-     * après exactement 10 secondes.
-     */
-
-    closeTimer =
-        window.setTimeout(
-            closeIntro,
-            INTRO_DURATION
-        );
-
 }
-
-
-/* =========================================================
-   SÉCURITÉ
-   ========================================================= */
-
-window.addEventListener(
-    "pagehide",
-    () => {
-
-        stopTimeline();
-
-    }
-);
