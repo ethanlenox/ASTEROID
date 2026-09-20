@@ -4030,4 +4030,552 @@ body.intro-active {
     }
 }
 
+/* =========================================================
+   ASTÉROÏD DESTROYER
+   PEMP // HOLOGRAPHIC INTERFACE
+   CSS — PARTIE 10/12
+   HOLOGRAMME + GLITCH + PROFONDEUR
+   ========================================================= */
+
+
+/* =========================================================
+   PROFONDEUR HOLOGRAPHIQUE
+   ========================================================= */
+
+.intro-content {
+
+    perspective:
+        1200px;
+}
+
+
+.intro-brand {
+
+    transform-style:
+        preserve-3d;
+
+    will-change:
+        transform;
+}
+
+
+/* =========================================================
+   LÉGER FLOTTEMENT DU CENTRE
+   ========================================================= */
+
+.intro-brand {
+
+    animation:
+        hologram-float
+        5s
+        ease-in-out
+        2.5s
+        infinite;
+}
+
+
+@keyframes hologram-float {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(0,0,0);
+    }
+
+    50% {
+
+        transform:
+            translate3d(
+                0,
+                -3px,
+                12px
+            );
+    }
+}
+
+
+/* =========================================================
+   LUMIÈRE HOLOGRAPHIQUE AUTOUR DU CENTRE
+   ========================================================= */
+
+.intro-logo {
+
+    isolation:
+        isolate;
+}
+
+
+.intro-logo::before {
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(0,229,255,.4)
+        );
+}
+
+
+/* =========================================================
+   HALO CYAN
+   ========================================================= */
+
+.intro-logo img {
+
+    animation:
+        hologram-light
+        3.5s
+        ease-in-out
+        5.5s
+        infinite;
+}
+
+
+@keyframes hologram-light {
+
+    0%,
+    100% {
+
+        filter:
+            drop-shadow(
+                0 0 8px
+                rgba(0,229,255,.45)
+            )
+            drop-shadow(
+                0 0 28px
+                rgba(0,229,255,.12)
+            );
+    }
+
+    50% {
+
+        filter:
+            drop-shadow(
+                0 0 14px
+                rgba(0,229,255,.8)
+            )
+            drop-shadow(
+                0 0 42px
+                rgba(0,229,255,.25)
+            );
+    }
+}
+
+
+/* =========================================================
+   MICRO GLITCH
+   ========================================================= */
+
+.intro-logo-name {
+
+    text-rendering:
+        geometricPrecision;
+}
+
+
+.intro-logo-name::before {
+
+    text-shadow:
+        1px 0
+        rgba(255,0,70,.35),
+
+        -1px 0
+        rgba(0,229,255,.35);
+}
+
+
+/* =========================================================
+   GLITCH EN ALERTE
+   ========================================================= */
+
+.intro.state-alert .intro-logo {
+
+    animation:
+        hologram-alert
+        .55s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes hologram-alert {
+
+    0% {
+
+        transform:
+            translate3d(0,0,0)
+            skewX(0deg);
+    }
+
+    25% {
+
+        transform:
+            translate3d(-1px,0,0)
+            skewX(-.4deg);
+    }
+
+    50% {
+
+        transform:
+            translate3d(1px,-1px,0)
+            skewX(.4deg);
+    }
+
+    75% {
+
+        transform:
+            translate3d(-.5px,1px,0)
+            skewX(0deg);
+    }
+
+    100% {
+
+        transform:
+            translate3d(0,0,0)
+            skewX(0deg);
+    }
+}
+
+
+/* =========================================================
+   DOUBLE COUCHE CHROMATIQUE
+   ========================================================= */
+
+.intro.state-alert .intro-logo img {
+
+    filter:
+
+        drop-shadow(
+            2px 0
+            rgba(255,0,60,.28)
+        )
+
+        drop-shadow(
+            -2px 0
+            rgba(0,229,255,.28)
+        )
+
+        drop-shadow(
+            0 0 18px
+            rgba(255,48,79,.55)
+        );
+}
+
+
+/* =========================================================
+   SCANLINES HOLOGRAPHIQUES
+   ========================================================= */
+
+.intro-logo {
+
+    overflow:
+        visible;
+}
+
+
+.intro-logo::after {
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 4px,
+            rgba(0,229,255,.025) 5px,
+            transparent 6px
+        );
+
+    mix-blend-mode:
+        screen;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   BALAYAGE SUR LE LOGO
+   ========================================================= */
+
+.intro-logo {
+
+    --holo-scan:
+        -120%;
+}
+
+
+.intro-logo::before {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            transparent 40%,
+            rgba(255,255,255,.14) 49%,
+            rgba(0,229,255,.25) 50%,
+            rgba(255,255,255,.14) 51%,
+            transparent 60%,
+            transparent 100%
+        ),
+
+        linear-gradient(
+            90deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        top left / 35px 1px no-repeat,
+
+        linear-gradient(
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        top left / 1px 35px no-repeat,
+
+        linear-gradient(
+            270deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        top right / 35px 1px no-repeat,
+
+        linear-gradient(
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        top right / 1px 35px no-repeat,
+
+        linear-gradient(
+            90deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        bottom left / 35px 1px no-repeat,
+
+        linear-gradient(
+            0deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        bottom left / 1px 35px no-repeat,
+
+        linear-gradient(
+            270deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        bottom right / 35px 1px no-repeat,
+
+        linear-gradient(
+            0deg,
+            var(--tick) 0 35px,
+            transparent 35px
+        )
+        bottom right / 1px 35px no-repeat;
+
+    background-size:
+        200% 100%,
+        35px 1px,
+        1px 35px,
+        35px 1px,
+        1px 35px,
+        35px 1px,
+        1px 35px,
+        35px 1px,
+        1px 35px;
+
+    background-position:
+        -120% 0,
+        top left,
+        top left,
+        top right,
+        top right,
+        bottom left,
+        bottom left,
+        bottom right,
+        bottom right;
+
+    animation:
+
+        logo-corners
+        .8s
+        ease
+        1.4s
+        forwards,
+
+        hologram-sweep
+        4s
+        cubic-bezier(.4,0,.2,1)
+        3.2s
+        infinite;
+}
+
+
+@keyframes hologram-sweep {
+
+    0% {
+
+        background-position:
+            -120% 0,
+            top left,
+            top left,
+            top right,
+            top right,
+            bottom left,
+            bottom left,
+            bottom right,
+            bottom right;
+    }
+
+    35%,
+    100% {
+
+        background-position:
+            120% 0,
+            top left,
+            top left,
+            top right,
+            top right,
+            bottom left,
+            bottom left,
+            bottom right,
+            bottom right;
+    }
+}
+
+
+/* =========================================================
+   ALERTE : SCAN ROUGE
+   ========================================================= */
+
+.intro.state-alert .intro-logo::before {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            transparent 42%,
+            rgba(255,255,255,.18) 49%,
+            rgba(255,48,79,.55) 50%,
+            rgba(255,255,255,.18) 51%,
+            transparent 58%,
+            transparent 100%
+        ),
+
+        linear-gradient(
+            var(--alert-red) 0 35px,
+            transparent 35px
+        );
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(255,48,79,.45)
+        );
+}
+
+
+/* =========================================================
+   DISTORSION LÉGÈRE DE L'ÉCRAN
+   ========================================================= */
+
+.intro.state-alert .intro-content {
+
+    animation:
+        screen-distortion
+        1.8s
+        steps(3)
+        infinite;
+}
+
+
+@keyframes screen-distortion {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(0,0,0);
+    }
+
+    25% {
+
+        transform:
+            translate3d(.3px,0,0);
+    }
+
+    50% {
+
+        transform:
+            translate3d(-.3px,.2px,0);
+    }
+
+    75% {
+
+        transform:
+            translate3d(.2px,-.2px,0);
+    }
+}
+
+
+/* =========================================================
+   PARTICULES DE GLITCH
+   ========================================================= */
+
+.intro.state-alert .intro-content > .intro-scan {
+
+    background:
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 18px,
+            rgba(255,48,79,.8) 19px 21px,
+            transparent 22px 45px
+        );
+
+    box-shadow:
+
+        0 0 10px
+        rgba(255,48,79,.8),
+
+        0 0 30px
+        rgba(255,48,79,.35);
+}
+
+
+/* =========================================================
+   RETOUR CYAN APRÈS ALERTE
+   ========================================================= */
+
+.intro.state-connect .intro-logo img,
+.intro.state-sync .intro-logo img {
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(0,229,255,.65)
+        )
+        drop-shadow(
+            0 0 35px
+            rgba(0,229,255,.18)
+        );
+}
+
+
+/* =========================================================
+   RÉDUCTION DE MOUVEMENT
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .intro-brand,
+    .intro-logo img,
+    .intro-logo::before,
+    .intro-logo::after {
+
+        animation:
+            none;
+    }
+}
 
