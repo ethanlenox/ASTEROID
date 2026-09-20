@@ -2808,7 +2808,9 @@ h2 {
 #media-preview .media-preview-grid {
     position: relative;
 
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     width: 100%;
     min-height: 300px;
@@ -2826,7 +2828,24 @@ h2 {
 
     border-radius:
         var(--radius-medium);
+
+    background-image:
+        linear-gradient(
+            rgba(5, 9, 20, 0.68),
+            rgba(5, 9, 20, 0.68)
+        ),
+        url("../img/artwork/01.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color:
+        var(--color-white);
+
+    text-decoration: none;
 }
+
     background-image:
         linear-gradient(
             rgba(5, 9, 20, 0.55),
