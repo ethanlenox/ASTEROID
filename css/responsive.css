@@ -777,5 +777,13 @@
         width:
             25px;
     }
-}
 
+    .intro.state-alert .intro-radar::after {
+
+        width:
+            78%;
+
+        height:
+            78%;
+    }
+}
