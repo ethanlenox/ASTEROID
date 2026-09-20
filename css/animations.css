@@ -2942,3 +2942,535 @@ body.intro-active {
     }
 }
 
+/* =========================================================
+   ASTÉROÏD DESTROYER
+   PEMP // HOLOGRAPHIC INTERFACE
+   CSS — PARTIE 8/12
+   ALERTE + CIBLE + IMPACT
+   ========================================================= */
+
+
+/* =========================================================
+   ZONE DE MENACE
+   ========================================================= */
+
+.intro.state-alert {
+
+    --alert-red:
+        #ff304f;
+
+    --alert-red-bright:
+        #ff526b;
+
+    --alert-red-soft:
+        rgba(255,48,79,.12);
+
+    --alert-red-glow:
+        rgba(255,48,79,.65);
+}
+
+
+/* =========================================================
+   FLASH ROUGE TRÈS LÉGER
+   ========================================================= */
+
+.intro.state-alert::after {
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            transparent 25%,
+            rgba(255,48,79,.035) 70%,
+            rgba(255,48,79,.09) 100%
+        );
+
+    animation:
+        alert-vignette
+        .55s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes alert-vignette {
+
+    from {
+
+        opacity:
+            .25;
+    }
+
+    to {
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   CIBLE AUTOUR DU CENTRE
+   ========================================================= */
+
+.intro.state-detect .intro-radar,
+.intro.state-alert .intro-radar {
+
+    opacity:
+        .65;
+
+    border-color:
+        rgba(255,106,0,.3);
+}
+
+
+.intro.state-alert .intro-radar {
+
+    border-color:
+        rgba(255,48,79,.5);
+
+    box-shadow:
+
+        0 0 45px
+        rgba(255,48,79,.15),
+
+        inset 0 0 70px
+        rgba(255,48,79,.08);
+}
+
+
+/* =========================================================
+   CERCLE DE VERROUILLAGE
+   ========================================================= */
+
+.intro.state-detect .intro-radar::after,
+.intro.state-alert .intro-radar::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        72%;
+
+    height:
+        72%;
+
+    border:
+        1px solid
+        rgba(255,106,0,.35);
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(0deg);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(255,106,0,.08);
+
+    animation:
+        target-lock-ring
+        2s
+        linear
+        infinite;
+}
+
+
+.intro.state-alert .intro-radar::after {
+
+    border-color:
+        rgba(255,48,79,.65);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255,48,79,.18);
+
+    animation:
+        target-lock-alert
+        .8s
+        linear
+        infinite;
+}
+
+
+@keyframes target-lock-ring {
+
+    from {
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+    }
+
+    to {
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes target-lock-alert {
+
+    0% {
+
+        transform:
+            translate(-50%,-50%)
+            scale(.92)
+            rotate(0deg);
+
+        opacity:
+            .35;
+    }
+
+    50% {
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.03)
+            rotate(180deg);
+
+        opacity:
+            1;
+    }
+
+    100% {
+
+        transform:
+            translate(-50%,-50%)
+            scale(.92)
+            rotate(360deg);
+
+        opacity:
+            .35;
+    }
+}
+
+
+/* =========================================================
+   QUATRE MARQUEURS DE CIBLE
+   ========================================================= */
+
+.intro.state-alert .intro-radar {
+
+    --lock-color:
+        var(--alert-red);
+}
+
+
+.intro.state-alert .intro-radar {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            transparent 0 22%,
+            rgba(255,48,79,.04) 22.5%,
+            transparent 23%
+        ),
+
+        repeating-radial-gradient(
+            circle,
+            transparent 0 60px,
+            rgba(255,48,79,.13) 61px,
+            transparent 62px
+        );
+}
+
+
+/* =========================================================
+   CROSSHAIR CENTRAL
+   ========================================================= */
+
+.intro.state-detect .intro-sonic,
+.intro.state-alert .intro-sonic {
+
+    width:
+        8px;
+
+    height:
+        8px;
+}
+
+
+.intro.state-alert .intro-sonic {
+
+    animation:
+        alert-core
+        .45s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes alert-core {
+
+    from {
+
+        transform:
+            translate(-50%,-50%)
+            scale(.75);
+    }
+
+    to {
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.8);
+    }
+}
+
+
+/* =========================================================
+   ONDES D'IMPACT
+   ========================================================= */
+
+.intro.state-detect .intro-particles,
+.intro.state-alert .intro-particles {
+
+    border-color:
+        rgba(255,106,0,.4);
+
+    box-shadow:
+        0 0 35px
+        rgba(255,106,0,.18);
+}
+
+
+.intro.state-alert .intro-particles {
+
+    border-color:
+        rgba(255,48,79,.6);
+
+    box-shadow:
+
+        0 0 35px
+        rgba(255,48,79,.22),
+
+        0 0 80px
+        rgba(255,48,79,.08);
+}
+
+
+/* =========================================================
+   MÉTÉORE EN PHASE DE MENACE
+   ========================================================= */
+
+.intro.state-detect .intro-asteroid {
+
+    animation-name:
+        meteor-threat;
+}
+
+
+.intro.state-alert .intro-asteroid {
+
+    animation-name:
+        meteor-alert;
+}
+
+
+@keyframes meteor-threat {
+
+    0% {
+
+        filter:
+            drop-shadow(
+                0 0 8px
+                rgba(255,106,0,.6)
+            );
+    }
+
+    50% {
+
+        filter:
+            drop-shadow(
+                0 0 18px
+                rgba(255,106,0,1)
+            )
+            drop-shadow(
+                0 0 45px
+                rgba(255,80,0,.7)
+            );
+    }
+
+    100% {
+
+        filter:
+            drop-shadow(
+                0 0 8px
+                rgba(255,106,0,.6)
+            );
+    }
+}
+
+
+@keyframes meteor-alert {
+
+    0% {
+
+        filter:
+            drop-shadow(
+                0 0 10px
+                rgba(255,48,79,.65)
+            );
+
+        opacity:
+            .85;
+    }
+
+    50% {
+
+        filter:
+            drop-shadow(
+                0 0 20px
+                rgba(255,48,79,1)
+            )
+            drop-shadow(
+                0 0 55px
+                rgba(255,48,79,.75)
+            );
+
+        opacity:
+            1;
+    }
+
+    100% {
+
+        filter:
+            drop-shadow(
+                0 0 10px
+                rgba(255,48,79,.65)
+            );
+
+        opacity:
+            .85;
+    }
+}
+
+
+/* =========================================================
+   LIGNES D'ALERTE
+   ========================================================= */
+
+.intro.state-alert .intro-content::before {
+
+    border-width:
+        1px;
+
+    animation:
+        alert-frame
+        .7s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes alert-frame {
+
+    from {
+
+        opacity:
+            .35;
+    }
+
+    to {
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   PETIT TEXTE D'ALERTE EN HAUT
+   ========================================================= */
+
+.intro.state-alert::before {
+
+    content:
+        "⚠  WARNING // HOSTILE OBJECT DETECTED";
+
+    color:
+        rgba(255,110,125,.95);
+
+    border-left-color:
+        var(--alert-red);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,48,79,.12),
+            transparent
+        );
+
+    text-shadow:
+        0 0 10px
+        rgba(255,48,79,.55);
+
+    animation:
+        warning-label
+        .5s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes warning-label {
+
+    from {
+
+        opacity:
+            .45;
+    }
+
+    to {
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   COULEUR ROUGE SUR LE BOUTON PASSER
+   ========================================================= */
+
+.intro.state-alert .intro-skip {
+
+    border-color:
+        rgba(255,48,79,.4);
+
+    color:
+        rgba(255,180,190,.7);
+}
+
+
+.intro.state-alert .intro-skip:hover {
+
+    border-color:
+        var(--hud-red);
+
+    background:
+        rgba(255,48,79,.1);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,48,79,.18);
+}
+
+
