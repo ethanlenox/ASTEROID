@@ -754,5 +754,28 @@
         animation-duration:
             .55s;
     }
+
+
+    .intro-logo::before {
+
+        inset:
+            -10px;
+    }
+
+    .intro-logo::after {
+
+        width:
+            120%;
+
+        height:
+            120%;
+    }
+
+    .intro-content > .intro-brand h1::before,
+    .intro-content > .intro-brand h1::after {
+
+        width:
+            25px;
+    }
 }
 
