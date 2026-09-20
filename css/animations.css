@@ -6222,6 +6222,576 @@ body.intro-active {
     }
 }
 
+/* =========================================================
+   PATCH — TEXTE HUD
+   Aucun texte blanc statique
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   ÉTAT PAR DÉFAUT
+   --------------------------------------------------------- */
+
+.intro-logo-subtitle,
+.intro-brand h1,
+.intro-logo-name {
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 8px rgba(0,229,255,.45),
+        0 0 22px rgba(0,229,255,.18);
+
+    transition:
+        color .35s ease,
+        opacity .35s ease,
+        text-shadow .35s ease,
+        transform .35s ease;
+
+}
+
+
+/* ---------------------------------------------------------
+   AC TEKPROD
+   --------------------------------------------------------- */
+
+.intro-logo-subtitle {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(8px)
+        scale(.96);
+
+    letter-spacing:
+        .42em;
+}
+
+
+/* ---------------------------------------------------------
+   PRESENTE
+   --------------------------------------------------------- */
+
+.intro-brand h1 {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(8px);
+
+    color:
+        var(--hud-cyan);
+
+    font-weight:
+        700;
+
+}
+
+
+/* ---------------------------------------------------------
+   NOM DU JEU
+   --------------------------------------------------------- */
+
+.intro-logo-name {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(8px)
+        scale(.97);
+
+    color:
+        var(--hud-cyan);
+
+}
+
+
+/* =========================================================
+   PHASE 1 — CONNEXION CYAN
+   ========================================================= */
+
+.intro.state-connect .intro-logo-subtitle {
+
+    opacity:
+        .9;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    color:
+        var(--hud-cyan);
+
+    animation:
+        hud-connect
+        1.2s
+        ease-in-out
+        infinite;
+}
+
+
+.intro.state-connect .intro-brand h1 {
+
+    opacity:
+        .35;
+
+    transform:
+        translateY(0);
+
+    color:
+        rgba(0,229,255,.65);
+}
+
+
+.intro.state-connect .intro-logo-name {
+
+    opacity:
+        .55;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    color:
+        rgba(0,229,255,.7);
+}
+
+
+@keyframes hud-connect {
+
+    0%,
+    100% {
+
+        opacity:
+            .45;
+
+        text-shadow:
+            0 0 5px
+            rgba(0,229,255,.25);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        text-shadow:
+            0 0 10px
+            rgba(0,229,255,.7),
+
+            0 0 28px
+            rgba(0,229,255,.3);
+    }
+}
+
+
+/* =========================================================
+   PHASE 2 — SYNCHRONISATION VERTE
+   ========================================================= */
+
+.intro.state-sync .intro-logo-subtitle {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    color:
+        var(--hud-green);
+
+    text-shadow:
+        0 0 8px
+        rgba(57,255,136,.55),
+
+        0 0 25px
+        rgba(57,255,136,.2);
+}
+
+
+.intro.state-sync .intro-brand h1 {
+
+    opacity:
+        .75;
+
+    transform:
+        translateY(0);
+
+    color:
+        var(--hud-green);
+
+    text-shadow:
+        0 0 10px
+        rgba(57,255,136,.45);
+}
+
+
+.intro.state-sync .intro-logo-name {
+
+    opacity:
+        .85;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 10px
+        rgba(0,229,255,.5);
+}
+
+
+/* =========================================================
+   PHASE 3 — DÉTECTION ORANGE
+   ========================================================= */
+
+.intro.state-detect .intro-logo-subtitle {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-orange);
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    text-shadow:
+        0 0 9px
+        rgba(255,106,0,.65),
+
+        0 0 25px
+        rgba(255,106,0,.25);
+
+    animation:
+        detect-text
+        .8s
+        ease-in-out
+        infinite;
+}
+
+
+.intro.state-detect .intro-brand h1 {
+
+    opacity:
+        .9;
+
+    transform:
+        translateY(0);
+
+    color:
+        var(--hud-orange);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,106,0,.55);
+}
+
+
+.intro.state-detect .intro-logo-name {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    color:
+        var(--hud-orange);
+
+    text-shadow:
+        0 0 12px
+        rgba(255,106,0,.65),
+
+        0 0 30px
+        rgba(255,106,0,.2);
+}
+
+
+@keyframes detect-text {
+
+    0%,
+    100% {
+
+        opacity:
+            .65;
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(-1px);
+    }
+}
+
+
+/* =========================================================
+   PHASE 4 — ALERTE ROUGE
+   ========================================================= */
+
+.intro.state-alert .intro-logo-subtitle {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,48,79,.8),
+
+        0 0 30px
+        rgba(255,48,79,.35);
+
+    animation:
+        alert-hud-text
+        .45s
+        steps(2)
+        infinite;
+}
+
+
+.intro.state-alert .intro-brand h1 {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,48,79,.8),
+
+        0 0 25px
+        rgba(255,48,79,.3);
+
+    animation:
+        alert-hud-text
+        .45s
+        steps(2)
+        infinite;
+}
+
+
+.intro.state-alert .intro-logo-name {
+
+    opacity:
+        1;
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 12px
+        rgba(255,48,79,.9),
+
+        0 0 35px
+        rgba(255,48,79,.4);
+
+    animation:
+        alert-name
+        .7s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes alert-hud-text {
+
+    0%,
+    100% {
+
+        opacity:
+            .55;
+
+        transform:
+            translateX(0);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(.8px);
+    }
+}
+
+
+@keyframes alert-name {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(0);
+
+        filter:
+            brightness(1);
+    }
+
+    45% {
+
+        transform:
+            translateX(-1px);
+
+        filter:
+            brightness(1.2);
+    }
+
+    50% {
+
+        transform:
+            translateX(1px);
+    }
+
+    55% {
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =========================================================
+   PHASE 5 — DÉFENSE ACTIVE
+   ========================================================= */
+
+.intro.state-complete .intro-logo-subtitle {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 10px
+        rgba(0,229,255,.7);
+}
+
+
+.intro.state-complete .intro-brand h1 {
+
+    opacity:
+        .9;
+
+    transform:
+        translateY(0);
+
+    color:
+        var(--hud-green);
+
+    text-shadow:
+        0 0 10px
+        rgba(57,255,136,.5);
+}
+
+
+.intro.state-complete .intro-logo-name {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    color:
+        var(--hud-cyan);
+
+    text-shadow:
+        0 0 12px
+        rgba(0,229,255,.65);
+}
+
+
+/* =========================================================
+   SORTIE
+   ========================================================= */
+
+.intro.is-hidden .intro-logo-subtitle,
+.intro.is-hidden .intro-brand h1,
+.intro.is-hidden .intro-logo-name {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(-12px)
+        scale(.96);
+
+    filter:
+        blur(3px);
+
+    transition:
+        opacity .25s ease,
+        transform .45s ease,
+        filter .45s ease;
+}
+
+
+/* =========================================================
+   IMPORTANT :
+   AUCUN BLANC FORCÉ
+   ========================================================= */
+
+.intro-logo img {
+
+    /*
+     * Le GIF/logo garde son rendu original.
+     * On ne lui impose aucune teinte.
+     */
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .intro-logo-subtitle {
+
+        letter-spacing:
+            .28em;
+    }
+
+    .intro-brand h1 {
+
+        letter-spacing:
+            .25em;
+    }
+
+    .intro-logo-name {
+
+        letter-spacing:
+            .16em;
+    }
+}
 
 /* =========================================================
    FIN DU CSS intro
