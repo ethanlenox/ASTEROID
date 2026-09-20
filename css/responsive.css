@@ -786,4 +786,19 @@
         height:
             78%;
     }
+
+    .intro-logo-name::before {
+
+        font-size:
+            5px;
+
+        letter-spacing:
+            .1em;
+    }
+
+    .intro-logo-name {
+
+        padding-bottom:
+            11px;
+    }
 }
