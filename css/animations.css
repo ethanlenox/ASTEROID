@@ -195,20 +195,6 @@ body.intro-active {
     overflow: hidden;
 }
 
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .intro-content::before {
-
-        inset: 15px;
-    }
-}
-
-
 /* =========================================================
    ACCESSIBILITÉ
    ========================================================= */
@@ -521,26 +507,6 @@ body.intro-active {
         screen;
 }
 
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .intro-stars {
-
-        background-size:
-
-            120px 120px,
-            170px 170px,
-            220px 220px,
-            270px 270px,
-            190px 190px,
-            240px 240px,
-            150px 150px;
-    }
-}
 /* =========================================================
    ASTÉROÏD DESTROYER
    PEMP // HOLOGRAPHIC INTERFACE
@@ -964,35 +930,7 @@ body.intro-active {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
-@media (max-width: 700px) {
-
-    .intro-content {
-
-        background-size:
-            32px 32px;
-    }
-
-    .intro-content > .intro-brand::after {
-
-        inset: 25px;
-    }
-
-    .intro-content > .intro-sonic::before {
-
-        left: 18px;
-        width: 45px;
-    }
-
-    .intro-content > .intro-sonic::after {
-
-        right: 18px;
-        width: 45px;
-    }
-}
 /* =========================================================
    ASTÉROÏD DESTROYER
    PEMP // HOLOGRAPHIC INTERFACE
