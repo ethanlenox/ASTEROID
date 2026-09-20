@@ -4579,3 +4579,584 @@ body.intro-active {
     }
 }
 
+/* =========================================================
+   ASTÉROÏD DESTROYER
+   PEMP // HOLOGRAPHIC INTERFACE
+   CSS — PARTIE 11/12
+   HUD PÉRIPHÉRIQUE + PANNEAUX D'ÉTAT
+   ========================================================= */
+
+
+/* =========================================================
+   CADRE HUD — ANGLES TECHNIQUES
+   ========================================================= */
+
+.intro-content::before {
+
+    border:
+        0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--hud-cyan) 0 55px,
+            transparent 55px
+        )
+        top left / 55px 1px no-repeat,
+
+        linear-gradient(
+            var(--hud-cyan) 0 55px,
+            transparent 55px
+        )
+        top left / 1px 55px no-repeat,
+
+        linear-gradient(
+            270deg,
+            var(--hud-cyan) 0 55px,
+            transparent 55px
+        )
+        top right / 55px 1px no-repeat,
+
+        linear-gradient(
+            var(--hud-cyan) 0 55px,
+            transparent 55px
+        )
+        top right / 1px 55px no-repeat,
+
+        linear-gradient(
+            90deg,
+            var(--hud-cyan) 0 55px,
+            transparent 55px
+        )
+        bottom left / 55px 1px no-repeat,
+
+        linear-gradient(
+            0deg,
+            var(--hud-cyan) 0 55px,
+            transparent 55px
+        )
+        bottom left / 1px 55px no-repeat,
+
+        linear-gradient(
+            270deg,
+            var(--hud-cyan) 0 55px,
+            transparent 55px
+        )
+        bottom right / 55px 1px no-repeat,
+
+        linear-gradient(
+            0deg,
+            var(--hud-cyan) 0 55px,
+            transparent 55px
+        )
+        bottom right / 1px 55px no-repeat;
+
+    opacity:
+        0;
+
+    animation:
+        hud-frame-in
+        .9s
+        ease
+        .5s
+        forwards;
+}
+
+
+/* =========================================================
+   PETITES MARQUES SUR LES BORDS
+   ========================================================= */
+
+.intro-content::after {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0 8%,
+            rgba(0,229,255,.35) 8% 8.15%,
+            transparent 8.15% 92%,
+            rgba(0,229,255,.35) 92% 92.15%,
+            transparent 92.15%
+        );
+
+    height:
+        100%;
+
+    top:
+        0;
+
+    box-shadow:
+        none;
+
+    opacity:
+        .5;
+
+    animation:
+        border-scan
+        4.5s
+        linear
+        1s
+        infinite;
+}
+
+
+@keyframes border-scan {
+
+    0% {
+
+        background-position:
+            0 -100vh;
+    }
+
+    100% {
+
+        background-position:
+            0 100vh;
+    }
+}
+
+
+/* =========================================================
+   PANNEAU GAUCHE
+   ========================================================= */
+
+.intro-content::after {
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   DONNÉES DÉCORATIVES AUTOUR DU LOGO
+   ========================================================= */
+
+.intro-brand {
+
+    --panel-color:
+        rgba(0,229,255,.45);
+}
+
+
+/* =========================================================
+   TRAITS HORIZONTAUX
+   ========================================================= */
+
+.intro-brand h1 {
+
+    position:
+        relative;
+}
+
+
+.intro-brand h1::before,
+.intro-brand h1::after {
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,229,255,.7)
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(0,229,255,.3);
+}
+
+
+/* =========================================================
+   INDICATEUR DE CONNEXION
+   ========================================================= */
+
+.intro-logo-subtitle {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+}
+
+
+.intro-logo-subtitle::after {
+
+    content:
+        "LINK";
+
+    position:
+        absolute;
+
+    left:
+        calc(100% + 18px);
+
+    color:
+        rgba(57,255,136,.65);
+
+    font-family:
+        monospace;
+
+    font-size:
+        .42rem;
+
+    letter-spacing:
+        .16em;
+
+    opacity:
+        .8;
+
+    animation:
+        link-status
+        1.2s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes link-status {
+
+    0%,
+    100% {
+
+        opacity:
+            .3;
+    }
+
+    50% {
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   ÉTAT CONNEXION
+   ========================================================= */
+
+.intro.state-connect .intro-logo-subtitle::after {
+
+    content:
+        "CONNECTING";
+
+    color:
+        rgba(0,229,255,.8);
+}
+
+
+/* =========================================================
+   ÉTAT SYNCHRONISÉ
+   ========================================================= */
+
+.intro.state-sync .intro-logo-subtitle::after {
+
+    content:
+        "ONLINE";
+
+    color:
+        var(--hud-green);
+
+    text-shadow:
+        0 0 8px
+        rgba(57,255,136,.55);
+}
+
+
+/* =========================================================
+   ÉTAT DÉTECTION
+   ========================================================= */
+
+.intro.state-detect .intro-logo-subtitle::after {
+
+    content:
+        "TRACKING";
+
+    color:
+        var(--hud-orange);
+
+    text-shadow:
+        0 0 8px
+        rgba(255,106,0,.55);
+}
+
+
+/* =========================================================
+   ÉTAT ALERTE
+   ========================================================= */
+
+.intro.state-alert .intro-logo-subtitle::after {
+
+    content:
+        "ALERT";
+
+    color:
+        var(--hud-red);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,48,79,.8);
+
+    animation:
+        alert-status
+        .35s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes alert-status {
+
+    0%,
+    100% {
+
+        opacity:
+            1;
+    }
+
+    50% {
+
+        opacity:
+            .25;
+    }
+}
+
+
+/* =========================================================
+   LIGNE SYSTÈME SOUS LE LOGO
+   ========================================================= */
+
+.intro-brand::before {
+
+    padding:
+        5px 12px;
+
+    border:
+        1px solid
+        rgba(0,229,255,.1);
+
+    box-shadow:
+        inset 0 0 15px
+        rgba(0,229,255,.025);
+
+    background:
+        rgba(0,10,18,.18);
+}
+
+
+/* =========================================================
+   STATUS BAS DE PAGE
+   ========================================================= */
+
+.intro-brand::after {
+
+    padding:
+        5px 15px;
+
+    border-top:
+        1px solid
+        rgba(0,229,255,.08);
+
+    border-bottom:
+        1px solid
+        rgba(0,229,255,.08);
+
+    background:
+        rgba(0,10,18,.25);
+
+    text-shadow:
+        0 0 8px
+        rgba(0,229,255,.25);
+}
+
+
+/* =========================================================
+   STATUS SYNCHRONISÉ
+   ========================================================= */
+
+.intro.state-sync .intro-brand::after {
+
+    color:
+        rgba(57,255,136,.65);
+
+    border-color:
+        rgba(57,255,136,.12);
+
+    text-shadow:
+        0 0 8px
+        rgba(57,255,136,.3);
+}
+
+
+/* =========================================================
+   STATUS DÉTECTION
+   ========================================================= */
+
+.intro.state-detect .intro-brand::after {
+
+    color:
+        rgba(255,106,0,.7);
+
+    border-color:
+        rgba(255,106,0,.15);
+
+    text-shadow:
+        0 0 8px
+        rgba(255,106,0,.35);
+}
+
+
+/* =========================================================
+   STATUS ALERTE
+   ========================================================= */
+
+.intro.state-alert .intro-brand::after {
+
+    content:
+        "CRITICAL // OBJECT TRACKED // IMPACT ANALYSIS // DEFENSE ACTIVE";
+
+    color:
+        rgba(255,48,79,.8);
+
+    border-color:
+        rgba(255,48,79,.2);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,48,79,.45);
+
+    animation:
+        bottom-alert
+        .45s
+        steps(2)
+        infinite;
+}
+
+
+@keyframes bottom-alert {
+
+    0%,
+    100% {
+
+        opacity:
+            .5;
+    }
+
+    50% {
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   PETIT REPÈRE DE POSITION
+   ========================================================= */
+
+.intro-logo-name {
+
+    letter-spacing:
+        .3em;
+}
+
+
+.intro-logo-name::after {
+
+    border-radius:
+        1px;
+}
+
+
+/* =========================================================
+   TICKS AUTOUR DE LA ZONE CENTRALE
+   ========================================================= */
+
+.intro-logo {
+
+    margin:
+        4px 0;
+}
+
+
+.intro-logo::after {
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   RÉACTION AU MODE ALERTE
+   ========================================================= */
+
+.intro.state-alert .intro-content::before {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--hud-red) 0 55px,
+            transparent 55px
+        )
+        top left / 55px 1px no-repeat,
+
+        linear-gradient(
+            var(--hud-red) 0 55px,
+            transparent 55px
+        )
+        top left / 1px 55px no-repeat,
+
+        linear-gradient(
+            270deg,
+            var(--hud-red) 0 55px,
+            transparent 55px
+        )
+        top right / 55px 1px no-repeat,
+
+        linear-gradient(
+            var(--hud-red) 0 55px,
+            transparent 55px
+        )
+        top right / 1px 55px no-repeat,
+
+        linear-gradient(
+            90deg,
+            var(--hud-red) 0 55px,
+            transparent 55px
+        )
+        bottom left / 55px 1px no-repeat,
+
+        linear-gradient(
+            0deg,
+            var(--hud-red) 0 55px,
+            transparent 55px
+        )
+        bottom left / 1px 55px no-repeat,
+
+        linear-gradient(
+            270deg,
+            var(--hud-red) 0 55px,
+            transparent 55px
+        )
+        bottom right / 55px 1px no-repeat,
+
+        linear-gradient(
+            0deg,
+            var(--hud-red) 0 55px,
+            transparent 55px
+        )
+        bottom right / 1px 55px no-repeat;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(255,48,79,.4)
+        );
+}
+
+
