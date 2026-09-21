@@ -2333,5 +2333,5 @@ body.intro-active {
 }
 
 #intro .intro-skip {
-    transform: scale(1.6);
+    transform: translateX(-6.25px) scale(1.6) !important;
 }
