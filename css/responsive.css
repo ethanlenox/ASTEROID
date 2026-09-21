@@ -2358,3 +2358,8 @@ body.intro-active {
     }
 
 }
+#intro .intro-skip {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 999999 !important;
+}
