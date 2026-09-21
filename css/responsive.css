@@ -2283,7 +2283,7 @@
 }
 
 /* =========================================================
-                      CORRECTION BUGS
+                    CORRECTION BUGS MOBILE
    ========================================================= */
 
 /* =========================================================
@@ -2338,4 +2338,23 @@ body.intro-active {
 
 #intro.state-complete .intro-logo {
     display: none !important;
+}
+
+/* =========================================================
+                    CORRECTION BUGS PC
+   ========================================================= */
+
+/* =========================================================
+                    FIX PC BOUTON PASSER
+   ========================================================= */
+
+@media (min-width: 701px) {
+
+    #intro .intro-skip {
+        top: 30px !important;
+        right: 30px !important;
+        bottom: auto !important;
+        left: auto !important;
+    }
+
 }
