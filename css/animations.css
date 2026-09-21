@@ -5636,8 +5636,10 @@ body.intro-active {
 
 .intro.is-hidden .intro-content {
 
-   transform:
-    none;
+ transform:
+    scale(1.06)
+    translateZ(30px);
+
 
     filter:
         blur(7px)
