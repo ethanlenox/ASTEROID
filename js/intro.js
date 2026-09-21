@@ -827,7 +827,7 @@ function startIntro() {
 
 
 /* =========================================================
-   FERMETURE INTRO — VERSION ANTI-GLITCH
+   FERMETURE
    ========================================================= */
 
 function closeIntro() {
@@ -840,27 +840,18 @@ function closeIntro() {
     }
 
 
-    /* =========================================
-       VERROUILLAGE
-       ========================================= */
+    closed =
+        true;
 
-    closed = true;
-
-
-    /* =========================================
-       ARRÊT DES TIMERS
-       ========================================= */
 
     timers.forEach(
         clearTimeout
     );
 
-    timers = [];
 
+    timers =
+        [];
 
-    /* =========================================
-       ARRÊT LIVE DATA
-       ========================================= */
 
     if (liveInterval) {
 
@@ -868,14 +859,8 @@ function closeIntro() {
             liveInterval
         );
 
-        liveInterval = null;
-
     }
 
-
-    /* =========================================
-       ARRÊT HORLOGE
-       ========================================= */
 
     if (clockInterval) {
 
@@ -883,56 +868,24 @@ function closeIntro() {
             clockInterval
         );
 
-        clockInterval = null;
-
     }
 
 
-    /* =========================================
-       FERMETURE PROPRE
-       ========================================= */
-
     intro.classList.add(
-        "is-closing"
+        "is-hidden"
     );
 
 
-    /*
-     * On attend la frame suivante
-     * avant de masquer complètement
-     * l'intro.
-     */
-
-    requestAnimationFrame(
-        () => {
-
-            if (!intro) {
-                return;
-            }
-
-
-            intro.classList.add(
-                "is-hidden"
-            );
-
-
-            document.body.classList.remove(
-                "intro-active"
-            );
-
-
-            intro.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-        }
+    document.body.classList.remove(
+        "intro-active"
     );
 
 
-    /* =========================================
-       SESSION
-       ========================================= */
+    intro.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
 
     try {
 
@@ -944,6 +897,7 @@ function closeIntro() {
     } catch (error) {}
 
 }
+
 
 /* =========================================================
    PASSER
