@@ -827,7 +827,7 @@ function startIntro() {
 
 
 /* =========================================================
-   FERMETURE
+   FERMETURE INTRO — VERSION ANTI-GLITCH
    ========================================================= */
 
 function closeIntro() {
@@ -840,18 +840,27 @@ function closeIntro() {
     }
 
 
-    closed =
-        true;
+    /* =========================================
+       VERROUILLAGE
+       ========================================= */
 
+    closed = true;
+
+
+    /* =========================================
+       ARRÊT DES TIMERS
+       ========================================= */
 
     timers.forEach(
         clearTimeout
     );
 
+    timers = [];
 
-    timers =
-        [];
 
+    /* =========================================
+       ARRÊT LIVE DATA
+       ========================================= */
 
     if (liveInterval) {
 
@@ -859,8 +868,14 @@ function closeIntro() {
             liveInterval
         );
 
+        liveInterval = null;
+
     }
 
+
+    /* =========================================
+       ARRÊT HORLOGE
+       ========================================= */
 
     if (clockInterval) {
 
@@ -868,24 +883,56 @@ function closeIntro() {
             clockInterval
         );
 
+        clockInterval = null;
+
     }
 
 
+    /* =========================================
+       FERMETURE PROPRE
+       ========================================= */
+
     intro.classList.add(
-        "is-hidden"
+        "is-closing"
     );
 
 
-    document.body.classList.remove(
-        "intro-active"
+    /*
+     * On attend la frame suivante
+     * avant de masquer complètement
+     * l'intro.
+     */
+
+    requestAnimationFrame(
+        () => {
+
+            if (!intro) {
+                return;
+            }
+
+
+            intro.classList.add(
+                "is-hidden"
+            );
+
+
+            document.body.classList.remove(
+                "intro-active"
+            );
+
+
+            intro.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
     );
 
 
-    intro.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
+    /* =========================================
+       SESSION
+       ========================================= */
 
     try {
 
@@ -897,7 +944,6 @@ function closeIntro() {
     } catch (error) {}
 
 }
-
 
 /* =========================================================
    PASSER
