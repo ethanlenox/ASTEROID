@@ -1348,7 +1348,9 @@
         none;
 
     transform:
-        translate(68px, 112px);
+        transform:
+      translate(120px, 220px);
+
 
     z-index:
         50;
