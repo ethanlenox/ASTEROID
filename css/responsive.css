@@ -2303,3 +2303,31 @@
 body.intro-active {
     overflow: hidden !important;
 }
+/* =========================================================
+   CORRECTION — BOUTON PASSER
+   EMPÊCHE UNE ZONE PLEINE HAUTEUR
+   ========================================================= */
+
+#intro .intro-skip {
+    position: absolute !important;
+
+    width: max-content !important;
+    height: auto !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    max-width: max-content !important;
+    max-height: max-content !important;
+
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    flex: none !important;
+
+    inset-block-end: auto;
+}
