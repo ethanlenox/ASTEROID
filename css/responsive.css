@@ -1337,21 +1337,22 @@
 
     .intro-asteroid {
 
-        width:
-            clamp(
-                230px,
-                52vw,
-                360px
-            );
+    width:
+        clamp(
+            230px,
+            52vw,
+            360px
+        );
 
-        max-width:
-            none;
+    max-width:
+        none;
 
-        z-index:
-            50;
-    }
+    transform:
+        translate(68px, 112px);
 
-
+    z-index:
+        50;
+}
 
     /* =====================================================
        CIBLE
