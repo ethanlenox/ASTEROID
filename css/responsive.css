@@ -839,6 +839,12 @@
 
         inset:
             10px;
+
+       .intro {
+
+        transition:
+            none;
+    }
     }
 
 
