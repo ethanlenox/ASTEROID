@@ -2303,28 +2303,3 @@
 body.intro-active {
     overflow: hidden !important;
 }
-/* =========================================================
-   CORRECTION — FRAGMENT DU LOGO EN FIN D'INTRO
-   ========================================================= */
-
-#intro {
-    isolation: isolate;
-}
-
-#intro .intro-content {
-    isolation: isolate;
-    contain: paint;
-}
-
-#intro .intro-brand {
-    isolation: isolate;
-    contain: paint;
-}
-
-#intro .intro-logo {
-    isolation: isolate;
-    contain: paint;
-    overflow: hidden;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
