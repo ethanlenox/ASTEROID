@@ -2282,3 +2282,20 @@
     }
 }
 
+/* =========================================================
+   TEST — EMPÊCHER LA PAGE D'ACCUEIL D'APPARAÎTRE
+   SOUS L'INTRO
+   ========================================================= */
+
+#intro {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    z-index: 99999 !important;
+    overflow: hidden !important;
+    background: #050914 !important;
+}
+body.intro-active {
+    overflow: hidden !important;
+}
