@@ -2331,6 +2331,7 @@ body.intro-active {
 
     inset-block-end: auto;
 }
+
 #intro .intro-skip {
-    transform: translateX(-10px) scale(1.6);
+    transform: scale(1.6);
 }
