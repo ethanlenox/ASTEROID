@@ -193,12 +193,15 @@ function setPower(value) {
 }
 
 
+/* =========================================================
+   ÉTAT VISUEL
+   ========================================================= */
+
 function setState(state) {
 
     if (!intro || closed) {
         return;
     }
-
     intro.classList.remove(
         "state-connect",
         "state-sync",
@@ -206,13 +209,17 @@ function setState(state) {
         "state-alert",
         "state-complete"
     );
+    if (state === "state-complete") {
 
+        intro.classList.add(
+            "state-alert"
+        );
+        return;
+    }
     intro.classList.add(
         state
     );
-
 }
-
 
 /* =========================================================
    DONNÉES — CONNEXION
