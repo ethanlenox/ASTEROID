@@ -2335,3 +2335,7 @@ body.intro-active {
 #intro .intro-skip {
     transform: translateX(-6.25px) scale(1.6) !important;
 }
+
+#intro.state-complete .intro-logo {
+    display: none !important;
+}
