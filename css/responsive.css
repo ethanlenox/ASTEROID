@@ -2283,6 +2283,459 @@
 }
 
 /* =========================================================
+   RESPONSIVE — PAGE ASTÉROÏDES
+   ASTEROID DATABASE / CLASSIFICATION PEMP
+   ========================================================= */
+
+
+/* =========================================================
+   TABLETTES
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTE
+       ----------------------------------------------------- */
+
+    .asteroid-header {
+        padding: 25px 25px 30px;
+    }
+
+
+    .asteroid-header h1 {
+        font-size: clamp(
+            2.8rem,
+            9vw,
+            4.5rem
+        );
+    }
+
+
+    .asteroid-topline {
+        font-size: 0.58rem;
+
+        letter-spacing: 0.14em;
+    }
+
+
+    /* -----------------------------------------------------
+       VUE D'ENSEMBLE
+       ----------------------------------------------------- */
+
+    .asteroid-overview {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .overview-item:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .overview-item:nth-child(-n + 2) {
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+
+    /* -----------------------------------------------------
+       CATÉGORIES
+       ----------------------------------------------------- */
+
+    .asteroid-category {
+        padding: 28px;
+
+        margin-bottom: 45px;
+    }
+
+
+    .category-header {
+        align-items: flex-start;
+    }
+
+
+    .category-status {
+        white-space: nowrap;
+    }
+
+
+    /* -----------------------------------------------------
+       GRILLE ASTÉROÏDES
+       ----------------------------------------------------- */
+
+    .asteroid-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    .asteroid-card-image {
+        min-height: 200px;
+    }
+
+
+    .asteroid-card-image img {
+        height: 175px;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .terminal-content {
+        padding: 32px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTE
+       ----------------------------------------------------- */
+
+    .asteroid-header {
+        padding: 22px 18px 28px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .asteroid-topline {
+        flex-direction: column;
+
+        gap: 8px;
+
+        margin-bottom: 22px;
+
+        font-size: 0.52rem;
+    }
+
+
+    .asteroid-header h1 {
+        margin-bottom: 15px;
+
+        font-size: clamp(
+            2.5rem,
+            15vw,
+            4rem
+        );
+    }
+
+
+    .asteroid-intro {
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+    }
+
+
+    .asteroid-status {
+        font-size: 0.55rem;
+
+        letter-spacing: 0.12em;
+    }
+
+
+    /* -----------------------------------------------------
+       VUE D'ENSEMBLE
+       ----------------------------------------------------- */
+
+    .asteroid-overview {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 40px;
+    }
+
+
+    .overview-item {
+        min-height: auto;
+
+        padding: 15px 17px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+
+    .overview-item:last-child {
+        border-bottom: none;
+    }
+
+
+    /* -----------------------------------------------------
+       CATÉGORIE
+       ----------------------------------------------------- */
+
+    .asteroid-category {
+        padding: 20px 16px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .asteroid-category::before {
+        width: 100px;
+    }
+
+
+    /* -----------------------------------------------------
+       EN-TÊTE CATÉGORIE
+       ----------------------------------------------------- */
+
+    .category-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+        padding-bottom: 18px;
+
+        margin-bottom: 17px;
+    }
+
+
+    .category-title {
+        gap: 12px;
+    }
+
+
+    .category-number {
+        width: 36px;
+        height: 36px;
+
+        font-size: 0.6rem;
+    }
+
+
+    .category-label {
+        font-size: 0.48rem;
+    }
+
+
+    .category-title h2 {
+        font-size: 1.6rem;
+    }
+
+
+    .category-status {
+        padding: 6px 10px;
+
+        font-size: 0.5rem;
+    }
+
+
+    .category-description {
+        margin-bottom: 22px;
+
+        font-size: 0.78rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------------------
+       GRILLE ASTÉROÏDES
+       ----------------------------------------------------- */
+
+    .asteroid-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       CARTES
+       ----------------------------------------------------- */
+
+    .asteroid-card {
+        width: 100%;
+    }
+
+
+    .asteroid-card-image {
+        min-height: 230px;
+
+        padding: 20px;
+    }
+
+
+    .asteroid-card-image img {
+        width: 100%;
+
+        max-width: 230px;
+
+        height: 205px;
+    }
+
+
+    .asteroid-card:hover {
+        transform: none;
+    }
+
+
+    .asteroid-card:hover
+    .asteroid-card-image img {
+        transform: none;
+    }
+
+
+    .asteroid-card-info {
+        padding: 14px 16px;
+    }
+
+
+    .asteroid-id {
+        top: 10px;
+        left: 10px;
+
+        font-size: 0.45rem;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .asteroid-terminal {
+        margin-top: 50px;
+    }
+
+
+    .terminal-header {
+        flex-direction: column;
+
+        gap: 6px;
+
+        padding: 10px 14px;
+
+        font-size: 0.5rem;
+    }
+
+
+    .terminal-content {
+        padding: 25px 18px;
+    }
+
+
+    .terminal-content h2 {
+        font-size: 1.7rem;
+
+        line-height: 1.15;
+    }
+
+
+    .terminal-content p {
+        font-size: 0.82rem;
+    }
+
+
+    .terminal-status {
+        font-size: 0.5rem;
+    }
+
+}
+
+
+/* =========================================================
+   TRÈS PETITS ÉCRANS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .asteroid-header {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+
+    .asteroid-header h1 {
+        font-size: 2.35rem;
+    }
+
+
+    .asteroid-category {
+        padding: 18px 13px;
+    }
+
+
+    .category-title h2 {
+        font-size: 1.4rem;
+    }
+
+
+    .category-number {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .asteroid-card-image {
+        min-height: 200px;
+    }
+
+
+    .asteroid-card-image img {
+        height: 175px;
+    }
+
+
+    .terminal-content {
+        padding: 22px 15px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITÉ / TOUCH
+   PAGE ASTÉROÏDES
+   ========================================================= */
+
+@media (hover: none) {
+
+    .asteroid-card:hover {
+        transform: none;
+
+        border-color:
+            var(--color-border);
+    }
+
+
+    .asteroid-card:hover
+    .asteroid-card-image img {
+        transform: none;
+
+        filter:
+            drop-shadow(
+                0 0 18px
+                rgba(0, 229, 255, 0.12)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   FIN — RESPONSIVE PAGE ASTÉROÏDES
+   ========================================================= */
+
+
+/* =========================================================
                     CORRECTION BUGS MOBILE
    ========================================================= */
 
