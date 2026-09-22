@@ -1,11 +1,11 @@
 /* =========================================================
    PAGE ORBESONIC
-   DATABASE / CLASSIFICATION PEMP
+   DATABASE / CLASSIFICATION ORBESONIC
    ========================================================= */
 
 
 /* =========================================================
-   EN-TÊTE DU DOSSIER
+   HEADER ORBESONIC
    ========================================================= */
 
 .orbesonic-header {
@@ -16,7 +16,6 @@
     padding: 30px 32px 35px;
 
     border: 1px solid var(--color-border);
-
     border-left: 3px solid var(--color-cyan);
 
     background:
@@ -127,6 +126,10 @@
 }
 
 
+/* =========================================================
+   STATUS
+   ========================================================= */
+
 .orbesonic-status {
     display: inline-flex;
 
@@ -136,11 +139,9 @@
 
     padding: 7px 12px;
 
-    border:
-        1px solid rgba(0, 229, 255, 0.25);
+    border: 1px solid rgba(0, 229, 255, 0.25);
 
-    background:
-        rgba(0, 229, 255, 0.035);
+    background: rgba(0, 229, 255, 0.035);
 
     color: var(--color-cyan);
 
@@ -160,8 +161,7 @@
 
     border-radius: 50%;
 
-    background:
-        var(--color-cyan);
+    background: var(--color-cyan);
 
     box-shadow:
         0 0 8px var(--color-cyan);
@@ -197,15 +197,14 @@
 
     margin-bottom: 65px;
 
-    border:
-        1px solid var(--color-border);
+    border: 1px solid var(--color-border);
 
     background:
         rgba(5, 15, 28, 0.8);
 }
 
 
-.orbesonic-overview .overview-item {
+.orbesonic-overview-item {
     min-height: 90px;
 
     padding: 18px 20px;
@@ -215,12 +214,12 @@
 }
 
 
-.orbesonic-overview .overview-item:last-child {
+.orbesonic-overview-item:last-child {
     border-right: none;
 }
 
 
-.orbesonic-overview .overview-item span {
+.orbesonic-overview-item span {
     display: block;
 
     margin-bottom: 8px;
@@ -235,7 +234,7 @@
 }
 
 
-.orbesonic-overview .overview-item strong {
+.orbesonic-overview-item strong {
     color: var(--color-cyan);
 
     font-size: 1rem;
@@ -244,13 +243,8 @@
 }
 
 
-.orbesonic-overview .overview-item .active-text {
-    color: var(--color-bonus);
-}
-
-
 /* =========================================================
-   CATÉGORIE
+   CATÉGORIES
    ========================================================= */
 
 .orbesonic-category {
@@ -304,7 +298,7 @@
    EN-TÊTE CATÉGORIE
    ========================================================= */
 
-.category-header {
+.orbesonic-category .category-header {
     display: flex;
 
     align-items: center;
@@ -322,7 +316,7 @@
 }
 
 
-.category-title {
+.orbesonic-category .category-title {
     display: flex;
 
     align-items: center;
@@ -331,7 +325,7 @@
 }
 
 
-.category-number {
+.orbesonic-category .category-number {
     display: flex;
 
     align-items: center;
@@ -361,7 +355,7 @@
 }
 
 
-.category-label {
+.orbesonic-category .category-label {
     display: block;
 
     margin-bottom: 5px;
@@ -376,7 +370,7 @@
 }
 
 
-.category-title h2 {
+.orbesonic-category .category-title h2 {
     margin: 0;
 
     color: var(--color-white);
@@ -391,7 +385,7 @@
 }
 
 
-.category-status {
+.orbesonic-category .category-status {
     display: flex;
 
     align-items: center;
@@ -413,7 +407,7 @@
 }
 
 
-.category-dot {
+.orbesonic-category .category-dot {
     width: 6px;
     height: 6px;
 
@@ -428,11 +422,7 @@
 }
 
 
-/* =========================================================
-   DESCRIPTION CATÉGORIE
-   ========================================================= */
-
-.category-description {
+.orbesonic-category .category-description {
     max-width: 750px;
 
     margin-bottom: 30px;
@@ -446,13 +436,11 @@
 
 
 /* =========================================================
-   COULEURS DES CATÉGORIES
+   COULEURS DES 5 CATÉGORIES
    ========================================================= */
 
 
-/* =========================================================
-   BASIC
-   ========================================================= */
+/* CATEGORY 01 — BASIC */
 
 .basic-category {
     border-left-color:
@@ -460,69 +448,15 @@
 }
 
 
-.basic-category .category-number {
-    color:
-        var(--color-cyan);
-
-    border-color:
-        rgba(0, 229, 255, 0.3);
-
-    background:
-        rgba(0, 229, 255, 0.025);
-}
-
-
-.basic-category .category-dot {
-    background:
-        var(--color-cyan);
-
-    box-shadow:
-        0 0 8px var(--color-cyan);
-}
-
-
-/* =========================================================
-   ÉLÉMENTAIRE
-   ========================================================= */
+/* CATEGORY 02 — ELEMENTAIRE */
 
 .elementaire-category {
-    border-left-color:
-        var(--color-danger);
-}
-
-
-.elementaire-category .category-number {
-    color:
-        var(--color-danger-light);
-
-    border-color:
-        rgba(255, 48, 79, 0.35);
-
-    background:
-        rgba(255, 48, 79, 0.035);
-}
-
-
-.elementaire-category .category-dot {
-    background:
-        var(--color-danger);
-
-    box-shadow:
-        0 0 8px var(--color-danger);
-}
-
-
-/* =========================================================
-   HAUTE FRÉQUENCE
-   ========================================================= */
-
-.haute-frequence-category {
     border-left-color:
         var(--color-bonus);
 }
 
 
-.haute-frequence-category .category-number {
+.elementaire-category .category-number {
     color:
         var(--color-bonus);
 
@@ -534,7 +468,7 @@
 }
 
 
-.haute-frequence-category .category-dot {
+.elementaire-category .category-dot {
     background:
         var(--color-bonus);
 
@@ -543,9 +477,36 @@
 }
 
 
-/* =========================================================
-   VÉLOCE
-   ========================================================= */
+/* CATEGORY 03 — HAUTE FREQUENCE */
+
+.frequence-category {
+    border-left-color:
+        #b96cff;
+}
+
+
+.frequence-category .category-number {
+    color:
+        #b96cff;
+
+    border-color:
+        rgba(185, 108, 255, 0.35);
+
+    background:
+        rgba(185, 108, 255, 0.025);
+}
+
+
+.frequence-category .category-dot {
+    background:
+        #b96cff;
+
+    box-shadow:
+        0 0 8px #b96cff;
+}
+
+
+/* CATEGORY 04 — VELOCE */
 
 .veloce-category {
     border-left-color:
@@ -559,6 +520,9 @@
 
     border-color:
         rgba(125, 220, 255, 0.35);
+
+    background:
+        rgba(125, 220, 255, 0.025);
 }
 
 
@@ -571,79 +535,37 @@
 }
 
 
-/* =========================================================
-   DESTRUCTION DIVINE
-   ========================================================= */
+/* CATEGORY 05 — DESTRUCTION */
 
-.destruction-divine-category {
+.destruction-category {
     border-left-color:
-        #d7b7ff;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(28, 15, 48, 0.72),
-            rgba(4, 9, 18, 0.9)
-        );
-
-    box-shadow:
-        inset 0 0 45px rgba(173, 94, 255, 0.035),
-        0 0 30px rgba(173, 94, 255, 0.04);
+        var(--color-danger);
 }
 
 
-.destruction-divine-category .category-number {
+.destruction-category .category-number {
     color:
-        #d7b7ff;
+        var(--color-danger-light);
 
     border-color:
-        rgba(215, 183, 255, 0.45);
+        rgba(255, 48, 79, 0.35);
 
     background:
-        rgba(173, 94, 255, 0.05);
-
-    box-shadow:
-        0 0 20px rgba(173, 94, 255, 0.12);
+        rgba(255, 48, 79, 0.035);
 }
 
 
-.destruction-divine-category .category-dot {
+.destruction-category .category-dot {
     background:
-        #d7b7ff;
+        var(--color-danger);
 
     box-shadow:
-        0 0 8px #d7b7ff,
-        0 0 18px rgba(173, 94, 255, 0.7);
-
-    animation:
-        divine-pulse 1.5s infinite;
-}
-
-
-@keyframes divine-pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-
-        box-shadow:
-            0 0 8px #d7b7ff,
-            0 0 18px rgba(173, 94, 255, 0.7);
-    }
-
-    50% {
-        opacity: 0.45;
-
-        box-shadow:
-            0 0 3px #d7b7ff,
-            0 0 7px rgba(173, 94, 255, 0.3);
-    }
-
+        0 0 8px var(--color-danger);
 }
 
 
 /* =========================================================
-   GRILLE ORBESONIC
+   GRILLE
    ========================================================= */
 
 .orbesonic-grid {
@@ -848,387 +770,61 @@
 
 
 /* =========================================================
-   CARTE DESTRUCTION DIVINE
+   RESPONSIVE
    ========================================================= */
 
-.divine-card {
-    position: relative;
+@media (max-width: 900px) {
 
-    grid-column:
-        1 / -1;
-
-    min-height: 430px;
-
-    border:
-        1px solid rgba(215, 183, 255, 0.35);
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(173, 94, 255, 0.13),
-            rgba(2, 8, 16, 0.95) 60%
-        );
-
-    overflow: hidden;
-
-    box-shadow:
-        inset 0 0 80px rgba(173, 94, 255, 0.045),
-        0 0 35px rgba(173, 94, 255, 0.05);
-}
-
-
-.divine-card::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 20px;
-
-    border:
-        1px solid rgba(215, 183, 255, 0.12);
-
-    pointer-events: none;
-
-    animation:
-        divine-border 3s ease-in-out infinite;
-}
-
-
-@keyframes divine-border {
-
-    0%,
-    100% {
-        opacity: 0.35;
+    .orbesonic-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    50% {
-        opacity: 1;
+    .orbesonic-overview {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 }
 
 
-.divine-card::after {
-    content: "";
+@media (max-width: 600px) {
 
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    width: 320px;
-    height: 320px;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(215, 183, 255, 0.13),
-            transparent 68%
-        );
-
-    animation:
-        divine-aura 3s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-
-@keyframes divine-aura {
-
-    0%,
-    100% {
-        opacity: 0.35;
-
-        transform:
-            translate(-50%, -50%)
-            scale(0.9);
+    .orbesonic-header {
+        padding: 25px 20px 30px;
     }
 
-    50% {
-        opacity: 1;
+    .orbesonic-category {
+        padding: 22px;
+    }
 
-        transform:
-            translate(-50%, -50%)
-            scale(1.15);
+    .orbesonic-category .category-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .orbesonic-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .orbesonic-overview {
+        grid-template-columns:
+            1fr;
+    }
+
+    .orbesonic-overview-item {
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+    .orbesonic-overview-item:last-child {
+        border-bottom: none;
     }
 
 }
-
-
-.divine-card .orbesonic-card-image {
-    min-height: 340px;
-
-    border-bottom:
-        1px solid rgba(215, 183, 255, 0.18);
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(215, 183, 255, 0.12),
-            transparent 65%
-        );
-}
-
-
-.divine-card .orbesonic-card-image::before {
-    border-color:
-        rgba(215, 183, 255, 0.08);
-}
-
-
-.divine-card .orbesonic-card-image img {
-    z-index: 2;
-
-    max-width: 300px;
-
-    height: 280px;
-
-    filter:
-        drop-shadow(
-            0 0 25px
-            rgba(215, 183, 255, 0.35)
-        );
-
-    animation:
-        divine-orb 4s ease-in-out infinite;
-}
-
-
-@keyframes divine-orb {
-
-    0%,
-    100% {
-        transform:
-            scale(1)
-            rotate(0deg);
-
-        filter:
-            drop-shadow(
-                0 0 25px
-                rgba(215, 183, 255, 0.3)
-            );
-    }
-
-    50% {
-        transform:
-            scale(1.08)
-            rotate(3deg);
-
-        filter:
-            drop-shadow(
-                0 0 45px
-                rgba(215, 183, 255, 0.75)
-            );
-    }
-
-}
-
-
-.divine-card .orbesonic-id {
-    border-color:
-        rgba(215, 183, 255, 0.3);
-
-    color:
-        #d7b7ff;
-
-    background:
-        rgba(20, 8, 35, 0.9);
-
-    box-shadow:
-        0 0 12px rgba(173, 94, 255, 0.15);
-}
-
-
-.divine-card .orbesonic-card-info {
-    position: relative;
-
-    z-index: 3;
-
-    padding: 25px 30px;
-
-    text-align: center;
-}
-
-
-.divine-card .orbesonic-card-info span {
-    color:
-        rgba(215, 183, 255, 0.65);
-
-    font-size: 0.6rem;
-}
-
-
-.divine-card .orbesonic-card-info strong {
-    color:
-        #d7b7ff;
-
-    font-size: clamp(
-        1rem,
-        3vw,
-        1.5rem
-    );
-
-    letter-spacing: 0.12em;
-
-    text-shadow:
-        0 0 15px rgba(215, 183, 255, 0.45);
-}
-
-
-.divine-card .orbesonic-card-info small {
-    display: block;
-
-    max-width: 700px;
-
-    margin: 8px auto 0;
-
-    color:
-        var(--color-text-muted);
-
-    font-size: 0.65rem;
-
-    line-height: 1.7;
-
-    letter-spacing: 0.04em;
-}
-
-
-/* =========================================================
-   TERMINAL FINAL
-   ========================================================= */
-
-.orbesonic-terminal {
-    margin-top: 75px;
-
-    border:
-        1px solid var(--color-border-strong);
-
-    background:
-        rgba(0, 8, 15, 0.82);
-
-    box-shadow:
-        var(--glow-cyan);
-
-    overflow: hidden;
-}
-
-
-.orbesonic-terminal .terminal-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    padding: 12px 20px;
-
-    border-bottom:
-        1px solid var(--color-border);
-
-    background:
-        rgba(0, 229, 255, 0.045);
-
-    color:
-        var(--color-cyan);
-
-    font-size: 0.6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.15em;
-}
-
-
-.orbesonic-terminal .terminal-content {
-    padding: 40px;
-}
-
-
-.orbesonic-terminal .terminal-label {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color:
-        var(--color-text-muted);
-
-    font-size: 0.6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.18em;
-}
-
-
-.orbesonic-terminal .terminal-content h2 {
-    margin-bottom: 15px;
-
-    color:
-        var(--color-white);
-
-    font-size: clamp(
-        1.5rem,
-        4vw,
-        2.5rem
-    );
-
-    text-shadow:
-        0 0 15px rgba(0, 229, 255, 0.25);
-}
-
-
-.orbesonic-terminal .terminal-content p {
-    max-width: 650px;
-
-    margin-bottom: 25px;
-
-    color:
-        var(--color-text-muted);
-
-    line-height: 1.7;
-}
-
-
-.orbesonic-terminal .terminal-status {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 8px 12px;
-
-    border:
-        1px solid rgba(57, 255, 136, 0.2);
-
-    background:
-        rgba(57, 255, 136, 0.025);
-
-    color:
-        var(--color-bonus);
-
-    font-size: 0.6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.14em;
-}
-
-
-.orbesonic-terminal .terminal-status .status-dot {
-    background:
-        var(--color-bonus);
-
-    box-shadow:
-        0 0 8px var(--color-bonus);
-}
-
-
-/* =========================================================
-   FIN
-   ========================================================= */
