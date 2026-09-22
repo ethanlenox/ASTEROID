@@ -12,10 +12,10 @@
 
     <meta
         name="description"
-        content="Découvrez les différents astéroïdes d'Astéroïd Destroyer."
+        content="Base de données classifiée des astéroïdes d'Astéroïd Destroyer."
     >
 
-    <title>Astéroïdes — ASTÉROÏD destroyer</title>
+    <title>Base astéroïdes — ASTÉROÏD destroyer</title>
 
     <link
         rel="stylesheet"
@@ -27,12 +27,20 @@
         href="css/responsive.css"
     >
 
+    <!-- CSS spécifique à la page -->
+    <link
+        rel="stylesheet"
+        href="css/asteroides.css"
+    >
+
 </head>
 
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
 
     <header id="header">
 
@@ -99,7 +107,9 @@
     </header>
 
 
-    <!-- CONTENU -->
+    <!-- =====================================================
+         CONTENU
+         ===================================================== -->
 
     <main>
 
@@ -107,286 +117,1118 @@
 
             <div class="section-content">
 
-                <p class="section-label">
-                    ASTEROID DATABASE
-                </p>
 
-                <h1>
-                    ASTÉROÏD
-                </h1>
+                <!-- =================================================
+                     EN-TÊTE DE LA BASE DE DONNÉES
+                     ================================================= -->
 
-                <p>
-                    Découvrez les différents
-                    astéroïdes présents dans
-                    ASTÉROÏD destroyer.
-                </p>
+                <div class="asteroid-header">
 
+                    <div class="asteroid-header-topline">
 
-                <div class="asteroid-grid">
+                        <span>
+                            ARCHIVE // PEMP-AST
+                        </span>
 
-                    <article class="asteroid-card">
+                        <span>
+                            CLASSIFICATION : OMEGA
+                        </span>
 
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (1).png"
-                                alt="Astéroïde 1"
-                            >
-
-                        </div>
+                    </div>
 
 
-                    </article>
+                    <p class="section-label">
+                        SYSTEM // ASTEROID DATABASE
+                    </p>
 
 
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (2).png"
-                                alt="Astéroïde 2"
-                            >
-
-                        </div>
+                    <h1>
+                        ASTÉROÏDES
+                    </h1>
 
 
-                    </article>
+                    <p class="asteroid-header-intro">
+                        Base de données des corps célestes
+                        détectés par le réseau PEMP.
+                    </p>
 
 
-                    <article class="asteroid-card">
+                    <div class="asteroid-status">
 
-                        <div class="asteroid-card-image">
+                        <span class="status-dot"></span>
 
-                            <img
-                                src="img/meteor/asteroid (3).png"
-                                alt="Astéroïde 3"
-                            >
+                        ANALYSE DES MENACES : ACTIVE
 
-                        </div>
+                    </div>
 
-
-                    </article>
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (4).png"
-                                alt="Astéroïde 4"
-                            >
-
-                        </div>
+                </div>
 
 
-                    </article>
+
+                <!-- =================================================
+                     DOSSIER PRINCIPAL
+                     ================================================= -->
+
+                <div class="asteroid-database">
 
 
-                    <article class="asteroid-card">
+                    <!-- =================================================
+                         MÉTADONNÉES
+                         ================================================= -->
 
-                        <div class="asteroid-card-image">
+                    <div class="asteroid-meta">
 
-                            <img
-                                src="img/meteor/asteroid (5).png"
-                                alt="Astéroïde 5"
-                            >
+                        <div>
+
+                            <span>
+                                OBJETS
+                            </span>
+
+                            <strong>
+                                18
+                            </strong>
 
                         </div>
 
 
-                    </article>
+                        <div>
 
+                            <span>
+                                CATÉGORIES
+                            </span>
 
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (6).png"
-                                alt="Astéroïde 6"
-                            >
+                            <strong>
+                                05
+                            </strong>
 
                         </div>
 
 
-                    </article>
+                        <div>
 
+                            <span>
+                                SYSTÈME
+                            </span>
 
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (7).png"
-                                alt="Astéroïde 7"
-                            >
+                            <strong>
+                                PEMP
+                            </strong>
 
                         </div>
 
 
-                    </article>
+                        <div>
+
+                            <span>
+                                NIVEAU
+                            </span>
+
+                            <strong class="danger-text">
+                                CRITIQUE
+                            </strong>
+
+                        </div>
+
+                    </div>
 
 
-                    <article class="asteroid-card">
 
-                        <div class="asteroid-card-image">
+                    <!-- =================================================
+                         INTRODUCTION
+                         ================================================= -->
 
-                            <img
-                                src="img/meteor/asteroid (8).png"
-                                alt="Astéroïde 8"
-                            >
+                    <div class="asteroid-intro">
+
+                        <span class="asteroid-file-number">
+                            FILE_AST_001
+                        </span>
+
+                        <h2>
+                            Classification des menaces
+                        </h2>
+
+                        <p>
+                            Les corps célestes détectés autour de la planète
+                            ont été regroupés selon leur composition,
+                            leur comportement et leur signature énergétique.
+                        </p>
+
+                        <p class="asteroid-warning">
+                            Chaque classe représente un niveau de menace différent.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         TRANSPHASE
+                         ================================================= -->
+
+                    <section class="asteroid-category category-transphase">
+
+                        <div class="category-header">
+
+                            <div class="category-marker">
+
+                                <span>
+                                    01
+                                </span>
+
+                                TRANSPHASE
+
+                            </div>
+
+
+                            <div class="category-status">
+
+                                <span class="category-status-dot"></span>
+
+                                ANALYSE ACTIVE
+
+                            </div>
 
                         </div>
 
 
-                    </article>
+                        <div class="category-title">
+
+                            <div>
+
+                                <span class="category-code">
+                                    CLASS // TP
+                                </span>
+
+                                <h2>
+                                    Transphase
+                                </h2>
+
+                            </div>
 
 
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (9).png"
-                                alt="Astéroïde 9"
-                            >
-
-                        </div>
-
-
-                    </article>
-
-
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (10).png"
-                                alt="Astéroïde 10"
-                            >
+                            <p>
+                                Corps présentant une signature énergétique
+                                instable et des propriétés de déplacement
+                                inhabituelles.
+                            </p>
 
                         </div>
 
 
-                    </article>
+                        <div class="asteroid-grid">
 
 
-                    <article class="asteroid-card">
+                            <!-- ASTÉROÏDE 01 -->
 
-                        <div class="asteroid-card-image">
+                            <article class="asteroid-card">
 
-                            <img
-                                src="img/meteor/asteroid (11).png"
-                                alt="Astéroïde 11"
-                            >
+                                <div class="asteroid-card-top">
+
+                                    <span>
+                                        AST // 001
+                                    </span>
+
+                                    <span>
+                                        TP-01
+                                    </span>
+
+                                </div>
+
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (1).png"
+                                        alt="Astéroïde Transphase 01"
+                                    >
+
+                                </div>
+
+
+                                <div class="asteroid-card-info">
+
+                                    <span>
+                                        SIGNATURE
+                                    </span>
+
+                                    <strong>
+                                        TRANSPHASE
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- ASTÉROÏDE 02 -->
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+
+                                    <span>
+                                        AST // 002
+                                    </span>
+
+                                    <span>
+                                        TP-02
+                                    </span>
+
+                                </div>
+
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (2).png"
+                                        alt="Astéroïde Transphase 02"
+                                    >
+
+                                </div>
+
+
+                                <div class="asteroid-card-info">
+
+                                    <span>
+                                        SIGNATURE
+                                    </span>
+
+                                    <strong>
+                                        TRANSPHASE
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- ASTÉROÏDE 03 -->
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+
+                                    <span>
+                                        AST // 003
+                                    </span>
+
+                                    <span>
+                                        TP-03
+                                    </span>
+
+                                </div>
+
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (3).png"
+                                        alt="Astéroïde Transphase 03"
+                                    >
+
+                                </div>
+
+
+                                <div class="asteroid-card-info">
+
+                                    <span>
+                                        SIGNATURE
+                                    </span>
+
+                                    <strong>
+                                        TRANSPHASE
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- ASTÉROÏDE 04 -->
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+
+                                    <span>
+                                        AST // 004
+                                    </span>
+
+                                    <span>
+                                        TP-04
+                                    </span>
+
+                                </div>
+
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (4).png"
+                                        alt="Astéroïde Transphase 04"
+                                    >
+
+                                </div>
+
+
+                                <div class="asteroid-card-info">
+
+                                    <span>
+                                        SIGNATURE
+                                    </span>
+
+                                    <strong>
+                                        TRANSPHASE
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- ASTÉROÏDE 05 -->
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+
+                                    <span>
+                                        AST // 005
+                                    </span>
+
+                                    <span>
+                                        TP-05
+                                    </span>
+
+                                </div>
+
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (5).png"
+                                        alt="Astéroïde Transphase 05"
+                                    >
+
+                                </div>
+
+
+                                <div class="asteroid-card-info">
+
+                                    <span>
+                                        SIGNATURE
+                                    </span>
+
+                                    <strong>
+                                        TRANSPHASE
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- ASTÉROÏDE 06 -->
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+
+                                    <span>
+                                        AST // 006
+                                    </span>
+
+                                    <span>
+                                        TP-06
+                                    </span>
+
+                                </div>
+
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (6).png"
+                                        alt="Astéroïde Transphase 06"
+                                    >
+
+                                </div>
+
+
+                                <div class="asteroid-card-info">
+
+                                    <span>
+                                        SIGNATURE
+                                    </span>
+
+                                    <strong>
+                                        TRANSPHASE
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         FERRIQUE
+                         ================================================= -->
+
+                    <section class="asteroid-category category-ferrique">
+
+                        <div class="category-header">
+
+                            <div class="category-marker">
+
+                                <span>
+                                    02
+                                </span>
+
+                                FERRIQUE
+
+                            </div>
+
+                            <div class="category-status">
+                                ANALYSE ACTIVE
+                            </div>
 
                         </div>
 
 
-                    </article>
+                        <div class="category-title">
+
+                            <div>
+
+                                <span class="category-code">
+                                    CLASS // FE
+                                </span>
+
+                                <h2>
+                                    Ferrique
+                                </h2>
+
+                            </div>
 
 
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (12).png"
-                                alt="Astéroïde 12"
-                            >
-
-                        </div>
-
-
-                    </article>
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (13).png"
-                                alt="Astéroïde 13"
-                            >
+                            <p>
+                                Corps métalliques à forte concentration
+                                en matériaux ferreux.
+                            </p>
 
                         </div>
 
 
-                    </article>
+                        <div class="asteroid-grid">
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 007</span>
+                                    <span>FE-01</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (7).png"
+                                        alt="Astéroïde Ferrique 01"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        FERRIQUE
+                                    </strong>
+
+                                </div>
+
+                            </article>
 
 
-                    <article class="asteroid-card">
+                            <article class="asteroid-card">
 
-                        <div class="asteroid-card-image">
+                                <div class="asteroid-card-top">
+                                    <span>AST // 008</span>
+                                    <span>FE-02</span>
+                                </div>
 
-                            <img
-                                src="img/meteor/asteroid (14).png"
-                                alt="Astéroïde 14"
-                            >
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (8).png"
+                                        alt="Astéroïde Ferrique 02"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        FERRIQUE
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 009</span>
+                                    <span>FE-03</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (9).png"
+                                        alt="Astéroïde Ferrique 03"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        FERRIQUE
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         MINERAL
+                         ================================================= -->
+
+                    <section class="asteroid-category category-mineral">
+
+                        <div class="category-header">
+
+                            <div class="category-marker">
+
+                                <span>
+                                    03
+                                </span>
+
+                                MINERAL
+
+                            </div>
+
+                            <div class="category-status">
+                                ANALYSE ACTIVE
+                            </div>
 
                         </div>
 
 
-                    </article>
+                        <div class="category-title">
+
+                            <div>
+
+                                <span class="category-code">
+                                    CLASS // MN
+                                </span>
+
+                                <h2>
+                                    Mineral
+                                </h2>
+
+                            </div>
 
 
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (15).png"
-                                alt="Astéroïde 15"
-                            >
-
-                        </div>
-
-
-                    </article>
-
-
-                    <article class="asteroid-card">
-
-                        <div class="asteroid-card-image">
-
-                            <img
-                                src="img/meteor/asteroid (16).png"
-                                alt="Astéroïde 16"
-                            >
+                            <p>
+                                Corps rocheux présentant une forte
+                                concentration en composés minéraux.
+                            </p>
 
                         </div>
 
 
-                    </article>
+                        <div class="asteroid-grid">
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 010</span>
+                                    <span>MN-01</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (10).png"
+                                        alt="Astéroïde Mineral 01"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        MINERAL
+                                    </strong>
+
+                                </div>
+
+                            </article>
 
 
-                    <article class="asteroid-card">
+                            <article class="asteroid-card">
 
-                        <div class="asteroid-card-image">
+                                <div class="asteroid-card-top">
+                                    <span>AST // 011</span>
+                                    <span>MN-02</span>
+                                </div>
 
-                            <img
-                                src="img/meteor/asteroid (17).png"
-                                alt="Astéroïde 17"
-                            >
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (11).png"
+                                        alt="Astéroïde Mineral 02"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        MINERAL
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 012</span>
+                                    <span>MN-03</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (12).png"
+                                        alt="Astéroïde Mineral 03"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        MINERAL
+                                    </strong>
+
+                                </div>
+
+                            </article>
 
                         </div>
 
-                    </article>
+                    </section>
 
 
-                    <article class="asteroid-card">
 
-                        <div class="asteroid-card-image">
+                    <!-- =================================================
+                         GLACIER
+                         ================================================= -->
 
-                            <img
-                                src="img/meteor/asteroid (18).png"
-                                alt="Astéroïde 18"
-                            >
+                    <section class="asteroid-category category-glacier">
+
+                        <div class="category-header">
+
+                            <div class="category-marker">
+
+                                <span>
+                                    04
+                                </span>
+
+                                GLACIER
+
+                            </div>
+
+                            <div class="category-status">
+                                ANALYSE ACTIVE
+                            </div>
 
                         </div>
 
 
-                    </article>
+                        <div class="category-title">
+
+                            <div>
+
+                                <span class="category-code">
+                                    CLASS // GL
+                                </span>
+
+                                <h2>
+                                    Glacier
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+                                Corps riches en composés gelés et
+                                signatures thermiques anormales.
+                            </p>
+
+                        </div>
+
+
+                        <div class="asteroid-grid">
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 013</span>
+                                    <span>GL-01</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (13).png"
+                                        alt="Astéroïde Glacier 01"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        GLACIER
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 014</span>
+                                    <span>GL-02</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (14).png"
+                                        alt="Astéroïde Glacier 02"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        GLACIER
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 015</span>
+                                    <span>GL-03</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (15).png"
+                                        alt="Astéroïde Glacier 03"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        GLACIER
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         ELEMENTS
+                         ================================================= -->
+
+                    <section class="asteroid-category category-elements">
+
+                        <div class="category-header">
+
+                            <div class="category-marker">
+
+                                <span>
+                                    05
+                                </span>
+
+                                ELEMENTS
+
+                            </div>
+
+                            <div class="category-status">
+                                ANALYSE ACTIVE
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-title">
+
+                            <div>
+
+                                <span class="category-code">
+                                    CLASS // EL
+                                </span>
+
+                                <h2>
+                                    Elements
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+                                Corps présentant des signatures élémentaires
+                                encore partiellement identifiées.
+                            </p>
+
+                        </div>
+
+
+                        <div class="asteroid-grid">
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 016</span>
+                                    <span>EL-01</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (16).png"
+                                        alt="Astéroïde Elements 01"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        ELEMENTS
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 017</span>
+                                    <span>EL-02</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (17).png"
+                                        alt="Astéroïde Elements 02"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        ELEMENTS
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+
+                            <article class="asteroid-card">
+
+                                <div class="asteroid-card-top">
+                                    <span>AST // 018</span>
+                                    <span>EL-03</span>
+                                </div>
+
+                                <div class="asteroid-card-image">
+
+                                    <img
+                                        src="img/meteor/asteroid (18).png"
+                                        alt="Astéroïde Elements 03"
+                                    >
+
+                                </div>
+
+                                <div class="asteroid-card-info">
+
+                                    <span>SIGNATURE</span>
+
+                                    <strong>
+                                        ELEMENTS
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         TERMINAL FINAL
+                         ================================================= -->
+
+                    <div class="asteroid-terminal">
+
+                        <div class="terminal-header">
+
+                            <span>
+                                PEMP // DATABASE CONTROL
+                            </span>
+
+                            <span>
+                                CONNECTION : ONLINE
+                            </span>
+
+                        </div>
+
+
+                        <div class="terminal-content">
+
+                            <span class="terminal-label">
+                                ANALYSE TERMINÉE
+                            </span>
+
+
+                            <div class="terminal-message">
+                                18 CORPS CÉLESTES IDENTIFIÉS.
+                            </div>
+
+
+                            <div class="terminal-sequence">
+
+                                <div>
+                                    <span>01</span>
+                                    <strong>TRANSPHASE</strong>
+                                    <em>06 UNITÉS</em>
+                                </div>
+
+                                <div>
+                                    <span>02</span>
+                                    <strong>FERRIQUE</strong>
+                                    <em>03 UNITÉS</em>
+                                </div>
+
+                                <div>
+                                    <span>03</span>
+                                    <strong>MINERAL</strong>
+                                    <em>03 UNITÉS</em>
+                                </div>
+
+                                <div>
+                                    <span>04</span>
+                                    <strong>GLACIER</strong>
+                                    <em>03 UNITÉS</em>
+                                </div>
+
+                                <div>
+                                    <span>05</span>
+                                    <strong>ELEMENTS</strong>
+                                    <em>03 UNITÉS</em>
+                                </div>
+
+                            </div>
+
+
+                            <div class="terminal-warning">
+
+                                <span>
+                                    STATUT DU RÉSEAU
+                                </span>
+
+                                <strong>
+                                    MENACE TOUJOURS ACTIVE
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
 
                 </div>
@@ -398,7 +1240,10 @@
     </main>
 
 
-    <!-- FOOTER -->
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
     <footer id="footer">
 
@@ -407,6 +1252,7 @@
         </p>
 
     </footer>
+
 
 
     <script
