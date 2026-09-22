@@ -1,21 +1,6 @@
 /* =========================================================
    PAGE ORBESONIC
-   DATABASE / CLASSIFICATION DES SYSTÈMES
    ========================================================= */
-
-
-/* =========================================================
-   STRUCTURE GÉNÉRALE
-   ========================================================= */
-
-#orbesonic-page {
-    position: relative;
-}
-
-
-#orbesonic-page .section-content {
-    position: relative;
-}
 
 
 /* =========================================================
@@ -25,27 +10,24 @@
 .orbesonic-category {
     position: relative;
 
-    margin-top: 75px;
-    margin-bottom: 80px;
+    margin-top: 70px;
+    margin-bottom: 70px;
 
-    padding: 35px;
+    padding: 30px;
 
     border:
         1px solid var(--color-border);
 
-    border-left:
-        2px solid var(--color-cyan);
-
     background:
         linear-gradient(
             145deg,
-            rgba(10, 22, 38, 0.72),
-            rgba(4, 9, 18, 0.88)
+            rgba(10, 22, 38, 0.78),
+            rgba(4, 9, 18, 0.9)
         );
 
     box-shadow:
-        inset 0 0 35px rgba(0, 229, 255, 0.018),
-        0 20px 60px rgba(0, 0, 0, 0.18);
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
 
     overflow: hidden;
 }
@@ -63,12 +45,12 @@
     height: 180px;
 
     border:
-        1px solid rgba(0, 229, 255, 0.06);
+        1px solid rgba(0, 229, 255, 0.08);
 
     border-radius: 50%;
 
     transform:
-        translate(45%, -45%);
+        translate(40%, -40%);
 }
 
 
@@ -87,10 +69,11 @@
         linear-gradient(
             90deg,
             var(--color-cyan),
-            transparent 70%
+            transparent 75%
         );
 
-    opacity: 0.45;
+    box-shadow:
+        0 0 12px rgba(0, 229, 255, 0.4);
 }
 
 
@@ -124,10 +107,7 @@
 
     font-weight: 800;
 
-    letter-spacing: 0.25em;
-
-    text-shadow:
-        0 0 10px rgba(0, 229, 255, 0.45);
+    letter-spacing: 0.22em;
 }
 
 
@@ -140,18 +120,15 @@
     font-size: clamp(
         1.8rem,
         4vw,
-        3rem
+        2.8rem
     );
 
     letter-spacing: -0.02em;
-
-    text-shadow:
-        0 0 15px rgba(0, 229, 255, 0.18);
 }
 
 
 .category-header p {
-    max-width: 700px;
+    max-width: 750px;
 
     margin: 0;
 
@@ -165,7 +142,7 @@
 
 
 /* =========================================================
-   GRILLE ORBESONIC
+   GRILLE
    ========================================================= */
 
 .orbesonic-grid {
@@ -183,7 +160,7 @@
 
 
 /* =========================================================
-   CARTES ORBESONIC
+   CARTES
    ========================================================= */
 
 .orbesonic-grid .asteroid-card {
@@ -195,20 +172,33 @@
         1px solid var(--color-border);
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(0, 229, 255, 0.035),
-            rgba(3, 10, 20, 0.75)
-        );
+        rgba(0, 229, 255, 0.018);
 
     overflow: hidden;
 
     transition:
-        transform var(--transition-normal),
         border-color var(--transition-normal),
-        box-shadow var(--transition-normal);
+        box-shadow var(--transition-normal),
+        transform var(--transition-normal);
 }
 
+
+.orbesonic-grid .asteroid-card:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        inset 0 0 35px rgba(0, 229, 255, 0.025),
+        0 0 25px rgba(0, 229, 255, 0.05);
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =========================================================
+   COINS TECHNIQUES
+   ========================================================= */
 
 .orbesonic-grid .asteroid-card::before {
     content: "";
@@ -218,8 +208,8 @@
     top: 0;
     left: 0;
 
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
 
     border-top:
         2px solid rgba(0, 229, 255, 0.35);
@@ -227,7 +217,7 @@
     border-left:
         2px solid rgba(0, 229, 255, 0.35);
 
-    pointer-events: none;
+    z-index: 2;
 }
 
 
@@ -239,8 +229,8 @@
     right: 0;
     bottom: 0;
 
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
 
     border-right:
         2px solid rgba(0, 229, 255, 0.2);
@@ -248,25 +238,12 @@
     border-bottom:
         2px solid rgba(0, 229, 255, 0.2);
 
-    pointer-events: none;
-}
-
-
-.orbesonic-grid .asteroid-card:hover {
-    transform:
-        translateY(-6px);
-
-    border-color:
-        var(--color-border-strong);
-
-    box-shadow:
-        0 0 25px rgba(0, 229, 255, 0.08),
-        inset 0 0 30px rgba(0, 229, 255, 0.025);
+    z-index: 2;
 }
 
 
 /* =========================================================
-   IMAGE ORBESONIC
+   IMAGE
    ========================================================= */
 
 .orbesonic-grid .asteroid-card-image {
@@ -278,8 +255,6 @@
     justify-content: center;
 
     width: 100%;
-    height: 100%;
-
     min-height: 260px;
 
     padding: 25px;
@@ -287,8 +262,8 @@
     background:
         radial-gradient(
             circle at center,
-            rgba(0, 229, 255, 0.06),
-            transparent 65%
+            rgba(0, 229, 255, 0.055),
+            transparent 68%
         );
 
     overflow: hidden;
@@ -296,7 +271,7 @@
 
 
 .orbesonic-grid .asteroid-card-image::before {
-    content: "SYSTEM ONLINE";
+    content: "ORBESONIC // SYSTEM";
 
     position: absolute;
 
@@ -310,7 +285,7 @@
 
     font-weight: 800;
 
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
 }
 
 
@@ -327,7 +302,7 @@
 
     filter:
         drop-shadow(
-            0 0 15px rgba(0, 229, 255, 0.16)
+            0 0 15px rgba(0, 229, 255, 0.18)
         );
 
     transition:
@@ -352,8 +327,8 @@
    ========================================================= */
 
 .orbesonic-category:nth-of-type(1) {
-    border-left-color:
-        var(--color-cyan);
+    border-left:
+        2px solid var(--color-cyan);
 }
 
 
@@ -362,36 +337,26 @@
    ========================================================= */
 
 .orbesonic-category:nth-of-type(2) {
-    border-left-color:
-        var(--color-bonus);
-}
-
-
-.orbesonic-category:nth-of-type(2) .category-number {
-    color:
-        var(--color-bonus);
-
-    text-shadow:
-        0 0 10px rgba(57, 255, 136, 0.4);
-}
-
-
-.orbesonic-category:nth-of-type(2) .orbesonic-grid .asteroid-card {
-    background:
-        linear-gradient(
-            145deg,
-            rgba(57, 255, 136, 0.025),
-            rgba(3, 12, 15, 0.78)
-        );
+    border-left:
+        2px solid var(--color-bonus);
 }
 
 
 .orbesonic-category:nth-of-type(2)
-.orbesonic-grid
-.asteroid-card:hover {
-    box-shadow:
-        0 0 25px rgba(57, 255, 136, 0.08),
-        inset 0 0 30px rgba(57, 255, 136, 0.025);
+.category-number {
+    color:
+        var(--color-bonus);
+}
+
+
+.orbesonic-category:nth-of-type(2)
+.orbesonic-grid .asteroid-card-image {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(57, 255, 136, 0.055),
+            transparent 68%
+        );
 }
 
 
@@ -400,40 +365,25 @@
    ========================================================= */
 
 .orbesonic-category:nth-of-type(3) {
-    border-left-color:
-        var(--color-asteroid);
+    border-left:
+        2px solid var(--color-asteroid);
 }
 
 
-.orbesonic-category:nth-of-type(3) .category-number {
+.orbesonic-category:nth-of-type(3)
+.category-number {
     color:
         var(--color-asteroid-light);
-
-    text-shadow:
-        0 0 10px rgba(255, 106, 0, 0.45);
 }
 
 
 .orbesonic-category:nth-of-type(3)
-.orbesonic-grid
-.asteroid-card:hover {
-    border-color:
-        rgba(255, 106, 0, 0.4);
-
-    box-shadow:
-        0 0 25px rgba(255, 106, 0, 0.08),
-        inset 0 0 30px rgba(255, 106, 0, 0.025);
-}
-
-
-.orbesonic-category:nth-of-type(3)
-.orbesonic-grid
-.asteroid-card-image {
+.orbesonic-grid .asteroid-card-image {
     background:
         radial-gradient(
             circle at center,
-            rgba(255, 106, 0, 0.07),
-            transparent 65%
+            rgba(255, 106, 0, 0.055),
+            transparent 68%
         );
 }
 
@@ -443,40 +393,25 @@
    ========================================================= */
 
 .orbesonic-category:nth-of-type(4) {
-    border-left-color:
-        #a855f7;
+    border-left:
+        2px solid #a855f7;
 }
 
 
-.orbesonic-category:nth-of-type(4) .category-number {
+.orbesonic-category:nth-of-type(4)
+.category-number {
     color:
         #c084fc;
-
-    text-shadow:
-        0 0 10px rgba(168, 85, 247, 0.5);
 }
 
 
 .orbesonic-category:nth-of-type(4)
-.orbesonic-grid
-.asteroid-card:hover {
-    border-color:
-        rgba(168, 85, 247, 0.45);
-
-    box-shadow:
-        0 0 25px rgba(168, 85, 247, 0.1),
-        inset 0 0 30px rgba(168, 85, 247, 0.025);
-}
-
-
-.orbesonic-category:nth-of-type(4)
-.orbesonic-grid
-.asteroid-card-image {
+.orbesonic-grid .asteroid-card-image {
     background:
         radial-gradient(
             circle at center,
-            rgba(168, 85, 247, 0.07),
-            transparent 65%
+            rgba(168, 85, 247, 0.055),
+            transparent 68%
         );
 }
 
@@ -486,7 +421,12 @@
    ========================================================= */
 
 .divine-category {
-    margin-top: 100px;
+    position: relative;
+
+    margin-top: 90px;
+    margin-bottom: 30px;
+
+    padding: 35px;
 
     border:
         1px solid rgba(255, 48, 79, 0.35);
@@ -497,30 +437,53 @@
     background:
         linear-gradient(
             145deg,
-            rgba(40, 5, 12, 0.72),
-            rgba(7, 5, 12, 0.94)
+            rgba(35, 6, 13, 0.85),
+            rgba(5, 8, 18, 0.95)
         );
 
     box-shadow:
         0 25px 80px rgba(0, 0, 0, 0.35),
-        inset 0 0 60px rgba(255, 48, 79, 0.025),
-        0 0 35px rgba(255, 48, 79, 0.04);
+        inset 0 0 50px rgba(255, 48, 79, 0.025);
+
+    overflow: hidden;
 }
 
 
 .divine-category::before {
-    width: 280px;
-    height: 280px;
+    content: "";
 
-    border-color:
-        rgba(255, 48, 79, 0.12);
+    position: absolute;
+
+    top: 50%;
+    left: 20%;
+
+    width: 300px;
+    height: 300px;
+
+    border:
+        1px solid rgba(255, 48, 79, 0.1);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
 
     box-shadow:
-        0 0 50px rgba(255, 48, 79, 0.04);
+        0 0 60px rgba(255, 48, 79, 0.08);
 }
 
 
 .divine-category::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
     background:
         linear-gradient(
             90deg,
@@ -533,9 +496,21 @@
 }
 
 
+/* =========================================================
+   EN-TÊTE DIVINE
+   ========================================================= */
+
 .divine-category-header {
-    border-bottom-color:
-        rgba(255, 48, 79, 0.2);
+    position: relative;
+
+    margin-bottom: 35px;
+
+    padding-bottom: 25px;
+
+    border-bottom:
+        1px solid rgba(255, 48, 79, 0.2);
+
+    z-index: 1;
 }
 
 
@@ -544,7 +519,7 @@
         var(--color-danger-light);
 
     text-shadow:
-        0 0 12px rgba(255, 48, 79, 0.55);
+        0 0 10px rgba(255, 48, 79, 0.45);
 }
 
 
@@ -553,13 +528,12 @@
         var(--color-white);
 
     text-shadow:
-        0 0 15px rgba(255, 48, 79, 0.25),
-        0 0 40px rgba(255, 48, 79, 0.08);
+        0 0 15px rgba(255, 48, 79, 0.25);
 }
 
 
 /* =========================================================
-   BLOC ORBESONIC DIVIN
+   BLOC DIVINE
    ========================================================= */
 
 .divine-orbesonic {
@@ -568,46 +542,21 @@
     display: grid;
 
     grid-template-columns:
-        minmax(300px, 0.9fr)
-        minmax(0, 1.1fr);
+        1fr 1fr;
+
+    gap: 40px;
 
     align-items: center;
 
-    gap: 50px;
-
-    padding: 35px;
+    padding: 25px;
 
     border:
         1px solid rgba(255, 48, 79, 0.25);
 
     background:
-        radial-gradient(
-            circle at 25% 50%,
-            rgba(255, 48, 79, 0.09),
-            transparent 45%
-        ),
-        rgba(8, 5, 12, 0.8);
+        rgba(255, 48, 79, 0.025);
 
-    overflow: hidden;
-}
-
-
-.divine-orbesonic::before {
-    content: "CLASSIFIED // MAXIMUM POWER";
-
-    position: absolute;
-
-    top: 15px;
-    right: 20px;
-
-    color:
-        rgba(255, 107, 127, 0.45);
-
-    font-size: 0.5rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.2em;
+    z-index: 1;
 }
 
 
@@ -631,8 +580,8 @@
     background:
         radial-gradient(
             circle,
-            rgba(255, 48, 79, 0.13),
-            rgba(10, 3, 8, 0.85) 65%
+            rgba(255, 48, 79, 0.12),
+            transparent 68%
         );
 
     overflow: hidden;
@@ -648,39 +597,15 @@
     height: 220px;
 
     border:
-        1px solid rgba(255, 48, 79, 0.18);
+        1px solid rgba(255, 48, 79, 0.2);
 
     border-radius: 50%;
 
     box-shadow:
-        0 0 50px rgba(255, 48, 79, 0.08);
+        0 0 40px rgba(255, 48, 79, 0.1);
 
     animation:
         divine-pulse 3s ease-in-out infinite;
-}
-
-
-.divine-orbesonic-image::after {
-    content: "POWER LEVEL // EXTREME";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 15px;
-
-    transform:
-        translateX(-50%);
-
-    color:
-        rgba(255, 107, 127, 0.5);
-
-    font-size: 0.5rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.18em;
-
-    white-space: nowrap;
 }
 
 
@@ -688,9 +613,6 @@
     position: relative;
 
     z-index: 1;
-
-    width: 100%;
-    height: 100%;
 
     max-width: 280px;
     max-height: 280px;
@@ -700,9 +622,6 @@
     filter:
         drop-shadow(
             0 0 25px rgba(255, 48, 79, 0.45)
-        )
-        drop-shadow(
-            0 0 60px rgba(255, 48, 79, 0.15)
         );
 
     animation:
@@ -715,13 +634,11 @@
     0%,
     100% {
         transform: scale(0.92);
-
         opacity: 0.5;
     }
 
     50% {
         transform: scale(1.08);
-
         opacity: 1;
     }
 
@@ -743,7 +660,7 @@
 
 
 /* =========================================================
-   CONTENU DIVINE
+   TEXTE DIVINE
    ========================================================= */
 
 .divine-orbesonic-content {
@@ -765,10 +682,7 @@
 
     font-weight: 800;
 
-    letter-spacing: 0.22em;
-
-    text-shadow:
-        0 0 10px rgba(255, 48, 79, 0.45);
+    letter-spacing: 0.2em;
 }
 
 
@@ -781,16 +695,10 @@
     font-size: clamp(
         2rem,
         4vw,
-        3.4rem
+        3.2rem
     );
 
     line-height: 1;
-
-    letter-spacing: -0.03em;
-
-    text-shadow:
-        0 0 20px rgba(255, 48, 79, 0.25),
-        0 0 45px rgba(255, 48, 79, 0.1);
 }
 
 
@@ -802,7 +710,7 @@
     color:
         var(--color-text);
 
-    font-size: 0.95rem;
+    font-size: 1rem;
 
     line-height: 1.9;
 }
@@ -811,13 +719,11 @@
 .divine-orbesonic-content strong {
     color:
         var(--color-danger-light);
-
-    font-weight: 800;
 }
 
 
 /* =========================================================
-   ALERTE ÉNERGÉTIQUE
+   ALERTE ÉNERGIE
    ========================================================= */
 
 .divine-warning {
@@ -838,9 +744,6 @@
 
     background:
         rgba(255, 48, 79, 0.045);
-
-    box-shadow:
-        inset 0 0 25px rgba(255, 48, 79, 0.025);
 }
 
 
@@ -862,43 +765,8 @@
 
     font-size: 0.75rem;
 
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
 
     text-shadow:
-        0 0 10px rgba(255, 48, 79, 0.45);
-}
-
-
-/* =========================================================
-   EFFET DE SURVOL DIVINE
-   ========================================================= */
-
-.divine-orbesonic:hover {
-    border-color:
-        rgba(255, 48, 79, 0.45);
-
-    box-shadow:
-        0 0 40px rgba(255, 48, 79, 0.08),
-        inset 0 0 50px rgba(255, 48, 79, 0.025);
-}
-
-
-.divine-orbesonic:hover
-.divine-orbesonic-image img {
-    filter:
-        drop-shadow(
-            0 0 35px rgba(255, 48, 79, 0.6)
-        )
-        drop-shadow(
-            0 0 80px rgba(255, 48, 79, 0.2)
-        );
-}
-
-
-/* =========================================================
-   FIN DE PAGE
-   ========================================================= */
-
-.orbesonic-category:last-child {
-    margin-bottom: 20px;
+        0 0 10px rgba(255, 48, 79, 0.4);
 }
