@@ -1,787 +1,1448 @@
-/* =========================================================
-   PAGE PLATEFORMES
-   DATABASE / CLASSIFICATION PLATFORMS
-   ========================================================= */
+<!DOCTYPE html>
+<html lang="fr">
 
-.platforms-header {
-    position: relative;
+<head>
 
-    margin-bottom: 35px;
+    <meta charset="UTF-8">
 
-    padding: 30px 32px 35px;
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    border: 1px solid var(--color-border);
+    <meta
+        name="description"
+        content="Découvrez les différentes plateformes d'ASTÉROÏD destroyer et leur influence sur les Orbesonic."
+    >
 
-    border-left: 3px solid var(--color-cyan);
+    <title>Plateformes — ASTÉROÏD destroyer</title>
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0, 229, 255, 0.045),
-            rgba(5, 9, 20, 0.45)
-        );
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
-    box-shadow:
-        inset 0 0 40px rgba(0, 229, 255, 0.025),
-        var(--glow-cyan);
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
 
-    overflow: hidden;
-}
+</head>
 
 
-.platforms-header::before {
-    content: "";
+<body>
 
-    position: absolute;
+    <!-- NAVIGATION -->
 
-    top: -80px;
-    right: -40px;
+    <header id="header">
 
-    width: 220px;
-    height: 220px;
+        <nav class="navbar">
 
-    border: 1px solid rgba(0, 229, 255, 0.08);
+            <a
+                href="index.html"
+                class="logo"
+            >
+                ASTÉROÏD destroyer
+            </a>
 
-    border-radius: 50%;
 
-    box-shadow:
-        0 0 0 25px rgba(0, 229, 255, 0.015),
-        0 0 0 50px rgba(0, 229, 255, 0.01);
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+                aria-controls="main-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-    pointer-events: none;
-}
 
+            <div
+                class="nav-menu"
+                id="main-menu"
+            >
 
-.platforms-header::after {
-    content: "";
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Accueil
+                </a>
 
-    position: absolute;
+                <a
+                    href="jeu.html"
+                    class="nav-link"
+                >
+                    Le jeu
+                </a>
 
-    left: 0;
-    bottom: 0;
+                <a
+                    href="medias.html"
+                    class="nav-link"
+                >
+                    Médias
+                </a>
 
-    width: 100%;
-    height: 1px;
+                <a
+                    href="demo.html"
+                    class="nav-link"
+                >
+                    Démo
+                </a>
 
-    background:
-        linear-gradient(
-            90deg,
-            var(--color-cyan),
-            transparent 75%
-        );
+            </div>
 
-    box-shadow:
-        0 0 12px rgba(0, 229, 255, 0.6);
+        </nav>
 
-    pointer-events: none;
-}
+    </header>
 
 
-/* =========================================================
-   LIGNE SUPÉRIEURE
-   ========================================================= */
+    <!-- CONTENU -->
 
-.platforms-header-topline {
-    display: flex;
+    <main>
 
-    justify-content: space-between;
+        <section id="asteroid-page">
 
-    gap: 20px;
+            <div class="section-content">
 
-    margin-bottom: 30px;
 
-    color: var(--color-text-muted);
+                <!-- =====================================================
+                     EN-TÊTE
+                     ===================================================== -->
 
-    font-size: 0.65rem;
+                <div class="platforms-header">
 
-    font-weight: 700;
+                    <div class="platforms-header-topline">
 
-    letter-spacing: 0.18em;
-}
+                        <span>
+                            PLATEFORMES DATABASE
+                        </span>
 
+                        <span>
+                            PEMP // PLATFORM CLASSIFICATION
+                        </span>
 
-/* =========================================================
-   LABEL
-   ========================================================= */
+                    </div>
 
-.platforms-header .section-label {
-    display: block;
 
-    margin-bottom: 12px;
+                    <h1>
+                        Plateformes
+                    </h1>
 
-    color: var(--color-cyan);
 
-    font-size: 0.55rem;
+                    <p class="platforms-header-intro">
+                        Découvrez les différentes plateformes capables
+                        d'interagir avec les propriétés fondamentales
+                        des Orbesonic.
+                    </p>
 
-    font-weight: 800;
 
-    letter-spacing: 0.18em;
-}
+                    <div class="platforms-status">
 
+                        <span class="status-dot"></span>
 
-/* =========================================================
-   TITRE PRINCIPAL
-   ========================================================= */
+                        SYSTEME DE CLASSIFICATION ACTIF
 
-.platforms-header h1 {
-    position: relative;
+                    </div>
 
-    margin-bottom: 20px;
+                </div>
 
-    color: var(--color-white);
 
-    font-size: clamp(
-        3rem,
-        7vw,
-        5.5rem
-    );
+                <!-- =====================================================
+                     VUE D'ENSEMBLE
+                     ===================================================== -->
 
-    line-height: 0.95;
+                <div class="platforms-meta">
 
-    letter-spacing: -0.04em;
+                    <div>
 
-    text-shadow:
-        0 0 15px rgba(0, 229, 255, 0.35),
-        0 0 45px rgba(0, 229, 255, 0.12);
+                        <span>
+                            UNITÉS RÉPERTORIÉES
+                        </span>
 
-    z-index: 1;
-}
+                        <strong>
+                            28
+                        </strong>
 
+                    </div>
 
-/* =========================================================
-   INTRODUCTION HEADER
-   ========================================================= */
 
-.platforms-header-intro {
-    max-width: 650px;
+                    <div>
 
-    margin-bottom: 25px;
+                        <span>
+                            CATÉGORIES
+                        </span>
 
-    color: var(--color-text);
+                        <strong>
+                            05
+                        </strong>
 
-    font-size: 1rem;
+                    </div>
 
-    line-height: 1.8;
-}
 
+                    <div>
 
-/* =========================================================
-   STATUT
-   ========================================================= */
+                        <span>
+                            SYSTÈME
+                        </span>
 
-.platforms-status {
-    display: inline-flex;
+                        <strong>
+                            PEMP
+                        </strong>
 
-    align-items: center;
+                    </div>
 
-    gap: 10px;
 
-    padding: 7px 12px;
+                    <div>
 
-    border: 1px solid rgba(0, 229, 255, 0.25);
+                        <span>
+                            ÉTAT
+                        </span>
 
-    background:
-        rgba(0, 229, 255, 0.035);
+                        <strong>
+                            ACTIF
+                        </strong>
 
-    color: var(--color-cyan);
+                    </div>
 
-    font-size: 0.65rem;
+                </div>
 
-    font-weight: 800;
 
-    letter-spacing: 0.16em;
-}
+                <!-- =====================================================
+                     DOSSIER PRINCIPAL
+                     ===================================================== -->
 
+                <div class="platforms-database">
 
-/* =========================================================
-   POINT DE STATUT
-   ========================================================= */
 
-.platforms-status .status-dot {
-    width: 7px;
-    height: 7px;
+                    <!-- =================================================
+                         INTRODUCTION
+                         ================================================= -->
 
-    flex-shrink: 0;
+                    <div class="platforms-intro">
 
-    border-radius: 50%;
+                        <span class="platforms-file-number">
+                            FILE // PLATFORM-CLASSIFICATION-001
+                        </span>
 
-    background: var(--color-cyan);
 
-    box-shadow:
-        0 0 8px var(--color-cyan);
+                        <h2>
+                            Architecture des plateformes
+                        </h2>
 
-    animation:
-        platforms-pulse 1.8s infinite;
-}
 
+                        <p>
+                            Les plateformes sont des structures
+                            spécialisées conçues pour modifier certains
+                            paramètres de fonctionnement des Orbesonic.
+                            Chaque architecture agit sur une propriété
+                            spécifique du système énergétique.
+                        </p>
 
-@keyframes platforms-pulse {
 
-    0%,
-    100% {
-        opacity: 1;
-    }
+                        <p>
+                            Leur classification permet d'identifier
+                            précisément leur fonction et leur influence
+                            sur les performances des Orbesonic.
+                        </p>
 
-    50% {
-        opacity: 0.35;
-    }
 
-}
+                        <p class="platforms-warning">
+                            CLASSIFICATION TECHNIQUE // COMPATIBILITÉ
+                            VARIABLE SELON LE TYPE D'ORBESONIC.
+                        </p>
 
+                    </div>
 
-/* =========================================================
-   VUE D'ENSEMBLE
-   ========================================================= */
 
-.platforms-meta {
-    display: grid;
+                    <!-- =================================================
+                         CATÉGORIE 01 — RÉSONNANCE
+                         ================================================= -->
 
-    grid-template-columns:
-        repeat(4, 1fr);
+                    <section class="platforms-category category-resonnance">
 
-    margin-bottom: 65px;
 
-    border: 1px solid var(--color-border);
+                        <div class="category-header">
 
-    background:
-        rgba(5, 15, 28, 0.8);
-}
+                            <div class="category-marker">
 
+                                <span>
+                                    01
+                                </span>
 
-.platforms-meta > div {
-    min-height: 90px;
+                                RÉSONNANCE
 
-    padding: 18px 20px;
+                            </div>
 
-    border-right:
-        1px solid var(--color-border);
-}
 
+                            <div class="category-status">
 
-.platforms-meta > div:last-child {
-    border-right: none;
-}
+                                <span class="category-status-dot"></span>
 
+                                SYNCHRONISATION ACTIVE
 
-.platforms-meta span {
-    display: block;
+                            </div>
 
-    margin-bottom: 8px;
+                        </div>
 
-    color: var(--color-text-muted);
 
-    font-size: 0.55rem;
+                        <div class="category-title">
 
-    font-weight: 800;
+                            <div>
 
-    letter-spacing: 0.18em;
-}
+                                <span class="category-code">
+                                    CLASS // RES-01
+                                </span>
 
+                                <h2>
+                                    Résonnance
+                                </h2>
 
-.platforms-meta strong {
-    color: var(--color-cyan);
+                            </div>
 
-    font-size: 1rem;
 
-    letter-spacing: 0.08em;
-}
+                            <p>
+                                Les plateformes de résonnance entrent
+                                en phase avec les fréquences naturelles
+                                des Orbesonic. Leur structure favorise
+                                la synchronisation des émissions et
+                                stabilise la circulation énergétique
+                                entre la plateforme et l'Orbesonic.
+                            </p>
 
+                        </div>
 
-/* =========================================================
-   DOSSIER PRINCIPAL
-   ========================================================= */
 
-.platforms-database {
-    width: 100%;
-}
+                        <div class="platforms-grid">
 
 
-/* =========================================================
-   INTRODUCTION
-   ========================================================= */
+                            <!-- PLATEFORME 01 -->
 
-.platforms-intro {
-    margin-bottom: 60px;
+                            <article class="platform-card">
 
-    padding: 30px 35px;
+                                <div class="platform-card-top">
 
-    border: 1px solid var(--color-border);
+                                    <span>
+                                        PLATFORM // 001
+                                    </span>
 
-    border-left: 2px solid var(--color-cyan);
+                                    <span>
+                                        RES-01
+                                    </span>
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(10, 22, 38, 0.65),
-            rgba(4, 9, 18, 0.78)
-        );
-}
+                                </div>
 
 
-.platforms-file-number {
-    display: block;
+                                <div class="platform-card-image">
 
-    margin-bottom: 12px;
+                                    <img
+                                        src="img/plareformes/plateforme  (1).png"
+                                        alt="Plateforme 1"
+                                    >
 
-    color: var(--color-cyan);
+                                </div>
 
-    font-size: 0.55rem;
 
-    font-weight: 800;
+                                <div class="platform-card-info">
 
-    letter-spacing: 0.18em;
-}
+                                    <span>
+                                        UNITÉ
+                                    </span>
 
+                                    <strong>
+                                        RÉSONNANCE 01
+                                    </strong>
 
-.platforms-intro h2 {
-    margin-bottom: 15px;
+                                </div>
 
-    color: var(--color-white);
+                            </article>
 
-    font-size: clamp(
-        1.5rem,
-        4vw,
-        2.5rem
-    );
 
-    letter-spacing: 0.01em;
-}
+                            <!-- PLATEFORME 02 -->
 
+                            <article class="platform-card">
 
-.platforms-intro p {
-    max-width: 750px;
+                                <div class="platform-card-top">
 
-    margin: 0;
+                                    <span>
+                                        PLATFORM // 002
+                                    </span>
 
-    color: var(--color-text-muted);
+                                    <span>
+                                        RES-01
+                                    </span>
 
-    line-height: 1.7;
-}
+                                </div>
 
 
-/* =========================================================
-   SECTION DATABASE
-   ========================================================= */
+                                <div class="platform-card-image">
 
-.platforms-section {
-    position: relative;
+                                    <img
+                                        src="img/plareformes/plateforme  (2).png"
+                                        alt="Plateforme 2"
+                                    >
 
-    margin-bottom: 60px;
+                                </div>
 
-    padding: 35px;
 
-    border: 1px solid var(--color-border);
+                                <div class="platform-card-info">
 
-    border-left: 2px solid var(--color-cyan);
+                                    <span>
+                                        UNITÉ
+                                    </span>
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(10, 22, 38, 0.65),
-            rgba(4, 9, 18, 0.78)
-        );
+                                    <strong>
+                                        RÉSONNANCE 02
+                                    </strong>
 
-    box-shadow:
-        inset 0 0 35px rgba(0, 229, 255, 0.015);
+                                </div>
 
-    overflow: hidden;
-}
+                            </article>
 
 
-.platforms-section::before {
-    content: "";
+                            <!-- PLATEFORME 03 -->
 
-    position: absolute;
+                            <article class="platform-card">
 
-    top: 0;
-    right: 0;
+                                <div class="platform-card-top">
 
-    width: 180px;
-    height: 1px;
+                                    <span>
+                                        PLATFORM // 003
+                                    </span>
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--color-cyan)
-        );
+                                    <span>
+                                        RES-01
+                                    </span>
 
-    opacity: 0.5;
-}
+                                </div>
 
 
-/* =========================================================
-   EN-TÊTE SECTION
-   ========================================================= */
+                                <div class="platform-card-image">
 
-.platforms-section-header {
-    display: flex;
+                                    <img
+                                        src="img/plareformes/plateforme  (3).png"
+                                        alt="Plateforme 3"
+                                    >
 
-    align-items: center;
+                                </div>
 
-    justify-content: space-between;
 
-    gap: 30px;
+                                <div class="platform-card-info">
 
-    padding-bottom: 25px;
+                                    <span>
+                                        UNITÉ
+                                    </span>
 
-    margin-bottom: 30px;
+                                    <strong>
+                                        RÉSONNANCE 03
+                                    </strong>
 
-    border-bottom:
-        1px solid var(--color-border);
-}
+                                </div>
 
+                            </article>
 
-.platforms-section-marker {
-    display: flex;
 
-    align-items: center;
+                            <!-- PLATEFORME 04 -->
 
-    gap: 12px;
+                            <article class="platform-card">
 
-    color: var(--color-text);
+                                <div class="platform-card-top">
 
-    font-size: 0.65rem;
+                                    <span>
+                                        PLATFORM // 004
+                                    </span>
 
-    font-weight: 800;
+                                    <span>
+                                        RES-01
+                                    </span>
 
-    letter-spacing: 0.14em;
-}
+                                </div>
 
 
-.platforms-section-marker span {
-    display: flex;
+                                <div class="platform-card-image">
 
-    align-items: center;
+                                    <img
+                                        src="img/plareformes/plateforme  (4).png"
+                                        alt="Plateforme 4"
+                                    >
 
-    justify-content: center;
+                                </div>
 
-    width: 42px;
-    height: 42px;
 
-    flex-shrink: 0;
+                                <div class="platform-card-info">
 
-    border:
-        1px solid rgba(0, 229, 255, 0.35);
+                                    <span>
+                                        UNITÉ
+                                    </span>
 
-    background:
-        rgba(0, 229, 255, 0.04);
+                                    <strong>
+                                        RÉSONNANCE 04
+                                    </strong>
 
-    color: var(--color-cyan);
+                                </div>
 
-    font-size: 0.65rem;
+                            </article>
 
-    font-weight: 800;
 
-    letter-spacing: 0.08em;
+                            <!-- PLATEFORME 05 -->
 
-    box-shadow:
-        0 0 15px rgba(0, 229, 255, 0.05);
-}
+                            <article class="platform-card">
 
+                                <div class="platform-card-top">
 
-.platforms-section-status {
-    display: flex;
+                                    <span>
+                                        PLATFORM // 005
+                                    </span>
 
-    align-items: center;
+                                    <span>
+                                        RES-01
+                                    </span>
 
-    gap: 9px;
+                                </div>
 
-    padding: 7px 12px;
 
-    border:
-        1px solid var(--color-border);
+                                <div class="platform-card-image">
 
-    color: var(--color-text-muted);
+                                    <img
+                                        src="img/plareformes/plateforme  (5).png"
+                                        alt="Plateforme 5"
+                                    >
 
-    font-size: 0.55rem;
+                                </div>
 
-    font-weight: 800;
 
-    letter-spacing: 0.14em;
-}
+                                <div class="platform-card-info">
 
+                                    <span>
+                                        UNITÉ
+                                    </span>
 
-.platforms-section-status .category-status-dot {
-    width: 6px;
-    height: 6px;
+                                    <strong>
+                                        RÉSONNANCE 05
+                                    </strong>
 
-    flex-shrink: 0;
+                                </div>
 
-    border-radius: 50%;
+                            </article>
 
-    background: var(--color-cyan);
 
-    box-shadow:
-        0 0 7px var(--color-cyan);
-}
+                            <!-- PLATEFORME 06 -->
 
+                            <article class="platform-card">
 
-/* =========================================================
-   GRILLE DES PLATEFORMES
-   ========================================================= */
+                                <div class="platform-card-top">
 
-.platforms-grid {
-    display: grid;
+                                    <span>
+                                        PLATFORM // 006
+                                    </span>
 
-    grid-template-columns:
-        repeat(3, 1fr);
+                                    <span>
+                                        RES-01
+                                    </span>
 
-    gap: 14px;
-}
+                                </div>
 
 
-/* =========================================================
-   CARTE PLATEFORME
-   ========================================================= */
+                                <div class="platform-card-image">
 
-.platform-card {
-    position: relative;
+                                    <img
+                                        src="img/plareformes/plateforme  (6).png"
+                                        alt="Plateforme 6"
+                                    >
 
-    border:
-        1px solid var(--color-border);
+                                </div>
 
-    background:
-        rgba(2, 8, 16, 0.9);
 
-    overflow: hidden;
+                                <div class="platform-card-info">
 
-    transition:
-        transform var(--transition-normal),
-        border-color var(--transition-normal),
-        box-shadow var(--transition-normal);
-}
+                                    <span>
+                                        UNITÉ
+                                    </span>
 
+                                    <strong>
+                                        RÉSONNANCE 06
+                                    </strong>
 
-.platform-card:hover {
-    transform:
-        translateY(-5px);
+                                </div>
 
-    border-color:
-        var(--color-border-strong);
+                            </article>
 
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.35),
-        0 0 25px rgba(0, 229, 255, 0.06);
-}
+                        </div>
 
+                    </section>
 
-/* =========================================================
-   IDENTIFIANT CARTE
-   ========================================================= */
 
-.platform-card-top {
-    display: flex;
+                    <!-- =================================================
+                         CATÉGORIE 02 — DISTRUPTION
+                         ================================================= -->
 
-    justify-content: space-between;
+                    <section class="platforms-category category-distruption">
 
-    align-items: center;
 
-    gap: 10px;
+                        <div class="category-header">
 
-    padding: 10px 12px;
+                            <div class="category-marker">
 
-    border-bottom:
-        1px solid var(--color-border);
+                                <span>
+                                    02
+                                </span>
 
-    color:
-        var(--color-text-muted);
+                                DISTRUPTION
 
-    font-size: 0.5rem;
+                            </div>
 
-    font-weight: 800;
 
-    letter-spacing: 0.12em;
-}
+                            <div class="category-status">
 
+                                <span class="category-status-dot"></span>
 
-.platform-card-top span:last-child {
-    color:
-        var(--color-cyan);
-}
+                                ACCÉLÉRATION ACTIVE
 
+                            </div>
 
-/* =========================================================
-   IMAGE PLATEFORME
-   ========================================================= */
+                        </div>
 
-.platform-card-image {
-    position: relative;
 
-    display: flex;
+                        <div class="category-title">
 
-    align-items: center;
+                            <div>
 
-    justify-content: center;
+                                <span class="category-code">
+                                    CLASS // DIS-02
+                                </span>
 
-    min-height: 220px;
+                                <h2>
+                                    Distruption
+                                </h2>
 
-    padding: 20px;
+                            </div>
 
-    border-bottom:
-        1px solid var(--color-border);
 
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(0, 229, 255, 0.06),
-            transparent 65%
-        );
-}
+                            <p>
+                                Les plateformes de distruption agissent
+                                sur la dynamique de déplacement des
+                                Orbesonic. Leur configuration augmente
+                                leur vélocité et permet une propagation
+                                plus rapide de leur mouvement à travers
+                                les différentes phases d'utilisation.
+                            </p>
 
+                        </div>
 
-.platform-card-image::before {
-    content: "";
 
-    position: absolute;
+                        <div class="platforms-grid">
 
-    inset: 12px;
 
-    border:
-        1px solid rgba(0, 229, 255, 0.035);
+                            <!-- PLATEFORME 07 -->
 
-    pointer-events: none;
-}
+                            <article class="platform-card">
 
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 007</span>
+                                    <span>DIS-02</span>
+                                </div>
 
-.platform-card-image::after {
-    content: "";
+                                <div class="platform-card-image">
 
-    position: absolute;
+                                    <img
+                                        src="img/plareformes/plateforme  (7).png"
+                                        alt="Plateforme 7"
+                                    >
 
-    top: 50%;
-    left: 50%;
+                                </div>
 
-    width: 70%;
-    height: 70%;
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DISTRUPTION 01</strong>
+                                </div>
 
-    transform:
-        translate(-50%, -50%);
+                            </article>
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(0, 229, 255, 0.035),
-            transparent 65%
-        );
 
-    pointer-events: none;
-}
+                            <!-- PLATEFORME 08 -->
 
+                            <article class="platform-card">
 
-.platform-card-image img {
-    position: relative;
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 008</span>
+                                    <span>DIS-02</span>
+                                </div>
 
-    z-index: 1;
+                                <div class="platform-card-image">
 
-    display: block;
+                                    <img
+                                        src="img/plareformes/plateforme  (8).png"
+                                        alt="Plateforme 8"
+                                    >
 
-    width: 100%;
+                                </div>
 
-    max-width: 210px;
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DISTRUPTION 02</strong>
+                                </div>
 
-    height: 190px;
+                            </article>
 
-    object-fit: contain;
 
-    filter:
-        drop-shadow(
-            0 0 18px
-            rgba(0, 229, 255, 0.12)
-        );
+                            <!-- PLATEFORME 09 -->
 
-    transition:
-        transform 0.4s ease,
-        filter 0.4s ease;
-}
+                            <article class="platform-card">
 
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 009</span>
+                                    <span>DIS-02</span>
+                                </div>
 
-.platform-card:hover
-.platform-card-image img {
-    transform:
-        scale(1.08);
+                                <div class="platform-card-image">
 
-    filter:
-        drop-shadow(
-            0 0 25px
-            rgba(0, 229, 255, 0.3)
-        );
-}
+                                    <img
+                                        src="img/plareformes/plateforme  (9).png"
+                                        alt="Plateforme 9"
+                                    >
 
+                                </div>
 
-/* =========================================================
-   INFORMATIONS CARTE
-   ========================================================= */
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DISTRUPTION 03</strong>
+                                </div>
 
-.platform-card-info {
-    display: flex;
+                            </article>
 
-    flex-direction: column;
 
-    gap: 5px;
+                            <!-- PLATEFORME 10 -->
 
-    padding: 16px 18px;
-}
+                            <article class="platform-card">
 
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 010</span>
+                                    <span>DIS-02</span>
+                                </div>
 
-.platform-card-info span {
-    color:
-        var(--color-text-muted);
+                                <div class="platform-card-image">
 
-    font-size: 0.5rem;
+                                    <img
+                                        src="img/plareformes/plateforme  (10).png"
+                                        alt="Plateforme 10"
+                                    >
 
-    font-weight: 800;
+                                </div>
 
-    letter-spacing: 0.18em;
-}
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DISTRUPTION 04</strong>
+                                </div>
 
+                            </article>
 
-.platform-card-info strong {
-    color:
-        var(--color-cyan);
 
-    font-size: 0.8rem;
+                            <!-- PLATEFORME 11 -->
 
-    letter-spacing: 0.08em;
-}
+                            <article class="platform-card">
 
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 011</span>
+                                    <span>DIS-02</span>
+                                </div>
 
-/* =========================================================
-   MARQUAGE SUPÉRIEUR DE CARTE
-   ========================================================= */
+                                <div class="platform-card-image">
 
-.platform-card::after {
-    content: "";
+                                    <img
+                                        src="img/plareformes/plateforme  (11).png"
+                                        alt="Plateforme 11"
+                                    >
 
-    position: absolute;
+                                </div>
 
-    top: 0;
-    left: 0;
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DISTRUPTION 05</strong>
+                                </div>
 
-    width: 35px;
-    height: 1px;
+                            </article>
 
-    background:
-        var(--color-cyan);
+                        </div>
 
-    box-shadow:
-        0 0 8px rgba(0, 229, 255, 0.5);
+                    </section>
 
-    opacity: 0.5;
 
-    transition:
-        width var(--transition-normal),
-        opacity var(--transition-normal);
-}
+                    <!-- =================================================
+                         CATÉGORIE 03 — ELIPTOR
+                         ================================================= -->
 
+                    <section class="platforms-category category-eliptor">
 
-.platform-card:hover::after {
-    width: 100%;
 
-    opacity: 0.9;
-}
+                        <div class="category-header">
 
+                            <div class="category-marker">
 
-/* =========================================================
-   FIN — PAGE PLATEFORMES
-   ========================================================= */
+                                <span>
+                                    03
+                                </span>
+
+                                ELIPTOR
+
+                            </div>
+
+
+                            <div class="category-status">
+
+                                <span class="category-status-dot"></span>
+
+                                PUISSANCE ACTIVE
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-title">
+
+                            <div>
+
+                                <span class="category-code">
+                                    CLASS // ELI-03
+                                </span>
+
+                                <h2>
+                                    Eliptor
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+                                Les plateformes Eliptor renforcent la
+                                puissance destructrice des Orbesonic.
+                                Elles concentrent l'énergie disponible
+                                afin d'augmenter l'intensité de la
+                                réponse offensive et la capacité de
+                                destruction générée lors de l'activation.
+                            </p>
+
+                        </div>
+
+
+                        <div class="platforms-grid">
+
+
+                            <!-- PLATEFORME 12 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 012</span>
+                                    <span>ELI-03</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (12).png"
+                                        alt="Plateforme 12"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>ELIPTOR 01</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 13 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 013</span>
+                                    <span>ELI-03</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (13).png"
+                                        alt="Plateforme 13"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>ELIPTOR 02</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 14 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 014</span>
+                                    <span>ELI-03</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (14).png"
+                                        alt="Plateforme 14"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>ELIPTOR 03</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 15 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 015</span>
+                                    <span>ELI-03</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (15).png"
+                                        alt="Plateforme 15"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>ELIPTOR 04</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 16 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 016</span>
+                                    <span>ELI-03</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (16).png"
+                                        alt="Plateforme 16"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>ELIPTOR 05</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 17 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 017</span>
+                                    <span>ELI-03</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (17).png"
+                                        alt="Plateforme 17"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>ELIPTOR 06</strong>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         CATÉGORIE 04 — DENSITIVE
+                         ================================================= -->
+
+                    <section class="platforms-category category-densitive">
+
+
+                        <div class="category-header">
+
+                            <div class="category-marker">
+
+                                <span>
+                                    04
+                                </span>
+
+                                DENSITIVE
+
+                            </div>
+
+
+                            <div class="category-status">
+
+                                <span class="category-status-dot"></span>
+
+                                DENSITÉ ACTIVE
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-title">
+
+                            <div>
+
+                                <span class="category-code">
+                                    CLASS // DEN-04
+                                </span>
+
+                                <h2>
+                                    Densitive
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+                                Les plateformes Densitive modifient la
+                                concentration interne des Orbesonic.
+                                Leur architecture permet d'augmenter
+                                progressivement la densité énergétique
+                                du système, produisant une compression
+                                exponentielle de la charge disponible.
+                            </p>
+
+                        </div>
+
+
+                        <div class="platforms-grid">
+
+
+                            <!-- PLATEFORME 18 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 018</span>
+                                    <span>DEN-04</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (18).png"
+                                        alt="Plateforme 18"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DENSITIVE 01</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 19 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 019</span>
+                                    <span>DEN-04</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (19).png"
+                                        alt="Plateforme 19"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DENSITIVE 02</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 20 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 020</span>
+                                    <span>DEN-04</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (20).png"
+                                        alt="Plateforme 20"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DENSITIVE 03</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 21 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 021</span>
+                                    <span>DEN-04</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (21).png"
+                                        alt="Plateforme 21"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DENSITIVE 04</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 22 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 022</span>
+                                    <span>DEN-04</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (22).png"
+                                        alt="Plateforme 22"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DENSITIVE 05</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 23 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 023</span>
+                                    <span>DEN-04</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (23).png"
+                                        alt="Plateforme 23"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>DENSITIVE 06</strong>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         CATÉGORIE 05 — VELOCITY
+                         ================================================= -->
+
+                    <section class="platforms-category category-velocity">
+
+
+                        <div class="category-header">
+
+                            <div class="category-marker">
+
+                                <span>
+                                    05
+                                </span>
+
+                                VELOCITY
+
+                            </div>
+
+
+                            <div class="category-status">
+
+                                <span class="category-status-dot"></span>
+
+                                VÉLOCITÉ ACTIVE
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-title">
+
+                            <div>
+
+                                <span class="category-code">
+                                    CLASS // VEL-05
+                                </span>
+
+                                <h2>
+                                    Velocity
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+                                Les plateformes Velocity sont spécialisées
+                                dans l'accélération des Orbesonic. Elles
+                                augmentent directement leur vitesse de
+                                déplacement et optimisent la réponse
+                                cinétique afin de réduire le temps
+                                nécessaire à leur mise en mouvement.
+                            </p>
+
+                        </div>
+
+
+                        <div class="platforms-grid">
+
+
+                            <!-- PLATEFORME 24 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 024</span>
+                                    <span>VEL-05</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (24).png"
+                                        alt="Plateforme 24"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>VELOCITY 01</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 25 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 025</span>
+                                    <span>VEL-05</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (25).png"
+                                        alt="Plateforme 25"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>VELOCITY 02</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 26 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 026</span>
+                                    <span>VEL-05</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (26).png"
+                                        alt="Plateforme 26"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>VELOCITY 03</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 27 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 027</span>
+                                    <span>VEL-05</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (27).png"
+                                        alt="Plateforme 27"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>VELOCITY 04</strong>
+                                </div>
+
+                            </article>
+
+
+                            <!-- PLATEFORME 28 -->
+
+                            <article class="platform-card">
+
+                                <div class="platform-card-top">
+                                    <span>PLATFORM // 028</span>
+                                    <span>VEL-05</span>
+                                </div>
+
+                                <div class="platform-card-image">
+
+                                    <img
+                                        src="img/plareformes/plateforme  (28).png"
+                                        alt="Plateforme 28"
+                                    >
+
+                                </div>
+
+                                <div class="platform-card-info">
+                                    <span>UNITÉ</span>
+                                    <strong>VELOCITY 05</strong>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+                        <div class="platforms-divine-warning">
+
+                            <span>
+                                ⚠ PARAMÈTRE DE VÉLOCITÉ ÉLEVÉ
+                            </span>
+
+                            <span>
+                                LIMITES SYSTÈME À SURVEILLER
+                            </span>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer id="footer">
+
+        <p>
+            © 2026.ASTÉROÏD-destroyer.AC-TekProd.
+        </p>
+
+    </footer>
+
+
+    <script
+        type="module"
+        src="js/main.js"
+    ></script>
+
+</body>
+
+</html>
