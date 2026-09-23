@@ -8,7 +8,7 @@
    TABLETTE
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 
     main section {
         padding: 90px 0;
@@ -33,7 +33,7 @@
    MOBILE
    ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .section-content {
         width: min(
@@ -164,7 +164,7 @@
    page acceuil
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 
     #concept .concept-flow {
 
@@ -182,7 +182,7 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     #concept.command-section {
 
@@ -331,7 +331,7 @@
    TRÈS PETITS ÉCRANS
    ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 360px) {
 
     .hero-content h1 {
         font-size: 2.3rem;
@@ -527,7 +527,7 @@
    RESPONSIVE page le jeu
    ======================= */
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
     .game-dossier {
         padding: 25px;
@@ -570,7 +570,7 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .classified-header {
         padding: 25px 20px;
@@ -638,7 +638,7 @@
    01 — TABLETTE / PETIT DESKTOP
    ========================================================= */
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
 
     .intro-content {
         width: 100%;
@@ -698,7 +698,7 @@
    02 — TABLETTE
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 
     .intro-content::before {
         inset:
@@ -1559,7 +1559,7 @@
    04 — MOBILE ÉTROIT
    ========================================================= */
 
-@media (max-width: 500px) {
+@media (max-width: 360px) {
 
     /* -----------------------------------------------------
        PANNEAUX PLUS DISCRETS
@@ -1733,7 +1733,7 @@
    05 — PETIT SMARTPHONE
    ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 360px) {
 
     /* -----------------------------------------------------
        PANNEAUX
@@ -2185,10 +2185,10 @@
 
 
 /* =========================================================
-   07 — TRÈS GRAND ÉCRAN
+   07 — GRAND ÉCRAN
    ========================================================= */
 
-@media (min-width: 1600px) {
+@media (min-width: 1024px) {
 
     .intro-content::before {
         inset:
@@ -2247,10 +2247,10 @@
 
 
 /* =========================================================
-   08 — ULTRA LARGE
+   08  LARGE
    ========================================================= */
 
-@media (min-width: 2000px) {
+@media (min-width: 1024px) {
 
     .hud-panel {
         width:
@@ -2292,7 +2292,7 @@
    TABLETTES
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 
     /* -----------------------------------------------------
        EN-TÊTE
@@ -2398,7 +2398,7 @@
    MOBILES
    ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     /* -----------------------------------------------------
        EN-TÊTE
@@ -2655,7 +2655,7 @@
    TRÈS PETITS ÉCRANS
    ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 360px) {
 
     .asteroid-header {
         padding-left: 14px;
@@ -2738,11 +2738,863 @@
 
 
 
-
 /* =========================================================
-   FIN — RESPONSIVE PAGE ORBESONIC 
+   PAGE ORBESONIC
+   RESPONSIVE
+   À AJOUTER À LA FIN DE responsive.css
    ========================================================= */
 
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTE
+       ----------------------------------------------------- */
+
+    .orbesonic-header {
+        padding: 28px 26px 32px;
+        margin-bottom: 30px;
+    }
+
+
+    .orbesonic-header h1 {
+        font-size: clamp(2.8rem, 8vw, 4.5rem);
+    }
+
+
+    .orbesonic-header-intro {
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       MÉTA
+       ----------------------------------------------------- */
+
+    .orbesonic-meta {
+        grid-template-columns: repeat(2, 1fr);
+
+        margin-bottom: 50px;
+    }
+
+
+    .orbesonic-meta > div {
+        min-height: 85px;
+
+        border-right: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+
+    .orbesonic-meta > div:nth-child(2n) {
+        border-right: none;
+    }
+
+
+    .orbesonic-meta > div:nth-last-child(-n + 2) {
+        border-bottom: none;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .orbesonic-intro {
+        margin-bottom: 45px;
+
+        padding: 26px 28px;
+    }
+
+
+    /* -----------------------------------------------------
+       CATÉGORIE
+       ----------------------------------------------------- */
+
+    .orbesonic-category {
+        margin-bottom: 45px;
+
+        padding: 28px;
+    }
+
+
+    .orbesonic-category .category-header {
+        gap: 20px;
+    }
+
+
+    .orbesonic-category .category-title {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .orbesonic-category .category-title p {
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       GRILLE
+       ----------------------------------------------------- */
+
+    .orbesonic-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGE CARTE
+       ----------------------------------------------------- */
+
+    .orbesonic-card-image {
+        min-height: 200px;
+
+        padding: 18px;
+    }
+
+
+    .orbesonic-card-image img {
+        max-width: 190px;
+
+        height: 175px;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .orbesonic-terminal {
+        margin-top: 55px;
+    }
+
+
+    .orbesonic-terminal .terminal-content {
+        padding: 30px;
+    }
+
+
+    .orbesonic-terminal .terminal-message {
+        font-size: clamp(
+            1.4rem,
+            4vw,
+            2.2rem
+        );
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE — 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTE
+       ----------------------------------------------------- */
+
+    .orbesonic-header {
+        margin-bottom: 25px;
+
+        padding: 24px 20px 28px;
+    }
+
+
+    .orbesonic-header::before {
+        width: 150px;
+        height: 150px;
+
+        top: -55px;
+        right: -50px;
+    }
+
+
+    .orbesonic-header-topline {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+
+        margin-bottom: 22px;
+
+        font-size: 0.58rem;
+    }
+
+
+    .orbesonic-header h1 {
+        margin-bottom: 15px;
+
+        font-size: clamp(
+            2.4rem,
+            12vw,
+            3.5rem
+        );
+
+        line-height: 0.95;
+    }
+
+
+    .orbesonic-header-intro {
+        margin-bottom: 20px;
+
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+    }
+
+
+    .orbesonic-status {
+        max-width: 100%;
+
+        font-size: 0.58rem;
+
+        line-height: 1.4;
+    }
+
+
+    /* -----------------------------------------------------
+       MÉTA
+       ----------------------------------------------------- */
+
+    .orbesonic-meta {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 40px;
+    }
+
+
+    .orbesonic-meta > div {
+        min-height: auto;
+
+        padding: 15px 17px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+
+    .orbesonic-meta > div:nth-child(2n) {
+        border-right: none;
+    }
+
+
+    .orbesonic-meta > div:nth-last-child(-n + 2) {
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+
+    .orbesonic-meta > div:last-child {
+        border-bottom: none;
+    }
+
+
+    .orbesonic-meta span {
+        margin-bottom: 5px;
+
+        font-size: 0.5rem;
+    }
+
+
+    .orbesonic-meta strong {
+        font-size: 0.85rem;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .orbesonic-intro {
+        margin-bottom: 35px;
+
+        padding: 22px 20px;
+    }
+
+
+    .orbesonic-file-number {
+        font-size: 0.5rem;
+    }
+
+
+    .orbesonic-intro h2 {
+        margin-bottom: 12px;
+
+        font-size: clamp(
+            1.35rem,
+            6vw,
+            2rem
+        );
+
+        line-height: 1.15;
+    }
+
+
+    .orbesonic-intro p {
+        margin-bottom: 12px;
+
+        font-size: 0.85rem;
+
+        line-height: 1.65;
+    }
+
+
+    .orbesonic-warning {
+        font-size: 0.62rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* -----------------------------------------------------
+       CATÉGORIE
+       ----------------------------------------------------- */
+
+    .orbesonic-category {
+        margin-bottom: 35px;
+
+        padding: 22px 18px;
+    }
+
+
+    .orbesonic-category .category-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+        padding-bottom: 18px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .category-marker {
+        gap: 9px;
+
+        font-size: 0.58rem;
+    }
+
+
+    .category-marker span {
+        width: 36px;
+        height: 36px;
+
+        font-size: 0.62rem;
+    }
+
+
+    .orbesonic-category .category-status {
+        align-self: stretch;
+
+        justify-content: flex-start;
+
+        font-size: 0.5rem;
+    }
+
+
+    /* -----------------------------------------------------
+       TITRE CATÉGORIE
+       ----------------------------------------------------- */
+
+    .orbesonic-category .category-title {
+        display: block;
+
+        margin-bottom: 22px;
+    }
+
+
+    .category-code {
+        margin-bottom: 6px;
+
+        font-size: 0.5rem;
+    }
+
+
+    .orbesonic-category .category-title h2 {
+        margin-bottom: 12px;
+
+        font-size: clamp(
+            1.45rem,
+            7vw,
+            2.1rem
+        );
+
+        line-height: 1.05;
+    }
+
+
+    .orbesonic-category .category-title p {
+        font-size: 0.78rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------------------
+       GRILLE ORBESONIC
+       ----------------------------------------------------- */
+
+    .orbesonic-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       CARTE
+       ----------------------------------------------------- */
+
+    .orbesonic-card-top {
+        padding: 9px 11px;
+
+        font-size: 0.46rem;
+    }
+
+
+    .orbesonic-card-image {
+        min-height: 210px;
+
+        padding: 18px;
+    }
+
+
+    .orbesonic-card-image::before {
+        inset: 10px;
+    }
+
+
+    .orbesonic-card-image img {
+        max-width: 200px;
+
+        height: 180px;
+    }
+
+
+    .orbesonic-card-info {
+        padding: 14px 16px;
+    }
+
+
+    .orbesonic-card-info span {
+        font-size: 0.48rem;
+    }
+
+
+    .orbesonic-card-info strong {
+        font-size: 0.75rem;
+    }
+
+
+    /* -----------------------------------------------------
+       DANGER / DESTRUCTION DIVINE
+       ----------------------------------------------------- */
+
+    .orbesonic-divine-warning {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+
+        margin-top: 15px;
+
+        padding: 11px 12px;
+
+        font-size: 0.55rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .orbesonic-terminal {
+        margin-top: 45px;
+    }
+
+
+    .orbesonic-terminal .terminal-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+
+        padding: 10px 14px;
+
+        font-size: 0.52rem;
+    }
+
+
+    .orbesonic-terminal .terminal-content {
+        padding: 22px 18px;
+    }
+
+
+    .orbesonic-terminal .terminal-label {
+        margin-bottom: 10px;
+
+        font-size: 0.52rem;
+    }
+
+
+    .orbesonic-terminal .terminal-message {
+        margin-bottom: 20px;
+
+        font-size: clamp(
+            1.3rem,
+            7vw,
+            2rem
+        );
+
+        line-height: 1.1;
+    }
+
+
+    .orbesonic-terminal .terminal-sequence {
+        margin-bottom: 20px;
+    }
+
+
+    .orbesonic-terminal .terminal-sequence > div {
+        grid-template-columns:
+            35px 1fr;
+
+        gap: 8px;
+
+        padding: 10px 0;
+
+        font-size: 0.52rem;
+
+        line-height: 1.4;
+    }
+
+
+    .orbesonic-terminal .terminal-sequence em {
+        grid-column: 2;
+
+        font-size: 0.48rem;
+    }
+
+
+    .orbesonic-terminal .terminal-warning {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 7px;
+
+        padding: 11px 12px;
+
+        font-size: 0.52rem;
+
+        line-height: 1.5;
+    }
+
+}
+
+
+/* =========================================================
+   PETIT MOBILE — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTE
+       ----------------------------------------------------- */
+
+    .orbesonic-header {
+        padding: 20px 16px 24px;
+
+        border-left-width: 2px;
+    }
+
+
+    .orbesonic-header h1 {
+        font-size: clamp(
+            2.1rem,
+            13vw,
+            3rem
+        );
+
+        letter-spacing: -0.05em;
+    }
+
+
+    .orbesonic-header-intro {
+        font-size: 0.82rem;
+
+        line-height: 1.65;
+    }
+
+
+    .orbesonic-status {
+        display: flex;
+
+        align-items: flex-start;
+
+        width: 100%;
+
+        padding: 8px 10px;
+
+        font-size: 0.52rem;
+    }
+
+
+    /* -----------------------------------------------------
+       MÉTA
+       ----------------------------------------------------- */
+
+    .orbesonic-meta {
+        margin-bottom: 30px;
+    }
+
+
+    .orbesonic-meta > div {
+        padding: 13px 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .orbesonic-intro {
+        padding: 19px 16px;
+
+        border-left-width: 2px;
+    }
+
+
+    .orbesonic-intro h2 {
+        font-size: 1.35rem;
+    }
+
+
+    .orbesonic-intro p {
+        font-size: 0.78rem;
+    }
+
+
+    .orbesonic-warning {
+        font-size: 0.55rem;
+    }
+
+
+    /* -----------------------------------------------------
+       CATÉGORIE
+       ----------------------------------------------------- */
+
+    .orbesonic-category {
+        padding: 19px 14px;
+
+        border-left-width: 2px;
+    }
+
+
+    .category-marker {
+        font-size: 0.52rem;
+    }
+
+
+    .category-marker span {
+        width: 32px;
+        height: 32px;
+
+        font-size: 0.56rem;
+    }
+
+
+    .orbesonic-category .category-status {
+        padding: 6px 9px;
+
+        font-size: 0.46rem;
+    }
+
+
+    .orbesonic-category .category-title h2 {
+        font-size: 1.4rem;
+    }
+
+
+    .orbesonic-category .category-title p {
+        font-size: 0.72rem;
+    }
+
+
+    /* -----------------------------------------------------
+       CARTE
+       ----------------------------------------------------- */
+
+    .orbesonic-card-top {
+        padding: 8px 9px;
+
+        font-size: 0.42rem;
+    }
+
+
+    .orbesonic-card-image {
+        min-height: 185px;
+
+        padding: 14px;
+    }
+
+
+    .orbesonic-card-image img {
+        max-width: 175px;
+
+        height: 160px;
+    }
+
+
+    .orbesonic-card-info {
+        padding: 12px 13px;
+    }
+
+
+    .orbesonic-card-info span {
+        font-size: 0.44rem;
+    }
+
+
+    .orbesonic-card-info strong {
+        font-size: 0.7rem;
+    }
+
+
+    /* -----------------------------------------------------
+       DESTRUCTION DIVINE
+       ----------------------------------------------------- */
+
+    .orbesonic-divine-warning {
+        font-size: 0.5rem;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .orbesonic-terminal {
+        margin-top: 35px;
+    }
+
+
+    .orbesonic-terminal .terminal-header {
+        padding: 9px 11px;
+
+        font-size: 0.46rem;
+    }
+
+
+    .orbesonic-terminal .terminal-content {
+        padding: 19px 14px;
+    }
+
+
+    .orbesonic-terminal .terminal-label {
+        font-size: 0.46rem;
+    }
+
+
+    .orbesonic-terminal .terminal-message {
+        font-size: 1.25rem;
+    }
+
+
+    .orbesonic-terminal .terminal-sequence > div {
+        grid-template-columns:
+            30px 1fr;
+
+        font-size: 0.47rem;
+    }
+
+
+    .orbesonic-terminal .terminal-sequence em {
+        font-size: 0.44rem;
+    }
+
+
+    .orbesonic-terminal .terminal-warning {
+        font-size: 0.47rem;
+    }
+
+}
+
+
+/* =========================================================
+   TRÈS PETIT ÉCRAN — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .orbesonic-header h1 {
+        font-size: 2rem;
+    }
+
+
+    .orbesonic-header-topline {
+        font-size: 0.5rem;
+    }
+
+
+    .orbesonic-category {
+        padding: 17px 12px;
+    }
+
+
+    .orbesonic-card-image {
+        min-height: 165px;
+    }
+
+
+    .orbesonic-card-image img {
+        max-width: 155px;
+
+        height: 145px;
+    }
+
+
+    .orbesonic-terminal .terminal-message {
+        font-size: 1.15rem;
+    }
+
+
+    .orbesonic-terminal .terminal-sequence > div {
+        grid-template-columns:
+            26px 1fr;
+
+        gap: 6px;
+    }
+
+}
+
+/* =========================================================
+   FIN — RESPONSIVE PAGE ORBESONIC
+   ========================================================= */
 
 
 
