@@ -154,7 +154,7 @@
    POINT DE STATUT
    ========================================================= */
 
-.platforms-status .status-dot {
+.status-dot {
     width: 7px;
     height: 7px;
 
@@ -547,9 +547,7 @@
    ========================================================= */
 
 
-/* =========================================================
-   RÉSONNANCE
-   ========================================================= */
+/* RÉSONNANCE */
 
 .category-resonnance {
     border-left-color:
@@ -578,9 +576,7 @@
 }
 
 
-/* =========================================================
-   DISTRUPTION
-   ========================================================= */
+/* DISTRUPTION */
 
 .category-distruption {
     border-left-color:
@@ -609,9 +605,7 @@
 }
 
 
-/* =========================================================
-   ELIPTOR
-   ========================================================= */
+/* ELIPTOR */
 
 .category-eliptor {
     border-left-color:
@@ -625,9 +619,6 @@
 
     border-color:
         rgba(125, 220, 255, 0.35);
-
-    background:
-        rgba(125, 220, 255, 0.025);
 }
 
 
@@ -640,9 +631,7 @@
 }
 
 
-/* =========================================================
-   DENSITIVE
-   ========================================================= */
+/* DENSITIVE */
 
 .category-densitive {
     border-left-color:
@@ -671,9 +660,7 @@
 }
 
 
-/* =========================================================
-   VELOCITY
-   ========================================================= */
+/* VELOCITY */
 
 .category-velocity {
     border-left-color:
@@ -720,7 +707,7 @@
    CARTE PLATEFORME
    ========================================================= */
 
-.platform-card {
+.platforms-card {
     position: relative;
 
     border:
@@ -738,7 +725,7 @@
 }
 
 
-.platform-card:hover {
+.platforms-card:hover {
     transform:
         translateY(-5px);
 
@@ -752,10 +739,10 @@
 
 
 /* =========================================================
-   IDENTIFIANT PLATEFORME
+   IDENTIFIANT
    ========================================================= */
 
-.platform-card-top {
+.platforms-card-top {
     display: flex;
 
     justify-content: space-between;
@@ -778,17 +765,17 @@
 }
 
 
-.platform-card-top span:last-child {
+.platforms-card-top span:last-child {
     color:
         var(--color-cyan);
 }
 
 
 /* =========================================================
-   IMAGE PLATEFORME
+   IMAGE
    ========================================================= */
 
-.platform-card-image {
+.platforms-card-image {
     position: relative;
 
     display: flex;
@@ -812,7 +799,7 @@
 }
 
 
-.platform-card-image::before {
+.platforms-card-image::before {
     content: "";
 
     position: absolute;
@@ -826,7 +813,7 @@
 }
 
 
-.platform-card-image img {
+.platforms-card-image img {
     position: relative;
 
     width: 100%;
@@ -848,8 +835,8 @@
 }
 
 
-.platform-card:hover
-.platform-card-image img {
+.platforms-card:hover
+.platforms-card-image img {
     transform:
         scale(1.08)
         rotate(2deg);
@@ -866,7 +853,7 @@
    INFORMATIONS CARTE
    ========================================================= */
 
-.platform-card-info {
+.platforms-card-info {
     display: flex;
 
     flex-direction: column;
@@ -877,7 +864,7 @@
 }
 
 
-.platform-card-info span {
+.platforms-card-info span {
     color:
         var(--color-text-muted);
 
@@ -889,7 +876,7 @@
 }
 
 
-.platform-card-info strong {
+.platforms-card-info strong {
     color:
         var(--color-cyan);
 
@@ -900,34 +887,16 @@
 
 
 /* =========================================================
-   COULEURS DES CARTES SELON CATÉGORIE
+   VELOCITY
    ========================================================= */
 
-.category-distruption .platform-card-info strong {
-    color:
-        var(--color-bonus);
-}
-
-
-.category-eliptor .platform-card-info strong {
-    color:
-        #7ddcff;
-}
-
-
-.category-densitive .platform-card-info strong {
-    color:
-        #b56cff;
-}
-
-
-.category-velocity .platform-card {
+.category-velocity .platforms-card {
     border-color:
         rgba(255, 48, 79, 0.25);
 }
 
 
-.category-velocity .platform-card:hover {
+.category-velocity .platforms-card:hover {
     border-color:
         rgba(255, 48, 79, 0.5);
 
@@ -937,13 +906,13 @@
 }
 
 
-.category-velocity .platform-card-info strong {
+.category-velocity .platforms-card-info strong {
     color:
         var(--color-danger-light);
 }
 
 
-.category-velocity .platform-card-image {
+.category-velocity .platforms-card-image {
     background:
         radial-gradient(
             circle at center,
@@ -953,7 +922,7 @@
 }
 
 
-.category-velocity .platform-card-image img {
+.category-velocity .platforms-card-image img {
     filter:
         drop-shadow(
             0 0 22px
@@ -962,21 +931,7 @@
 }
 
 
-.category-velocity .platform-card:hover
-.platform-card-image img {
-    filter:
-        drop-shadow(
-            0 0 30px
-            rgba(255, 48, 79, 0.35)
-        );
-}
-
-
-/* =========================================================
-   AVERTISSEMENT VELOCITY
-   ========================================================= */
-
-.platforms-divine-warning {
+.platforms-velocity-warning {
     display: flex;
 
     align-items: center;
@@ -1007,5 +962,184 @@
 
 
 /* =========================================================
-   FIN PAGE PLATEFORMES
+   TERMINAL FINAL
+   ========================================================= */
+
+.platforms-terminal {
+    margin-top: 75px;
+
+    border:
+        1px solid var(--color-border-strong);
+
+    background:
+        rgba(0, 8, 15, 0.82);
+
+    box-shadow:
+        var(--glow-cyan);
+
+    overflow: hidden;
+}
+
+
+.platforms-terminal .terminal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 12px 20px;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    background:
+        rgba(0, 229, 255, 0.045);
+
+    color:
+        var(--color-cyan);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+.platforms-terminal .terminal-content {
+    padding: 40px;
+}
+
+
+.platforms-terminal .terminal-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+.platforms-terminal .terminal-message {
+    margin-bottom: 25px;
+
+    color:
+        var(--color-white);
+
+    font-size: clamp(
+        1.5rem,
+        4vw,
+        2.5rem
+    );
+
+    font-weight: 800;
+
+    text-shadow:
+        0 0 15px rgba(0, 229, 255, 0.25);
+}
+
+
+.platforms-terminal .terminal-sequence {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 25px;
+
+    border-top:
+        1px solid var(--color-border);
+}
+
+
+.platforms-terminal .terminal-sequence > div {
+    display: grid;
+
+    grid-template-columns:
+        50px 1fr auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.08em;
+}
+
+
+.platforms-terminal .terminal-sequence span {
+    color:
+        var(--color-cyan);
+
+    font-weight: 800;
+}
+
+
+.platforms-terminal .terminal-sequence strong {
+    color:
+        var(--color-white);
+}
+
+
+.platforms-terminal .terminal-sequence em {
+    color:
+        var(--color-text-muted);
+
+    font-style: normal;
+}
+
+
+.platforms-terminal .terminal-warning {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 12px 15px;
+
+    border:
+        1px solid rgba(57, 255, 136, 0.2);
+
+    background:
+        rgba(57, 255, 136, 0.025);
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+
+.platforms-terminal .terminal-warning strong {
+    color:
+        var(--color-bonus);
+}
+
+
+/* =========================================================
+   FIN
+   PAGE PLATEFORMES
    ========================================================= */
