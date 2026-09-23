@@ -547,7 +547,9 @@
    ========================================================= */
 
 
-/* RÉSONNANCE */
+/* =========================================================
+   01 — RÉSONNANCE
+   ========================================================= */
 
 .category-resonnance {
     border-left-color:
@@ -576,7 +578,9 @@
 }
 
 
-/* DISTRUPTION */
+/* =========================================================
+   02 — DISTRUPTION
+   ========================================================= */
 
 .category-distruption {
     border-left-color:
@@ -605,7 +609,9 @@
 }
 
 
-/* ELIPTOR */
+/* =========================================================
+   03 — ELIPTOR
+   ========================================================= */
 
 .category-eliptor {
     border-left-color:
@@ -619,6 +625,9 @@
 
     border-color:
         rgba(125, 220, 255, 0.35);
+
+    background:
+        rgba(125, 220, 255, 0.025);
 }
 
 
@@ -631,7 +640,9 @@
 }
 
 
-/* DENSITIVE */
+/* =========================================================
+   04 — DENSITIVE
+   ========================================================= */
 
 .category-densitive {
     border-left-color:
@@ -660,7 +671,9 @@
 }
 
 
-/* VELOCITY */
+/* =========================================================
+   05 — VELOCITY
+   ========================================================= */
 
 .category-velocity {
     border-left-color:
@@ -707,7 +720,7 @@
    CARTE PLATEFORME
    ========================================================= */
 
-.platforms-card {
+.platform-card {
     position: relative;
 
     border:
@@ -725,7 +738,7 @@
 }
 
 
-.platforms-card:hover {
+.platform-card:hover {
     transform:
         translateY(-5px);
 
@@ -742,7 +755,7 @@
    IDENTIFIANT
    ========================================================= */
 
-.platforms-card-top {
+.platform-card-top {
     display: flex;
 
     justify-content: space-between;
@@ -765,7 +778,7 @@
 }
 
 
-.platforms-card-top span:last-child {
+.platform-card-top span:last-child {
     color:
         var(--color-cyan);
 }
@@ -775,7 +788,7 @@
    IMAGE
    ========================================================= */
 
-.platforms-card-image {
+.platform-card-image {
     position: relative;
 
     display: flex;
@@ -799,7 +812,7 @@
 }
 
 
-.platforms-card-image::before {
+.platform-card-image::before {
     content: "";
 
     position: absolute;
@@ -813,10 +826,11 @@
 }
 
 
-.platforms-card-image img {
+.platform-card-image img {
     position: relative;
 
     width: 100%;
+
     max-width: 210px;
 
     height: 190px;
@@ -835,8 +849,8 @@
 }
 
 
-.platforms-card:hover
-.platforms-card-image img {
+.platform-card:hover
+.platform-card-image img {
     transform:
         scale(1.08)
         rotate(2deg);
@@ -853,7 +867,7 @@
    INFORMATIONS CARTE
    ========================================================= */
 
-.platforms-card-info {
+.platform-card-info {
     display: flex;
 
     flex-direction: column;
@@ -864,7 +878,7 @@
 }
 
 
-.platforms-card-info span {
+.platform-card-info span {
     color:
         var(--color-text-muted);
 
@@ -876,7 +890,7 @@
 }
 
 
-.platforms-card-info strong {
+.platform-card-info strong {
     color:
         var(--color-cyan);
 
@@ -887,16 +901,16 @@
 
 
 /* =========================================================
-   VELOCITY
+   VELOCITY — STYLE SPÉCIAL
    ========================================================= */
 
-.category-velocity .platforms-card {
+.category-velocity .platform-card {
     border-color:
         rgba(255, 48, 79, 0.25);
 }
 
 
-.category-velocity .platforms-card:hover {
+.category-velocity .platform-card:hover {
     border-color:
         rgba(255, 48, 79, 0.5);
 
@@ -906,13 +920,13 @@
 }
 
 
-.category-velocity .platforms-card-info strong {
+.category-velocity .platform-card-info strong {
     color:
         var(--color-danger-light);
 }
 
 
-.category-velocity .platforms-card-image {
+.category-velocity .platform-card-image {
     background:
         radial-gradient(
             circle at center,
@@ -922,7 +936,7 @@
 }
 
 
-.category-velocity .platforms-card-image img {
+.category-velocity .platform-card-image img {
     filter:
         drop-shadow(
             0 0 22px
@@ -931,7 +945,7 @@
 }
 
 
-.platforms-velocity-warning {
+.platforms-divine-warning {
     display: flex;
 
     align-items: center;
@@ -962,184 +976,5 @@
 
 
 /* =========================================================
-   TERMINAL FINAL
-   ========================================================= */
-
-.platforms-terminal {
-    margin-top: 75px;
-
-    border:
-        1px solid var(--color-border-strong);
-
-    background:
-        rgba(0, 8, 15, 0.82);
-
-    box-shadow:
-        var(--glow-cyan);
-
-    overflow: hidden;
-}
-
-
-.platforms-terminal .terminal-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    padding: 12px 20px;
-
-    border-bottom:
-        1px solid var(--color-border);
-
-    background:
-        rgba(0, 229, 255, 0.045);
-
-    color:
-        var(--color-cyan);
-
-    font-size: 0.6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.15em;
-}
-
-
-.platforms-terminal .terminal-content {
-    padding: 40px;
-}
-
-
-.platforms-terminal .terminal-label {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color:
-        var(--color-text-muted);
-
-    font-size: 0.6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.18em;
-}
-
-
-.platforms-terminal .terminal-message {
-    margin-bottom: 25px;
-
-    color:
-        var(--color-white);
-
-    font-size: clamp(
-        1.5rem,
-        4vw,
-        2.5rem
-    );
-
-    font-weight: 800;
-
-    text-shadow:
-        0 0 15px rgba(0, 229, 255, 0.25);
-}
-
-
-.platforms-terminal .terminal-sequence {
-    display: flex;
-
-    flex-direction: column;
-
-    margin-bottom: 25px;
-
-    border-top:
-        1px solid var(--color-border);
-}
-
-
-.platforms-terminal .terminal-sequence > div {
-    display: grid;
-
-    grid-template-columns:
-        50px 1fr auto;
-
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 12px 0;
-
-    border-bottom:
-        1px solid var(--color-border);
-
-    color:
-        var(--color-text-muted);
-
-    font-size: 0.6rem;
-
-    letter-spacing: 0.08em;
-}
-
-
-.platforms-terminal .terminal-sequence span {
-    color:
-        var(--color-cyan);
-
-    font-weight: 800;
-}
-
-
-.platforms-terminal .terminal-sequence strong {
-    color:
-        var(--color-white);
-}
-
-
-.platforms-terminal .terminal-sequence em {
-    color:
-        var(--color-text-muted);
-
-    font-style: normal;
-}
-
-
-.platforms-terminal .terminal-warning {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    padding: 12px 15px;
-
-    border:
-        1px solid rgba(57, 255, 136, 0.2);
-
-    background:
-        rgba(57, 255, 136, 0.025);
-
-    color:
-        var(--color-text-muted);
-
-    font-size: 0.6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.14em;
-}
-
-
-.platforms-terminal .terminal-warning strong {
-    color:
-        var(--color-bonus);
-}
-
-
-/* =========================================================
    FIN
-   PAGE PLATEFORMES
    ========================================================= */
