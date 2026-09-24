@@ -15,6 +15,12 @@ const intro =
 const introSkip =
     document.querySelector("#intro-skip");
 
+const INTRO_SOUND =
+    new Audio("son/son intro site.wav");
+
+INTRO_SOUND.preload = "auto";
+INTRO_SOUND.volume = 1.0;
+
 
 /* =========================================================
    CONFIG
@@ -720,6 +726,11 @@ function startIntro() {
     startedAt =
         Date.now();
 
+       INTRO_SOUND.currentTime = 0;
+
+       INTRO_SOUND.play();
+
+
 
     setState(
         "state-connect"
@@ -842,13 +853,12 @@ function closeIntro() {
 
     closed =
         true;
-
+   INTRO_SOUND.pause();
+   INTRO_SOUND.currentTime = 0;
 
     timers.forEach(
         clearTimeout
     );
-
-
     timers =
         [];
 
