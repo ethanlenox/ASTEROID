@@ -154,7 +154,7 @@
    POINT DE STATUT
    ========================================================= */
 
-.status-dot {
+.platforms-status .status-dot {
     width: 7px;
     height: 7px;
 
@@ -398,7 +398,7 @@
 }
 
 
-.category-marker {
+.platforms-category .category-marker {
     display: flex;
 
     align-items: center;
@@ -415,7 +415,7 @@
 }
 
 
-.category-marker span {
+.platforms-category .category-marker span {
     display: flex;
 
     align-items: center;
@@ -467,7 +467,7 @@
 }
 
 
-.category-status-dot {
+.platforms-category .category-status-dot {
     width: 6px;
     height: 6px;
 
@@ -499,7 +499,7 @@
 }
 
 
-.category-code {
+.platforms-category .category-code {
     display: block;
 
     margin-bottom: 5px;
@@ -543,11 +543,8 @@
 
 
 /* =========================================================
-   COULEURS DES CATÉGORIES
+   COULEUR — RÉSONNANCE
    ========================================================= */
-
-
-/* RÉSONNANCE */
 
 .category-resonnance {
     border-left-color:
@@ -576,7 +573,9 @@
 }
 
 
-/* DISTRUPTION */
+/* =========================================================
+   COULEUR — DISTRUPTION
+   ========================================================= */
 
 .category-distruption {
     border-left-color:
@@ -605,7 +604,9 @@
 }
 
 
-/* ELIPTOR */
+/* =========================================================
+   COULEUR — ELIPTOR
+   ========================================================= */
 
 .category-eliptor {
     border-left-color:
@@ -619,6 +620,9 @@
 
     border-color:
         rgba(125, 220, 255, 0.35);
+
+    background:
+        rgba(125, 220, 255, 0.025);
 }
 
 
@@ -631,7 +635,9 @@
 }
 
 
-/* DENSITIVE */
+/* =========================================================
+   COULEUR — DENSITIVE
+   ========================================================= */
 
 .category-densitive {
     border-left-color:
@@ -660,7 +666,9 @@
 }
 
 
-/* VELOCITY */
+/* =========================================================
+   COULEUR — VELOCITY
+   ========================================================= */
 
 .category-velocity {
     border-left-color:
@@ -700,6 +708,8 @@
         repeat(3, 1fr);
 
     gap: 14px;
+
+    width: 100%;
 }
 
 
@@ -709,6 +719,8 @@
 
 .platform-card {
     position: relative;
+
+    width: 100%;
 
     border:
         1px solid var(--color-border);
@@ -739,7 +751,7 @@
 
 
 /* =========================================================
-   IDENTIFIANT
+   IDENTIFIANT PLATEFORME
    ========================================================= */
 
 .platform-card-top {
@@ -772,7 +784,7 @@
 
 
 /* =========================================================
-   IMAGE
+   IMAGE PLATEFORME
    ========================================================= */
 
 .platform-card-image {
@@ -783,7 +795,11 @@
     align-items: center;
     justify-content: center;
 
+    width: 100%;
+
     min-height: 220px;
+
+    height: 220px;
 
     padding: 20px;
 
@@ -796,6 +812,8 @@
             rgba(0, 229, 255, 0.06),
             transparent 65%
         );
+
+    overflow: hidden;
 }
 
 
@@ -816,7 +834,10 @@
 .platform-card-image img {
     position: relative;
 
+    display: block;
+
     width: 100%;
+
     max-width: 210px;
 
     height: 190px;
@@ -850,7 +871,7 @@
 
 
 /* =========================================================
-   INFORMATIONS CARTE
+   INFORMATIONS PLATEFORME
    ========================================================= */
 
 .platform-card-info {
@@ -887,7 +908,144 @@
 
 
 /* =========================================================
-   VELOCITY
+   PLATEFORMES — RÉSONNANCE
+   ========================================================= */
+
+.category-resonnance .platform-card-info strong {
+    color:
+        var(--color-cyan);
+}
+
+
+.category-resonnance .platform-card-image {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 229, 255, 0.06),
+            transparent 65%
+        );
+}
+
+
+/* =========================================================
+   PLATEFORMES — DISTRUPTION
+   ========================================================= */
+
+.category-distruption .platform-card-info strong {
+    color:
+        var(--color-bonus);
+}
+
+
+.category-distruption .platform-card-image {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(57, 255, 136, 0.055),
+            transparent 65%
+        );
+}
+
+
+.category-distruption .platform-card-image img {
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(57, 255, 136, 0.12)
+        );
+}
+
+
+.category-distruption .platform-card:hover
+.platform-card-image img {
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(57, 255, 136, 0.3)
+        );
+}
+
+
+/* =========================================================
+   PLATEFORMES — ELIPTOR
+   ========================================================= */
+
+.category-eliptor .platform-card-info strong {
+    color:
+        #7ddcff;
+}
+
+
+.category-eliptor .platform-card-image {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(125, 220, 255, 0.06),
+            transparent 65%
+        );
+}
+
+
+.category-eliptor .platform-card-image img {
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(125, 220, 255, 0.14)
+        );
+}
+
+
+.category-eliptor .platform-card:hover
+.platform-card-image img {
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(125, 220, 255, 0.3)
+        );
+}
+
+
+/* =========================================================
+   PLATEFORMES — DENSITIVE
+   ========================================================= */
+
+.category-densitive .platform-card-info strong {
+    color:
+        #b56cff;
+}
+
+
+.category-densitive .platform-card-image {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(181, 108, 255, 0.06),
+            transparent 65%
+        );
+}
+
+
+.category-densitive .platform-card-image img {
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(181, 108, 255, 0.14)
+        );
+}
+
+
+.category-densitive .platform-card:hover
+.platform-card-image img {
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(181, 108, 255, 0.3)
+        );
+}
+
+
+/* =========================================================
+   VELOCITY — STYLE RENFORCÉ
    ========================================================= */
 
 .category-velocity .platform-card {
@@ -931,6 +1089,20 @@
 }
 
 
+.category-velocity .platform-card:hover
+.platform-card-image img {
+    filter:
+        drop-shadow(
+            0 0 30px
+            rgba(255, 48, 79, 0.35)
+        );
+}
+
+
+/* =========================================================
+   AVERTISSEMENT VELOCITY
+   ========================================================= */
+
 .platforms-divine-warning {
     display: flex;
 
@@ -962,5 +1134,5 @@
 
 
 /* =========================================================
-   FIN
+   FIN — PAGE PLATEFORMES
    ========================================================= */
