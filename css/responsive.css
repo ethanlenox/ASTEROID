@@ -3591,11 +3591,595 @@
     }
 
 }
-
 /* =========================================================
    FIN — RESPONSIVE PAGE ORBESONIC
    ========================================================= */
 
+
+
+/* =========================================================
+   PAGE PLATEFORMES
+   RESPONSIVE
+   ========================================================= */
+/* =========================================================
+   TABLETTE — 1024px
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTE
+       ----------------------------------------------------- */
+
+    .plateformes-header {
+        padding: 28px 26px 32px;
+        margin-bottom: 30px;
+    }
+
+    .plateformes-header h1 {
+        font-size: clamp(2.8rem, 8vw, 4.5rem);
+    }
+
+    .plateformes-header-intro {
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       META
+       ----------------------------------------------------- */
+
+    .plateformes-meta {
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 50px;
+    }
+
+    .plateformes-meta > div {
+        min-height: 85px;
+
+        border-right:
+            1px solid var(--color-border);
+
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+    .plateformes-meta > div:nth-child(2n) {
+        border-right: none;
+    }
+
+    .plateformes-meta > div:nth-last-child(-n + 2) {
+        border-bottom: none;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .plateformes-intro {
+        margin-bottom: 45px;
+        padding: 26px 28px;
+    }
+
+
+    /* -----------------------------------------------------
+       CATÉGORIE
+       ----------------------------------------------------- */
+
+    .plateformes-category {
+        margin-bottom: 45px;
+        padding: 28px;
+    }
+
+    .plateformes-category .category-header {
+        gap: 20px;
+    }
+
+    .plateformes-category .category-title {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        margin-bottom: 25px;
+    }
+
+    .plateformes-category .category-title p {
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       GRILLE
+       ----------------------------------------------------- */
+
+    .plateformes-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       CARTES
+       ----------------------------------------------------- */
+
+    .plateformes-grid .asteroid-card {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGE
+       ----------------------------------------------------- */
+
+    .plateformes-grid .asteroid-card-image {
+        width: 100%;
+        height: 220px;
+
+        min-height: 220px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 18px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+    .plateformes-grid .asteroid-card-image img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        max-width: 190px;
+        max-height: 190px;
+
+        margin: 0;
+
+        object-fit: contain;
+
+        transform: none;
+    }
+
+
+    /* -----------------------------------------------------
+       INFOS CARTE
+       ----------------------------------------------------- */
+
+    .plateformes-grid .asteroid-card-info {
+        padding: 14px 16px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE — 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTE
+       ----------------------------------------------------- */
+
+    .plateformes-header {
+        margin-bottom: 25px;
+
+        padding: 24px 20px 28px;
+    }
+
+    .plateformes-header-topline {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+
+        margin-bottom: 22px;
+
+        font-size: 0.58rem;
+    }
+
+    .plateformes-header h1 {
+        margin-bottom: 15px;
+
+        font-size: clamp(
+            2.4rem,
+            12vw,
+            3.5rem
+        );
+
+        line-height: 0.95;
+    }
+
+    .plateformes-header-intro {
+        margin-bottom: 20px;
+
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+    }
+
+    .plateformes-status {
+        max-width: 100%;
+
+        font-size: 0.58rem;
+
+        line-height: 1.4;
+    }
+
+
+    /* -----------------------------------------------------
+       META
+       ----------------------------------------------------- */
+
+    .plateformes-meta {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 40px;
+    }
+
+    .plateformes-meta > div {
+        min-height: auto;
+
+        padding: 15px 17px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+    .plateformes-meta > div:last-child {
+        border-bottom: none;
+    }
+
+    .plateformes-meta span {
+        margin-bottom: 5px;
+
+        font-size: 0.5rem;
+    }
+
+    .plateformes-meta strong {
+        font-size: 0.85rem;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .plateformes-intro {
+        margin-bottom: 35px;
+
+        padding: 22px 20px;
+    }
+
+    .plateformes-intro h2 {
+        margin-bottom: 12px;
+
+        font-size: clamp(
+            1.35rem,
+            6vw,
+            2rem
+        );
+
+        line-height: 1.15;
+    }
+
+    .plateformes-intro p {
+        margin-bottom: 12px;
+
+        font-size: 0.85rem;
+
+        line-height: 1.65;
+    }
+
+
+    /* -----------------------------------------------------
+       CATÉGORIE
+       ----------------------------------------------------- */
+
+    .plateformes-category {
+        margin-bottom: 35px;
+
+        padding: 22px 18px;
+    }
+
+    .plateformes-category .category-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+        padding-bottom: 18px;
+
+        margin-bottom: 20px;
+    }
+
+    .plateformes-category .category-title {
+        display: block;
+
+        margin-bottom: 22px;
+    }
+
+    .plateformes-category .category-title h2 {
+        margin-bottom: 12px;
+
+        font-size: clamp(
+            1.45rem,
+            7vw,
+            2.1rem
+        );
+
+        line-height: 1.05;
+    }
+
+    .plateformes-category .category-title p {
+        font-size: 0.78rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------------------
+       GRILLE PLATEFORMES
+       ----------------------------------------------------- */
+
+    .plateformes-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       CARTE
+       ----------------------------------------------------- */
+
+    .plateformes-grid .asteroid-card {
+        width: 100%;
+        height: auto;
+
+        min-width: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGE CARTE
+       ----------------------------------------------------- */
+
+    .plateformes-grid .asteroid-card-image {
+        width: 100%;
+
+        height: 230px;
+
+        min-height: 230px;
+
+        padding: 20px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+    .plateformes-grid .asteroid-card-image img {
+        width: 100%;
+        height: 100%;
+
+        max-width: 230px;
+        max-height: 205px;
+
+        object-fit: contain;
+
+        margin: 0;
+
+        transform: none;
+    }
+
+
+    /* -----------------------------------------------------
+       INFO CARTE
+       ----------------------------------------------------- */
+
+    .plateformes-grid .asteroid-card-info {
+        padding: 14px 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       DÉSACTIVER LES EFFETS TROP FORTS AU TOUCH
+       ----------------------------------------------------- */
+
+    .plateformes-grid .asteroid-card:hover {
+        transform: none;
+    }
+
+    .plateformes-grid
+    .asteroid-card:hover
+    .asteroid-card-image img {
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   PETIT MOBILE — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTE
+       ----------------------------------------------------- */
+
+    .plateformes-header {
+        padding: 20px 16px 24px;
+    }
+
+    .plateformes-header h1 {
+        font-size: 2.1rem;
+    }
+
+    .plateformes-header-intro {
+        font-size: 0.82rem;
+
+        line-height: 1.65;
+    }
+
+
+    /* -----------------------------------------------------
+       META
+       ----------------------------------------------------- */
+
+    .plateformes-meta {
+        margin-bottom: 30px;
+    }
+
+    .plateformes-meta > div {
+        padding: 13px 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .plateformes-intro {
+        padding: 19px 16px;
+    }
+
+    .plateformes-intro h2 {
+        font-size: 1.35rem;
+    }
+
+    .plateformes-intro p {
+        font-size: 0.78rem;
+    }
+
+
+    /* -----------------------------------------------------
+       CATÉGORIE
+       ----------------------------------------------------- */
+
+    .plateformes-category {
+        padding: 19px 14px;
+    }
+
+    .plateformes-category .category-title h2 {
+        font-size: 1.4rem;
+    }
+
+    .plateformes-category .category-title p {
+        font-size: 0.72rem;
+    }
+
+
+    /* -----------------------------------------------------
+       CARTES
+       ----------------------------------------------------- */
+
+    .plateformes-grid {
+        gap: 10px;
+    }
+
+    .plateformes-grid .asteroid-card-image {
+        height: 200px;
+
+        min-height: 200px;
+
+        padding: 14px;
+    }
+
+    .plateformes-grid .asteroid-card-image img {
+        max-width: 190px;
+        max-height: 175px;
+    }
+
+    .plateformes-grid .asteroid-card-info {
+        padding: 12px 13px;
+    }
+
+}
+
+
+/* =========================================================
+   TRÈS PETIT ÉCRAN
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .plateformes-header h1 {
+        font-size: 1.9rem;
+    }
+
+    .plateformes-category {
+        padding: 17px 12px;
+    }
+
+    .plateformes-grid .asteroid-card-image {
+        height: 180px;
+
+        min-height: 180px;
+    }
+
+    .plateformes-grid .asteroid-card-image img {
+        max-width: 165px;
+        max-height: 155px;
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH / PAS DE HOVER
+   ========================================================= */
+
+@media (hover: none) {
+
+    .plateformes-grid .asteroid-card:hover {
+        transform: none;
+
+        border-color:
+            var(--color-border);
+    }
+
+    .plateformes-grid
+    .asteroid-card:hover
+    .asteroid-card-image img {
+        transform: none;
+
+        filter:
+            drop-shadow(
+                0 0 18px
+                rgba(0, 229, 255, 0.12)
+            );
+    }
+
+}
+/* =========================================================
+   FIN — RESPONSIVE PAGE PLATEFORMES
+   ========================================================= */
 
 
 
