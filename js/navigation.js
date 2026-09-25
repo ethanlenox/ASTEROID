@@ -209,5 +209,3 @@ if (malusCard) {
 
     malusCard.style.cursor = "pointer";
 }
-
-}
