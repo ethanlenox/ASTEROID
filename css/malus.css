@@ -1,0 +1,1098 @@
+/* =========================================================
+   PAGE MALUS
+   DOSSIER PEMP // HAZARD DATABASE
+   ========================================================= */
+
+
+/* =========================================================
+   EN-TÊTE DU DOSSIER
+   ========================================================= */
+
+.malus-header {
+    position: relative;
+
+    padding: 30px 32px 35px;
+
+    margin-bottom: 35px;
+
+    border:
+        1px solid var(--color-border);
+
+    border-left:
+        3px solid var(--color-orange);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 145, 0, 0.045),
+            rgba(5, 9, 20, 0.45)
+        );
+
+    box-shadow:
+        inset 0 0 40px rgba(255, 145, 0, 0.025),
+        0 0 25px rgba(255, 145, 0, 0.04);
+
+    overflow: hidden;
+}
+
+
+.malus-header::before {
+    content: "";
+
+    position: absolute;
+
+    top: -80px;
+    right: -80px;
+
+    width: 220px;
+    height: 220px;
+
+    border:
+        1px solid rgba(255, 145, 0, 0.08);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 25px rgba(255, 145, 0, 0.015),
+        0 0 0 50px rgba(255, 145, 0, 0.01);
+}
+
+
+.malus-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-orange),
+            transparent 75%
+        );
+
+    box-shadow:
+        0 0 12px rgba(255, 145, 0, 0.6);
+}
+
+
+.malus-header-topline {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.malus-header h1 {
+    position: relative;
+
+    margin-bottom: 15px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        clamp(3rem, 7vw, 5.5rem);
+
+    letter-spacing: -0.04em;
+
+    text-shadow:
+        0 0 15px rgba(255, 145, 0, 0.35),
+        0 0 45px rgba(255, 145, 0, 0.12);
+}
+
+
+.malus-header-description {
+    max-width: 650px;
+
+    margin-bottom: 25px;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.8rem;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.12em;
+}
+
+
+.malus-header-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 7px 12px;
+
+    border:
+        1px solid rgba(255, 145, 0, 0.3);
+
+    background:
+        rgba(255, 145, 0, 0.05);
+
+    color:
+        var(--color-orange);
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+.malus-header .status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--color-orange);
+
+    box-shadow:
+        0 0 8px var(--color-orange);
+
+    animation:
+        malus-pulse 1.4s infinite;
+}
+
+
+@keyframes malus-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 8px var(--color-orange);
+    }
+
+    50% {
+        opacity: 0.35;
+
+        box-shadow:
+            0 0 2px var(--color-orange);
+    }
+
+}
+
+
+/* =========================================================
+   DOSSIER PRINCIPAL
+   ========================================================= */
+
+.malus-dossier {
+    position: relative;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 45px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 22, 38, 0.78),
+            rgba(4, 9, 18, 0.9)
+        );
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    overflow: hidden;
+}
+
+
+.malus-dossier::before {
+    content:
+        "PEMP // HAZARD CONFIDENTIAL";
+
+    position: absolute;
+
+    top: 24px;
+    right: -70px;
+
+    padding: 5px 55px;
+
+    transform:
+        rotate(45deg);
+
+    border:
+        1px solid rgba(255, 145, 0, 0.2);
+
+    color:
+        rgba(255, 145, 0, 0.3);
+
+    font-size: 0.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MÉTADONNÉES
+   ========================================================= */
+
+.malus-meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    margin-bottom: 55px;
+
+    border:
+        1px solid var(--color-border);
+}
+
+
+.malus-meta > div {
+    min-height: 90px;
+
+    padding: 18px 20px;
+
+    border-right:
+        1px solid var(--color-border);
+}
+
+
+.malus-meta > div:last-child {
+    border-right: none;
+}
+
+
+.malus-meta span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+}
+
+
+.malus-meta strong {
+    color:
+        var(--color-orange);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.08em;
+}
+
+
+.malus-warning {
+    color:
+        var(--color-orange) !important;
+
+    text-shadow:
+        0 0 10px rgba(255, 145, 0, 0.3);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.malus-intro {
+    max-width: 900px;
+
+    margin-bottom: 65px;
+}
+
+
+.malus-file-number {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--color-orange);
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.25em;
+
+    text-shadow:
+        0 0 10px rgba(255, 145, 0, 0.5);
+}
+
+
+.malus-intro h2 {
+    max-width: 800px;
+
+    margin-bottom: 28px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        clamp(2rem, 4vw, 3.2rem);
+
+    line-height: 1.15;
+}
+
+
+.malus-intro p,
+.malus-report-content p,
+.malus-dossier-block p {
+    max-width: 850px;
+
+    margin-bottom: 20px;
+
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+}
+
+
+.malus-lead {
+    color:
+        var(--color-white) !important;
+
+    font-size:
+        1.2rem !important;
+
+    line-height:
+        1.85 !important;
+}
+
+
+/* =========================================================
+   BLOC AVEC GIF
+   ========================================================= */
+
+.malus-report {
+    display: grid;
+
+    grid-template-columns:
+        250px minmax(0, 1fr);
+
+    gap: 45px;
+
+    align-items: center;
+
+    margin-bottom: 50px;
+
+    padding: 30px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(255, 145, 0, 0.018);
+
+    transition:
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+
+.malus-report:hover {
+    border-color:
+        rgba(255, 145, 0, 0.35);
+
+    box-shadow:
+        inset 0 0 35px rgba(255, 145, 0, 0.025),
+        0 0 25px rgba(255, 145, 0, 0.05);
+}
+
+
+/* =========================================================
+   ZONE GIF
+   ========================================================= */
+
+.malus-report-media {
+    width: 250px;
+
+    min-width: 0;
+
+    padding: 15px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(0, 8, 15, 0.65);
+
+    box-sizing: border-box;
+}
+
+
+.malus-media-label {
+    margin-bottom: 12px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.malus-gif-frame {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 170px;
+
+    border:
+        1px solid rgba(255, 145, 0, 0.1);
+
+    background:
+        rgba(255, 145, 0, 0.015);
+
+    overflow: hidden;
+}
+
+
+.malus-gif-frame img {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+
+    height: auto;
+    max-height: 200px;
+
+    object-fit: contain;
+}
+
+
+.malus-media-status {
+    display: block;
+
+    margin-top: 12px;
+
+    color:
+        var(--color-orange);
+
+    font-size: 0.48rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   MARQUEURS DE BLOC
+   ========================================================= */
+
+.malus-block-marker {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color:
+        var(--color-orange);
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.22em;
+}
+
+
+.malus-block-marker span {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border:
+        1px solid rgba(255, 145, 0, 0.35);
+
+    background:
+        rgba(255, 145, 0, 0.05);
+
+    color:
+        var(--color-orange);
+
+    box-shadow:
+        0 0 10px rgba(255, 145, 0, 0.08);
+}
+
+
+.malus-report-content h2,
+.malus-dossier-block h2 {
+    margin-bottom: 22px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        clamp(1.6rem, 3vw, 2.5rem);
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   LIGNES DE DONNÉES
+   ========================================================= */
+
+.malus-data-line {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 25px;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid rgba(255, 145, 0, 0.12);
+}
+
+
+.malus-data-line span {
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.malus-data-line strong {
+    color:
+        var(--color-orange);
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.12em;
+
+    text-shadow:
+        0 0 8px rgba(255, 145, 0, 0.35);
+}
+
+
+/* =========================================================
+   BLOCS CENTRAUX
+   ========================================================= */
+
+.malus-dossier-block {
+    position: relative;
+
+    margin-bottom: 50px;
+
+    padding: 35px;
+
+    border:
+        1px solid var(--color-border);
+
+    border-left:
+        2px solid var(--color-orange);
+
+    background:
+        rgba(255, 145, 0, 0.018);
+
+    transition:
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+
+.malus-dossier-block:hover {
+    border-color:
+        rgba(255, 145, 0, 0.35);
+
+    box-shadow:
+        inset 0 0 35px rgba(255, 145, 0, 0.025),
+        0 0 25px rgba(255, 145, 0, 0.05);
+}
+
+
+.malus-dossier-block strong {
+    color:
+        var(--color-orange);
+}
+
+
+/* =========================================================
+   GRILLE SYSTÈME
+   ========================================================= */
+
+.malus-system-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+
+.malus-system-item {
+    padding: 22px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(255, 145, 0, 0.025);
+}
+
+
+.malus-system-item span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+}
+
+
+.malus-system-item strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--color-orange);
+
+    font-size: 0.9rem;
+}
+
+
+.malus-system-item small {
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   BLOC RISQUE
+   ========================================================= */
+
+.malus-risk-block {
+    border-left-color:
+        var(--color-orange);
+}
+
+
+.malus-risk-block:hover {
+    border-color:
+        rgba(255, 145, 0, 0.45);
+}
+
+
+.malus-risk-marker {
+    color:
+        var(--color-orange);
+}
+
+
+.malus-risk-marker span {
+    border-color:
+        rgba(255, 145, 0, 0.4);
+
+    color:
+        var(--color-orange);
+}
+
+
+/* =========================================================
+   AVERTISSEMENT
+   ========================================================= */
+
+.malus-warning-panel {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border:
+        1px solid rgba(255, 145, 0, 0.3);
+
+    background:
+        rgba(255, 145, 0, 0.045);
+}
+
+
+.malus-warning-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border:
+        1px solid rgba(255, 145, 0, 0.45);
+
+    color:
+        var(--color-orange);
+
+    font-size: 1.1rem;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 0 15px rgba(255, 145, 0, 0.12);
+}
+
+
+.malus-warning-panel span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--color-orange);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.malus-warning-panel strong {
+    display: block;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.72rem;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   TERMINAL FINAL
+   ========================================================= */
+
+.malus-terminal {
+    margin-top: 65px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(0, 5, 12, 0.7);
+
+    box-shadow:
+        inset 0 0 40px rgba(255, 145, 0, 0.02);
+}
+
+
+.malus-terminal-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 13px 20px;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.malus-terminal-content {
+    padding: 40px;
+}
+
+
+.malus-terminal-label {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color:
+        var(--color-orange);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+}
+
+
+.malus-terminal-content h2 {
+    max-width: 700px;
+
+    margin-bottom: 25px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        clamp(1.8rem, 4vw, 3rem);
+
+    line-height: 1.15;
+}
+
+
+.malus-terminal-content p {
+    max-width: 800px;
+
+    margin-bottom: 15px;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SÉQUENCE FINALE
+   ========================================================= */
+
+.malus-final-sequence {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+
+.malus-final-sequence > div {
+    padding: 20px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(255, 145, 0, 0.02);
+}
+
+
+.malus-final-sequence span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--color-orange);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+.malus-final-sequence strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--color-white);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.08em;
+}
+
+
+.malus-final-sequence em {
+    display: block;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.5rem;
+
+    font-style: normal;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   COMMANDE FINALE
+   ========================================================= */
+
+.malus-final-command {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border-top:
+        1px solid rgba(255, 145, 0, 0.15);
+
+    border-bottom:
+        1px solid rgba(255, 145, 0, 0.15);
+}
+
+
+.malus-final-command span {
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.malus-final-command strong {
+    color:
+        var(--color-orange);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+
+    text-shadow:
+        0 0 10px rgba(255, 145, 0, 0.4);
+}
+
+
+/* =========================================================
+   ANIMATION LÉGÈRE DES ENCADRÉS
+   ========================================================= */
+
+.malus-report::after,
+.malus-dossier-block::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 80px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-orange),
+            transparent
+        );
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   FIN — PAGE MALUS
+   ========================================================= */
