@@ -4550,6 +4550,518 @@
    FIN — RESPONSIVE PAGE NIVO
    ========================================================= */
 
+/* =========================================================
+   RESPONSIVE — PAGE BONUS
+   1024px / 700px / 360px
+   ========================================================= */
+
+
+/* =========================================================
+   1024px
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .bonus-header {
+        padding: 28px;
+    }
+
+    .bonus-header h1 {
+        font-size: clamp(
+            3rem,
+            7vw,
+            4.8rem
+        );
+    }
+
+
+    /* -----------------------------------------------------
+       DOSSIER
+       ----------------------------------------------------- */
+
+    .bonus-dossier {
+        padding: 35px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .bonus-intro {
+        padding: 30px;
+    }
+
+    .bonus-intro h2 {
+        font-size: 2.4rem;
+    }
+
+    .bonus-intro p {
+        font-size: 0.95rem;
+    }
+
+
+    /* -----------------------------------------------------
+       ARCHIVES GIF
+       ----------------------------------------------------- */
+
+    .bonus-archive {
+        gap: 25px;
+
+        padding: 25px;
+    }
+
+    .bonus-archive-image {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .bonus-archive-image img {
+        max-width: 220px;
+        max-height: 220px;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOCS DU DOSSIER
+       ----------------------------------------------------- */
+
+    .bonus-block {
+        padding: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       ANALYSE
+       ----------------------------------------------------- */
+
+    .bonus-analysis-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .bonus-terminal {
+        padding: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .bonus-header {
+        padding: 24px 20px;
+    }
+
+    .bonus-header-topline {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+
+        font-size: 0.55rem;
+    }
+
+    .bonus-header h1 {
+        font-size: clamp(
+            2.6rem,
+            10vw,
+            4rem
+        );
+
+        line-height: 1;
+    }
+
+    .bonus-header-status {
+        font-size: 0.55rem;
+    }
+
+
+    /* -----------------------------------------------------
+       DOSSIER
+       ----------------------------------------------------- */
+
+    .bonus-dossier {
+        padding: 25px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .bonus-intro {
+        padding: 25px 20px;
+    }
+
+    .bonus-intro h2 {
+        font-size: 2rem;
+
+        line-height: 1.2;
+    }
+
+    .bonus-intro p {
+        font-size: 0.9rem;
+
+        line-height: 1.75;
+    }
+
+    .bonus-intro-lead {
+        font-size: 1rem !important;
+
+        line-height: 1.75 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ARCHIVES GIF
+       ----------------------------------------------------- */
+
+    .bonus-archive {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+
+    .bonus-archive-image {
+        width: 100%;
+        min-width: 0;
+
+        display: flex;
+
+        justify-content: center;
+
+        order: 1;
+    }
+
+
+    .bonus-archive-image img {
+        width: auto;
+
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+
+    .bonus-archive-text {
+        order: 2;
+
+        width: 100%;
+    }
+
+
+    .bonus-archive-right .bonus-archive-image {
+        order: 1;
+    }
+
+    .bonus-archive-right .bonus-archive-text {
+        order: 2;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOCS
+       ----------------------------------------------------- */
+
+    .bonus-block {
+        padding: 25px 20px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .bonus-block p {
+        font-size: 0.9rem;
+
+        line-height: 1.75;
+    }
+
+
+    .bonus-block h2 {
+        font-size: 1.7rem;
+
+        line-height: 1.25;
+    }
+
+
+    /* -----------------------------------------------------
+       MARQUEUR
+       ----------------------------------------------------- */
+
+    .bonus-block-marker {
+        font-size: 0.55rem;
+
+        letter-spacing: 0.15em;
+    }
+
+
+    /* -----------------------------------------------------
+       ANALYSE
+       ----------------------------------------------------- */
+
+    .bonus-analysis-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 10px;
+    }
+
+    .bonus-analysis-item {
+        padding: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       STATUTS
+       ----------------------------------------------------- */
+
+    .bonus-status-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .bonus-terminal {
+        padding: 25px 20px;
+    }
+
+    .bonus-terminal-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+    .bonus-terminal-command {
+        font-size: 1.5rem;
+
+        line-height: 1.25;
+    }
+
+
+    /* -----------------------------------------------------
+       HOVER
+       ----------------------------------------------------- */
+
+    .bonus-block:hover,
+    .bonus-archive:hover {
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .bonus-header {
+        padding: 20px 15px;
+    }
+
+    .bonus-header-topline {
+        font-size: 0.48rem;
+
+        letter-spacing: 0.12em;
+    }
+
+    .bonus-header h1 {
+        font-size: 2.25rem;
+
+        letter-spacing: -0.04em;
+    }
+
+    .bonus-header-status {
+        padding: 6px 9px;
+
+        font-size: 0.48rem;
+    }
+
+
+    /* -----------------------------------------------------
+       DOSSIER
+       ----------------------------------------------------- */
+
+    .bonus-dossier {
+        padding: 20px 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .bonus-intro {
+        padding: 20px 15px;
+    }
+
+    .bonus-intro h2 {
+        font-size: 1.65rem;
+    }
+
+    .bonus-intro p {
+        font-size: 0.82rem;
+
+        line-height: 1.7;
+    }
+
+    .bonus-intro-lead {
+        font-size: 0.9rem !important;
+    }
+
+
+    /* -----------------------------------------------------
+       GIFS
+       ----------------------------------------------------- */
+
+    .bonus-archive {
+        padding: 16px;
+
+        gap: 15px;
+    }
+
+    .bonus-archive-image img {
+        max-width: 170px;
+        max-height: 170px;
+    }
+
+
+    .bonus-archive-text {
+        font-size: 0.8rem;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOCS
+       ----------------------------------------------------- */
+
+    .bonus-block {
+        padding: 20px 15px;
+
+        margin-bottom: 18px;
+    }
+
+    .bonus-block h2 {
+        font-size: 1.4rem;
+    }
+
+    .bonus-block p {
+        font-size: 0.8rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------------------
+       MARQUEURS
+       ----------------------------------------------------- */
+
+    .bonus-block-marker {
+        gap: 8px;
+
+        font-size: 0.48rem;
+
+        letter-spacing: 0.12em;
+    }
+
+    .bonus-block-marker span {
+        width: 26px;
+        height: 26px;
+    }
+
+
+    /* -----------------------------------------------------
+       ANALYSE
+       ----------------------------------------------------- */
+
+    .bonus-analysis-item {
+        padding: 15px;
+    }
+
+    .bonus-analysis-item strong {
+        font-size: 0.8rem;
+    }
+
+    .bonus-analysis-item small {
+        font-size: 0.5rem;
+    }
+
+
+    /* -----------------------------------------------------
+       STATUTS
+       ----------------------------------------------------- */
+
+    .bonus-status-item {
+        padding: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .bonus-terminal {
+        padding: 18px 15px;
+    }
+
+    .bonus-terminal-title {
+        font-size: 0.48rem;
+    }
+
+    .bonus-terminal-command {
+        font-size: 1.15rem;
+    }
+
+    .bonus-terminal p {
+        font-size: 0.78rem;
+
+        line-height: 1.65;
+    }
+
+}
+
+
+/* =========================================================
+   FIN — RESPONSIVE PAGE BONUS
+   ========================================================= */
 
 
 
