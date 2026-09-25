@@ -204,7 +204,7 @@ const malusCard = document.querySelector(".feature-malus");
 
 if (malusCard) {
     malusCard.addEventListener("click", () => {
-        window.location.href = "malus.html";
+        window.location.href = "./malus.html";
     });
 
     malusCard.style.cursor = "pointer";
