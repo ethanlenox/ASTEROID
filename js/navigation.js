@@ -164,3 +164,22 @@ function setActivePage() {
 
 
 setActivePage();
+
+
+
+
+
+/* =========================================================
+   CLICK CARTE FONCTION
+   ========================================================= */
+
+
+const niveauxCard = document.querySelector(".feature-niveaux");
+
+if (niveauxCard) {
+    niveauxCard.addEventListener("click", () => {
+        window.location.href = "niveaux.html";
+    });
+
+    niveauxCard.style.cursor = "pointer";
+}
