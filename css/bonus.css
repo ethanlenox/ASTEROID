@@ -1,1 +1,1105 @@
 
+/* =========================================================
+   PAGE BONUS
+   DOSSIER PEMP // ENHANCEMENT DATABASE
+   ========================================================= */
+
+
+/* =========================================================
+   EN-TÊTE DU DOSSIER
+   ========================================================= */
+
+.bonus-header {
+    position: relative;
+
+    padding: 30px 32px 35px;
+
+    margin-bottom: 35px;
+
+    border:
+        1px solid var(--color-border);
+
+    border-left:
+        3px solid var(--color-cyan);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 229, 255, 0.045),
+            rgba(5, 9, 20, 0.45)
+        );
+
+    box-shadow:
+        inset 0 0 40px rgba(0, 229, 255, 0.025),
+        var(--glow-cyan);
+
+    overflow: hidden;
+}
+
+
+.bonus-header::before {
+    content: "";
+
+    position: absolute;
+
+    top: -80px;
+    right: -80px;
+
+    width: 220px;
+    height: 220px;
+
+    border:
+        1px solid rgba(0, 229, 255, 0.08);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 25px rgba(0, 229, 255, 0.015),
+        0 0 0 50px rgba(0, 229, 255, 0.01);
+}
+
+
+.bonus-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-cyan),
+            transparent 75%
+        );
+
+    box-shadow:
+        0 0 12px rgba(0, 229, 255, 0.6);
+}
+
+
+.bonus-header-topline {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.bonus-header h1 {
+    position: relative;
+
+    margin-bottom: 15px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        clamp(3rem, 7vw, 5.5rem);
+
+    letter-spacing: -0.04em;
+
+    text-shadow:
+        0 0 15px rgba(0, 229, 255, 0.35),
+        0 0 45px rgba(0, 229, 255, 0.12);
+}
+
+
+.bonus-header-description {
+    max-width: 650px;
+
+    margin-bottom: 25px;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.8rem;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.12em;
+}
+
+
+.bonus-header-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 7px 12px;
+
+    border:
+        1px solid rgba(57, 255, 136, 0.3);
+
+    background:
+        rgba(57, 255, 136, 0.05);
+
+    color:
+        var(--color-bonus);
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+.bonus-header .status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--color-bonus);
+
+    box-shadow:
+        0 0 8px var(--color-bonus);
+
+    animation:
+        bonus-pulse 1.8s infinite;
+}
+
+
+@keyframes bonus-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 8px var(--color-bonus);
+    }
+
+    50% {
+        opacity: 0.4;
+
+        box-shadow:
+            0 0 2px var(--color-bonus);
+    }
+
+}
+
+
+/* =========================================================
+   DOSSIER PRINCIPAL
+   ========================================================= */
+
+.bonus-dossier {
+    position: relative;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 45px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 22, 38, 0.78),
+            rgba(4, 9, 18, 0.9)
+        );
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    overflow: hidden;
+}
+
+
+.bonus-dossier::before {
+    content:
+        "PEMP // ENHANCEMENT CONFIDENTIAL";
+
+    position: absolute;
+
+    top: 24px;
+    right: -70px;
+
+    padding: 5px 55px;
+
+    transform:
+        rotate(45deg);
+
+    border:
+        1px solid rgba(0, 229, 255, 0.2);
+
+    color:
+        rgba(0, 229, 255, 0.3);
+
+    font-size: 0.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MÉTADONNÉES
+   ========================================================= */
+
+.bonus-meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    margin-bottom: 55px;
+
+    border:
+        1px solid var(--color-border);
+}
+
+
+.bonus-meta > div {
+    min-height: 90px;
+
+    padding: 18px 20px;
+
+    border-right:
+        1px solid var(--color-border);
+}
+
+
+.bonus-meta > div:last-child {
+    border-right: none;
+}
+
+
+.bonus-meta span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+}
+
+
+.bonus-meta strong {
+    color:
+        var(--color-cyan);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.08em;
+}
+
+
+.bonus-warning {
+    color:
+        var(--color-orange) !important;
+
+    text-shadow:
+        0 0 10px rgba(255, 145, 0, 0.3);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.bonus-intro {
+    max-width: 900px;
+
+    margin-bottom: 65px;
+}
+
+
+.bonus-file-number {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--color-cyan);
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.25em;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+
+.bonus-intro h2 {
+    max-width: 800px;
+
+    margin-bottom: 28px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        clamp(2rem, 4vw, 3.2rem);
+
+    line-height: 1.15;
+}
+
+
+.bonus-intro p,
+.bonus-report-content p,
+.bonus-dossier-block p {
+    max-width: 850px;
+
+    margin-bottom: 20px;
+
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+}
+
+
+.bonus-lead {
+    color:
+        var(--color-white) !important;
+
+    font-size:
+        1.2rem !important;
+
+    line-height:
+        1.85 !important;
+}
+
+
+/* =========================================================
+   BLOCS AVEC GIF
+   ========================================================= */
+
+.bonus-report {
+    display: grid;
+
+    grid-template-columns:
+        250px minmax(0, 1fr);
+
+    gap: 45px;
+
+    align-items: center;
+
+    margin-bottom: 50px;
+
+    padding: 30px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(0, 229, 255, 0.018);
+
+    transition:
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+
+.bonus-report:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        inset 0 0 35px rgba(0, 229, 255, 0.025),
+        0 0 25px rgba(0, 229, 255, 0.05);
+}
+
+
+.bonus-report-right {
+    grid-template-columns:
+        minmax(0, 1fr) 250px;
+}
+
+
+/* =========================================================
+   ZONE GIF
+   ========================================================= */
+
+.bonus-report-media {
+    width: 250px;
+
+    min-width: 0;
+
+    padding: 15px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(0, 8, 15, 0.65);
+
+    box-sizing: border-box;
+}
+
+
+.bonus-media-label {
+    margin-bottom: 12px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.bonus-gif-frame {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 170px;
+
+    border:
+        1px solid rgba(0, 229, 255, 0.1);
+
+    background:
+        rgba(0, 229, 255, 0.015);
+
+    overflow: hidden;
+}
+
+
+.bonus-gif-frame img {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+
+    height: auto;
+    max-height: 200px;
+
+    object-fit: contain;
+}
+
+
+.bonus-media-status {
+    display: block;
+
+    margin-top: 12px;
+
+    color:
+        var(--color-cyan);
+
+    font-size: 0.48rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   MARQUEUR DE BLOC
+   ========================================================= */
+
+.bonus-block-marker {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color:
+        var(--color-cyan);
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.22em;
+}
+
+
+.bonus-block-marker span {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border:
+        1px solid var(--color-border-strong);
+
+    background:
+        rgba(0, 229, 255, 0.05);
+
+    color:
+        var(--color-cyan);
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.08);
+}
+
+
+.bonus-report-content h2,
+.bonus-dossier-block h2 {
+    margin-bottom: 22px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        clamp(1.6rem, 3vw, 2.5rem);
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   LIGNES DE DONNÉES
+   ========================================================= */
+
+.bonus-data-line {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 25px;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid rgba(0, 229, 255, 0.12);
+}
+
+
+.bonus-data-line span {
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.bonus-data-line strong {
+    color:
+        var(--color-cyan);
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.12em;
+
+    text-shadow:
+        0 0 8px rgba(0, 229, 255, 0.35);
+}
+
+
+/* =========================================================
+   BLOC CENTRAL
+   ========================================================= */
+
+.bonus-dossier-block {
+    position: relative;
+
+    margin-bottom: 50px;
+
+    padding: 35px;
+
+    border:
+        1px solid var(--color-border);
+
+    border-left:
+        2px solid var(--color-cyan);
+
+    background:
+        rgba(0, 229, 255, 0.018);
+
+    transition:
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+
+.bonus-dossier-block:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        inset 0 0 35px rgba(0, 229, 255, 0.025),
+        0 0 25px rgba(0, 229, 255, 0.05);
+}
+
+
+.bonus-dossier-block strong {
+    color:
+        var(--color-cyan);
+}
+
+
+/* =========================================================
+   GRILLE SYSTÈME
+   ========================================================= */
+
+.bonus-system-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+
+.bonus-system-item {
+    padding: 22px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(0, 229, 255, 0.025);
+}
+
+
+.bonus-system-item span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+}
+
+
+.bonus-system-item strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--color-cyan);
+
+    font-size: 0.9rem;
+}
+
+
+.bonus-system-item small {
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   BLOC DOUBLE TRANCHANT
+   ========================================================= */
+
+.bonus-risk-block {
+    border-left-color:
+        var(--color-orange);
+}
+
+
+.bonus-risk-block:hover {
+    border-color:
+        rgba(255, 145, 0, 0.35);
+}
+
+
+.bonus-risk-marker {
+    color:
+        var(--color-orange);
+}
+
+
+.bonus-risk-marker span {
+    border-color:
+        rgba(255, 145, 0, 0.35);
+
+    color:
+        var(--color-orange);
+}
+
+
+/* =========================================================
+   AVERTISSEMENT
+   ========================================================= */
+
+.bonus-warning-panel {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border:
+        1px solid rgba(255, 145, 0, 0.25);
+
+    background:
+        rgba(255, 145, 0, 0.035);
+}
+
+
+.bonus-warning-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border:
+        1px solid rgba(255, 145, 0, 0.4);
+
+    color:
+        var(--color-orange);
+
+    font-size: 1.1rem;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 0 15px rgba(255, 145, 0, 0.1);
+}
+
+
+.bonus-warning-panel span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--color-orange);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.bonus-warning-panel strong {
+    display: block;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.72rem;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   TERMINAL FINAL
+   ========================================================= */
+
+.bonus-terminal {
+    margin-top: 65px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(0, 5, 12, 0.7);
+
+    box-shadow:
+        inset 0 0 40px rgba(0, 229, 255, 0.02);
+}
+
+
+.bonus-terminal-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 13px 20px;
+
+    border-bottom:
+        1px solid var(--color-border);
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.bonus-terminal-content {
+    padding: 40px;
+}
+
+
+.bonus-terminal-label {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color:
+        var(--color-cyan);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+}
+
+
+.bonus-terminal-content h2 {
+    max-width: 700px;
+
+    margin-bottom: 25px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        clamp(1.8rem, 4vw, 3rem);
+
+    line-height: 1.15;
+}
+
+
+.bonus-terminal-content p {
+    max-width: 800px;
+
+    margin-bottom: 15px;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SÉQUENCE FINALE
+   ========================================================= */
+
+.bonus-final-sequence {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+
+.bonus-final-sequence > div {
+    padding: 20px;
+
+    border:
+        1px solid var(--color-border);
+
+    background:
+        rgba(0, 229, 255, 0.02);
+}
+
+
+.bonus-final-sequence span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--color-cyan);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+.bonus-final-sequence strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--color-white);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.08em;
+}
+
+
+.bonus-final-sequence em {
+    display: block;
+
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.5rem;
+
+    font-style: normal;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   COMMANDE FINALE
+   ========================================================= */
+
+.bonus-final-command {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border-top:
+        1px solid rgba(0, 229, 255, 0.15);
+
+    border-bottom:
+        1px solid rgba(0, 229, 255, 0.15);
+}
+
+
+.bonus-final-command span {
+    color:
+        var(--color-text-muted);
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.bonus-final-command strong {
+    color:
+        var(--color-cyan);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+
+/* =========================================================
+   ANIMATION LÉGÈRE DES ENCADRÉS
+   ========================================================= */
+
+.bonus-report::after,
+.bonus-dossier-block::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 80px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-cyan),
+            transparent
+        );
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   FIN — PAGE BONUS
+   ========================================================= */
