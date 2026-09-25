@@ -1094,6 +1094,41 @@ h2 {
         2px solid var(--color-cyan);
 }
 
+/* =========================================================
+   FIX — CARTE CLIQUABLE
+   ========================================================= */
+
+.features-grid > a.feature-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-width: 0;
+
+    color: inherit;
+    text-decoration: none;
+
+    box-sizing: border-box;
+}
+
+.features-grid > a.feature-card:link,
+.features-grid > a.feature-card:visited,
+.features-grid > a.feature-card:hover,
+.features-grid > a.feature-card:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Empêche le contenu du lien de modifier la grille */
+
+.features-grid > a.feature-card .feature-card-header,
+.features-grid > a.feature-card .feature-card-content,
+.features-grid > a.feature-card .feature-card-footer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 
 /* =========================================================
    MÉDIAS
