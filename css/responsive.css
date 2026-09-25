@@ -5334,6 +5334,790 @@
    FIN — RESPONSIVE PAGE BONUS
    ========================================================= */
 
+/* =========================================================
+   RESPONSIVE — PAGE MALUS
+   VERSION ALIGNÉE SUR LE HTML ACTUEL
+   1024px / 700px / 360px
+   ========================================================= */
+
+
+/* =========================================================
+   1024px
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .malus-header {
+        padding: 28px;
+    }
+
+    .malus-header h1 {
+        font-size: clamp(
+            3rem,
+            7vw,
+            4.8rem
+        );
+    }
+
+
+    /* -----------------------------------------------------
+       DOSSIER PRINCIPAL
+       ----------------------------------------------------- */
+
+    .malus-dossier {
+        padding: 35px;
+    }
+
+
+    /* -----------------------------------------------------
+       MÉTADONNÉES
+       ----------------------------------------------------- */
+
+    .malus-meta {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .malus-meta > div:nth-child(2) {
+        border-right: none;
+    }
+
+    .malus-meta > div:nth-child(-n + 2) {
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .malus-intro {
+        max-width: 100%;
+    }
+
+    .malus-intro h2 {
+        font-size: 2.4rem;
+    }
+
+    .malus-intro p,
+    .malus-report-content p,
+    .malus-dossier-block p {
+        font-size: 0.95rem;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOC AVEC GIF
+       ----------------------------------------------------- */
+
+    .malus-report {
+        grid-template-columns:
+            220px minmax(0, 1fr);
+
+        gap: 30px;
+
+        padding: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       ZONE GIF
+       ----------------------------------------------------- */
+
+    .malus-report-media {
+        width: 220px;
+    }
+
+    .malus-gif-frame {
+        min-height: 160px;
+    }
+
+    .malus-report-media img {
+        max-height: 180px;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOCS DU DOSSIER
+       ----------------------------------------------------- */
+
+    .malus-dossier-block {
+        padding: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       GRILLE SYSTÈME
+       ----------------------------------------------------- */
+
+    .malus-system-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .malus-terminal-content {
+        padding: 35px;
+    }
+
+    .malus-terminal-content h2 {
+        font-size:
+            clamp(1.8rem, 4vw, 2.7rem);
+    }
+
+
+    /* -----------------------------------------------------
+       SÉQUENCE FINALE
+       ----------------------------------------------------- */
+
+    .malus-final-sequence {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .malus-header {
+        padding: 24px 20px;
+    }
+
+    .malus-header-topline {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+
+        font-size: 0.55rem;
+    }
+
+    .malus-header h1 {
+        font-size: clamp(
+            2.6rem,
+            10vw,
+            4rem
+        );
+
+        line-height: 1;
+    }
+
+    .malus-header-description {
+        font-size: 0.7rem;
+
+        line-height: 1.7;
+    }
+
+    .malus-header-status {
+        font-size: 0.55rem;
+    }
+
+
+    /* -----------------------------------------------------
+       DOSSIER PRINCIPAL
+       ----------------------------------------------------- */
+
+    .malus-dossier {
+        padding: 25px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       MÉTADONNÉES
+       ----------------------------------------------------- */
+
+    .malus-meta {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 40px;
+    }
+
+    .malus-meta > div {
+        min-height: auto;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--color-border);
+    }
+
+    .malus-meta > div:last-child {
+        border-bottom: none;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .malus-intro {
+        margin-bottom: 45px;
+    }
+
+    .malus-intro h2 {
+        font-size: 2rem;
+
+        line-height: 1.2;
+    }
+
+    .malus-intro p,
+    .malus-report-content p,
+    .malus-dossier-block p {
+        font-size: 0.9rem;
+
+        line-height: 1.75;
+    }
+
+    .malus-lead {
+        font-size: 1rem !important;
+
+        line-height: 1.75 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOC AVEC GIF
+       ----------------------------------------------------- */
+
+    .malus-report {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+        margin-bottom: 30px;
+
+        padding: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       ZONE GIF
+       ----------------------------------------------------- */
+
+    .malus-report-media {
+        width: 100%;
+
+        min-width: 0;
+
+        order: 1;
+    }
+
+    .malus-report-content {
+        width: 100%;
+
+        order: 2;
+    }
+
+
+    /* -----------------------------------------------------
+       GIF
+       ----------------------------------------------------- */
+
+    .malus-gif-frame {
+        min-height: 170px;
+    }
+
+    .malus-report-media img {
+        max-width: 200px;
+
+        max-height: 200px;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOCS DU DOSSIER
+       ----------------------------------------------------- */
+
+    .malus-dossier-block {
+        padding: 25px 20px;
+
+        margin-bottom: 30px;
+    }
+
+    .malus-dossier-block h2,
+    .malus-report-content h2 {
+        font-size: 1.7rem;
+
+        line-height: 1.25;
+    }
+
+
+    /* -----------------------------------------------------
+       MARQUEURS
+       ----------------------------------------------------- */
+
+    .malus-block-marker {
+        font-size: 0.55rem;
+
+        letter-spacing: 0.15em;
+    }
+
+
+    /* -----------------------------------------------------
+       GRILLE SYSTÈME
+       ----------------------------------------------------- */
+
+    .malus-system-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin-top: 25px;
+    }
+
+    .malus-system-item {
+        padding: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       AVERTISSEMENT
+       ----------------------------------------------------- */
+
+    .malus-warning-panel {
+        align-items: flex-start;
+
+        gap: 14px;
+
+        padding: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       LIGNES DE DONNÉES
+       ----------------------------------------------------- */
+
+    .malus-data-line {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .malus-terminal {
+        margin-top: 45px;
+    }
+
+    .malus-terminal-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+    .malus-terminal-content {
+        padding: 25px 20px;
+    }
+
+    .malus-terminal-content h2 {
+        font-size: 2rem;
+
+        line-height: 1.2;
+    }
+
+    .malus-terminal-content p {
+        font-size: 0.9rem;
+
+        line-height: 1.75;
+    }
+
+
+    /* -----------------------------------------------------
+       SÉQUENCE FINALE
+       ----------------------------------------------------- */
+
+    .malus-final-sequence {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin-top: 25px;
+    }
+
+    .malus-final-sequence > div {
+        padding: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       COMMANDE FINALE
+       ----------------------------------------------------- */
+
+    .malus-final-command {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 25px;
+
+        padding: 18px 0;
+    }
+
+
+    /* -----------------------------------------------------
+       HOVER
+       ----------------------------------------------------- */
+
+    .malus-report:hover,
+    .malus-dossier-block:hover {
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .malus-header {
+        padding: 20px 15px;
+    }
+
+    .malus-header-topline {
+        font-size: 0.48rem;
+
+        letter-spacing: 0.12em;
+    }
+
+    .malus-header h1 {
+        font-size: 2.25rem;
+
+        letter-spacing: -0.04em;
+    }
+
+    .malus-header-description {
+        font-size: 0.62rem;
+
+        line-height: 1.65;
+    }
+
+    .malus-header-status {
+        padding: 6px 9px;
+
+        font-size: 0.48rem;
+    }
+
+
+    /* -----------------------------------------------------
+       DOSSIER
+       ----------------------------------------------------- */
+
+    .malus-dossier {
+        padding: 20px 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       MÉTADONNÉES
+       ----------------------------------------------------- */
+
+    .malus-meta {
+        margin-bottom: 30px;
+    }
+
+    .malus-meta > div {
+        padding: 15px;
+    }
+
+    .malus-meta span {
+        font-size: 0.5rem;
+    }
+
+    .malus-meta strong {
+        font-size: 0.65rem;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRODUCTION
+       ----------------------------------------------------- */
+
+    .malus-intro {
+        margin-bottom: 35px;
+    }
+
+    .malus-file-number {
+        font-size: 0.52rem;
+
+        letter-spacing: 0.18em;
+    }
+
+    .malus-intro h2 {
+        font-size: 1.65rem;
+    }
+
+    .malus-intro p,
+    .malus-report-content p,
+    .malus-dossier-block p {
+        font-size: 0.82rem;
+
+        line-height: 1.7;
+    }
+
+    .malus-lead {
+        font-size: 0.9rem !important;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOC GIF
+       ----------------------------------------------------- */
+
+    .malus-report {
+        padding: 16px;
+
+        gap: 18px;
+
+        margin-bottom: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       GIF
+       ----------------------------------------------------- */
+
+    .malus-report-media {
+        padding: 12px;
+    }
+
+    .malus-gif-frame {
+        min-height: 145px;
+    }
+
+    .malus-report-media img {
+        max-width: 170px;
+
+        max-height: 170px;
+    }
+
+    .malus-media-label,
+    .malus-media-status {
+        font-size: 0.45rem;
+    }
+
+
+    /* -----------------------------------------------------
+       BLOCS
+       ----------------------------------------------------- */
+
+    .malus-dossier-block {
+        padding: 20px 15px;
+
+        margin-bottom: 18px;
+    }
+
+    .malus-dossier-block h2,
+    .malus-report-content h2 {
+        font-size: 1.4rem;
+    }
+
+
+    /* -----------------------------------------------------
+       MARQUEURS
+       ----------------------------------------------------- */
+
+    .malus-block-marker {
+        gap: 8px;
+
+        font-size: 0.48rem;
+
+        letter-spacing: 0.12em;
+    }
+
+    .malus-block-marker span {
+        width: 26px;
+        height: 26px;
+    }
+
+
+    /* -----------------------------------------------------
+       LIGNES DE DONNÉES
+       ----------------------------------------------------- */
+
+    .malus-data-line span,
+    .malus-data-line strong {
+        font-size: 0.48rem;
+    }
+
+
+    /* -----------------------------------------------------
+       SYSTÈME
+       ----------------------------------------------------- */
+
+    .malus-system-grid {
+        gap: 8px;
+
+        margin-top: 20px;
+    }
+
+    .malus-system-item {
+        padding: 15px;
+    }
+
+    .malus-system-item span {
+        font-size: 0.48rem;
+    }
+
+    .malus-system-item strong {
+        font-size: 0.8rem;
+    }
+
+    .malus-system-item small {
+        font-size: 0.5rem;
+    }
+
+
+    /* -----------------------------------------------------
+       AVERTISSEMENT
+       ----------------------------------------------------- */
+
+    .malus-warning-panel {
+        gap: 12px;
+
+        margin-top: 20px;
+
+        padding: 14px;
+    }
+
+    .malus-warning-icon {
+        width: 32px;
+        height: 32px;
+
+        font-size: 0.9rem;
+    }
+
+    .malus-warning-panel span {
+        font-size: 0.48rem;
+    }
+
+    .malus-warning-panel strong {
+        font-size: 0.62rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* -----------------------------------------------------
+       TERMINAL
+       ----------------------------------------------------- */
+
+    .malus-terminal {
+        margin-top: 35px;
+    }
+
+    .malus-terminal-content {
+        padding: 18px 15px;
+    }
+
+    .malus-terminal-label {
+        font-size: 0.48rem;
+    }
+
+    .malus-terminal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .malus-terminal-content p {
+        font-size: 0.78rem;
+
+        line-height: 1.65;
+    }
+
+
+    /* -----------------------------------------------------
+       SÉQUENCE FINALE
+       ----------------------------------------------------- */
+
+    .malus-final-sequence {
+        gap: 8px;
+
+        margin-top: 20px;
+    }
+
+    .malus-final-sequence > div {
+        padding: 15px;
+    }
+
+    .malus-final-sequence span {
+        font-size: 0.48rem;
+    }
+
+    .malus-final-sequence strong {
+        font-size: 0.7rem;
+    }
+
+    .malus-final-sequence em {
+        font-size: 0.48rem;
+    }
+
+
+    /* -----------------------------------------------------
+       COMMANDE FINALE
+       ----------------------------------------------------- */
+
+    .malus-final-command {
+        gap: 8px;
+
+        margin-top: 20px;
+
+        padding: 15px 0;
+    }
+
+    .malus-final-command span {
+        font-size: 0.48rem;
+    }
+
+    .malus-final-command strong {
+        font-size: 0.58rem;
+
+        line-height: 1.5;
+    }
+
+}
+
+
+/* =========================================================
+   FIN — RESPONSIVE PAGE MALUS
+   ========================================================= */
+
+
 
 
 
