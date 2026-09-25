@@ -183,3 +183,16 @@ if (niveauxCard) {
 
     niveauxCard.style.cursor = "pointer";
 }
+/* =========================================================
+   CLICK CARTE BONUS
+   ========================================================= */
+
+const bonusCard = document.querySelector(".feature-bonus");
+
+if (bonusCard) {
+    bonusCard.addEventListener("click", () => {
+        window.location.href = "bonus.html";
+    });
+
+    bonusCard.style.cursor = "pointer";
+}
