@@ -1094,6 +1094,24 @@ h2 {
         2px solid var(--color-cyan);
 }
 
+/* =========================================================
+   CARTE FONCTIONNALITÉ CLIQUABLE
+   ========================================================= */
+
+a.feature-card {
+    color: inherit;
+    text-decoration: none;
+}
+
+a.feature-card:visited {
+    color: inherit;
+}
+
+a.feature-card:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
 
 /* =========================================================
    MÉDIAS
