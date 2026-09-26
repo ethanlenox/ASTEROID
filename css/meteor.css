@@ -17,7 +17,7 @@ PAGE PRINCIPALE
 
     background:
         radial-gradient(
-            circle at 50% 10%,
+            circle at 50% 15%,
             rgba(0, 229, 255, 0.07),
             transparent 35%
         ),
@@ -33,7 +33,7 @@ PAGE PRINCIPALE
 
 
 /* =========================================================
-GRILLE TECHNIQUE DE FOND
+LIGNES TECHNIQUES DE FOND
 ========================================================= */
 
 #meteor-page::before {
@@ -73,8 +73,8 @@ HALO CENTRAL
     top: 0;
     left: 50%;
 
-    width: 1000px;
-    height: 1000px;
+    width: 900px;
+    height: 900px;
 
     transform: translateX(-50%);
 
@@ -104,13 +104,14 @@ CONTENEUR
 
 
 /* =========================================================
-EN-TÊTE DU DOSSIER
+EN-TÊTE // DOSSIER
 ========================================================= */
 
 .meteor-header {
     position: relative;
 
     margin-bottom: 70px;
+
     padding: 35px 40px;
 
     border: 1px solid rgba(0, 229, 255, 0.28);
@@ -128,8 +129,6 @@ EN-TÊTE DU DOSSIER
 }
 
 
-/* coins techniques */
-
 .meteor-header::before,
 .meteor-header::after {
     content: "";
@@ -143,12 +142,14 @@ EN-TÊTE DU DOSSIER
     border-style: solid;
 }
 
+
 .meteor-header::before {
     top: -1px;
     left: -1px;
 
     border-width: 2px 0 0 2px;
 }
+
 
 .meteor-header::after {
     right: -1px;
@@ -164,7 +165,7 @@ LIGNE SUPÉRIEURE
 
 .meteor-header-topline {
     display: flex;
-    align-items: center;
+
     justify-content: space-between;
 
     gap: 30px;
@@ -180,11 +181,10 @@ LIGNE SUPÉRIEURE
     font-weight: 700;
 
     letter-spacing: 0.18em;
+
     text-transform: uppercase;
 }
 
-
-/* classification */
 
 .meteor-classification {
     color: #ff4b4b;
@@ -201,6 +201,7 @@ TITRE
     color: #ecfdff;
 
     font-size: clamp(3rem, 7vw, 7rem);
+
     font-weight: 800;
 
     line-height: 0.9;
@@ -223,6 +224,7 @@ TITRE
     color: #8baab1;
 
     font-size: 1rem;
+
     line-height: 1.8;
 }
 
@@ -238,11 +240,13 @@ STATUT
 
 .meteor-status {
     display: inline-flex;
+
     align-items: center;
 
     gap: 10px;
 
     margin-top: 30px;
+
     padding: 10px 16px;
 
     border: 1px solid rgba(255, 67, 67, 0.4);
@@ -252,6 +256,7 @@ STATUT
     color: #ff6262;
 
     font-size: 0.72rem;
+
     font-weight: 800;
 
     letter-spacing: 0.15em;
@@ -311,6 +316,7 @@ BANDEAU MÉTA
     color: #54747c;
 
     font-size: 0.68rem;
+
     font-weight: 700;
 
     letter-spacing: 0.14em;
@@ -332,7 +338,7 @@ BANDEAU MÉTA
 
 
 /* =========================================================
-INTRODUCTION / ARCHIVE
+INTRODUCTION // ARCHIVE
 ========================================================= */
 
 .meteor-briefing {
@@ -361,6 +367,7 @@ INTRODUCTION / ARCHIVE
     color: #00e5ff;
 
     font-size: 0.7rem;
+
     font-weight: 800;
 
     letter-spacing: 0.18em;
@@ -374,9 +381,9 @@ INTRODUCTION / ARCHIVE
 
     font-size: clamp(2rem, 4vw, 3.5rem);
 
-    letter-spacing: 0.06em;
-
     text-transform: uppercase;
+
+    letter-spacing: 0.06em;
 }
 
 
@@ -388,6 +395,7 @@ INTRODUCTION / ARCHIVE
     color: #91adb3;
 
     font-size: 1rem;
+
     line-height: 1.9;
 }
 
@@ -403,7 +411,7 @@ INTRODUCTION / ARCHIVE
 
 
 /* =========================================================
-CATÉGORIE
+SECTION // CLASSIFICATION
 ========================================================= */
 
 .meteor-category {
@@ -417,18 +425,17 @@ CATÉGORIE
 }
 
 
-/* =========================================================
-HEADER CATÉGORIE
-========================================================= */
-
 .meteor-category-header {
     display: flex;
+
     align-items: flex-end;
+
     justify-content: space-between;
 
     gap: 30px;
 
     margin-bottom: 35px;
+
     padding-bottom: 18px;
 
     border-bottom: 1px solid rgba(0, 229, 255, 0.2);
@@ -443,6 +450,7 @@ HEADER CATÉGORIE
     color: #00e5ff;
 
     font-size: 0.68rem;
+
     font-weight: 800;
 
     letter-spacing: 0.2em;
@@ -470,6 +478,7 @@ HEADER CATÉGORIE
     color: #608d96;
 
     font-size: 0.65rem;
+
     font-weight: 800;
 
     letter-spacing: 0.12em;
@@ -477,7 +486,7 @@ HEADER CATÉGORIE
 
 
 /* =========================================================
-DESCRIPTION CATÉGORIE
+DESCRIPTION SECTION
 ========================================================= */
 
 .meteor-category-description {
@@ -513,19 +522,14 @@ LIGNE MÉTÉORE
 .meteor-row {
     display: grid;
 
-    grid-template-columns:
-        70px
-        300px
-        1fr
-        180px;
+    grid-template-columns: 70px 300px 1fr 180px;
 
-    min-height: 145px;
+    min-height: 120px;
 
     border-bottom: 1px solid rgba(0, 229, 255, 0.11);
 
     transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+        background 0.3s ease;
 }
 
 
@@ -536,9 +540,6 @@ LIGNE MÉTÉORE
 
 .meteor-row:hover {
     background: rgba(0, 229, 255, 0.035);
-
-    box-shadow:
-        inset 4px 0 0 currentColor;
 }
 
 
@@ -548,7 +549,9 @@ NUMÉRO
 
 .meteor-number {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-right: 1px solid rgba(0, 229, 255, 0.12);
@@ -556,6 +559,7 @@ NUMÉRO
     color: #3d6972;
 
     font-size: 0.7rem;
+
     font-weight: 800;
 
     letter-spacing: 0.08em;
@@ -568,10 +572,12 @@ IMAGE
 
 .meteor-image {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    min-height: 145px;
+    min-height: 120px;
 
     padding: 15px;
 
@@ -590,9 +596,10 @@ IMAGE
     display: block;
 
     width: 100%;
-    max-width: 220px;
 
-    max-height: 115px;
+    max-width: 210px;
+
+    max-height: 100px;
 
     object-fit: contain;
 
@@ -608,11 +615,11 @@ IMAGE
 
 
 .meteor-row:hover .meteor-image img {
-    transform: scale(1.08);
+    transform: scale(1.06);
 
     filter:
         drop-shadow(
-            0 0 20px rgba(0, 229, 255, 0.4)
+            0 0 18px rgba(0, 229, 255, 0.35)
         );
 }
 
@@ -623,7 +630,9 @@ INFORMATIONS
 
 .meteor-info {
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
 
     padding: 25px 30px;
@@ -636,6 +645,7 @@ INFORMATIONS
     color: #52757d;
 
     font-size: 0.65rem;
+
     font-weight: 800;
 
     letter-spacing: 0.14em;
@@ -671,12 +681,14 @@ INFORMATIONS
 
 
 /* =========================================================
-NIVEAU / SIGNATURE
+CAPACITÉ / MENACE
 ========================================================= */
 
 .meteor-threat {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     padding: 20px;
@@ -706,6 +718,7 @@ NIVEAU / SIGNATURE
     color: #426a72;
 
     font-size: 0.58rem;
+
     font-weight: 800;
 
     letter-spacing: 0.12em;
@@ -722,12 +735,11 @@ NIVEAU / SIGNATURE
 
 
 /* =========================================================
-CATÉGORIE — TRANSPHASE
+TRANSPHASE
 CYAN
 ========================================================= */
 
-.meteor-category-transphase
-.meteor-category-number,
+.meteor-category-transphase .meteor-category-number,
 .meteor-category-transphase .meteor-class,
 .meteor-category-transphase .meteor-threat-box strong {
     color: #00e5ff;
@@ -742,13 +754,21 @@ CYAN
 .meteor-category-transphase .meteor-image img {
     filter:
         drop-shadow(
-            0 0 10px rgba(0, 229, 255, 0.2)
+            0 0 10px rgba(0, 229, 255, 0.18)
+        );
+}
+
+
+.meteor-category-transphase .meteor-row:hover .meteor-image img {
+    filter:
+        drop-shadow(
+            0 0 18px rgba(0, 229, 255, 0.35)
         );
 }
 
 
 /* =========================================================
-CATÉGORIE — FERRIQUE
+FERRIQUE
 ORANGE
 ========================================================= */
 
@@ -761,8 +781,6 @@ ORANGE
 
 .meteor-category-ferrique .meteor-category-code {
     border-color: rgba(255, 157, 53, 0.25);
-
-    color: #b97a43;
 }
 
 
@@ -779,7 +797,7 @@ ORANGE
 .meteor-category-ferrique .meteor-image img {
     filter:
         drop-shadow(
-            0 0 10px rgba(255, 157, 53, 0.2)
+            0 0 10px rgba(255, 157, 53, 0.18)
         );
 }
 
@@ -787,13 +805,13 @@ ORANGE
 .meteor-category-ferrique .meteor-row:hover .meteor-image img {
     filter:
         drop-shadow(
-            0 0 20px rgba(255, 157, 53, 0.4)
+            0 0 18px rgba(255, 157, 53, 0.35)
         );
 }
 
 
 /* =========================================================
-CATÉGORIE — MINERAL
+MINERAL
 JAUNE
 ========================================================= */
 
@@ -806,8 +824,6 @@ JAUNE
 
 .meteor-category-mineral .meteor-category-code {
     border-color: rgba(255, 216, 77, 0.25);
-
-    color: #b4a252;
 }
 
 
@@ -815,7 +831,7 @@ JAUNE
     background:
         radial-gradient(
             circle,
-            rgba(255, 216, 77, 0.05),
+            rgba(255, 216, 77, 0.055),
             transparent 70%
         );
 }
@@ -832,13 +848,13 @@ JAUNE
 .meteor-category-mineral .meteor-row:hover .meteor-image img {
     filter:
         drop-shadow(
-            0 0 20px rgba(255, 216, 77, 0.38)
+            0 0 18px rgba(255, 216, 77, 0.35)
         );
 }
 
 
 /* =========================================================
-CATÉGORIE — GLACIER
+GLACIER
 BLEU GLACÉ
 ========================================================= */
 
@@ -851,8 +867,6 @@ BLEU GLACÉ
 
 .meteor-category-glacier .meteor-category-code {
     border-color: rgba(100, 223, 255, 0.25);
-
-    color: #5c9eaa;
 }
 
 
@@ -860,7 +874,7 @@ BLEU GLACÉ
     background:
         radial-gradient(
             circle,
-            rgba(100, 223, 255, 0.06),
+            rgba(100, 223, 255, 0.055),
             transparent 70%
         );
 }
@@ -869,7 +883,7 @@ BLEU GLACÉ
 .meteor-category-glacier .meteor-image img {
     filter:
         drop-shadow(
-            0 0 10px rgba(100, 223, 255, 0.2)
+            0 0 10px rgba(100, 223, 255, 0.18)
         );
 }
 
@@ -877,13 +891,13 @@ BLEU GLACÉ
 .meteor-category-glacier .meteor-row:hover .meteor-image img {
     filter:
         drop-shadow(
-            0 0 20px rgba(100, 223, 255, 0.4)
+            0 0 18px rgba(100, 223, 255, 0.35)
         );
 }
 
 
 /* =========================================================
-CATÉGORIE — ELEMENTS
+ELEMENTS
 VIOLET
 ========================================================= */
 
@@ -896,8 +910,6 @@ VIOLET
 
 .meteor-category-elements .meteor-category-code {
     border-color: rgba(184, 108, 255, 0.25);
-
-    color: #9064b3;
 }
 
 
@@ -922,7 +934,7 @@ VIOLET
 .meteor-category-elements .meteor-row:hover .meteor-image img {
     filter:
         drop-shadow(
-            0 0 20px rgba(184, 108, 255, 0.4)
+            0 0 18px rgba(184, 108, 255, 0.4)
         );
 }
 
@@ -964,6 +976,7 @@ AVERTISSEMENT CLASSIFIÉ
     color: #ff4141;
 
     font-size: 0.58rem;
+
     font-weight: 900;
 
     letter-spacing: 0.18em;
@@ -972,6 +985,7 @@ AVERTISSEMENT CLASSIFIÉ
 
 .meteor-warning-header {
     display: flex;
+
     align-items: center;
 
     gap: 12px;
@@ -981,6 +995,7 @@ AVERTISSEMENT CLASSIFIÉ
     color: #ff4d4d;
 
     font-size: 0.72rem;
+
     font-weight: 900;
 
     letter-spacing: 0.14em;
@@ -991,7 +1006,9 @@ AVERTISSEMENT CLASSIFIÉ
     content: "!";
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     width: 22px;
@@ -1017,7 +1034,7 @@ AVERTISSEMENT CLASSIFIÉ
 
 
 /* =========================================================
-TERMINAL FINAL
+CONCLUSION // SYSTEME
 ========================================================= */
 
 .meteor-system-summary {
@@ -1076,12 +1093,15 @@ SIGNATURE DU DOSSIER
 
 .meteor-dossier-footer {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 30px;
 
     margin-top: 60px;
+
     padding-top: 25px;
 
     border-top: 1px solid rgba(0, 229, 255, 0.13);
@@ -1089,6 +1109,7 @@ SIGNATURE DU DOSSIER
     color: #3f6269;
 
     font-size: 0.62rem;
+
     font-weight: 700;
 
     letter-spacing: 0.13em;
@@ -1103,7 +1124,7 @@ SIGNATURE DU DOSSIER
 
 
 /* =========================================================
-TEXTE TERMINAL / CLASSIFIÉ
+EFFET TERMINAL / TEXTE CLASSIFIÉ
 ========================================================= */
 
 .meteor-classified-text {
@@ -1124,7 +1145,8 @@ TEXTE TERMINAL / CLASSIFIÉ
 
     color: #101419;
 
-    transition: color 0.25s ease;
+    transition:
+        color 0.25s ease;
 }
 
 
@@ -1134,7 +1156,7 @@ TEXTE TERMINAL / CLASSIFIÉ
 
 
 /* =========================================================
-ANIMATION STATUT
+ANIMATION DU POINT DE STATUT
 ========================================================= */
 
 @keyframes meteorStatusPulse {
