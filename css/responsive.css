@@ -6123,6 +6123,748 @@
 
 
 /* =========================================================
+   PEMP // RESPONSIVE
+   1024px / 700px / 360px
+   ========================================================= */
+/* =========================================================
+   TABLETTE / PETIT DESKTOP
+   MAX 1024px
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* -----------------------------------------------------
+       CONTENEUR
+       ----------------------------------------------------- */
+
+    .pemp-container {
+        width: 94%;
+    }
+
+
+    /* -----------------------------------------------------
+       PAGE
+       ----------------------------------------------------- */
+
+    #pemp-page {
+        padding: 100px 0 80px;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .pemp-header {
+        padding: 45px 35px 40px;
+        margin-bottom: 50px;
+    }
+
+    .pemp-file-stamp {
+        top: 25px;
+        right: 25px;
+    }
+
+    .pemp-header h1 {
+        font-size: clamp(4rem, 10vw, 6.5rem);
+    }
+
+    .pemp-header h2 {
+        max-width: 750px;
+        font-size: 1.05rem;
+    }
+
+
+    /* -----------------------------------------------------
+       WARNING
+       ----------------------------------------------------- */
+
+    .pemp-warning {
+        margin-bottom: 65px;
+    }
+
+
+    /* -----------------------------------------------------
+       TITRES DE SECTION
+       ----------------------------------------------------- */
+
+    .pemp-section,
+    .pemp-platform-section {
+        margin-bottom: 75px;
+    }
+
+    .pemp-section-heading {
+        gap: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       OVERVIEW
+       ----------------------------------------------------- */
+
+    .pemp-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pemp-overview-card:nth-child(2) {
+        border-right: 0;
+    }
+
+    .pemp-overview-card:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--pemp-border-soft);
+    }
+
+
+    /* -----------------------------------------------------
+       CLASSIFICATION
+       ----------------------------------------------------- */
+
+    .pemp-class-row {
+        grid-template-columns:
+            55px
+            minmax(180px, 1fr)
+            130px
+            110px;
+    }
+
+
+    /* -----------------------------------------------------
+       PLATEFORMES
+       ----------------------------------------------------- */
+
+    .pemp-unit {
+        grid-template-columns: 38% 62%;
+        min-height: 175px;
+    }
+
+    .pemp-unit > img {
+        height: 175px;
+        padding: 20px;
+    }
+
+    .pemp-unit-info {
+        padding: 25px 30px;
+    }
+
+    .pemp-unit-info strong {
+        font-size: 0.9rem;
+    }
+
+    .pemp-unit-info p {
+        font-size: 0.75rem;
+    }
+
+
+    /* -----------------------------------------------------
+       RAPPORT FINAL
+       ----------------------------------------------------- */
+
+    .pemp-final-report {
+        margin-top: 80px;
+        padding: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLETTE / MOBILE LARGE
+   MAX 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------------------
+       PAGE
+       ----------------------------------------------------- */
+
+    #pemp-page {
+        padding: 85px 0 60px;
+    }
+
+    .pemp-container {
+        width: 92%;
+    }
+
+
+    /* -----------------------------------------------------
+       CLASSIFICATION
+       ----------------------------------------------------- */
+
+    .pemp-classification {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+
+        padding: 12px 14px;
+    }
+
+    .pemp-classification-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .pemp-header {
+        padding: 75px 25px 30px;
+        margin-bottom: 40px;
+    }
+
+    .pemp-file-stamp {
+        top: 20px;
+        right: 20px;
+
+        font-size: 0.5rem;
+    }
+
+    .pemp-file-code {
+        font-size: 0.55rem;
+        line-height: 1.6;
+    }
+
+    .pemp-eyebrow {
+        font-size: 0.58rem;
+        line-height: 1.7;
+    }
+
+    .pemp-header h1 {
+        font-size: clamp(3.5rem, 17vw, 5.5rem);
+    }
+
+    .pemp-header h2 {
+        margin-top: 15px;
+
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .pemp-header-intro {
+        font-size: 0.58rem;
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------------------
+       WARNING
+       ----------------------------------------------------- */
+
+    .pemp-warning {
+        gap: 15px;
+
+        margin-bottom: 55px;
+        padding: 20px;
+    }
+
+    .pemp-warning-symbol {
+        width: 35px;
+        height: 35px;
+
+        font-size: 0.9rem;
+    }
+
+    .pemp-warning strong {
+        font-size: 0.58rem;
+        line-height: 1.6;
+    }
+
+    .pemp-warning p {
+        font-size: 0.72rem;
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTIONS
+       ----------------------------------------------------- */
+
+    .pemp-section,
+    .pemp-platform-section {
+        margin-bottom: 60px;
+    }
+
+    .pemp-section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .pemp-section-heading h2 {
+        font-size: 1.8rem;
+    }
+
+    .pemp-section-status {
+        font-size: 0.5rem;
+    }
+
+
+    /* -----------------------------------------------------
+       OVERVIEW
+       ----------------------------------------------------- */
+
+    .pemp-overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pemp-overview-card {
+        min-height: auto;
+
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--pemp-border-soft);
+    }
+
+    .pemp-overview-card:last-child {
+        border-bottom: 0;
+    }
+
+    .pemp-overview-text {
+        margin-top: 25px;
+    }
+
+    .pemp-overview-text p {
+        font-size: 0.8rem;
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------------------
+       CLASSIFICATION
+       ----------------------------------------------------- */
+
+    .pemp-class-list {
+        overflow: visible;
+    }
+
+    .pemp-class-row {
+        grid-template-columns:
+            45px
+            1fr
+            auto;
+
+        min-height: 65px;
+    }
+
+    .pemp-class-row em {
+        display: none;
+    }
+
+    .pemp-class-row small {
+        padding-right: 15px;
+    }
+
+    .pemp-class-row strong {
+        padding-left: 18px;
+
+        font-size: 0.65rem;
+    }
+
+
+    /* -----------------------------------------------------
+       DESCRIPTION
+       ----------------------------------------------------- */
+
+    .pemp-class-description {
+        margin-bottom: 25px;
+
+        font-size: 0.76rem;
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------------------
+       TABLEAU PEMP
+       ----------------------------------------------------- */
+
+    /*
+       On conserve une présentation
+       image à gauche / texte à droite,
+       mais avec des proportions adaptées.
+    */
+
+    .pemp-unit {
+        grid-template-columns: 42% 58%;
+
+        min-height: 155px;
+    }
+
+    .pemp-unit > img {
+        height: 155px;
+
+        padding: 15px;
+    }
+
+    .pemp-unit-info {
+        padding: 20px;
+    }
+
+    .pemp-unit-info::before {
+        top: 18px;
+        bottom: 18px;
+    }
+
+    .pemp-unit-info span {
+        font-size: 0.5rem;
+    }
+
+    .pemp-unit-info strong {
+        margin-bottom: 8px;
+
+        font-size: 0.72rem;
+        line-height: 1.4;
+    }
+
+    .pemp-unit-info p {
+        font-size: 0.65rem;
+        line-height: 1.6;
+    }
+
+    .pemp-unit::after {
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       WARNING VELOCITY
+       ----------------------------------------------------- */
+
+    .pemp-critical-warning {
+        flex-direction: column;
+        gap: 8px;
+
+        font-size: 0.5rem;
+        line-height: 1.5;
+    }
+
+
+    /* -----------------------------------------------------
+       RAPPORT FINAL
+       ----------------------------------------------------- */
+
+    .pemp-final-report {
+        margin-top: 65px;
+        padding: 25px;
+    }
+
+    .pemp-final-report h2 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .pemp-final-report p {
+        font-size: 0.75rem;
+        line-height: 1.8;
+    }
+
+    .pemp-final-status {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pemp-final-status strong {
+        font-size: 0.58rem;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER DOSSIER
+       ----------------------------------------------------- */
+
+    .pemp-file-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+
+        font-size: 0.48rem;
+        line-height: 1.6;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   MAX 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    /* -----------------------------------------------------
+       PAGE
+       ----------------------------------------------------- */
+
+    #pemp-page {
+        padding: 75px 0 50px;
+    }
+
+    .pemp-container {
+        width: 94%;
+    }
+
+
+    /* -----------------------------------------------------
+       CLASSIFICATION
+       ----------------------------------------------------- */
+
+    .pemp-classification {
+        padding: 10px 11px;
+    }
+
+    .pemp-classification-left,
+    .pemp-classification-right {
+        font-size: 0.48rem;
+        letter-spacing: 0.1em;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .pemp-header {
+        padding: 70px 18px 25px;
+    }
+
+    .pemp-file-stamp {
+        top: 18px;
+        right: 15px;
+
+        padding: 5px 8px;
+
+        font-size: 0.44rem;
+        letter-spacing: 0.12em;
+    }
+
+    .pemp-file-code {
+        font-size: 0.48rem;
+    }
+
+    .pemp-eyebrow {
+        font-size: 0.5rem;
+    }
+
+    .pemp-header h1 {
+        font-size: 3.5rem;
+        letter-spacing: 0.05em;
+    }
+
+    .pemp-header h2 {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+    }
+
+    .pemp-header-intro {
+        font-size: 0.5rem;
+    }
+
+
+    /* -----------------------------------------------------
+       WARNING
+       ----------------------------------------------------- */
+
+    .pemp-warning {
+        padding: 17px;
+    }
+
+    .pemp-warning-symbol {
+        width: 30px;
+        height: 30px;
+    }
+
+    .pemp-warning strong {
+        font-size: 0.5rem;
+    }
+
+    .pemp-warning p {
+        font-size: 0.65rem;
+    }
+
+
+    /* -----------------------------------------------------
+       TITRES
+       ----------------------------------------------------- */
+
+    .pemp-section-number {
+        font-size: 0.52rem;
+    }
+
+    .pemp-section-heading h2 {
+        font-size: 1.45rem;
+    }
+
+    .pemp-section-status {
+        padding: 6px 9px;
+
+        font-size: 0.44rem;
+    }
+
+    .pemp-class-code {
+        font-size: 0.48rem;
+    }
+
+
+    /* -----------------------------------------------------
+       OVERVIEW
+       ----------------------------------------------------- */
+
+    .pemp-overview-card {
+        padding: 20px;
+    }
+
+    .pemp-overview-card > span {
+        font-size: 0.5rem;
+    }
+
+    .pemp-overview-card strong {
+        font-size: 0.82rem;
+    }
+
+    .pemp-overview-card p {
+        font-size: 0.65rem;
+    }
+
+
+    /* -----------------------------------------------------
+       CLASSIFICATION
+       ----------------------------------------------------- */
+
+    .pemp-class-row {
+        grid-template-columns:
+            35px
+            1fr
+            auto;
+
+        min-height: 58px;
+    }
+
+    .pemp-class-row > span {
+        font-size: 0.5rem;
+    }
+
+    .pemp-class-row strong {
+        padding-left: 12px;
+
+        font-size: 0.55rem;
+        letter-spacing: 0.08em;
+    }
+
+    .pemp-class-row small {
+        padding-right: 10px;
+
+        font-size: 0.45rem;
+    }
+
+
+    /* -----------------------------------------------------
+       PLATEFORMES
+       ----------------------------------------------------- */
+
+    /*
+       À 360px on garde toujours
+       image + texte côte à côte,
+       mais l'image devient plus compacte.
+    */
+
+    .pemp-unit {
+        grid-template-columns: 38% 62%;
+
+        min-height: 135px;
+    }
+
+    .pemp-unit > img {
+        height: 135px;
+
+        padding: 10px;
+    }
+
+    .pemp-unit-info {
+        padding: 15px;
+    }
+
+    .pemp-unit-info::before {
+        top: 15px;
+        bottom: 15px;
+    }
+
+    .pemp-unit-info span {
+        margin-bottom: 5px;
+
+        font-size: 0.43rem;
+        letter-spacing: 0.1em;
+    }
+
+    .pemp-unit-info strong {
+        margin-bottom: 6px;
+
+        font-size: 0.58rem;
+        line-height: 1.35;
+    }
+
+    .pemp-unit-info p {
+        font-size: 0.54rem;
+        line-height: 1.5;
+    }
+
+
+    /* -----------------------------------------------------
+       CRITICAL WARNING
+       ----------------------------------------------------- */
+
+    .pemp-critical-warning {
+        padding: 10px 12px;
+
+        font-size: 0.44rem;
+    }
+
+
+    /* -----------------------------------------------------
+       RAPPORT FINAL
+       ----------------------------------------------------- */
+
+    .pemp-final-report {
+        padding: 20px;
+    }
+
+    .pemp-final-report h2 {
+        font-size: 1.2rem;
+    }
+
+    .pemp-final-report p {
+        font-size: 0.65rem;
+    }
+
+    .pemp-final-status span,
+    .pemp-final-status strong {
+        font-size: 0.48rem;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
+    .pemp-file-footer {
+        font-size: 0.42rem;
+    }
+
+}
+
+/* =========================================================
+   FIN — RESPONSIVE PAGE PEMP
+   ========================================================= */
+
+
+
+
+
+
+
+
+/* =========================================================
                     CORRECTION BUGS MOBILE
    ========================================================= */
 
