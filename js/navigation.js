@@ -209,3 +209,16 @@ if (malusCard) {
 
     malusCard.style.cursor = "pointer";
 }
+/* =========================================================
+   CLICK CARTE PEMP
+   ========================================================= */
+
+const pempCard = document.querySelector(".feature-plateformes");
+
+if (pempCard) {
+    pempCard.addEventListener("click", () => {
+        window.location.href = "pemp.html";
+    });
+
+    pempCard.style.cursor = "pointer";
+}
