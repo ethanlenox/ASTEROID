@@ -6852,9 +6852,682 @@
     }
 
 }
-
 /* =========================================================
    FIN — RESPONSIVE PAGE PEMP
+   ========================================================= */
+
+
+
+
+
+
+
+
+/* =========================================================
+METEOR // RESPONSIVE
+========================================================= */
+
+/* =========================================================
+TABLETTES / PETITS ÉCRANS
+1024px
+========================================================= */
+
+@media (max-width: 1024px) {
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+#meteor-page {
+    padding: 100px 0 80px;
+}
+
+.meteor-container {
+    width: min(92%, 900px);
+}
+
+
+/* =====================================================
+   HEADER // DOSSIER
+   ===================================================== */
+
+.meteor-header {
+    padding: 30px;
+    margin-bottom: 55px;
+}
+
+.meteor-header-topline {
+    margin-bottom: 28px;
+}
+
+.meteor-header h1 {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+}
+
+.meteor-header-subtitle {
+    max-width: 700px;
+    font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   MÉTA
+   ===================================================== */
+
+.meteor-meta {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 55px;
+}
+
+.meteor-meta-item {
+    min-height: 95px;
+}
+
+.meteor-meta-item:nth-child(2) {
+    border-right: 0;
+}
+
+.meteor-meta-item:nth-child(1),
+.meteor-meta-item:nth-child(2) {
+    border-bottom: 1px solid rgba(0, 229, 255, 0.14);
+}
+
+
+/* =====================================================
+   BRIEFING
+   ===================================================== */
+
+.meteor-briefing {
+    margin-bottom: 70px;
+    padding: 35px;
+}
+
+.meteor-briefing h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+
+/* =====================================================
+   SECTIONS
+   ===================================================== */
+
+.meteor-section {
+    margin-bottom: 75px;
+}
+
+.meteor-section-header {
+    margin-bottom: 28px;
+}
+
+.meteor-section-header h2 {
+    font-size: clamp(1.7rem, 5vw, 2.8rem);
+}
+
+
+/* =====================================================
+   TABLEAU DES MÉTÉORES
+   ===================================================== */
+
+.meteor-unit-row {
+    grid-template-columns: 60px 240px 1fr 150px;
+    min-height: 115px;
+}
+
+.meteor-unit-image {
+    min-height: 115px;
+    padding: 12px;
+}
+
+.meteor-unit-image img {
+    max-width: 175px;
+    max-height: 90px;
+}
+
+.meteor-unit-info {
+    padding: 20px 22px;
+}
+
+.meteor-unit-info h3 {
+    font-size: 1.05rem;
+}
+
+.meteor-unit-info p {
+    font-size: 0.78rem;
+}
+
+.meteor-unit-capability {
+    padding: 15px;
+}
+
+.meteor-capability-box {
+    padding: 10px 8px;
+}
+
+
+/* =====================================================
+   WARNING
+   ===================================================== */
+
+.meteor-warning {
+    margin-top: 65px;
+    padding: 28px 30px;
+}
+
+
+/* =====================================================
+   SUMMARY
+   ===================================================== */
+
+.meteor-system-summary {
+    margin-top: 75px;
+    padding: 35px;
+}
+
+.meteor-system-summary h2 {
+    font-size: 1.8rem;
+}
+
+
+/* =====================================================
+   FOOTER DOSSIER
+   ===================================================== */
+
+.meteor-dossier-footer {
+    margin-top: 50px;
+}
+
+
+}
+
+/* =========================================================
+MOBILE
+700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+#meteor-page {
+    padding: 85px 0 65px;
+}
+
+.meteor-container {
+    width: 92%;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.meteor-header {
+    margin-bottom: 45px;
+    padding: 25px 22px;
+}
+
+.meteor-header-topline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+}
+
+.meteor-header h1 {
+    font-size: clamp(2.4rem, 12vw, 4.5rem);
+    line-height: 0.95;
+}
+
+.meteor-header-subtitle {
+    margin-top: 22px;
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+.meteor-status {
+    margin-top: 22px;
+    font-size: 0.62rem;
+}
+
+
+/* =====================================================
+   MÉTA
+   ===================================================== */
+
+.meteor-meta {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+}
+
+.meteor-meta-item {
+    min-height: 85px;
+    padding: 17px 15px;
+}
+
+.meteor-meta-item span {
+    margin-bottom: 8px;
+    font-size: 0.6rem;
+}
+
+.meteor-meta-item strong {
+    font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   BRIEFING
+   ===================================================== */
+
+.meteor-briefing {
+    margin-bottom: 60px;
+    padding: 28px 22px;
+}
+
+.meteor-file {
+    margin-bottom: 14px;
+    font-size: 0.62rem;
+}
+
+.meteor-briefing h2 {
+    margin-bottom: 18px;
+    font-size: clamp(1.6rem, 8vw, 2.5rem);
+    line-height: 1.05;
+}
+
+.meteor-briefing p {
+    font-size: 0.85rem;
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   SECTIONS
+   ===================================================== */
+
+.meteor-section {
+    margin-bottom: 65px;
+}
+
+.meteor-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+.meteor-section-header h2 {
+    font-size: clamp(1.55rem, 8vw, 2.5rem);
+}
+
+.meteor-section-code {
+    padding: 7px 10px;
+    font-size: 0.58rem;
+}
+
+.meteor-section-description {
+    margin-bottom: 25px;
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   TABLEAU
+   On passe du tableau horizontal à une fiche verticale.
+   ===================================================== */
+
+.meteor-unit-table {
+    border-radius: 0;
+}
+
+.meteor-unit-row {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    grid-template-rows: auto auto auto;
+    min-height: auto;
+}
+
+.meteor-unit-number {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    min-height: 100%;
+    padding: 10px 5px;
+}
+
+.meteor-unit-image {
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 150px;
+    padding: 18px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.meteor-unit-image img {
+    max-width: 190px;
+    max-height: 115px;
+}
+
+.meteor-unit-info {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 20px;
+}
+
+.meteor-unit-info h3 {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.meteor-unit-info p {
+    font-size: 0.76rem;
+    line-height: 1.65;
+}
+
+.meteor-unit-capability {
+    grid-column: 2;
+    grid-row: 3;
+    padding: 15px 20px 20px;
+    border-left: 0;
+    border-top: 1px solid rgba(0, 229, 255, 0.08);
+}
+
+.meteor-capability-box {
+    padding: 10px;
+}
+
+
+/* =====================================================
+   WARNING
+   ===================================================== */
+
+.meteor-warning {
+    margin-top: 50px;
+    padding: 25px 20px;
+}
+
+.meteor-warning::before {
+    left: 18px;
+}
+
+.meteor-warning-header {
+    font-size: 0.65rem;
+}
+
+.meteor-warning p {
+    font-size: 0.76rem;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   SUMMARY
+   ===================================================== */
+
+.meteor-system-summary {
+    margin-top: 65px;
+    padding: 28px 22px;
+}
+
+.meteor-system-summary h2 {
+    margin-bottom: 15px;
+    font-size: 1.55rem;
+}
+
+.meteor-system-summary p {
+    font-size: 0.8rem;
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   FOOTER DOSSIER
+   ===================================================== */
+
+.meteor-dossier-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 0.55rem;
+}
+
+
+}
+
+/* =========================================================
+TRÈS PETITS ÉCRANS
+360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+#meteor-page {
+    padding: 75px 0 55px;
+}
+
+.meteor-container {
+    width: 94%;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.meteor-header {
+    padding: 22px 17px;
+    margin-bottom: 38px;
+}
+
+.meteor-header-topline {
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+}
+
+.meteor-header h1 {
+    font-size: 2.35rem;
+    letter-spacing: 0.05em;
+}
+
+.meteor-header-subtitle {
+    font-size: 0.78rem;
+    line-height: 1.65;
+}
+
+.meteor-status {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 10px;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+}
+
+
+/* =====================================================
+   MÉTA
+   ===================================================== */
+
+.meteor-meta {
+    grid-template-columns: 1fr;
+}
+
+.meteor-meta-item {
+    min-height: auto;
+    padding: 15px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+}
+
+.meteor-meta-item:last-child {
+    border-bottom: 0;
+}
+
+.meteor-meta-item:nth-child(1),
+.meteor-meta-item:nth-child(2) {
+    border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+}
+
+
+/* =====================================================
+   BRIEFING
+   ===================================================== */
+
+.meteor-briefing {
+    padding: 23px 17px;
+}
+
+.meteor-briefing h2 {
+    font-size: 1.55rem;
+}
+
+.meteor-briefing p {
+    font-size: 0.76rem;
+}
+
+
+/* =====================================================
+   SECTION
+   ===================================================== */
+
+.meteor-section-header {
+    gap: 12px;
+}
+
+.meteor-section-number {
+    font-size: 0.58rem;
+}
+
+.meteor-section-header h2 {
+    font-size: 1.55rem;
+}
+
+.meteor-section-code {
+    font-size: 0.52rem;
+}
+
+.meteor-section-description {
+    font-size: 0.75rem;
+}
+
+
+/* =====================================================
+   TABLEAU
+   ===================================================== */
+
+.meteor-unit-row {
+    grid-template-columns: 35px 1fr;
+}
+
+.meteor-unit-number {
+    font-size: 0.58rem;
+}
+
+.meteor-unit-image {
+    min-height: 125px;
+    padding: 12px;
+}
+
+.meteor-unit-image img {
+    max-width: 155px;
+    max-height: 90px;
+}
+
+.meteor-unit-info {
+    padding: 16px;
+}
+
+.meteor-unit-class {
+    margin-bottom: 7px;
+    font-size: 0.56rem;
+}
+
+.meteor-unit-info h3 {
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+}
+
+.meteor-unit-info p {
+    font-size: 0.7rem;
+    line-height: 1.6;
+}
+
+.meteor-unit-capability {
+    padding: 12px 16px 16px;
+}
+
+.meteor-capability-box span {
+    font-size: 0.5rem;
+}
+
+.meteor-capability-box strong {
+    font-size: 0.62rem;
+}
+
+
+/* =====================================================
+   WARNING
+   ===================================================== */
+
+.meteor-warning {
+    padding: 22px 16px;
+}
+
+.meteor-warning-header {
+    gap: 9px;
+    font-size: 0.58rem;
+}
+
+.meteor-warning-header::before {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+}
+
+.meteor-warning p {
+    font-size: 0.7rem;
+}
+
+
+/* =====================================================
+   SUMMARY
+   ===================================================== */
+
+.meteor-system-summary {
+    padding: 23px 17px;
+}
+
+.meteor-system-summary h2 {
+    font-size: 1.35rem;
+}
+
+.meteor-system-summary p {
+    font-size: 0.72rem;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.meteor-dossier-footer {
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+
+}
+/* =========================================================
+   FIN — RESPONSIVE PAGE METEOR
    ========================================================= */
 
 
