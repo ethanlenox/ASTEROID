@@ -222,3 +222,16 @@ if (pempCard) {
 
     pempCard.style.cursor = "pointer";
 }
+/* =========================================================
+   CLICK CARTE MÉTÉOR
+   ========================================================= */
+
+const asteroidCard = document.querySelector(".feature-asteroides");
+
+if (asteroidCard) {
+    asteroidCard.addEventListener("click", () => {
+        window.location.href = "meteor.html";
+    });
+
+    asteroidCard.style.cursor = "pointer";
+}
